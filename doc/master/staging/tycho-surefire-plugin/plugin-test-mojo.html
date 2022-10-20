@@ -975,7 +975,7 @@ In toolchains.xml:
             
 <td><code>-</code></td>
             
-<td>Run tests using UI (true) or headless (false) test harness.<br /><b>Default value is</b>: <code>false</code>.<br /></td>
+<td>Run tests using UI (true) or headless (false) test harness.<br /><b>Default value is</b>: <code>false</code>.<br /><b>User property is</b>: <code>tycho.surefire.useUIHarness</code>.<br /></td>
           </tr>
           
 <tr class="a">
@@ -987,7 +987,7 @@ In toolchains.xml:
 <td><code>-</code></td>
             
 <td>Run tests in UI (true) or background (false) thread. Only applies
-to UI test harness.<br /><b>Default value is</b>: <code>true</code>.<br /></td>
+to UI test harness.<br /><b>Default value is</b>: <code>true</code>.<br /><b>User property is</b>: <code>tycho.surefire.useUIThread</code>.<br /></td>
           </tr>
           
 <tr class="b">
@@ -1879,6 +1879,8 @@ In toolchains.xml:
           
 <li><b>Required</b>: <code>No</code></li>
           
+<li><b>User Property</b>: <code>tycho.surefire.useUIHarness</code></li>
+          
 <li><b>Default</b>: <code>false</code></li>
         </ul><hr /></section><section>
 <h4><a name="a.3CuseUIThread.3E"></a><b><a name="useUIThread">&lt;useUIThread&gt;</a></b></h4>
@@ -1891,6 +1893,8 @@ to UI test harness.</div>
 <li><b>Type</b>: <code>boolean</code></li>
           
 <li><b>Required</b>: <code>No</code></li>
+          
+<li><b>User Property</b>: <code>tycho.surefire.useUIThread</code></li>
           
 <li><b>Default</b>: <code>true</code></li>
         </ul><hr /></section><section>
