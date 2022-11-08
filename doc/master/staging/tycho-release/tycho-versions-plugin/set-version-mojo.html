@@ -91,47 +91,28 @@
 <p><b>Description</b>:</p>
       
 <div>
-<p>Sets the version of the current project and child projects with
-the same version, and updates references as necessary.</p>
+<p>Sets the version of the current project and child projects with the same version, and updates references as necessary.</p>
 
-<p>The set-version goal implements a version refactoring for a
-Tycho reactor: When updating the version of a project, it
-consistently updates the version strings in the project's
-configuration files (e.g. pom.xml and META-INF/MANIFEST.MF) and all
-references to that project (e.g. in a feature.xml).</p>
+<p>The set-version goal implements a version refactoring for a Tycho reactor: When updating the version of a project, it consistently updates the version strings in the project's configuration files (e.g. pom.xml and META-INF/MANIFEST.MF) and all references to that project (e.g. in a feature.xml).</p>
 
-<p>In many cases, the set-version goal changes the version of
-multiple projects or entities at once. In addition to the current
-project, child projects with the same version are also changed. The
-set of version changes is determined according to the following
-rules:</p>
+<p>In many cases, the set-version goal changes the version of multiple projects or entities at once. In addition to the current project, child projects with the same version are also changed. The set of version changes is determined according to the following rules:</p>
 
 <ul>
-
-<li>When the parent project of a project is changed and the project
-has the same version as the parent project, the project is also
-changed.</li>
-
-<li>When an <code>eclipse-plugin</code> project is changed and the
-plugin exports a package with a version which is the same as the
-unqualified project version, the version of the package is also
-changed.</li>
-
-<li>Require-Bundle and Fragment-Host Version Range in references to
-an <code>eclipse-plugin</code> that changed version will be updated: 
-
+ 
+<li>When the parent project of a project is changed and the project has the same version as the parent project, the project is also changed.</li>
+ 
+<li>When an <code>eclipse-plugin</code> project is changed and the plugin exports a package with a version which is the same as the unqualified project version, the version of the package is also changed.</li>
+ 
+<li>Require-Bundle and Fragment-Host Version Range in references to an <code>eclipse-plugin</code> that changed version will be updated: 
+  
 <ul>
-
+   
 <li>if the newVersion becomes out of the original VersionRange</li>
-
-<li>or if <code>updateVersionRangeMatchingBounds</code> is true and
-one of the bounds is matching the original version</li>
-</ul>
-</li>
-
-<li>When an <code>eclipse-repository</code> project is changed and a
-product file in the project has an equivalent version, the version
-in the product file is also changed.</li>
+   
+<li>or if <code>updateVersionRangeMatchingBounds</code> is true and one of the bounds is matching the original version</li>
+  </ul></li>
+ 
+<li>When an <code>eclipse-repository</code> project is changed and a product file in the project has an equivalent version, the version in the product file is also changed.</li>
 </ul></div>
       
 <p><b>Attributes</b>:</p>
@@ -169,8 +150,7 @@ in the product file is also changed.</li>
 <td><code>-</code></td>
             
 <td>
-<p>The new version to set to the current project and other entities
-which have the same version as the current project.</p><br /><b>User property is</b>: <code>newVersion</code>.<br /><b>Alias is</b>: <code>developmentVersion</code>.</td>
+<p>The new version to set to the current project and other entities which have the same version as the current project.</p><br /><b>User property is</b>: <code>newVersion</code>.<br /><b>Alias is</b>: <code>developmentVersion</code>.</td>
           </tr>
         </table>
       </section>
@@ -199,10 +179,7 @@ which have the same version as the current project.</p><br /><b>User property is
 <td><code>-</code></td>
             
 <td>
-<p>Initial list of of projects to be changed. From these projects,
-the full list of projects to be changed is derived according to the
-rules described above. If set, this parameter needs to be specified
-as a comma separated list of artifactIds.</p><br /><b>Default value is</b>: <code>${project.artifactId}</code>.<br /><b>User property is</b>: <code>artifacts</code>.<br /></td>
+<p>Initial list of of projects to be changed. From these projects, the full list of projects to be changed is derived according to the rules described above. If set, this parameter needs to be specified as a comma separated list of artifactIds.</p><br /><b>Default value is</b>: <code>${project.artifactId}</code>.<br /><b>User property is</b>: <code>artifacts</code>.<br /></td>
           </tr>
           
 <tr class="a">
@@ -214,9 +191,7 @@ as a comma separated list of artifactIds.</p><br /><b>Default value is</b>: <cod
 <td><code>0.18.0</code></td>
             
 <td>
-<p>Comma separated list of names of POM properties to set the new
-version to. Note that properties are only changed in the projects
-explicitly listed by the <code>artifacts</code> parameter.</p><br /><b>User property is</b>: <code>properties</code>.<br /></td>
+<p>Comma separated list of names of POM properties to set the new version to. Note that properties are only changed in the projects explicitly listed by the <code>artifacts</code> parameter.</p><br /><b>User property is</b>: <code>properties</code>.<br /></td>
           </tr>
           
 <tr class="b">
@@ -228,9 +203,7 @@ explicitly listed by the <code>artifacts</code> parameter.</p><br /><b>User prop
 <td><code>-</code></td>
             
 <td>
-<p>When true bounds of OSGI version ranges referencing the version
-of an element that changed version will be updated to match the
-newVersion.</p><br /><b>Default value is</b>: <code>false</code>.<br /><b>User property is</b>: <code>updateVersionRangeMatchingBounds</code>.<br /></td>
+<p>When true bounds of OSGI version ranges referencing the version of an element that changed version will be updated to match the newVersion.</p><br /><b>Default value is</b>: <code>false</code>.<br /><b>User property is</b>: <code>updateVersionRangeMatchingBounds</code>.<br /></td>
           </tr>
         </table>
       </section>
@@ -240,10 +213,7 @@ newVersion.</p><br /><b>Default value is</b>: <code>false</code>.<br /><b>User p
 <h4><a name="a.3Cartifacts.3E"></a><b><a name="artifacts">&lt;artifacts&gt;</a></b></h4>
         
 <div>
-<p>Initial list of of projects to be changed. From these projects,
-the full list of projects to be changed is derived according to the
-rules described above. If set, this parameter needs to be specified
-as a comma separated list of artifactIds.</p></div>
+<p>Initial list of of projects to be changed. From these projects, the full list of projects to be changed is derived according to the rules described above. If set, this parameter needs to be specified as a comma separated list of artifactIds.</p></div>
         
 <ul>
           
@@ -258,8 +228,7 @@ as a comma separated list of artifactIds.</p></div>
 <h4><a name="a.3CnewVersion.3E"></a><b><a name="newVersion">&lt;newVersion&gt;</a></b></h4>
         
 <div>
-<p>The new version to set to the current project and other entities
-which have the same version as the current project.</p></div>
+<p>The new version to set to the current project and other entities which have the same version as the current project.</p></div>
         
 <ul>
           
@@ -274,9 +243,7 @@ which have the same version as the current project.</p></div>
 <h4><a name="a.3Cproperties.3E"></a><b><a name="properties">&lt;properties&gt;</a></b></h4>
         
 <div>
-<p>Comma separated list of names of POM properties to set the new
-version to. Note that properties are only changed in the projects
-explicitly listed by the <code>artifacts</code> parameter.</p></div>
+<p>Comma separated list of names of POM properties to set the new version to. Note that properties are only changed in the projects explicitly listed by the <code>artifacts</code> parameter.</p></div>
         
 <ul>
           
@@ -291,9 +258,7 @@ explicitly listed by the <code>artifacts</code> parameter.</p></div>
 <h4><a name="a.3CupdateVersionRangeMatchingBounds.3E"></a><b><a name="updateVersionRangeMatchingBounds">&lt;updateVersionRangeMatchingBounds&gt;</a></b></h4>
         
 <div>
-<p>When true bounds of OSGI version ranges referencing the version
-of an element that changed version will be updated to match the
-newVersion.</p></div>
+<p>When true bounds of OSGI version ranges referencing the version of an element that changed version will be updated to match the newVersion.</p></div>
         
 <ul>
           

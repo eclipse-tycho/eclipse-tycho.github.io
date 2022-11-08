@@ -90,12 +90,7 @@
       
 <p><b>Description</b>:</p>
       
-<div>Modifies the p2 metadata (<code>artifacts.xml</code>) to add PGP
-signatures for each included artifact. Signatures are added as
-<code>pgp.signatures</code> property on the artifact metadata, in
-armored form; and public keys of the signers are added as
-<code>pgp.publicKeys</code> property on the repository metadata, in
-armored form.</div>
+<div>Modifies the p2 metadata (<code>artifacts.xml</code>) to add PGP signatures for each included artifact. Signatures are added as <code>pgp.signatures</code> property on the artifact metadata, in armored form; and public keys of the signers are added as <code>pgp.publicKeys</code> property on the repository metadata, in armored form.</div>
       
 <p><b>Attributes</b>:</p>
       
@@ -125,7 +120,7 @@ armored form.</div>
           
 <tr class="b">
             
-<td align="left"><code><a href="#addPublicKeyToRepo">&lt;addPublicKeyToRepo&gt;</a></code></td>
+<td align="left"><code><a href="#addPublicKeysToArtifacts">&lt;addPublicKeysToArtifacts&gt;</a></code></td>
             
 <td><code>boolean</code></td>
             
@@ -136,7 +131,7 @@ armored form.</div>
           
 <tr class="a">
             
-<td align="left"><code><a href="#addPublicKeysToArtifacts">&lt;addPublicKeysToArtifacts&gt;</a></code></td>
+<td align="left"><code><a href="#addPublicKeyToRepo">&lt;addPublicKeyToRepo&gt;</a></code></td>
             
 <td><code>boolean</code></td>
             
@@ -153,8 +148,7 @@ armored form.</div>
             
 <td><code>1.2</code></td>
             
-<td>Whether to add the default keyrings from gpg's home directory to
-the list of used keyrings.<br /><b>Default value is</b>: <code>true</code>.<br /><b>User property is</b>: <code>gpg.defaultKeyring</code>.<br /></td>
+<td>Whether to add the default keyrings from gpg's home directory to the list of used keyrings.<br /><b>Default value is</b>: <code>true</code>.<br /><b>User property is</b>: <code>gpg.defaultKeyring</code>.<br /></td>
           </tr>
           
 <tr class="a">
@@ -165,36 +159,32 @@ the list of used keyrings.<br /><b>Default value is</b>: <code>true</code>.<br /
             
 <td><code>1.1</code></td>
             
-<td>The path to the GnuPG executable to use for artifact signing.
-Defaults to either &quot;gpg&quot; or &quot;gpg.exe&quot; depending on the operating
-system.<br /><b>User property is</b>: <code>gpg.executable</code>.<br /></td>
+<td>The path to the GnuPG executable to use for artifact signing. Defaults to either &quot;gpg&quot; or &quot;gpg.exe&quot; depending on the operating system.<br /><b>User property is</b>: <code>gpg.executable</code>.<br /></td>
           </tr>
           
 <tr class="b">
             
 <td align="left"><code><a href="#forceSignature">&lt;forceSignature&gt;</a></code></td>
             
-<td><code>List</code></td>
+<td><code>List&lt;String&gt;</code></td>
             
 <td><code>-</code></td>
             
-<td>Bundles that should be signed independently of other settings, eg
-<code>skipIfJarsigned</code>.<br /></td>
+<td>Bundles that should be signed independently of other settings, eg <code>skipIfJarsigned</code>.<br /></td>
           </tr>
           
 <tr class="a">
             
 <td align="left"><code><a href="#gpgArguments">&lt;gpgArguments&gt;</a></code></td>
             
-<td><code>List</code></td>
+<td><code>List&lt;String&gt;</code></td>
             
 <td><code>1.5</code></td>
             
 <td>Sets the arguments to be passed to gpg. Example: 
 
 <div>
-<pre>
-&lt;gpgArguments&gt;
+<pre>&lt;gpgArguments&gt;
   &lt;arg&gt;--no-random-seed-file&lt;/arg&gt;
   &lt;arg&gt;--no-permission-warning&lt;/arg&gt;
 &lt;/gpgArguments&gt;
@@ -209,9 +199,7 @@ system.<br /><b>User property is</b>: <code>gpg.executable</code>.<br /></td>
             
 <td><code>1.0</code></td>
             
-<td>The directory from which gpg will load keyrings. If not specified,
-gpg will use the value configured for its installation, e.g.
-<code>~/.gnupg</code> or <code>%APPDATA%/gnupg</code>.<br /><b>User property is</b>: <code>gpg.homedir</code>.<br /></td>
+<td>The directory from which gpg will load keyrings. If not specified, gpg will use the value configured for its installation, e.g. <code>~/.gnupg</code> or <code>%APPDATA%/gnupg</code>.<br /><b>User property is</b>: <code>gpg.homedir</code>.<br /></td>
           </tr>
           
 <tr class="a">
@@ -222,8 +210,7 @@ gpg will use the value configured for its installation, e.g.
             
 <td><code>-</code></td>
             
-<td>The &quot;name&quot; of the key to sign with. Passed to gpg as
-<code>--local-user</code>.<br /><b>User property is</b>: <code>gpg.keyname</code>.<br /></td>
+<td>The &quot;name&quot; of the key to sign with. Passed to gpg as <code>--local-user</code>.<br /><b>User property is</b>: <code>gpg.keyname</code>.<br /></td>
           </tr>
           
 <tr class="b">
@@ -234,12 +221,7 @@ gpg will use the value configured for its installation, e.g.
             
 <td><code>1.5</code></td>
             
-<td>The lock mode to use when invoking gpg. By default no lock mode
-will be specified. Valid values are <code>once</code>,
-<code>multiple</code> and <code>never</code>. The lock mode gets
-translated into the corresponding <code>--lock-___</code> command
-line argument. Improper usage of this option may lead to data and
-key corruption.<br /><b>User property is</b>: <code>gpg.lockMode</code>.<br /></td>
+<td>The lock mode to use when invoking gpg. By default no lock mode will be specified. Valid values are <code>once</code>, <code>multiple</code> and <code>never</code>. The lock mode gets translated into the corresponding <code>--lock-___</code> command line argument. Improper usage of this option may lead to data and key corruption.<br /><b>See also:</b> <a class="externalLink" href="http://www.gnupg.org/documentation/manuals/gnupg/GPG-Configuration-Options.html">the --lock-options</a><br /><b>User property is</b>: <code>gpg.lockMode</code>.<br /></td>
           </tr>
           
 <tr class="a">
@@ -250,9 +232,7 @@ key corruption.<br /><b>User property is</b>: <code>gpg.lockMode</code>.<br /></
             
 <td><code>-</code></td>
             
-<td>The passphrase to use when signing. If not given, look up the value
-under Maven settings using server id at 'passphraseServerKey'
-configuration.<br /><b>User property is</b>: <code>gpg.passphrase</code>.<br /></td>
+<td>The passphrase to use when signing. If not given, look up the value under Maven settings using server id at 'passphraseServerKey' configuration.<br /><b>User property is</b>: <code>gpg.passphrase</code>.<br /></td>
           </tr>
           
 <tr class="b">
@@ -274,12 +254,7 @@ configuration.<br /><b>User property is</b>: <code>gpg.passphrase</code>.<br /><
             
 <td><code>1.2</code></td>
             
-<td>The path to a public keyring to add to the list of keyrings. By
-default, only the <code>pubring.gpg</code> from gpg's home
-directory is considered. Use this option (and
-<code>defaultKeyring</code> if required) to use a different public
-key. <i>Note:</i> Relative paths are resolved against gpg's home
-directory, not the project base directory.<br /><b>User property is</b>: <code>gpg.publicKeyring</code>.<br /></td>
+<td>The path to a public keyring to add to the list of keyrings. By default, only the <code>pubring.gpg</code> from gpg's home directory is considered. Use this option (and <code>defaultKeyring</code> if required) to use a different public key. <i>Note:</i> Relative paths are resolved against gpg's home directory, not the project base directory.<br /><b>User property is</b>: <code>gpg.publicKeyring</code>.<br /></td>
           </tr>
           
 <tr class="b">
@@ -302,16 +277,7 @@ directory, not the project base directory.<br /><b>User property is</b>: <code>g
 <td><code>1.2</code></td>
             
 <td>
-<p>The path to a secret keyring to add to the list of keyrings. By
-default, only the <code>secring.gpg</code> from gpg's home
-directory is considered. Use this option (in combination with
-<code>publicKeyring</code> and <code>defaultKeyring</code> if
-required) to use a different secret key. <i>Note:</i> Relative
-paths are resolved against gpg's home directory, not the project
-base directory.</p>
-<b>NOTE:</b> As of gpg 2.1 this is an obsolete option and
-ignored. All secret keys are stored in the 'private-keys-v1.d'
-directory below the GnuPG home directory.<br /><b>User property is</b>: <code>gpg.secretKeyring</code>.<br /></td>
+<p>The path to a secret keyring to add to the list of keyrings. By default, only the <code>secring.gpg</code> from gpg's home directory is considered. Use this option (in combination with <code>publicKeyring</code> and <code>defaultKeyring</code> if required) to use a different secret key. <i>Note:</i> Relative paths are resolved against gpg's home directory, not the project base directory.</p> <b>NOTE: </b>As of gpg 2.1 this is an obsolete option and ignored. All secret keys are stored in the &#x2018;private-keys-v1.d&#x2019; directory below the GnuPG home directory.<br /><b>User property is</b>: <code>gpg.secretKeyring</code>.<br /></td>
           </tr>
           
 <tr class="b">
@@ -322,9 +288,7 @@ directory below the GnuPG home directory.<br /><b>User property is</b>: <code>gp
             
 <td><code>-</code></td>
             
-<td>Configures to <code>true</code> to generate PGP signature only for
-artifacts that do <b>not</b> already contain signatures
-files from jarsigner.<br /><b>Default value is</b>: <code>true</code>.<br /></td>
+<td>Configures to <code>true</code> to generate PGP signature only for artifacts that do <b>not</b> already contain signatures files from jarsigner.<br /><b>Default value is</b>: <code>true</code>.<br /></td>
           </tr>
           
 <tr class="a">
@@ -335,17 +299,14 @@ files from jarsigner.<br /><b>Default value is</b>: <code>true</code>.<br /></td
             
 <td><code>-</code></td>
             
-<td>Passes <code>--use-agent</code> or <code>--no-use-agent</code> to
-gpg. If using an agent, the passphrase is optional as the agent
-will provide it. For gpg2, specify true as --no-use-agent was
-removed in gpg2 and doesn't ask for a passphrase anymore.<br /><b>Default value is</b>: <code>true</code>.<br /><b>User property is</b>: <code>gpg.useagent</code>.<br /></td>
+<td>Passes <code>--use-agent</code> or <code>--no-use-agent</code> to gpg. If using an agent, the passphrase is optional as the agent will provide it. For gpg2, specify true as --no-use-agent was removed in gpg2 and doesn't ask for a passphrase anymore.<br /><b>Default value is</b>: <code>true</code>.<br /><b>User property is</b>: <code>gpg.useagent</code>.<br /></td>
           </tr>
         </table>
       </section>
       <section>
 <h3><a name="Parameter_Details"></a>Parameter Details</h3>
         <section>
-<h4><a name="a.3CaddPublicKeyToRepo.3E"></a><b><a name="addPublicKeyToRepo">&lt;addPublicKeyToRepo&gt;</a></b></h4>
+<h4><a name="a.3CaddPublicKeysToArtifacts.3E"></a><b><a name="addPublicKeysToArtifacts">&lt;addPublicKeysToArtifacts&gt;</a></b></h4>
         
 <div>(no description)</div>
         
@@ -357,7 +318,7 @@ removed in gpg2 and doesn't ask for a passphrase anymore.<br /><b>Default value 
           
 <li><b>Default</b>: <code>true</code></li>
         </ul><hr /></section><section>
-<h4><a name="a.3CaddPublicKeysToArtifacts.3E"></a><b><a name="addPublicKeysToArtifacts">&lt;addPublicKeysToArtifacts&gt;</a></b></h4>
+<h4><a name="a.3CaddPublicKeyToRepo.3E"></a><b><a name="addPublicKeyToRepo">&lt;addPublicKeyToRepo&gt;</a></b></h4>
         
 <div>(no description)</div>
         
@@ -371,8 +332,7 @@ removed in gpg2 and doesn't ask for a passphrase anymore.<br /><b>Default value 
         </ul><hr /></section><section>
 <h4><a name="a.3CdefaultKeyring.3E"></a><b><a name="defaultKeyring">&lt;defaultKeyring&gt;</a></b></h4>
         
-<div>Whether to add the default keyrings from gpg's home directory to
-the list of used keyrings.</div>
+<div>Whether to add the default keyrings from gpg's home directory to the list of used keyrings.</div>
         
 <ul>
           
@@ -388,9 +348,7 @@ the list of used keyrings.</div>
         </ul><hr /></section><section>
 <h4><a name="a.3Cexecutable.3E"></a><b><a name="executable">&lt;executable&gt;</a></b></h4>
         
-<div>The path to the GnuPG executable to use for artifact signing.
-Defaults to either &quot;gpg&quot; or &quot;gpg.exe&quot; depending on the operating
-system.</div>
+<div>The path to the GnuPG executable to use for artifact signing. Defaults to either &quot;gpg&quot; or &quot;gpg.exe&quot; depending on the operating system.</div>
         
 <ul>
           
@@ -404,12 +362,11 @@ system.</div>
         </ul><hr /></section><section>
 <h4><a name="a.3CforceSignature.3E"></a><b><a name="forceSignature">&lt;forceSignature&gt;</a></b></h4>
         
-<div>Bundles that should be signed independently of other settings, eg
-<code>skipIfJarsigned</code>.</div>
+<div>Bundles that should be signed independently of other settings, eg <code>skipIfJarsigned</code>.</div>
         
 <ul>
           
-<li><b>Type</b>: <code>java.util.List</code></li>
+<li><b>Type</b>: <code>java.util.List&lt;java.lang.String&gt;</code></li>
           
 <li><b>Required</b>: <code>No</code></li>
         </ul><hr /></section><section>
@@ -418,8 +375,7 @@ system.</div>
 <div>Sets the arguments to be passed to gpg. Example: 
 
 <div>
-<pre>
-&lt;gpgArguments&gt;
+<pre>&lt;gpgArguments&gt;
   &lt;arg&gt;--no-random-seed-file&lt;/arg&gt;
   &lt;arg&gt;--no-permission-warning&lt;/arg&gt;
 &lt;/gpgArguments&gt;
@@ -427,7 +383,7 @@ system.</div>
         
 <ul>
           
-<li><b>Type</b>: <code>java.util.List</code></li>
+<li><b>Type</b>: <code>java.util.List&lt;java.lang.String&gt;</code></li>
           
 <li><b>Since</b>: <code>1.5</code></li>
           
@@ -435,9 +391,7 @@ system.</div>
         </ul><hr /></section><section>
 <h4><a name="a.3Chomedir.3E"></a><b><a name="homedir">&lt;homedir&gt;</a></b></h4>
         
-<div>The directory from which gpg will load keyrings. If not specified,
-gpg will use the value configured for its installation, e.g.
-<code>~/.gnupg</code> or <code>%APPDATA%/gnupg</code>.</div>
+<div>The directory from which gpg will load keyrings. If not specified, gpg will use the value configured for its installation, e.g. <code>~/.gnupg</code> or <code>%APPDATA%/gnupg</code>.</div>
         
 <ul>
           
@@ -451,8 +405,7 @@ gpg will use the value configured for its installation, e.g.
         </ul><hr /></section><section>
 <h4><a name="a.3Ckeyname.3E"></a><b><a name="keyname">&lt;keyname&gt;</a></b></h4>
         
-<div>The &quot;name&quot; of the key to sign with. Passed to gpg as
-<code>--local-user</code>.</div>
+<div>The &quot;name&quot; of the key to sign with. Passed to gpg as <code>--local-user</code>.</div>
         
 <ul>
           
@@ -464,12 +417,7 @@ gpg will use the value configured for its installation, e.g.
         </ul><hr /></section><section>
 <h4><a name="a.3ClockMode.3E"></a><b><a name="lockMode">&lt;lockMode&gt;</a></b></h4>
         
-<div>The lock mode to use when invoking gpg. By default no lock mode
-will be specified. Valid values are <code>once</code>,
-<code>multiple</code> and <code>never</code>. The lock mode gets
-translated into the corresponding <code>--lock-___</code> command
-line argument. Improper usage of this option may lead to data and
-key corruption.</div>
+<div>The lock mode to use when invoking gpg. By default no lock mode will be specified. Valid values are <code>once</code>, <code>multiple</code> and <code>never</code>. The lock mode gets translated into the corresponding <code>--lock-___</code> command line argument. Improper usage of this option may lead to data and key corruption.<br /><b>See also:</b> <a class="externalLink" href="http://www.gnupg.org/documentation/manuals/gnupg/GPG-Configuration-Options.html">the --lock-options</a></div>
         
 <ul>
           
@@ -483,9 +431,7 @@ key corruption.</div>
         </ul><hr /></section><section>
 <h4><a name="a.3Cpassphrase.3E"></a><b><a name="passphrase">&lt;passphrase&gt;</a></b></h4>
         
-<div>The passphrase to use when signing. If not given, look up the value
-under Maven settings using server id at 'passphraseServerKey'
-configuration.</div>
+<div>The passphrase to use when signing. If not given, look up the value under Maven settings using server id at 'passphraseServerKey' configuration.</div>
         
 <ul>
           
@@ -513,12 +459,7 @@ configuration.</div>
         </ul><hr /></section><section>
 <h4><a name="a.3CpublicKeyring.3E"></a><b><a name="publicKeyring">&lt;publicKeyring&gt;</a></b></h4>
         
-<div>The path to a public keyring to add to the list of keyrings. By
-default, only the <code>pubring.gpg</code> from gpg's home
-directory is considered. Use this option (and
-<code>defaultKeyring</code> if required) to use a different public
-key. <i>Note:</i> Relative paths are resolved against gpg's home
-directory, not the project base directory.</div>
+<div>The path to a public keyring to add to the list of keyrings. By default, only the <code>pubring.gpg</code> from gpg's home directory is considered. Use this option (and <code>defaultKeyring</code> if required) to use a different public key. <i>Note:</i> Relative paths are resolved against gpg's home directory, not the project base directory.</div>
         
 <ul>
           
@@ -545,16 +486,7 @@ directory, not the project base directory.</div>
 <h4><a name="a.3CsecretKeyring.3E"></a><b><a name="secretKeyring">&lt;secretKeyring&gt;</a></b></h4>
         
 <div>
-<p>The path to a secret keyring to add to the list of keyrings. By
-default, only the <code>secring.gpg</code> from gpg's home
-directory is considered. Use this option (in combination with
-<code>publicKeyring</code> and <code>defaultKeyring</code> if
-required) to use a different secret key. <i>Note:</i> Relative
-paths are resolved against gpg's home directory, not the project
-base directory.</p>
-<b>NOTE:</b> As of gpg 2.1 this is an obsolete option and
-ignored. All secret keys are stored in the 'private-keys-v1.d'
-directory below the GnuPG home directory.</div>
+<p>The path to a secret keyring to add to the list of keyrings. By default, only the <code>secring.gpg</code> from gpg's home directory is considered. Use this option (in combination with <code>publicKeyring</code> and <code>defaultKeyring</code> if required) to use a different secret key. <i>Note:</i> Relative paths are resolved against gpg's home directory, not the project base directory.</p> <b>NOTE: </b>As of gpg 2.1 this is an obsolete option and ignored. All secret keys are stored in the &#x2018;private-keys-v1.d&#x2019; directory below the GnuPG home directory.</div>
         
 <ul>
           
@@ -568,9 +500,7 @@ directory below the GnuPG home directory.</div>
         </ul><hr /></section><section>
 <h4><a name="a.3CskipIfJarsigned.3E"></a><b><a name="skipIfJarsigned">&lt;skipIfJarsigned&gt;</a></b></h4>
         
-<div>Configures to <code>true</code> to generate PGP signature only for
-artifacts that do <b>not</b> already contain signatures
-files from jarsigner.</div>
+<div>Configures to <code>true</code> to generate PGP signature only for artifacts that do <b>not</b> already contain signatures files from jarsigner.</div>
         
 <ul>
           
@@ -582,10 +512,7 @@ files from jarsigner.</div>
         </ul><hr /></section><section>
 <h4><a name="a.3CuseAgent.3E"></a><b><a name="useAgent">&lt;useAgent&gt;</a></b></h4>
         
-<div>Passes <code>--use-agent</code> or <code>--no-use-agent</code> to
-gpg. If using an agent, the passphrase is optional as the agent
-will provide it. For gpg2, specify true as --no-use-agent was
-removed in gpg2 and doesn't ask for a passphrase anymore.</div>
+<div>Passes <code>--use-agent</code> or <code>--no-use-agent</code> to gpg. If using an agent, the passphrase is optional as the agent will provide it. For gpg2, specify true as --no-use-agent was removed in gpg2 and doesn't ask for a passphrase anymore.</div>
         
 <ul>
           

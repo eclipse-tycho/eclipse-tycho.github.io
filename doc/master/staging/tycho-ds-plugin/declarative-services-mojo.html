@@ -90,12 +90,7 @@
       
 <p><b>Description</b>:</p>
       
-<div>This mojo generates <a class="externalLink" href="http://docs.osgi.org/specification/osgi.cmpn/8.0.0/service.component.html#service.component-component.description">OSGi
-Declarative Services component description XMLs</a> based on <a class="externalLink" href="https://docs.osgi.org/javadoc/osgi.cmpn/8.0.0/org/osgi/service/component/annotations/package-summary.html">OSGi
-DS annotations</a> in the <code>process-classes</code> phase. The
-generated component description XMLs end up in
-<code>project.build.outputDirectory</code> below the given
-<code>DeclarativeServicesMojo.path</code>. This mojo uses <a class="externalLink" href="https://bnd.bndtools.org/">Bnd</a> under the hood.</div>
+<div>This mojo generates <a class="externalLink" href="http://docs.osgi.org/specification/osgi.cmpn/8.0.0/service.component.html#service.component-component.description"> OSGi Declarative Services component description XMLs</a> based on <a class="externalLink" href="https://docs.osgi.org/javadoc/osgi.cmpn/8.0.0/org/osgi/service/component/annotations/package-summary.html">OSGi DS annotations</a> in the <code>process-classes</code> phase. The generated component description XMLs end up in <code>project.build.outputDirectory</code> below the given <code>path</code>. This mojo uses <a class="externalLink" href="https://bnd.bndtools.org/">Bnd</a> under the hood.</div>
       
 <p><b>Attributes</b>:</p>
       
@@ -133,8 +128,7 @@ generated component description XMLs end up in
             
 <td><code>-</code></td>
             
-<td>Controls if the DS components annotations are made available on the
-compile-classpath, this means no explicit import is required.<br /><b>Default value is</b>: <code>true</code>.<br /><b>User property is</b>: <code>tycho.ds.classpath</code>.<br /></td>
+<td>Controls if the DS components annotations are made available on the compile-classpath, this means no explicit import is required.<br /><b>Default value is</b>: <code>true</code>.<br /><b>User property is</b>: <code>tycho.ds.classpath</code>.<br /></td>
           </tr>
           
 <tr class="a">
@@ -145,12 +139,7 @@ compile-classpath, this means no explicit import is required.<br /><b>Default va
             
 <td><code>-</code></td>
             
-<td>Controls the declarative services specification version to use as
-maximum. This mojo may generate component descriptions in a version
-lower than the given one in case the annotations don't require
-features from newer versions. Values need to be given in format
-<code>V&lt;major&gt;_&lt;minor&gt;</code> or
-<code>&lt;major&gt;.&lt;minor&gt;</code>.<br /><b>Default value is</b>: <code>1.3</code>.<br /><b>User property is</b>: <code>tycho.ds.version</code>.<br /></td>
+<td>Controls the declarative services specification version to use as maximum. This mojo may generate component descriptions in a version lower than the given one in case the annotations don't require features from newer versions. Values need to be given in format <code>V&lt;major&gt;_&lt;minor&gt;</code> or <code>&lt;major&gt;.&lt;minor&gt;</code>.<br /><b>Default value is</b>: <code>1.3</code>.<br /><b>User property is</b>: <code>tycho.ds.version</code>.<br /></td>
           </tr>
           
 <tr class="b">
@@ -161,13 +150,7 @@ features from newer versions. Values need to be given in format
             
 <td><code>-</code></td>
             
-<td>Enables the processing of declarative services by Tycho, this could
-be overridden by project specific configuration. If set to
-<code>true</code> will enable DS it for all projects except for
-those that have explicitly disabled <a class="externalLink" href="https://help.eclipse.org/latest/index.jsp?topic=%2Forg.eclipse.pde.doc.user%2Ftips%2Fpde_tips.htm&amp;cp%3D4_4">DS
-processing in their per-project configuration</a>, if set to
-<code>false</code> will only process projects which have DS
-processing explicitly enabled in their per-project configuration.<br /><b>Default value is</b>: <code>false</code>.<br /><b>User property is</b>: <code>tycho.ds.enabled</code>.<br /></td>
+<td>Enables the processing of declarative services by Tycho, this could be overridden by project specific configuration. If set to <code>true</code> will enable DS it for all projects except for those that have explicitly disabled <a class="externalLink" href="https://help.eclipse.org/latest/index.jsp?topic=%2Forg.eclipse.pde.doc.user%2Ftips%2Fpde_tips.htm&amp;cp%3D4_4">DS processing in their per-project configuration</a>, if set to <code>false</code> will only process projects which have DS processing explicitly enabled in their per-project configuration.<br /><b>Default value is</b>: <code>false</code>.<br /><b>User property is</b>: <code>tycho.ds.enabled</code>.<br /></td>
           </tr>
           
 <tr class="a">
@@ -178,9 +161,7 @@ processing explicitly enabled in their per-project configuration.<br /><b>Defaul
             
 <td><code>-</code></td>
             
-<td>The desired path where to place component definitions. If it is
-given as relative path it is relative to
-<code>project.build.outputDirectory</code>.<br /><b>Default value is</b>: <code>OSGI-INF</code>.<br /><b>User property is</b>: <code>tycho.ds.path</code>.<br /></td>
+<td>The desired path where to place component definitions. If it is given as relative path it is relative to <code>project.build.outputDirectory</code>.<br /><b>Default value is</b>: <code>OSGI-INF</code>.<br /><b>User property is</b>: <code>tycho.ds.path</code>.<br /></td>
           </tr>
           
 <tr class="b">
@@ -191,8 +172,7 @@ given as relative path it is relative to
             
 <td><code>-</code></td>
             
-<td>Skips the generation of any DS processing regardless of project
-configuration<br /><b>Default value is</b>: <code>false</code>.<br /><b>User property is</b>: <code>tycho.ds.skip</code>.<br /></td>
+<td>Skips the generation of any DS processing regardless of project configuration<br /><b>Default value is</b>: <code>false</code>.<br /><b>User property is</b>: <code>tycho.ds.skip</code>.<br /></td>
           </tr>
         </table>
       </section>
@@ -201,8 +181,7 @@ configuration<br /><b>Default value is</b>: <code>false</code>.<br /><b>User pro
         <section>
 <h4><a name="a.3Cclasspath.3E"></a><b><a name="classpath">&lt;classpath&gt;</a></b></h4>
         
-<div>Controls if the DS components annotations are made available on the
-compile-classpath, this means no explicit import is required.</div>
+<div>Controls if the DS components annotations are made available on the compile-classpath, this means no explicit import is required.</div>
         
 <ul>
           
@@ -216,12 +195,7 @@ compile-classpath, this means no explicit import is required.</div>
         </ul><hr /></section><section>
 <h4><a name="a.3CdsVersion.3E"></a><b><a name="dsVersion">&lt;dsVersion&gt;</a></b></h4>
         
-<div>Controls the declarative services specification version to use as
-maximum. This mojo may generate component descriptions in a version
-lower than the given one in case the annotations don't require
-features from newer versions. Values need to be given in format
-<code>V&lt;major&gt;_&lt;minor&gt;</code> or
-<code>&lt;major&gt;.&lt;minor&gt;</code>.</div>
+<div>Controls the declarative services specification version to use as maximum. This mojo may generate component descriptions in a version lower than the given one in case the annotations don't require features from newer versions. Values need to be given in format <code>V&lt;major&gt;_&lt;minor&gt;</code> or <code>&lt;major&gt;.&lt;minor&gt;</code>.</div>
         
 <ul>
           
@@ -235,13 +209,7 @@ features from newer versions. Values need to be given in format
         </ul><hr /></section><section>
 <h4><a name="a.3Cenabled.3E"></a><b><a name="enabled">&lt;enabled&gt;</a></b></h4>
         
-<div>Enables the processing of declarative services by Tycho, this could
-be overridden by project specific configuration. If set to
-<code>true</code> will enable DS it for all projects except for
-those that have explicitly disabled <a class="externalLink" href="https://help.eclipse.org/latest/index.jsp?topic=%2Forg.eclipse.pde.doc.user%2Ftips%2Fpde_tips.htm&amp;cp%3D4_4">DS
-processing in their per-project configuration</a>, if set to
-<code>false</code> will only process projects which have DS
-processing explicitly enabled in their per-project configuration.</div>
+<div>Enables the processing of declarative services by Tycho, this could be overridden by project specific configuration. If set to <code>true</code> will enable DS it for all projects except for those that have explicitly disabled <a class="externalLink" href="https://help.eclipse.org/latest/index.jsp?topic=%2Forg.eclipse.pde.doc.user%2Ftips%2Fpde_tips.htm&amp;cp%3D4_4">DS processing in their per-project configuration</a>, if set to <code>false</code> will only process projects which have DS processing explicitly enabled in their per-project configuration.</div>
         
 <ul>
           
@@ -255,9 +223,7 @@ processing explicitly enabled in their per-project configuration.</div>
         </ul><hr /></section><section>
 <h4><a name="a.3Cpath.3E"></a><b><a name="path">&lt;path&gt;</a></b></h4>
         
-<div>The desired path where to place component definitions. If it is
-given as relative path it is relative to
-<code>project.build.outputDirectory</code>.</div>
+<div>The desired path where to place component definitions. If it is given as relative path it is relative to <code>project.build.outputDirectory</code>.</div>
         
 <ul>
           
@@ -271,8 +237,7 @@ given as relative path it is relative to
         </ul><hr /></section><section>
 <h4><a name="a.3Cskip.3E"></a><b><a name="skip">&lt;skip&gt;</a></b></h4>
         
-<div>Skips the generation of any DS processing regardless of project
-configuration</div>
+<div>Skips the generation of any DS processing regardless of project configuration</div>
         
 <ul>
           

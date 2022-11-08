@@ -90,27 +90,13 @@
       
 <p><b>Description</b>:</p>
       
-<div>This mojo compares versions the output artifacts of your module
-build with the version of the same artifacts available in
-configured baselines, in order to detect version inconsistencies
-(version moved back, or not correctly bumped since last release).
-Rules for &quot;illegal&quot; versions are: 
-
-<ul class="noindent">
+<div>This mojo compares versions the output artifacts of your module build with the version of the same artifacts available in configured baselines, in order to detect version inconsistencies (version moved back, or not correctly bumped since last release). Rules for &quot;illegal&quot; versions are: 
 
 <li>version decreased compared to baseline</li>
 
-<li>same fully-qualified version as baseline, but with different
-binary content</li>
+<li>same fully-qualified version as baseline, but with different binary content</li>
 
-<li>same major.minor.micro as baseline, with different qualifier
-(at least micro should be increased)</li>
-
-<li style="list-style: none">This mojo doesn't allow to use
-qualifier as a versioning segment and will most likely drive to
-false-positive errors if your qualifier has means to show
-versioniterations.</li>
-</ul></div>
+<li>same major.minor.micro as baseline, with different qualifier (at least micro should be increased)</li> This mojo doesn't allow to use qualifier as a versioning segment and will most likely drive to false-positive errors if your qualifier has means to show versioniterations.</div>
       
 <p><b>Attributes</b>:</p>
       
@@ -140,28 +126,22 @@ versioniterations.</li>
             
 <td align="left"><code><a href="#baselines">&lt;baselines&gt;</a></code></td>
             
-<td><code>List</code></td>
+<td><code>List&lt;String&gt;</code></td>
             
 <td><code>-</code></td>
             
-<td>A list of p2 repositories to be used as baseline. Those are
-typically the most recent released versions of your project.<br /><b>User property is</b>: <code>baselines</code>.<br /></td>
+<td>A list of p2 repositories to be used as baseline. Those are typically the most recent released versions of your project.<br /><b>User property is</b>: <code>baselines</code>.<br /></td>
           </tr>
           
 <tr class="a">
             
 <td align="left"><code><a href="#ignoredPatterns">&lt;ignoredPatterns&gt;</a></code></td>
             
-<td><code>List</code></td>
+<td><code>List&lt;String&gt;</code></td>
             
 <td><code>-</code></td>
             
-<td>A list of file path patterns that are ignored when comparing the
-build artifact against the baseline version.
-<code>&lt;ignoredPatterns&gt;
-&lt;pattern&gt;META-INF/ECLIPSE_.RSA&lt;pattern&gt;
-&lt;pattern&gt;META-INF/ECLIPSE_.SF&lt;/pattern&gt;
-&lt;/ignoredPatterns&gt;</code><br /></td>
+<td>A list of file path patterns that are ignored when comparing the build artifact against the baseline version. <code>&lt;ignoredPatterns&gt; &lt;pattern&gt;META-INF/ECLIPSE_.RSA&lt;pattern&gt; &lt;pattern&gt;META-INF/ECLIPSE_.SF&lt;/pattern&gt; &lt;/ignoredPatterns&gt; </code><br /></td>
           </tr>
           
 <tr class="b">
@@ -192,12 +172,11 @@ build artifact against the baseline version.
         <section>
 <h4><a name="a.3Cbaselines.3E"></a><b><a name="baselines">&lt;baselines&gt;</a></b></h4>
         
-<div>A list of p2 repositories to be used as baseline. Those are
-typically the most recent released versions of your project.</div>
+<div>A list of p2 repositories to be used as baseline. Those are typically the most recent released versions of your project.</div>
         
 <ul>
           
-<li><b>Type</b>: <code>java.util.List</code></li>
+<li><b>Type</b>: <code>java.util.List&lt;java.lang.String&gt;</code></li>
           
 <li><b>Required</b>: <code>No</code></li>
           
@@ -205,16 +184,11 @@ typically the most recent released versions of your project.</div>
         </ul><hr /></section><section>
 <h4><a name="a.3CignoredPatterns.3E"></a><b><a name="ignoredPatterns">&lt;ignoredPatterns&gt;</a></b></h4>
         
-<div>A list of file path patterns that are ignored when comparing the
-build artifact against the baseline version.
-<code>&lt;ignoredPatterns&gt;
-&lt;pattern&gt;META-INF/ECLIPSE_.RSA&lt;pattern&gt;
-&lt;pattern&gt;META-INF/ECLIPSE_.SF&lt;/pattern&gt;
-&lt;/ignoredPatterns&gt;</code></div>
+<div>A list of file path patterns that are ignored when comparing the build artifact against the baseline version. <code>&lt;ignoredPatterns&gt; &lt;pattern&gt;META-INF/ECLIPSE_.RSA&lt;pattern&gt; &lt;pattern&gt;META-INF/ECLIPSE_.SF&lt;/pattern&gt; &lt;/ignoredPatterns&gt; </code></div>
         
 <ul>
           
-<li><b>Type</b>: <code>java.util.List</code></li>
+<li><b>Type</b>: <code>java.util.List&lt;java.lang.String&gt;</code></li>
           
 <li><b>Required</b>: <code>No</code></li>
         </ul><hr /></section><section>

@@ -124,8 +124,7 @@
             
 <td><code>-</code></td>
             
-<td>The output directory of the jar file By default this is the Maven
-&quot;target/&quot; directory.<br /><b>User property is</b>: <code>project.build.directory</code>.<br /></td>
+<td>The output directory of the jar file By default this is the Maven &quot;target/&quot; directory.<br /><b>User property is</b>: <code>project.build.directory</code>.<br /></td>
           </tr>
           
 <tr class="a">
@@ -164,16 +163,10 @@
             
 <td><code>-</code></td>
             
-<td>Additional files to be included in the bundle jar. This can be used
-when <code>bin.includes</code> in build.properties is not flexible
-enough , e.g. for generated files. If conflicting, additional files
-win over <code>bin.includes</code><br />
-Example:<br />
- 
+<td>Additional files to be included in the bundle jar. This can be used when <code>bin.includes</code> in build.properties is not flexible enough , e.g. for generated files. If conflicting, additional files win over <code>bin.includes</code><br /> Example:<br />
 
 <div>
-<pre>
-&lt;additionalFileSets&gt;
+<pre>&lt;additionalFileSets&gt;
  &lt;fileSet&gt;
   &lt;directory&gt;${project.build.directory}/mytool-gen/&lt;/directory&gt;
   &lt;includes&gt;
@@ -192,17 +185,10 @@ Example:<br />
             
 <td><code>-</code></td>
             
-<td>The <a class="externalLink" href="https://maven.apache.org/shared/maven-archiver/">maven
-archiver</a> to use. One of the archiver properties is the
-<code>addMavenDescriptor</code> flag, which indicates whether the
-generated archive will contain the pom.xml and pom.properties file.
-If no archive configuration is specified, the default value is
-<code>true</code>. If the maven descriptor should not be added to
-the artifact, use the following configuration: 
+<td>The <a class="externalLink" href="https://maven.apache.org/shared/maven-archiver/">maven archiver</a> to use. One of the archiver properties is the <code>addMavenDescriptor</code> flag, which indicates whether the generated archive will contain the pom.xml and pom.properties file. If no archive configuration is specified, the default value is <code>true</code>. If the maven descriptor should not be added to the artifact, use the following configuration: 
 
 <div>
-<pre>
-&lt;plugin&gt;
+<pre>&lt;plugin&gt;
   &lt;groupId&gt;org.eclipse.tycho&lt;/groupId&gt;
   &lt;artifactId&gt;tycho-packaging-plugin&lt;/artifactId&gt;
   &lt;version&gt;${tycho-version}&lt;/version&gt;
@@ -223,13 +209,11 @@ the artifact, use the following configuration:
             
 <td><code>-</code></td>
             
-<td>Whether to derive OSGi-Headers from the maven-pom configuration,
-currently the following header are supported 
+<td>Whether to derive OSGi-Headers from the maven-pom configuration, currently the following header are supported 
 
 <ul>
-
-<li><code>Constants.BUNDLE_LICENSE</code> is generated from maven
-&lt;licenses&gt; configuration</li>
+ 
+<li><code>org.osgi.framework.Constants.BUNDLE_LICENSE</code> is generated from maven &lt;licenses&gt; configuration</li>
 </ul><br /><b>Default value is</b>: <code>true</code>.<br /></td>
           </tr>
           
@@ -241,8 +225,7 @@ currently the following header are supported
             
 <td><code>-</code></td>
             
-<td>Build qualifier. Recommended way to set this parameter is using
-build-qualifier goal.<br /><b>User property is</b>: <code>buildQualifier</code>.<br /></td>
+<td>Build qualifier. Recommended way to set this parameter is using build-qualifier goal.<br /><b>User property is</b>: <code>buildQualifier</code>.<br /></td>
           </tr>
           
 <tr class="b">
@@ -253,25 +236,16 @@ build-qualifier goal.<br /><b>User property is</b>: <code>buildQualifier</code>.
             
 <td><code>-</code></td>
             
-<td>Whether to generate an <a class="externalLink" href="https://wiki.eclipse.org/PDE/UI/SourceReferences">Eclipse-SourceReferences</a>
-MANIFEST header. When using this parameter, property
-${tycho.scmUrl} must be set and be a valid <a class="externalLink" href="https://maven.apache.org/scm/scm-url-format.html">maven SCM
-URL</a>. Example configuration: 
+<td>Whether to generate an <a class="externalLink" href="https://wiki.eclipse.org/PDE/UI/SourceReferences">Eclipse-SourceReferences</a> MANIFEST header. When using this parameter, property ${tycho.scmUrl} must be set and be a valid <a class="externalLink" href="https://maven.apache.org/scm/scm-url-format.html">maven SCM URL</a>. Example configuration: 
 
 <div>
-<pre>
-        &lt;sourceReferences&gt;
+<pre>        &lt;sourceReferences&gt;
           &lt;generate&gt;true&lt;/generate&gt;
         &lt;/sourceReferences&gt;
-</pre></div>
-
-Note that a <code>SourceReferencesProvider</code> component must be
-registered for the SCM type being used. You may also override the
-generated value by configuring: 
+</pre></div> Note that a <code>org.eclipse.tycho.packaging.sourceref.SourceReferencesProvider</code> component must be registered for the SCM type being used. You may also override the generated value by configuring: 
 
 <div>
-<pre>
-        &lt;sourceReferences&gt;
+<pre>        &lt;sourceReferences&gt;
           &lt;generate&gt;true&lt;/generate&gt;
           &lt;customValue&gt;scm:myscm:customSourceReferenceValue&lt;/customValue&gt;
         &lt;/sourceReferences&gt;
@@ -286,10 +260,7 @@ generated value by configuring:
             
 <td><code>-</code></td>
             
-<td>If set to <code>true</code> (the default), missing build.properties
-bin.includes will cause build failure. If set to
-<code>false</code>, missing build.properties bin.includes will be
-reported as warnings but the build will not fail.<br /><b>Default value is</b>: <code>true</code>.<br /></td>
+<td>If set to <code>true</code> (the default), missing build.properties bin.includes will cause build failure. If set to <code>false</code>, missing build.properties bin.includes will be reported as warnings but the build will not fail.<br /><b>Default value is</b>: <code>true</code>.<br /></td>
           </tr>
           
 <tr class="b">
@@ -309,16 +280,10 @@ reported as warnings but the build will not fail.<br /><b>Default value is</b>: 
         <section>
 <h4><a name="a.3CadditionalFileSets.3E"></a><b><a name="additionalFileSets">&lt;additionalFileSets&gt;</a></b></h4>
         
-<div>Additional files to be included in the bundle jar. This can be used
-when <code>bin.includes</code> in build.properties is not flexible
-enough , e.g. for generated files. If conflicting, additional files
-win over <code>bin.includes</code><br />
-Example:<br />
- 
+<div>Additional files to be included in the bundle jar. This can be used when <code>bin.includes</code> in build.properties is not flexible enough , e.g. for generated files. If conflicting, additional files win over <code>bin.includes</code><br /> Example:<br />
 
 <div>
-<pre>
-&lt;additionalFileSets&gt;
+<pre>&lt;additionalFileSets&gt;
  &lt;fileSet&gt;
   &lt;directory&gt;${project.build.directory}/mytool-gen/&lt;/directory&gt;
   &lt;includes&gt;
@@ -336,17 +301,10 @@ Example:<br />
         </ul><hr /></section><section>
 <h4><a name="a.3Carchive.3E"></a><b><a name="archive">&lt;archive&gt;</a></b></h4>
         
-<div>The <a class="externalLink" href="https://maven.apache.org/shared/maven-archiver/">maven
-archiver</a> to use. One of the archiver properties is the
-<code>addMavenDescriptor</code> flag, which indicates whether the
-generated archive will contain the pom.xml and pom.properties file.
-If no archive configuration is specified, the default value is
-<code>true</code>. If the maven descriptor should not be added to
-the artifact, use the following configuration: 
+<div>The <a class="externalLink" href="https://maven.apache.org/shared/maven-archiver/">maven archiver</a> to use. One of the archiver properties is the <code>addMavenDescriptor</code> flag, which indicates whether the generated archive will contain the pom.xml and pom.properties file. If no archive configuration is specified, the default value is <code>true</code>. If the maven descriptor should not be added to the artifact, use the following configuration: 
 
 <div>
-<pre>
-&lt;plugin&gt;
+<pre>&lt;plugin&gt;
   &lt;groupId&gt;org.eclipse.tycho&lt;/groupId&gt;
   &lt;artifactId&gt;tycho-packaging-plugin&lt;/artifactId&gt;
   &lt;version&gt;${tycho-version}&lt;/version&gt;
@@ -366,8 +324,7 @@ the artifact, use the following configuration:
         </ul><hr /></section><section>
 <h4><a name="a.3CbuildDirectory.3E"></a><b><a name="buildDirectory">&lt;buildDirectory&gt;</a></b></h4>
         
-<div>The output directory of the jar file By default this is the Maven
-&quot;target/&quot; directory.</div>
+<div>The output directory of the jar file By default this is the Maven &quot;target/&quot; directory.</div>
         
 <ul>
           
@@ -379,13 +336,11 @@ the artifact, use the following configuration:
         </ul><hr /></section><section>
 <h4><a name="a.3CderiveHeaderFromProject.3E"></a><b><a name="deriveHeaderFromProject">&lt;deriveHeaderFromProject&gt;</a></b></h4>
         
-<div>Whether to derive OSGi-Headers from the maven-pom configuration,
-currently the following header are supported 
+<div>Whether to derive OSGi-Headers from the maven-pom configuration, currently the following header are supported 
 
 <ul>
-
-<li><code>Constants.BUNDLE_LICENSE</code> is generated from maven
-&lt;licenses&gt; configuration</li>
+ 
+<li><code>org.osgi.framework.Constants.BUNDLE_LICENSE</code> is generated from maven &lt;licenses&gt; configuration</li>
 </ul></div>
         
 <ul>
@@ -412,8 +367,7 @@ currently the following header are supported
         </ul><hr /></section><section>
 <h4><a name="a.3Cqualifier.3E"></a><b><a name="qualifier">&lt;qualifier&gt;</a></b></h4>
         
-<div>Build qualifier. Recommended way to set this parameter is using
-build-qualifier goal.</div>
+<div>Build qualifier. Recommended way to set this parameter is using build-qualifier goal.</div>
         
 <ul>
           
@@ -425,25 +379,16 @@ build-qualifier goal.</div>
         </ul><hr /></section><section>
 <h4><a name="a.3CsourceReferences.3E"></a><b><a name="sourceReferences">&lt;sourceReferences&gt;</a></b></h4>
         
-<div>Whether to generate an <a class="externalLink" href="https://wiki.eclipse.org/PDE/UI/SourceReferences">Eclipse-SourceReferences</a>
-MANIFEST header. When using this parameter, property
-${tycho.scmUrl} must be set and be a valid <a class="externalLink" href="https://maven.apache.org/scm/scm-url-format.html">maven SCM
-URL</a>. Example configuration: 
+<div>Whether to generate an <a class="externalLink" href="https://wiki.eclipse.org/PDE/UI/SourceReferences">Eclipse-SourceReferences</a> MANIFEST header. When using this parameter, property ${tycho.scmUrl} must be set and be a valid <a class="externalLink" href="https://maven.apache.org/scm/scm-url-format.html">maven SCM URL</a>. Example configuration: 
 
 <div>
-<pre>
-        &lt;sourceReferences&gt;
+<pre>        &lt;sourceReferences&gt;
           &lt;generate&gt;true&lt;/generate&gt;
         &lt;/sourceReferences&gt;
-</pre></div>
-
-Note that a <code>SourceReferencesProvider</code> component must be
-registered for the SCM type being used. You may also override the
-generated value by configuring: 
+</pre></div> Note that a <code>org.eclipse.tycho.packaging.sourceref.SourceReferencesProvider</code> component must be registered for the SCM type being used. You may also override the generated value by configuring: 
 
 <div>
-<pre>
-        &lt;sourceReferences&gt;
+<pre>        &lt;sourceReferences&gt;
           &lt;generate&gt;true&lt;/generate&gt;
           &lt;customValue&gt;scm:myscm:customSourceReferenceValue&lt;/customValue&gt;
         &lt;/sourceReferences&gt;
@@ -457,10 +402,7 @@ generated value by configuring:
         </ul><hr /></section><section>
 <h4><a name="a.3CstrictBinIncludes.3E"></a><b><a name="strictBinIncludes">&lt;strictBinIncludes&gt;</a></b></h4>
         
-<div>If set to <code>true</code> (the default), missing build.properties
-bin.includes will cause build failure. If set to
-<code>false</code>, missing build.properties bin.includes will be
-reported as warnings but the build will not fail.</div>
+<div>If set to <code>true</code> (the default), missing build.properties bin.includes will cause build failure. If set to <code>false</code>, missing build.properties bin.includes will be reported as warnings but the build will not fail.</div>
         
 <ul>
           

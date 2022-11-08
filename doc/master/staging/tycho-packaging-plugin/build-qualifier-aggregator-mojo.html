@@ -91,28 +91,11 @@
 <p><b>Description</b>:</p>
       
 <div>
-<p>This mojo calculates build timestamp as the latest timestamp of
-the project itself and timestamps of bundles and features directly
-included in the project. This is meant to work with custom
-timestamp providers and generate build qualifier based on build
-contents, i.e. the source code, and not the time the build was
-started; rebuilding the same source code will result in the same
-version qualifier.</p>
+<p>This mojo calculates build timestamp as the latest timestamp of the project itself and timestamps of bundles and features directly included in the project. This is meant to work with custom timestamp providers and generate build qualifier based on build contents, i.e. the source code, and not the time the build was started; rebuilding the same source code will result in the same version qualifier.</p>
 
-<p>Timestamp of included bundles and features is determined by
-parsing their respective version qualifiers. Qualifiers that cannot
-be parsed are silently ignored, which can result in old version
-qualifier used even when aggregator project contents actually
-changed. In this case aggregator project timestamp will have to be
-increased manually, using artificial SCM commit for example.</p>
+<p>Timestamp of included bundles and features is determined by parsing their respective version qualifiers. Qualifiers that cannot be parsed are silently ignored, which can result in old version qualifier used even when aggregator project contents actually changed. In this case aggregator project timestamp will have to be increased manually, using artificial SCM commit for example.</p>
 
-<p>Qualifier aggregation is enabled only for projects with custom
-timestamp provider, i.e. &lt;timestampProvider&gt; is set in
-pom.xml to a value other than &quot;default&quot;. The default build
-timestamp provider uses build start time as build timestamp, which
-should be newer or equal than timestamp of any included
-bundle/feature project, which makes qualifier aggregation
-redundant.</p></div>
+<p>Qualifier aggregation is enabled only for projects with custom timestamp provider, i.e. &lt;timestampProvider&gt; is set in pom.xml to a value other than &quot;default&quot;. The default build timestamp provider uses build start time as build timestamp, which should be newer or equal than timestamp of any included bundle/feature project, which makes qualifier aggregation redundant.</p></div>
       
 <p><b>Attributes</b>:</p>
       
@@ -160,8 +143,7 @@ redundant.</p></div>
 <td><code>-</code></td>
             
 <td>
-<p>Specify a date format as specified by
-java.text.SimpleDateFormat. Timezone used is UTC.</p><br /><b>Default value is</b>: <code>yyyyMMddHHmm</code>.<br /><b>User property is</b>: <code>tycho.buildqualifier.format</code>.<br /></td>
+<p>Specify a date format as specified by java.text.SimpleDateFormat. Timezone used is UTC.</p><br /><b>Default value is</b>: <code>yyyyMMddHHmm</code>.<br /><b>User property is</b>: <code>tycho.buildqualifier.format</code>.<br /></td>
           </tr>
           
 <tr class="b">
@@ -195,8 +177,7 @@ java.text.SimpleDateFormat. Timezone used is UTC.</p><br /><b>Default value is</
 <h4><a name="a.3Cformat.3E"></a><b><a name="format">&lt;format&gt;</a></b></h4>
         
 <div>
-<p>Specify a date format as specified by
-java.text.SimpleDateFormat. Timezone used is UTC.</p></div>
+<p>Specify a date format as specified by java.text.SimpleDateFormat. Timezone used is UTC.</p></div>
         
 <ul>
           

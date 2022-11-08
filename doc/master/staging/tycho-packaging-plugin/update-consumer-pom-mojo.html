@@ -90,10 +90,7 @@
       
 <p><b>Description</b>:</p>
       
-<div>Updates the pom file with the dependencies from the tycho model. If
-you further like to customize the pom you should take a look at the
-<a class="externalLink" href="https://www.mojohaus.org/flatten-maven-plugin/plugin-info.html">Maven
-Flatten Plugin</a></div>
+<div>Updates the pom file with the dependencies from the tycho model. If you further like to customize the pom you should take a look at the <a class="externalLink" href="https://www.mojohaus.org/flatten-maven-plugin/plugin-info.html">Maven Flatten Plugin</a></div>
       
 <p><b>Attributes</b>:</p>
       
@@ -131,8 +128,7 @@ Flatten Plugin</a></div>
             
 <td><code>-</code></td>
             
-<td>The directory where the tycho generated POM file will be written
-to.<br /><b>Default value is</b>: <code>${project.basedir}</code>.<br /></td>
+<td>The directory where the tycho generated POM file will be written to.<br /><b>Default value is</b>: <code>${project.basedir}</code>.<br /></td>
           </tr>
           
 <tr class="a">
@@ -182,8 +178,7 @@ to.<br /><b>Default value is</b>: <code>${project.basedir}</code>.<br /></td>
             
 <td><code>-</code></td>
             
-<td>If deleteOnExit is true the file will be marked for deletion on JVM
-exit<br /><b>Default value is</b>: <code>true</code>.<br /></td>
+<td>If deleteOnExit is true the file will be marked for deletion on JVM exit<br /><b>Default value is</b>: <code>true</code>.<br /></td>
           </tr>
           
 <tr class="b">
@@ -194,10 +189,7 @@ exit<br /><b>Default value is</b>: <code>true</code>.<br /></td>
             
 <td><code>-</code></td>
             
-<td>If includeP2Dependencies is true Tycho will include P2 dependencies
-in the consumer pom as optional items with provided scope. If the
-value is false, such items are skipped and only such items are
-included that can be mapped to a valid maven artifact<br /><b>Default value is</b>: <code>false</code>.<br /></td>
+<td>If includeP2Dependencies is true Tycho will include P2 dependencies in the consumer pom as optional items with provided scope. If the value is false, such items are skipped and only such items are included that can be mapped to a valid maven artifact<br /><b>Default value is</b>: <code>false</code>.<br /></td>
           </tr>
           
 <tr class="a">
@@ -208,9 +200,7 @@ included that can be mapped to a valid maven artifact<br /><b>Default value is</
             
 <td><code>-</code></td>
             
-<td>If mapP2Dependencies is true then Tycho tries to reverse-resolve P2
-dependencies to true maven artifact coordinates and include those
-in the pom instead of the P2 system scoped ones.<br /><b>Default value is</b>: <code>false</code>.<br /></td>
+<td>If mapP2Dependencies is true then Tycho tries to reverse-resolve P2 dependencies to true maven artifact coordinates and include those in the pom instead of the P2 system scoped ones.<br /><b>Default value is</b>: <code>false</code>.<br /></td>
           </tr>
           
 <tr class="b">
@@ -221,8 +211,7 @@ in the pom instead of the P2 system scoped ones.<br /><b>Default value is</b>: <
             
 <td><code>-</code></td>
             
-<td>replace they type of a dependency (e.g. 'eclipse-plugin') with its
-extension (e.g. 'jar')<br /><b>Default value is</b>: <code>true</code>.<br /></td>
+<td>replace they type of a dependency (e.g. 'eclipse-plugin') with its extension (e.g. 'jar')<br /><b>Default value is</b>: <code>true</code>.<br /></td>
           </tr>
           
 <tr class="a">
@@ -274,8 +263,7 @@ extension (e.g. 'jar')<br /><b>Default value is</b>: <code>true</code>.<br /></t
         </ul><hr /></section><section>
 <h4><a name="a.3CdeleteOnExit.3E"></a><b><a name="deleteOnExit">&lt;deleteOnExit&gt;</a></b></h4>
         
-<div>If deleteOnExit is true the file will be marked for deletion on JVM
-exit</div>
+<div>If deleteOnExit is true the file will be marked for deletion on JVM exit</div>
         
 <ul>
           
@@ -287,10 +275,7 @@ exit</div>
         </ul><hr /></section><section>
 <h4><a name="a.3CincludeP2Dependencies.3E"></a><b><a name="includeP2Dependencies">&lt;includeP2Dependencies&gt;</a></b></h4>
         
-<div>If includeP2Dependencies is true Tycho will include P2 dependencies
-in the consumer pom as optional items with provided scope. If the
-value is false, such items are skipped and only such items are
-included that can be mapped to a valid maven artifact</div>
+<div>If includeP2Dependencies is true Tycho will include P2 dependencies in the consumer pom as optional items with provided scope. If the value is false, such items are skipped and only such items are included that can be mapped to a valid maven artifact</div>
         
 <ul>
           
@@ -302,9 +287,7 @@ included that can be mapped to a valid maven artifact</div>
         </ul><hr /></section><section>
 <h4><a name="a.3CmapP2Dependencies.3E"></a><b><a name="mapP2Dependencies">&lt;mapP2Dependencies&gt;</a></b></h4>
         
-<div>If mapP2Dependencies is true then Tycho tries to reverse-resolve P2
-dependencies to true maven artifact coordinates and include those
-in the pom instead of the P2 system scoped ones.</div>
+<div>If mapP2Dependencies is true then Tycho tries to reverse-resolve P2 dependencies to true maven artifact coordinates and include those in the pom instead of the P2 system scoped ones.</div>
         
 <ul>
           
@@ -316,8 +299,7 @@ in the pom instead of the P2 system scoped ones.</div>
         </ul><hr /></section><section>
 <h4><a name="a.3CoutputDirectory.3E"></a><b><a name="outputDirectory">&lt;outputDirectory&gt;</a></b></h4>
         
-<div>The directory where the tycho generated POM file will be written
-to.</div>
+<div>The directory where the tycho generated POM file will be written to.</div>
         
 <ul>
           
@@ -329,8 +311,7 @@ to.</div>
         </ul><hr /></section><section>
 <h4><a name="a.3CreplaceTypeWithExtension.3E"></a><b><a name="replaceTypeWithExtension">&lt;replaceTypeWithExtension&gt;</a></b></h4>
         
-<div>replace they type of a dependency (e.g. 'eclipse-plugin') with its
-extension (e.g. 'jar')</div>
+<div>replace they type of a dependency (e.g. 'eclipse-plugin') with its extension (e.g. 'jar')</div>
         
 <ul>
           

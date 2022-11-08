@@ -154,8 +154,7 @@
             
 <td><code>-</code></td>
             
-<td>The base directory of the project being tested. This can be
-obtained in your unit test by System.getProperty(&quot;basedir&quot;).<br /><b>Default value is</b>: <code>${basedir}</code>.<br /></td>
+<td>The base directory of the project being tested. This can be obtained in your unit test by System.getProperty(&quot;basedir&quot;).<br /><b>Default value is</b>: <code>${basedir}</code>.<br /></td>
           </tr>
           
 <tr class="a">
@@ -166,7 +165,7 @@ obtained in your unit test by System.getProperty(&quot;basedir&quot;).<br /><b>D
             
 <td><code>-</code></td>
             
-<td><b>Deprecated.</b> since of 2.20.1<br /><b>Default value is</b>: <code>${project.reporting.outputEncoding}</code>.<br /><b>User property is</b>: <code>encoding</code>.<br /></td>
+<td><b>Deprecated.</b> The character encoding scheme to be applied. Deprecated since 2.20.1 and used encoding UTF-8 in <code>failsafe-summary.xml</code>.<br /><b>Default value is</b>: <code>${project.reporting.outputEncoding}</code>.<br /><b>User property is</b>: <code>encoding</code>.<br /></td>
           </tr>
           
 <tr class="b">
@@ -199,11 +198,7 @@ obtained in your unit test by System.getProperty(&quot;basedir&quot;).<br /><b>D
             
 <td><code>-</code></td>
             
-<td>Set this to 'true' to bypass unit tests entirely. Its use is NOT
-RECOMMENDED, especially if you enable it using the
-&quot;maven.test.skip&quot; property, because maven.test.skip disables both
-running the tests and compiling the tests. Consider using the
-skipTests parameter instead.<br /><b>Default value is</b>: <code>false</code>.<br /><b>User property is</b>: <code>maven.test.skip</code>.<br /></td>
+<td>Set this to 'true' to bypass unit tests entirely. Its use is NOT RECOMMENDED, especially if you enable it using the &quot;maven.test.skip&quot; property, because maven.test.skip disables both running the tests and compiling the tests. Consider using the skipTests parameter instead.<br /><b>Default value is</b>: <code>false</code>.<br /><b>User property is</b>: <code>maven.test.skip</code>.<br /></td>
           </tr>
           
 <tr class="a">
@@ -214,7 +209,7 @@ skipTests parameter instead.<br /><b>Default value is</b>: <code>false</code>.<b
             
 <td><code>2.3</code></td>
             
-<td><b>Deprecated.</b> Use -DskipTests instead.<br /><b>User property is</b>: <code>maven.test.skip.exec</code>.<br /></td>
+<td><b>Deprecated.</b> This old parameter is just like skipTests, but bound to the old property maven.test.skip.exec.<br /><b>User property is</b>: <code>maven.test.skip.exec</code>.<br /></td>
           </tr>
           
 <tr class="b">
@@ -225,9 +220,7 @@ skipTests parameter instead.<br /><b>Default value is</b>: <code>false</code>.<b
             
 <td><code>2.4.3-alpha-2</code></td>
             
-<td>Set this to 'true' to skip running integration tests, but still
-compile them. Its use is NOT RECOMMENDED, but quite convenient on
-occasion.<br /><b>User property is</b>: <code>skipITs</code>.<br /></td>
+<td>Set this to 'true' to skip running integration tests, but still compile them. Its use is NOT RECOMMENDED, but quite convenient on occasion.<br /><b>User property is</b>: <code>skipITs</code>.<br /></td>
           </tr>
           
 <tr class="a">
@@ -238,8 +231,7 @@ occasion.<br /><b>User property is</b>: <code>skipITs</code>.<br /></td>
             
 <td><code>2.4</code></td>
             
-<td>Set this to 'true' to skip running tests, but still compile them.
-Its use is NOT RECOMMENDED, but quite convenient on occasion.<br /><b>User property is</b>: <code>skipTests</code>.<br /></td>
+<td>Set this to 'true' to skip running tests, but still compile them. Its use is NOT RECOMMENDED, but quite convenient on occasion.<br /><b>User property is</b>: <code>skipTests</code>.<br /></td>
           </tr>
           
 <tr class="b">
@@ -261,9 +253,7 @@ Its use is NOT RECOMMENDED, but quite convenient on occasion.<br /><b>User prope
             
 <td><code>-</code></td>
             
-<td>The directory containing generated test classes of the project
-being tested. This will be included at the beginning the test
-classpath.<br /><b>Default value is</b>: <code>${project.build.testOutputDirectory}</code>.<br /></td>
+<td>The directory containing generated test classes of the project being tested. This will be included at the beginning the test classpath.<br /><b>Default value is</b>: <code>${project.build.testOutputDirectory}</code>.<br /></td>
           </tr>
           
 <tr class="b">
@@ -274,8 +264,7 @@ classpath.<br /><b>Default value is</b>: <code>${project.build.testOutputDirecto
             
 <td><code>-</code></td>
             
-<td>Set this to true to ignore a failure during testing. Its use is NOT
-RECOMMENDED, but quite convenient on occasion.<br /><b>Default value is</b>: <code>false</code>.<br /><b>User property is</b>: <code>maven.test.failure.ignore</code>.<br /></td>
+<td>Set this to true to ignore a failure during testing. Its use is NOT RECOMMENDED, but quite convenient on occasion.<br /><b>Default value is</b>: <code>false</code>.<br /><b>User property is</b>: <code>maven.test.failure.ignore</code>.<br /></td>
           </tr>
         </table>
       </section>
@@ -284,8 +273,7 @@ RECOMMENDED, but quite convenient on occasion.<br /><b>Default value is</b>: <co
         <section>
 <h4><a name="a.3Cbasedir.3E"></a><b><a name="basedir">&lt;basedir&gt;</a></b></h4>
         
-<div>The base directory of the project being tested. This can be
-obtained in your unit test by System.getProperty(&quot;basedir&quot;).</div>
+<div>The base directory of the project being tested. This can be obtained in your unit test by System.getProperty(&quot;basedir&quot;).</div>
         
 <ul>
           
@@ -299,8 +287,7 @@ obtained in your unit test by System.getProperty(&quot;basedir&quot;).</div>
         
 <div><b>Deprecated.</b> since of 2.20.1</div>
         
-<div>The character encoding scheme to be applied. Deprecated since
-2.20.1 and used encoding UTF-8 in <code>failsafe-summary.xml</code>.</div>
+<div>The character encoding scheme to be applied. Deprecated since 2.20.1 and used encoding UTF-8 in <code>failsafe-summary.xml</code>.</div>
         
 <ul>
           
@@ -340,11 +327,7 @@ obtained in your unit test by System.getProperty(&quot;basedir&quot;).</div>
         </ul><hr /></section><section>
 <h4><a name="a.3Cskip.3E"></a><b><a name="skip">&lt;skip&gt;</a></b></h4>
         
-<div>Set this to 'true' to bypass unit tests entirely. Its use is NOT
-RECOMMENDED, especially if you enable it using the
-&quot;maven.test.skip&quot; property, because maven.test.skip disables both
-running the tests and compiling the tests. Consider using the
-skipTests parameter instead.</div>
+<div>Set this to 'true' to bypass unit tests entirely. Its use is NOT RECOMMENDED, especially if you enable it using the &quot;maven.test.skip&quot; property, because maven.test.skip disables both running the tests and compiling the tests. Consider using the skipTests parameter instead.</div>
         
 <ul>
           
@@ -360,8 +343,7 @@ skipTests parameter instead.</div>
         
 <div><b>Deprecated.</b> Use -DskipTests instead.</div>
         
-<div>This old parameter is just like skipTests, but bound to the old
-property maven.test.skip.exec.</div>
+<div>This old parameter is just like skipTests, but bound to the old property maven.test.skip.exec.</div>
         
 <ul>
           
@@ -375,9 +357,7 @@ property maven.test.skip.exec.</div>
         </ul><hr /></section><section>
 <h4><a name="a.3CskipITs.3E"></a><b><a name="skipITs">&lt;skipITs&gt;</a></b></h4>
         
-<div>Set this to 'true' to skip running integration tests, but still
-compile them. Its use is NOT RECOMMENDED, but quite convenient on
-occasion.</div>
+<div>Set this to 'true' to skip running integration tests, but still compile them. Its use is NOT RECOMMENDED, but quite convenient on occasion.</div>
         
 <ul>
           
@@ -391,8 +371,7 @@ occasion.</div>
         </ul><hr /></section><section>
 <h4><a name="a.3CskipTests.3E"></a><b><a name="skipTests">&lt;skipTests&gt;</a></b></h4>
         
-<div>Set this to 'true' to skip running tests, but still compile them.
-Its use is NOT RECOMMENDED, but quite convenient on occasion.</div>
+<div>Set this to 'true' to skip running tests, but still compile them. Its use is NOT RECOMMENDED, but quite convenient on occasion.</div>
         
 <ul>
           
@@ -430,9 +409,7 @@ Its use is NOT RECOMMENDED, but quite convenient on occasion.</div>
         </ul><hr /></section><section>
 <h4><a name="a.3CtestClassesDirectory.3E"></a><b><a name="testClassesDirectory">&lt;testClassesDirectory&gt;</a></b></h4>
         
-<div>The directory containing generated test classes of the project
-being tested. This will be included at the beginning the test
-classpath.</div>
+<div>The directory containing generated test classes of the project being tested. This will be included at the beginning the test classpath.</div>
         
 <ul>
           
@@ -444,8 +421,7 @@ classpath.</div>
         </ul><hr /></section><section>
 <h4><a name="a.3CtestFailureIgnore.3E"></a><b><a name="testFailureIgnore">&lt;testFailureIgnore&gt;</a></b></h4>
         
-<div>Set this to true to ignore a failure during testing. Its use is NOT
-RECOMMENDED, but quite convenient on occasion.</div>
+<div>Set this to true to ignore a failure during testing. Its use is NOT RECOMMENDED, but quite convenient on occasion.</div>
         
 <ul>
           

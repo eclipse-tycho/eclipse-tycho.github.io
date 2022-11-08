@@ -128,18 +128,14 @@
             
 <td><code>0.16.0</code></td>
             
-<td>Qualified class names of annotation processors to run. If
-specified, the <a class="externalLink" href="https://java.sun.com/javase/6/docs/api/javax/annotation/processing/Processor.html">normal
-processor discovery process</a> will be skipped. This parameter
-requires a 1.6 VM or above and is used only if the compliance is
-1.6<br /></td>
+<td>Qualified class names of annotation processors to run. If specified, the <a class="externalLink" href="https://java.sun.com/javase/6/docs/api/javax/annotation/processing/Processor.html"> normal processor discovery process</a> will be skipped. This parameter requires a 1.6 VM or above and is used only if the compliance is 1.6<br /></td>
           </tr>
           
 <tr class="a">
             
 <td align="left"><code><a href="#compilerArgs">&lt;compilerArgs&gt;</a></code></td>
             
-<td><code>List</code></td>
+<td><code>List&lt;String&gt;</code></td>
             
 <td><code>0.17.0</code></td>
             
@@ -155,22 +151,23 @@ requires a 1.6 VM or above and is used only if the compliance is
 <td><code>-</code></td>
             
 <td>
-<p>Unformatted argument string to be passed to the compiler if fork
-is set to true.</p>
+<p>Unformatted argument string to be passed to the compiler if fork is set to true.</p>
 
-<p>This is because the list of valid arguments passed to a Java
-compiler varies based on the compiler version.</p><br /></td>
+<p>This is because the list of valid arguments passed to a Java compiler varies based on the compiler version.</p><br /></td>
           </tr>
           
 <tr class="a">
             
 <td align="left"><code><a href="#compilerArguments">&lt;compilerArguments&gt;</a></code></td>
             
-<td><code>Map</code></td>
+<td><code>Map&lt;String,String&gt;</code></td>
             
 <td><code>-</code></td>
             
-<td><b>Deprecated.</b> use <code>compilerArgs</code> instead.<br /></td>
+<td><b>Deprecated.</b> 
+<p>Arguments to be passed to the compiler (prepending a dash) if fork is set to true.</p>
+
+<p>This is because the list of valid arguments passed to a Java compiler varies based on the compiler version.</p><br /></td>
           </tr>
           
 <tr class="b">
@@ -192,8 +189,7 @@ compiler varies based on the compiler version.</p><br /></td>
             
 <td><code>-</code></td>
             
-<td>Version of the compiler to use, ex. &quot;1.3&quot;, &quot;1.5&quot;, if fork is set to
-true<br /><b>User property is</b>: <code>maven.compiler.compilerVersion</code>.<br /></td>
+<td>Version of the compiler to use, ex. &quot;1.3&quot;, &quot;1.5&quot;, if fork is set to true<br /><b>User property is</b>: <code>maven.compiler.compilerVersion</code>.<br /></td>
           </tr>
           
 <tr class="b">
@@ -204,17 +200,7 @@ true<br /><b>User property is</b>: <code>maven.compiler.compilerVersion</code>.<
             
 <td><code>-</code></td>
             
-<td>Whether all resources in the source folders should be copied to
-${project.build.outputDirectory}. <code>true</code> (default) means
-that all resources are copied from the source folders to
-<code>${project.build.outputDirectory}</code>. <code>false</code>
-means that no resources are copied from the source folders to
-<code>${project.build.outputDirectory}</code>. Set this to
-<code>false</code> in case you want to keep resources separate from
-java files in <code>src/main/resources</code> and handle them using
-<a class="externalLink" href="https://maven.apache.org/plugins/maven-resources-plugin/">maven-resources-plugin</a>
-(e.g. for <a class="externalLink" href="https://maven.apache.org/plugins/maven-resources-plugin/examples/filter.html">resource
-filtering</a>.<br /><b>Default value is</b>: <code>true</code>.<br /></td>
+<td>Whether all resources in the source folders should be copied to ${project.build.outputDirectory}. <code>true</code> (default) means that all resources are copied from the source folders to <code>${project.build.outputDirectory}</code>. <code>false</code> means that no resources are copied from the source folders to <code>${project.build.outputDirectory}</code>. Set this to <code>false</code> in case you want to keep resources separate from java files in <code>src/main/resources</code> and handle them using <a class="externalLink" href="https://maven.apache.org/plugins/maven-resources-plugin/"> maven-resources-plugin</a> (e.g. for <a class="externalLink" href="https://maven.apache.org/plugins/maven-resources-plugin/examples/filter.html">resource filtering</a>.<br /><b>Default value is</b>: <code>true</code>.<br /></td>
           </tr>
           
 <tr class="a">
@@ -225,8 +211,7 @@ filtering</a>.<br /><b>Default value is</b>: <code>true</code>.<br /></td>
             
 <td><code>-</code></td>
             
-<td>Whether to include debugging information in the compiled class
-files. The default value is true.<br /><b>Default value is</b>: <code>true</code>.<br /><b>User property is</b>: <code>maven.compiler.debug</code>.<br /></td>
+<td>Whether to include debugging information in the compiled class files. The default value is true.<br /><b>Default value is</b>: <code>true</code>.<br /><b>User property is</b>: <code>maven.compiler.debug</code>.<br /></td>
           </tr>
           
 <tr class="b">
@@ -237,14 +222,9 @@ files. The default value is true.<br /><b>Default value is</b>: <code>true</code
             
 <td><code>-</code></td>
             
-<td>Whether the <code>-release</code> argument for the Java compiler
-should be derived from the target level. Enabled by default. 
+<td>Whether the <code>-release</code> argument for the Java compiler should be derived from the target level. Enabled by default. 
 
-<p>Disabling this can be useful in situations where compiling using
-<code>-release</code> cannot be used, e.g. when referencing
-internal JDK classes exported via an OSGI framework extension. In
-that case <code>&lt;release&gt;</code> should also be explicitly
-set to an empty value to prevent it from being inherited.</p><br /><b>Default value is</b>: <code>true</code>.<br /></td>
+<p>Disabling this can be useful in situations where compiling using <code>-release</code> cannot be used, e.g. when referencing internal JDK classes exported via an OSGI framework extension. In that case <code>&lt;release&gt;</code> should also be explicitly set to an empty value to prevent it from being inherited.</p><br /><b>Default value is</b>: <code>true</code>.<br /></td>
           </tr>
           
 <tr class="a">
@@ -262,19 +242,18 @@ set to an empty value to prevent it from being inherited.</p><br /><b>Default va
             
 <td align="left"><code><a href="#excludeResources">&lt;excludeResources&gt;</a></code></td>
             
-<td><code>Set</code></td>
+<td><code>Set&lt;String&gt;</code></td>
             
 <td><code>-</code></td>
             
-<td>A list of exclusion filters for non-java resource files which
-should not be copied to the output directory.<br /></td>
+<td>A list of exclusion filters for non-java resource files which should not be copied to the output directory.<br /></td>
           </tr>
           
 <tr class="a">
             
 <td align="left"><code><a href="#excludes">&lt;excludes&gt;</a></code></td>
             
-<td><code>Set</code></td>
+<td><code>Set&lt;String&gt;</code></td>
             
 <td><code>-</code></td>
             
@@ -300,13 +279,7 @@ should not be copied to the output directory.<br /></td>
             
 <td><code>-</code></td>
             
-<td>Transitively add specified maven artifacts to compile classpath in
-addition to elements calculated according to OSGi rules. All
-packages from additional entries will be accessible at compile
-time. Useful when OSGi runtime classpath contains elements not
-defined using normal dependency mechanisms. For example, when
-Eclipse Equinox is started from application server with
--Dosgi.parentClassloader=fwk parameter.<br /></td>
+<td>Transitively add specified maven artifacts to compile classpath in addition to elements calculated according to OSGi rules. All packages from additional entries will be accessible at compile time. Useful when OSGi runtime classpath contains elements not defined using normal dependency mechanisms. For example, when Eclipse Equinox is started from application server with -Dosgi.parentClassloader=fwk parameter.<br /></td>
           </tr>
           
 <tr class="b">
@@ -328,9 +301,7 @@ Eclipse Equinox is started from application server with
             
 <td><code>-</code></td>
             
-<td>Allows running the compiler in a separate process. If &quot;false&quot; it
-uses the built in compiler, while if &quot;true&quot; it will use an
-executable.<br /><b>Default value is</b>: <code>false</code>.<br /></td>
+<td>Allows running the compiler in a separate process. If &quot;false&quot; it uses the built in compiler, while if &quot;true&quot; it will use an executable.<br /><b>Default value is</b>: <code>false</code>.<br /></td>
           </tr>
           
 <tr class="b">
@@ -341,16 +312,14 @@ executable.<br /><b>Default value is</b>: <code>false</code>.<br /></td>
             
 <td><code>0.16.0</code></td>
             
-<td>The directory where source files generated by annotation processors
-will be created. This parameter requires a 1.6 VM or above and is
-used only if the compliance is 1.6.<br /><b>Default value is</b>: <code>${project.build.directory}/generated-sources/annotations</code>.<br /></td>
+<td>The directory where source files generated by annotation processors will be created. This parameter requires a 1.6 VM or above and is used only if the compliance is 1.6.<br /><b>Default value is</b>: <code>${project.build.directory}/generated-sources/annotations</code>.<br /></td>
           </tr>
           
 <tr class="a">
             
 <td align="left"><code><a href="#includes">&lt;includes&gt;</a></code></td>
             
-<td><code>Set</code></td>
+<td><code>Set&lt;String&gt;</code></td>
             
 <td><code>-</code></td>
             
@@ -365,14 +334,10 @@ used only if the compliance is 1.6.<br /><b>Default value is</b>: <code>${projec
             
 <td><code>-</code></td>
             
-<td>The format of the compiler log file. <code>plain</code> will log
-into a plain text file (.log), <code>xml</code> will log in xml
-format (.xml). If omitted, no logging into files is done. The log
-file name is derived from the jar file name: 
+<td>The format of the compiler log file. <code>plain</code> will log into a plain text file (.log), <code>xml</code> will log in xml format (.xml). If omitted, no logging into files is done. The log file name is derived from the jar file name: 
 
 <div>
-<pre>
-Example:
+<pre>Example:
 build.properties:
 
 output.lib1/library.jar = lib1bin/ 
@@ -403,11 +368,7 @@ ${project.build.directory}/logfiles/lib2_library.jar.xml
             
 <td><code>-</code></td>
             
-<td>The directory where the compiler log files should be placed. For
-each output jar a log file will be created and stored in this
-directory. Logging into files is only enabled if <code>log</code>
-is specified. Default:
-<code>${project.build.directory}/compile-logs</code><br /><b>Default value is</b>: <code>${project.build.directory}/compile-logs</code>.<br /></td>
+<td>The directory where the compiler log files should be placed. For each output jar a log file will be created and stored in this directory. Logging into files is only enabled if <code>log</code> is specified. Default: <code>${project.build.directory}/compile-logs</code><br /><b>Default value is</b>: <code>${project.build.directory}/compile-logs</code>.<br /></td>
           </tr>
           
 <tr class="b">
@@ -418,8 +379,7 @@ is specified. Default:
             
 <td><code>-</code></td>
             
-<td>maximum size, in megabytes, of the memory allocation pool, ex.
-&quot;128&quot;, &quot;128m&quot; if fork is set to true<br /><b>User property is</b>: <code>maven.compiler.maxmem</code>.<br /></td>
+<td>maximum size, in megabytes, of the memory allocation pool, ex. &quot;128&quot;, &quot;128m&quot; if fork is set to true<br /><b>User property is</b>: <code>maven.compiler.maxmem</code>.<br /></td>
           </tr>
           
 <tr class="a">
@@ -430,8 +390,7 @@ is specified. Default:
             
 <td><code>-</code></td>
             
-<td>Initial size, in megabytes, of the memory allocation pool, ex.
-&quot;64&quot;, &quot;64m&quot; if fork is set to true<br /><b>User property is</b>: <code>maven.compiler.meminitial</code>.<br /></td>
+<td>Initial size, in megabytes, of the memory allocation pool, ex. &quot;64&quot;, &quot;64m&quot; if fork is set to true<br /><b>User property is</b>: <code>maven.compiler.meminitial</code>.<br /></td>
           </tr>
           
 <tr class="b">
@@ -453,8 +412,7 @@ is specified. Default:
             
 <td><code>-</code></td>
             
-<td>Used to control the name of the output file when compiling a set of
-sources to a single file.<br /><b>User property is</b>: <code>project.build.finalName</code>.<br /></td>
+<td>Used to control the name of the output file when compiling a set of sources to a single file.<br /><b>User property is</b>: <code>project.build.finalName</code>.<br /></td>
           </tr>
           
 <tr class="b">
@@ -465,14 +423,7 @@ sources to a single file.<br /><b>User property is</b>: <code>project.build.fina
             
 <td><code>0.16.0</code></td>
             
-<td>If <code>only</code> is specified, the annotation processors will run
-but no compilation will be performed. If <code>none</code> is
-specified, annotation processors will not be discovered or run;
-compilation will proceed as if no annotation processors were found.
-By default the compiler must search the classpath for annotation
-processors, so specifying <code>none</code> may speed compilation if
-annotation processing is not required. This parameter requires a
-1.6 VM or above and is used only if the compliance is 1.6<br /></td>
+<td>If <code>only</code> is specified, the annotation processors will run but no compilation will be performed. If <code>none</code> is specified, annotation processors will not be discovered or run; compilation will proceed as if no annotation processors were found. By default the compiler must search the classpath for annotation processors, so specifying <code>none</code> may speed compilation if annotation processing is not required. This parameter requires a 1.6 VM or above and is used only if the compliance is 1.6<br /></td>
           </tr>
           
 <tr class="a">
@@ -488,28 +439,24 @@ annotation processing is not required. This parameter requires a
           
 <tr class="b">
             
-<td align="left"><code><a href="#requireJREPackageImports">&lt;requireJREPackageImports&gt;</a></code></td>
-            
-<td><code>Boolean</code></td>
-            
-<td><code>-</code></td>
-            
-<td><b>Deprecated.</b> OSGI requires all packages to be imported and support for
-osgi.compatibility.bootdelegation will be removed in one of the
-next Tycho releases.<br /></td>
-          </tr>
-          
-<tr class="a">
-            
 <td align="left"><code><a href="#requireJavaPackageImports">&lt;requireJavaPackageImports&gt;</a></code></td>
             
 <td><code>boolean</code></td>
             
 <td><code>-</code></td>
             
-<td>Since OSGi R7 it is <a class="externalLink" href="https://blog.osgi.org/2018/02/osgi-r7-highlights-java-9-support.html">allowed
-to import java.* packages</a> as well and considered good practice.
-This option controls if Tycho enforces this rule.<br /><b>Default value is</b>: <code>false</code>.<br /></td>
+<td>Since OSGi R7 it is <a class="externalLink" href="https://blog.osgi.org/2018/02/osgi-r7-highlights-java-9-support.html">allowed to import java.* packages</a> as well and considered good practice. This option controls if Tycho enforces this rule.<br /><b>Default value is</b>: <code>false</code>.<br /></td>
+          </tr>
+          
+<tr class="a">
+            
+<td align="left"><code><a href="#requireJREPackageImports">&lt;requireJREPackageImports&gt;</a></code></td>
+            
+<td><code>Boolean</code></td>
+            
+<td><code>-</code></td>
+            
+<td><b>Deprecated.</b> Whether a bundle is required to explicitly import non-java.* packages from the JDK. This is the design-time equivalent to the equinox runtime option <a class="externalLink" href="https://wiki.eclipse.org/Equinox_Boot_Delegation#The_solution">osgi.compatibility.bootdelegation</a>.<br /><b>See also:</b> requireJavaPackageImports<br /></td>
           </tr>
           
 <tr class="b">
@@ -553,8 +500,7 @@ This option controls if Tycho enforces this rule.<br /><b>Default value is</b>: 
             
 <td><code>-</code></td>
             
-<td>The granularity in milliseconds of the last modification date for
-testing whether a source needs recompilation<br /><b>Default value is</b>: <code>0</code>.<br /><b>User property is</b>: <code>lastModGranularityMs</code>.<br /></td>
+<td>The granularity in milliseconds of the last modification date for testing whether a source needs recompilation<br /><b>Default value is</b>: <code>0</code>.<br /><b>User property is</b>: <code>lastModGranularityMs</code>.<br /></td>
           </tr>
           
 <tr class="b">
@@ -565,11 +511,7 @@ testing whether a source needs recompilation<br /><b>Default value is</b>: <code
             
 <td><code>-</code></td>
             
-<td>If set to <code>false</code> (the default) issue a warning if
-effective compiler target level is incompatible with bundle minimal
-execution environment. If set to <code>true</code> will fail the
-build if effective compiler target and minimal BREE are
-incompatible.<br /><b>Default value is</b>: <code>false</code>.<br /></td>
+<td>If set to <code>false</code> (the default) issue a warning if effective compiler target level is incompatible with bundle minimal execution environment. If set to <code>true</code> will fail the build if effective compiler target and minimal BREE are incompatible.<br /><b>Default value is</b>: <code>false</code>.<br /></td>
           </tr>
           
 <tr class="a">
@@ -591,17 +533,10 @@ incompatible.<br /><b>Default value is</b>: <code>false</code>.<br /></td>
             
 <td><code>-</code></td>
             
-<td>Which JDK to use for compilation. Default value is SYSTEM which
-means the currently running JDK. If BREE is specified, MANIFEST
-header <code>Bundle-RequiredExecutionEnvironment</code> is used to
-define the JDK to compile against. In this case, you need to
-provide a <a class="externalLink" href="https://maven.apache.org/guides/mini/guide-using-toolchains.html">toolchains.xml</a>
-configuration file. The value of BREE will be matched against the
-id of the toolchain elements in toolchains.xml. Example: 
+<td>Which JDK to use for compilation. Default value is SYSTEM which means the currently running JDK. If BREE is specified, MANIFEST header <code>Bundle-RequiredExecutionEnvironment</code> is used to define the JDK to compile against. In this case, you need to provide a <a class="externalLink" href="https://maven.apache.org/guides/mini/guide-using-toolchains.html">toolchains.xml</a> configuration file. The value of BREE will be matched against the id of the toolchain elements in toolchains.xml. Example: 
 
 <div>
-<pre>
-&lt;toolchains&gt;
+<pre>&lt;toolchains&gt;
   &lt;toolchain&gt;
      &lt;type&gt;jdk&lt;/type&gt;
      &lt;provides&gt;
@@ -612,16 +547,10 @@ id of the toolchain elements in toolchains.xml. Example:
      &lt;/configuration&gt;
   &lt;/toolchain&gt;
 &lt;/toolchains&gt;
-</pre></div>
-
-The default value of the bootclasspath used for compilation is
-<code>&lt;jdkHome&gt;/lib/*;&lt;jdkHome&gt;/lib/ext/*;&lt;jdkHome&gt;/lib/endorsed/*</code>
-. For JDKs with different filesystem layouts, the bootclasspath can
-be specified explicitly in the configuration section. Example: 
+</pre></div> The default value of the bootclasspath used for compilation is <code>&lt;jdkHome&gt;/lib/*;&lt;jdkHome&gt;/lib/ext/*;&lt;jdkHome&gt;/lib/endorsed/*</code> . For JDKs with different filesystem layouts, the bootclasspath can be specified explicitly in the configuration section. Example: 
 
 <div>
-<pre>
-&lt;configuration&gt;
+<pre>&lt;configuration&gt;
   &lt;jdkHome&gt;/path/to/jdk/1.5&lt;/jdkHome&gt;
   &lt;bootClassPath&gt;
     &lt;includes&gt;
@@ -643,10 +572,7 @@ be specified explicitly in the configuration section. Example:
             
 <td><code>-</code></td>
             
-<td>If set to <code>true</code>, the settings file
-${project.basedir}/.settings/org.eclipse.jdt.core.prefs will be
-passed to the compiler. If the file is not present, the build will
-not fail.<br /><b>Default value is</b>: <code>true</code>.<br /></td>
+<td>If set to <code>true</code>, the settings file ${project.basedir}/.settings/org.eclipse.jdt.core.prefs will be passed to the compiler. If the file is not present, the build will not fail.<br /><b>Default value is</b>: <code>true</code>.<br /></td>
           </tr>
           
 <tr class="b">
@@ -666,11 +592,7 @@ not fail.<br /><b>Default value is</b>: <code>true</code>.<br /></td>
         <section>
 <h4><a name="a.3CannotationProcessors.3E"></a><b><a name="annotationProcessors">&lt;annotationProcessors&gt;</a></b></h4>
         
-<div>Qualified class names of annotation processors to run. If
-specified, the <a class="externalLink" href="https://java.sun.com/javase/6/docs/api/javax/annotation/processing/Processor.html">normal
-processor discovery process</a> will be skipped. This parameter
-requires a 1.6 VM or above and is used only if the compliance is
-1.6</div>
+<div>Qualified class names of annotation processors to run. If specified, the <a class="externalLink" href="https://java.sun.com/javase/6/docs/api/javax/annotation/processing/Processor.html"> normal processor discovery process</a> will be skipped. This parameter requires a 1.6 VM or above and is used only if the compliance is 1.6</div>
         
 <ul>
           
@@ -686,7 +608,7 @@ requires a 1.6 VM or above and is used only if the compliance is
         
 <ul>
           
-<li><b>Type</b>: <code>java.util.List</code></li>
+<li><b>Type</b>: <code>java.util.List&lt;java.lang.String&gt;</code></li>
           
 <li><b>Since</b>: <code>0.17.0</code></li>
           
@@ -695,11 +617,9 @@ requires a 1.6 VM or above and is used only if the compliance is
 <h4><a name="a.3CcompilerArgument.3E"></a><b><a name="compilerArgument">&lt;compilerArgument&gt;</a></b></h4>
         
 <div>
-<p>Unformatted argument string to be passed to the compiler if fork
-is set to true.</p>
+<p>Unformatted argument string to be passed to the compiler if fork is set to true.</p>
 
-<p>This is because the list of valid arguments passed to a Java
-compiler varies based on the compiler version.</p></div>
+<p>This is because the list of valid arguments passed to a Java compiler varies based on the compiler version.</p></div>
         
 <ul>
           
@@ -709,18 +629,16 @@ compiler varies based on the compiler version.</p></div>
         </ul><hr /></section><section>
 <h4><a name="a.3CcompilerArguments.3E"></a><b><a name="compilerArguments">&lt;compilerArguments&gt;</a></b></h4>
         
-<div><b>Deprecated.</b> use <code>compilerArgs</code> instead.</div>
+<div><b>Deprecated.</b> use <code>copied.org.apache.maven.plugin.AbstractCompilerMojo.compilerArgs</code> instead.</div>
         
 <div>
-<p>Arguments to be passed to the compiler (prepending a dash) if
-fork is set to true.</p>
+<p>Arguments to be passed to the compiler (prepending a dash) if fork is set to true.</p>
 
-<p>This is because the list of valid arguments passed to a Java
-compiler varies based on the compiler version.</p></div>
+<p>This is because the list of valid arguments passed to a Java compiler varies based on the compiler version.</p></div>
         
 <ul>
           
-<li><b>Type</b>: <code>java.util.Map</code></li>
+<li><b>Type</b>: <code>java.util.Map&lt;java.lang.String, java.lang.String&gt;</code></li>
           
 <li><b>Required</b>: <code>No</code></li>
         </ul><hr /></section><section>
@@ -740,8 +658,7 @@ compiler varies based on the compiler version.</p></div>
         </ul><hr /></section><section>
 <h4><a name="a.3CcompilerVersion.3E"></a><b><a name="compilerVersion">&lt;compilerVersion&gt;</a></b></h4>
         
-<div>Version of the compiler to use, ex. &quot;1.3&quot;, &quot;1.5&quot;, if fork is set to
-true</div>
+<div>Version of the compiler to use, ex. &quot;1.3&quot;, &quot;1.5&quot;, if fork is set to true</div>
         
 <ul>
           
@@ -753,17 +670,7 @@ true</div>
         </ul><hr /></section><section>
 <h4><a name="a.3CcopyResources.3E"></a><b><a name="copyResources">&lt;copyResources&gt;</a></b></h4>
         
-<div>Whether all resources in the source folders should be copied to
-${project.build.outputDirectory}. <code>true</code> (default) means
-that all resources are copied from the source folders to
-<code>${project.build.outputDirectory}</code>. <code>false</code>
-means that no resources are copied from the source folders to
-<code>${project.build.outputDirectory}</code>. Set this to
-<code>false</code> in case you want to keep resources separate from
-java files in <code>src/main/resources</code> and handle them using
-<a class="externalLink" href="https://maven.apache.org/plugins/maven-resources-plugin/">maven-resources-plugin</a>
-(e.g. for <a class="externalLink" href="https://maven.apache.org/plugins/maven-resources-plugin/examples/filter.html">resource
-filtering</a>.</div>
+<div>Whether all resources in the source folders should be copied to ${project.build.outputDirectory}. <code>true</code> (default) means that all resources are copied from the source folders to <code>${project.build.outputDirectory}</code>. <code>false</code> means that no resources are copied from the source folders to <code>${project.build.outputDirectory}</code>. Set this to <code>false</code> in case you want to keep resources separate from java files in <code>src/main/resources</code> and handle them using <a class="externalLink" href="https://maven.apache.org/plugins/maven-resources-plugin/"> maven-resources-plugin</a> (e.g. for <a class="externalLink" href="https://maven.apache.org/plugins/maven-resources-plugin/examples/filter.html">resource filtering</a>.</div>
         
 <ul>
           
@@ -775,8 +682,7 @@ filtering</a>.</div>
         </ul><hr /></section><section>
 <h4><a name="a.3Cdebug.3E"></a><b><a name="debug">&lt;debug&gt;</a></b></h4>
         
-<div>Whether to include debugging information in the compiled class
-files. The default value is true.</div>
+<div>Whether to include debugging information in the compiled class files. The default value is true.</div>
         
 <ul>
           
@@ -790,14 +696,9 @@ files. The default value is true.</div>
         </ul><hr /></section><section>
 <h4><a name="a.3CderiveReleaseCompilerArgumentFromTargetLevel.3E"></a><b><a name="deriveReleaseCompilerArgumentFromTargetLevel">&lt;deriveReleaseCompilerArgumentFromTargetLevel&gt;</a></b></h4>
         
-<div>Whether the <code>-release</code> argument for the Java compiler
-should be derived from the target level. Enabled by default. 
+<div>Whether the <code>-release</code> argument for the Java compiler should be derived from the target level. Enabled by default. 
 
-<p>Disabling this can be useful in situations where compiling using
-<code>-release</code> cannot be used, e.g. when referencing
-internal JDK classes exported via an OSGI framework extension. In
-that case <code>&lt;release&gt;</code> should also be explicitly
-set to an empty value to prevent it from being inherited.</p></div>
+<p>Disabling this can be useful in situations where compiling using <code>-release</code> cannot be used, e.g. when referencing internal JDK classes exported via an OSGI framework extension. In that case <code>&lt;release&gt;</code> should also be explicitly set to an empty value to prevent it from being inherited.</p></div>
         
 <ul>
           
@@ -821,12 +722,11 @@ set to an empty value to prevent it from being inherited.</p></div>
         </ul><hr /></section><section>
 <h4><a name="a.3CexcludeResources.3E"></a><b><a name="excludeResources">&lt;excludeResources&gt;</a></b></h4>
         
-<div>A list of exclusion filters for non-java resource files which
-should not be copied to the output directory.</div>
+<div>A list of exclusion filters for non-java resource files which should not be copied to the output directory.</div>
         
 <ul>
           
-<li><b>Type</b>: <code>java.util.Set</code></li>
+<li><b>Type</b>: <code>java.util.Set&lt;java.lang.String&gt;</code></li>
           
 <li><b>Required</b>: <code>No</code></li>
         </ul><hr /></section><section>
@@ -836,7 +736,7 @@ should not be copied to the output directory.</div>
         
 <ul>
           
-<li><b>Type</b>: <code>java.util.Set</code></li>
+<li><b>Type</b>: <code>java.util.Set&lt;java.lang.String&gt;</code></li>
           
 <li><b>Required</b>: <code>No</code></li>
         </ul><hr /></section><section>
@@ -854,13 +754,7 @@ should not be copied to the output directory.</div>
         </ul><hr /></section><section>
 <h4><a name="a.3CextraClasspathElements.3E"></a><b><a name="extraClasspathElements">&lt;extraClasspathElements&gt;</a></b></h4>
         
-<div>Transitively add specified maven artifacts to compile classpath in
-addition to elements calculated according to OSGi rules. All
-packages from additional entries will be accessible at compile
-time. Useful when OSGi runtime classpath contains elements not
-defined using normal dependency mechanisms. For example, when
-Eclipse Equinox is started from application server with
--Dosgi.parentClassloader=fwk parameter.</div>
+<div>Transitively add specified maven artifacts to compile classpath in addition to elements calculated according to OSGi rules. All packages from additional entries will be accessible at compile time. Useful when OSGi runtime classpath contains elements not defined using normal dependency mechanisms. For example, when Eclipse Equinox is started from application server with -Dosgi.parentClassloader=fwk parameter.</div>
         
 <ul>
           
@@ -884,9 +778,7 @@ Eclipse Equinox is started from application server with
         </ul><hr /></section><section>
 <h4><a name="a.3Cfork.3E"></a><b><a name="fork">&lt;fork&gt;</a></b></h4>
         
-<div>Allows running the compiler in a separate process. If &quot;false&quot; it
-uses the built in compiler, while if &quot;true&quot; it will use an
-executable.</div>
+<div>Allows running the compiler in a separate process. If &quot;false&quot; it uses the built in compiler, while if &quot;true&quot; it will use an executable.</div>
         
 <ul>
           
@@ -898,9 +790,7 @@ executable.</div>
         </ul><hr /></section><section>
 <h4><a name="a.3CgeneratedSourcesDirectory.3E"></a><b><a name="generatedSourcesDirectory">&lt;generatedSourcesDirectory&gt;</a></b></h4>
         
-<div>The directory where source files generated by annotation processors
-will be created. This parameter requires a 1.6 VM or above and is
-used only if the compliance is 1.6.</div>
+<div>The directory where source files generated by annotation processors will be created. This parameter requires a 1.6 VM or above and is used only if the compliance is 1.6.</div>
         
 <ul>
           
@@ -918,20 +808,16 @@ used only if the compliance is 1.6.</div>
         
 <ul>
           
-<li><b>Type</b>: <code>java.util.Set</code></li>
+<li><b>Type</b>: <code>java.util.Set&lt;java.lang.String&gt;</code></li>
           
 <li><b>Required</b>: <code>No</code></li>
         </ul><hr /></section><section>
 <h4><a name="a.3Clog.3E"></a><b><a name="log">&lt;log&gt;</a></b></h4>
         
-<div>The format of the compiler log file. <code>plain</code> will log
-into a plain text file (.log), <code>xml</code> will log in xml
-format (.xml). If omitted, no logging into files is done. The log
-file name is derived from the jar file name: 
+<div>The format of the compiler log file. <code>plain</code> will log into a plain text file (.log), <code>xml</code> will log in xml format (.xml). If omitted, no logging into files is done. The log file name is derived from the jar file name: 
 
 <div>
-<pre>
-Example:
+<pre>Example:
 build.properties:
 
 output.lib1/library.jar = lib1bin/ 
@@ -961,11 +847,7 @@ ${project.build.directory}/logfiles/lib2_library.jar.xml
         </ul><hr /></section><section>
 <h4><a name="a.3ClogDirectory.3E"></a><b><a name="logDirectory">&lt;logDirectory&gt;</a></b></h4>
         
-<div>The directory where the compiler log files should be placed. For
-each output jar a log file will be created and stored in this
-directory. Logging into files is only enabled if <code>log</code>
-is specified. Default:
-<code>${project.build.directory}/compile-logs</code></div>
+<div>The directory where the compiler log files should be placed. For each output jar a log file will be created and stored in this directory. Logging into files is only enabled if <code>log</code> is specified. Default: <code>${project.build.directory}/compile-logs</code></div>
         
 <ul>
           
@@ -977,8 +859,7 @@ is specified. Default:
         </ul><hr /></section><section>
 <h4><a name="a.3Cmaxmem.3E"></a><b><a name="maxmem">&lt;maxmem&gt;</a></b></h4>
         
-<div>maximum size, in megabytes, of the memory allocation pool, ex.
-&quot;128&quot;, &quot;128m&quot; if fork is set to true</div>
+<div>maximum size, in megabytes, of the memory allocation pool, ex. &quot;128&quot;, &quot;128m&quot; if fork is set to true</div>
         
 <ul>
           
@@ -990,8 +871,7 @@ is specified. Default:
         </ul><hr /></section><section>
 <h4><a name="a.3Cmeminitial.3E"></a><b><a name="meminitial">&lt;meminitial&gt;</a></b></h4>
         
-<div>Initial size, in megabytes, of the memory allocation pool, ex.
-&quot;64&quot;, &quot;64m&quot; if fork is set to true</div>
+<div>Initial size, in megabytes, of the memory allocation pool, ex. &quot;64&quot;, &quot;64m&quot; if fork is set to true</div>
         
 <ul>
           
@@ -1017,8 +897,7 @@ is specified. Default:
         </ul><hr /></section><section>
 <h4><a name="a.3CoutputFileName.3E"></a><b><a name="outputFileName">&lt;outputFileName&gt;</a></b></h4>
         
-<div>Used to control the name of the output file when compiling a set of
-sources to a single file.</div>
+<div>Used to control the name of the output file when compiling a set of sources to a single file.</div>
         
 <ul>
           
@@ -1030,14 +909,7 @@ sources to a single file.</div>
         </ul><hr /></section><section>
 <h4><a name="a.3Cproc.3E"></a><b><a name="proc">&lt;proc&gt;</a></b></h4>
         
-<div>If <code>only</code> is specified, the annotation processors will run
-but no compilation will be performed. If <code>none</code> is
-specified, annotation processors will not be discovered or run;
-compilation will proceed as if no annotation processors were found.
-By default the compiler must search the classpath for annotation
-processors, so specifying <code>none</code> may speed compilation if
-annotation processing is not required. This parameter requires a
-1.6 VM or above and is used only if the compliance is 1.6</div>
+<div>If <code>only</code> is specified, the annotation processors will run but no compilation will be performed. If <code>none</code> is specified, annotation processors will not be discovered or run; compilation will proceed as if no annotation processors were found. By default the compiler must search the classpath for annotation processors, so specifying <code>none</code> may speed compilation if annotation processing is not required. This parameter requires a 1.6 VM or above and is used only if the compliance is 1.6</div>
         
 <ul>
           
@@ -1059,27 +931,9 @@ annotation processing is not required. This parameter requires a
           
 <li><b>User Property</b>: <code>maven.compiler.release</code></li>
         </ul><hr /></section><section>
-<h4><a name="a.3CrequireJREPackageImports.3E"></a><b><a name="requireJREPackageImports">&lt;requireJREPackageImports&gt;</a></b></h4>
-        
-<div><b>Deprecated.</b> OSGI requires all packages to be imported and support for
-osgi.compatibility.bootdelegation will be removed in one of the
-next Tycho releases.</div>
-        
-<div>Whether a bundle is required to explicitly import non-java.*
-packages from the JDK. This is the design-time equivalent to the
-equinox runtime option <a class="externalLink" href="https://wiki.eclipse.org/Equinox_Boot_Delegation#The_solution">osgi.compatibility.bootdelegation</a>.</div>
-        
-<ul>
-          
-<li><b>Type</b>: <code>java.lang.Boolean</code></li>
-          
-<li><b>Required</b>: <code>No</code></li>
-        </ul><hr /></section><section>
 <h4><a name="a.3CrequireJavaPackageImports.3E"></a><b><a name="requireJavaPackageImports">&lt;requireJavaPackageImports&gt;</a></b></h4>
         
-<div>Since OSGi R7 it is <a class="externalLink" href="https://blog.osgi.org/2018/02/osgi-r7-highlights-java-9-support.html">allowed
-to import java.* packages</a> as well and considered good practice.
-This option controls if Tycho enforces this rule.</div>
+<div>Since OSGi R7 it is <a class="externalLink" href="https://blog.osgi.org/2018/02/osgi-r7-highlights-java-9-support.html">allowed to import java.* packages</a> as well and considered good practice. This option controls if Tycho enforces this rule.</div>
         
 <ul>
           
@@ -1088,6 +942,18 @@ This option controls if Tycho enforces this rule.</div>
 <li><b>Required</b>: <code>No</code></li>
           
 <li><b>Default</b>: <code>false</code></li>
+        </ul><hr /></section><section>
+<h4><a name="a.3CrequireJREPackageImports.3E"></a><b><a name="requireJREPackageImports">&lt;requireJREPackageImports&gt;</a></b></h4>
+        
+<div><b>Deprecated.</b> OSGI requires all packages to be imported and support for osgi.compatibility.bootdelegation will be removed in one of the next Tycho releases.</div>
+        
+<div>Whether a bundle is required to explicitly import non-java.* packages from the JDK. This is the design-time equivalent to the equinox runtime option <a class="externalLink" href="https://wiki.eclipse.org/Equinox_Boot_Delegation#The_solution">osgi.compatibility.bootdelegation</a>.<br /><b>See also:</b> requireJavaPackageImports</div>
+        
+<ul>
+          
+<li><b>Type</b>: <code>java.lang.Boolean</code></li>
+          
+<li><b>Required</b>: <code>No</code></li>
         </ul><hr /></section><section>
 <h4><a name="a.3CshowDeprecation.3E"></a><b><a name="showDeprecation">&lt;showDeprecation&gt;</a></b></h4>
         
@@ -1131,8 +997,7 @@ This option controls if Tycho enforces this rule.</div>
         </ul><hr /></section><section>
 <h4><a name="a.3CstaleMillis.3E"></a><b><a name="staleMillis">&lt;staleMillis&gt;</a></b></h4>
         
-<div>The granularity in milliseconds of the last modification date for
-testing whether a source needs recompilation</div>
+<div>The granularity in milliseconds of the last modification date for testing whether a source needs recompilation</div>
         
 <ul>
           
@@ -1146,11 +1011,7 @@ testing whether a source needs recompilation</div>
         </ul><hr /></section><section>
 <h4><a name="a.3CstrictCompilerTarget.3E"></a><b><a name="strictCompilerTarget">&lt;strictCompilerTarget&gt;</a></b></h4>
         
-<div>If set to <code>false</code> (the default) issue a warning if
-effective compiler target level is incompatible with bundle minimal
-execution environment. If set to <code>true</code> will fail the
-build if effective compiler target and minimal BREE are
-incompatible.</div>
+<div>If set to <code>false</code> (the default) issue a warning if effective compiler target level is incompatible with bundle minimal execution environment. If set to <code>true</code> will fail the build if effective compiler target and minimal BREE are incompatible.</div>
         
 <ul>
           
@@ -1174,17 +1035,10 @@ incompatible.</div>
         </ul><hr /></section><section>
 <h4><a name="a.3CuseJDK.3E"></a><b><a name="useJDK">&lt;useJDK&gt;</a></b></h4>
         
-<div>Which JDK to use for compilation. Default value is SYSTEM which
-means the currently running JDK. If BREE is specified, MANIFEST
-header <code>Bundle-RequiredExecutionEnvironment</code> is used to
-define the JDK to compile against. In this case, you need to
-provide a <a class="externalLink" href="https://maven.apache.org/guides/mini/guide-using-toolchains.html">toolchains.xml</a>
-configuration file. The value of BREE will be matched against the
-id of the toolchain elements in toolchains.xml. Example: 
+<div>Which JDK to use for compilation. Default value is SYSTEM which means the currently running JDK. If BREE is specified, MANIFEST header <code>Bundle-RequiredExecutionEnvironment</code> is used to define the JDK to compile against. In this case, you need to provide a <a class="externalLink" href="https://maven.apache.org/guides/mini/guide-using-toolchains.html">toolchains.xml</a> configuration file. The value of BREE will be matched against the id of the toolchain elements in toolchains.xml. Example: 
 
 <div>
-<pre>
-&lt;toolchains&gt;
+<pre>&lt;toolchains&gt;
   &lt;toolchain&gt;
      &lt;type&gt;jdk&lt;/type&gt;
      &lt;provides&gt;
@@ -1195,16 +1049,10 @@ id of the toolchain elements in toolchains.xml. Example:
      &lt;/configuration&gt;
   &lt;/toolchain&gt;
 &lt;/toolchains&gt;
-</pre></div>
-
-The default value of the bootclasspath used for compilation is
-<code>&lt;jdkHome&gt;/lib/*;&lt;jdkHome&gt;/lib/ext/*;&lt;jdkHome&gt;/lib/endorsed/*</code>
-. For JDKs with different filesystem layouts, the bootclasspath can
-be specified explicitly in the configuration section. Example: 
+</pre></div> The default value of the bootclasspath used for compilation is <code>&lt;jdkHome&gt;/lib/*;&lt;jdkHome&gt;/lib/ext/*;&lt;jdkHome&gt;/lib/endorsed/*</code> . For JDKs with different filesystem layouts, the bootclasspath can be specified explicitly in the configuration section. Example: 
 
 <div>
-<pre>
-&lt;configuration&gt;
+<pre>&lt;configuration&gt;
   &lt;jdkHome&gt;/path/to/jdk/1.5&lt;/jdkHome&gt;
   &lt;bootClassPath&gt;
     &lt;includes&gt;
@@ -1227,10 +1075,7 @@ be specified explicitly in the configuration section. Example:
         </ul><hr /></section><section>
 <h4><a name="a.3CuseProjectSettings.3E"></a><b><a name="useProjectSettings">&lt;useProjectSettings&gt;</a></b></h4>
         
-<div>If set to <code>true</code>, the settings file
-${project.basedir}/.settings/org.eclipse.jdt.core.prefs will be
-passed to the compiler. If the file is not present, the build will
-not fail.</div>
+<div>If set to <code>true</code>, the settings file ${project.basedir}/.settings/org.eclipse.jdt.core.prefs will be passed to the compiler. If the file is not present, the build will not fail.</div>
         
 <ul>
           

@@ -90,10 +90,7 @@
       
 <p><b>Description</b>:</p>
       
-<div>Configures the target-platform to use in order to resolve
-dependencies. <br />
-&#x26a0;&#xfe0f; This mojo is actually not executable, and is only meant to host
-configuration</div>
+<div>Configures the target-platform to use in order to resolve dependencies. <br /> &#x26a0;&#xfe0f; This mojo is actually not executable, and is only meant to host configuration</div>
       
 <p><b>Attributes</b>:</p>
       
@@ -149,12 +146,10 @@ configuration</div>
             
 <td><code>-</code></td>
             
-<td>Configure dependency resolution, for example by adding
-requirements. Example: 
+<td>Configure dependency resolution, for example by adding requirements. Example: 
 
 <div>
-<pre>
-&lt;plugin&gt;
+<pre>&lt;plugin&gt;
   &lt;groupId&gt;org.eclipse.tycho&lt;/groupId&gt;
   &lt;artifactId&gt;target-platform-configuration&lt;/artifactId&gt;
   &lt;configuration&gt;
@@ -187,15 +182,11 @@ requirements. Example:
             
 <td align="left"><code><a href="#exclusions">&lt;exclusions&gt;</a></code></td>
             
-<td><code>List</code></td>
+<td><code>List&lt;Exclusion&gt;</code></td>
             
 <td><code>-</code></td>
             
-<td>Exclusions could be used together with <code>pomDependencies</code>
-setting to exclude certain maven dependencies from being
-considered. This is useful for example if there is an offending
-(transitive) dependency needed for compilation but not for the
-runtime that would cause problems otherwise.<br /></td>
+<td>Exclusions could be used together with <code>pomDependencies</code> setting to exclude certain maven dependencies from being considered. This is useful for example if there is an offending (transitive) dependency needed for compilation but not for the runtime that would cause problems otherwise.<br /></td>
           </tr>
           
 <tr class="a">
@@ -206,13 +197,9 @@ runtime that would cause problems otherwise.<br /></td>
             
 <td><code>-</code></td>
             
-<td>Force an execution environment for dependency resolution. If unset,
-use the default JRE of your computer. 
+<td>Force an execution environment for dependency resolution. If unset, use the default JRE of your computer. 
 
-<p>Set to <code>none</code> to force the resolution to happen
-<b>without</b> any execution environment, typically when the module
-is supposed to use system packages coming from some dependencies
-(eg shipping a JRE inside products with Eclipse JustJ).</p><br /></td>
+<p>Set to <code>none</code> to force the resolution to happen <b>without</b> any execution environment, typically when the module is supposed to use system packages coming from some dependencies (eg shipping a JRE inside products with Eclipse JustJ).</p><br /></td>
           </tr>
           
 <tr class="b">
@@ -230,36 +217,22 @@ is supposed to use system packages coming from some dependencies
             
 <td align="left"><code><a href="#filters">&lt;filters&gt;</a></code></td>
             
-<td><code>List</code></td>
+<td><code>List&lt;?&gt;</code></td>
             
 <td><code>-</code></td>
             
 <td>Selectively remove content from the target platform. 
 
-<p>This for example allows to restrict the version of a bundle, or
-to select one particular provider for a package. Filtering is done
-as last step in the target platform computation, so the filters
-apply to all sources listed above.</p>
+<p>This for example allows to restrict the version of a bundle, or to select one particular provider for a package. Filtering is done as last step in the target platform computation, so the filters apply to all sources listed above.</p>
 
-<p>The filters will only remove content from the target platform;
-they will not add new content. <code>dependency-resolution</code>
-should be used for addition of extra content. If you specify a
-restriction that is not fulfilled by any of the units from the
-target platform sources, all units that the filter applies to (i.e.
-units that match the filter.type, filter.id, and
-filter.version/versionRange criteria) will be removed from the
-target platform.</p>
+<p>The filters will only remove content from the target platform; they will not add new content. <code>dependency-resolution</code> should be used for addition of extra content. If you specify a restriction that is not fulfilled by any of the units from the target platform sources, all units that the filter applies to (i.e. units that match the filter.type, filter.id, and filter.version/versionRange criteria) will be removed from the target platform.</p>
 
-<p>Package provider restrictions work by removing all other bundles
-exporting the package. This means that these other bundles (and the
-packages only exported by them) won't be available in your
-build.</p>
+<p>Package provider restrictions work by removing all other bundles exporting the package. This means that these other bundles (and the packages only exported by them) won't be available in your build.</p>
 
 <p>Example:</p>
 
 <div>
-<pre>
-&lt;plugin&gt; &lt;groupId&gt;org.eclipse.tycho&lt;/groupId&gt;
+<pre>&lt;plugin&gt; &lt;groupId&gt;org.eclipse.tycho&lt;/groupId&gt;
 &lt;artifactId&gt;target-platform-configuration&lt;/artifactId&gt;
 &lt;version&gt;${tycho-version}&lt;/version&gt; &lt;configuration&gt; &lt;filters&gt;
 
@@ -278,8 +251,10 @@ javax.persistence --&gt; &lt;filter&gt; &lt;type&gt;java-package&lt;/type&gt;
 &lt;id&gt;org.eclipse.equinox.servletbridge.extensionbundle&lt;/id&gt; &lt;removeAll /&gt;
 &lt;/filter&gt; &lt;/filters&gt; &lt;/configuration&gt; &lt;/plugin&gt;
 
-&lt;pre&gt;
-</pre></div><br /></td>
+
+<div>
+<pre>
+<p></p></pre></div></pre></div><br /></td>
           </tr>
           
 <tr class="b">
@@ -292,48 +267,23 @@ javax.persistence --&gt; &lt;filter&gt; &lt;type&gt;java-package&lt;/type&gt;
             
 <td>Defines which strategy to apply to Maven dependencies. 
 
-<p>If <code>consider</code> or <code>wrapAsBundle</code>, the
-effect is:</p>
+<p>If <code>consider</code> or <code>wrapAsBundle</code>, the effect is:</p>
 
 <ul>
-
-<li>First, Maven resolves the GAV dependencies according to the
-normal Maven rules. This results in a list of artifacts consisting
-of the specified artifacts and their transitive Maven
-dependencies.</li>
-
-<li>Tycho then checks each of these artifacts, and if the artifact
-is an OSGi bundle, it is added to the target platform. Other
-artifacts are ignored in case of <code>consider</code>, or get some
-OSGi metadata generated and an OSGi bundle created from them.</li>
-
-<li>OSGi bundles which become part of the target platform in this
-way are then available to resolve the project's OSGi
-dependencies.</li>
-</ul>
-<br />
-<br />
  
+<li>First, Maven resolves the GAV dependencies according to the normal Maven rules. This results in a list of artifacts consisting of the specified artifacts and their transitive Maven dependencies.</li>
+ 
+<li>Tycho then checks each of these artifacts, and if the artifact is an OSGi bundle, it is added to the target platform. Other artifacts are ignored in case of <code>consider</code>, or get some OSGi metadata generated and an OSGi bundle created from them.</li>
+ 
+<li>OSGi bundles which become part of the target platform in this way are then available to resolve the project's OSGi dependencies.</li>
+</ul>
 
-<p>Tycho always attempts to resolve transitive dependencies, so if
-you need a POM dependency in the target platform of one module, you
-will also need it in all downstream modules. Therefore the POM
-dependencies (and the pomDependencies=consider configuration)
-typically need to be added in the parent POM.</p><br /><b>Default value is</b>: <code>ignore</code>.<br /></td>
+<p></p>
+
+<p>&#x1f4dd; Tycho always attempts to resolve transitive dependencies, so if you need a POM dependency in the target platform of one module, you will also need it in all downstream modules. Therefore the POM dependencies (and the pomDependencies=consider configuration) typically need to be added in the parent POM.</p><br /><b>Default value is</b>: <code>ignore</code>.<br /></td>
           </tr>
           
 <tr class="a">
-            
-<td align="left"><code><a href="#resolveWithExecutionEnvironmentConstraints">&lt;resolveWithExecutionEnvironmentConstraints&gt;</a></code></td>
-            
-<td><code>boolean</code></td>
-            
-<td><code>-</code></td>
-            
-<td>(no description)<br /><b>Default value is</b>: <code>true</code>.<br /></td>
-          </tr>
-          
-<tr class="b">
             
 <td align="left"><code><a href="#resolver">&lt;resolver&gt;</a></code></td>
             
@@ -344,6 +294,17 @@ typically need to be added in the parent POM.</p><br /><b>Default value is</b>: 
 <td>(no description)<br /><b>Default value is</b>: <code>p2</code>.<br /></td>
           </tr>
           
+<tr class="b">
+            
+<td align="left"><code><a href="#resolveWithExecutionEnvironmentConstraints">&lt;resolveWithExecutionEnvironmentConstraints&gt;</a></code></td>
+            
+<td><code>boolean</code></td>
+            
+<td><code>-</code></td>
+            
+<td>(no description)<br /><b>Default value is</b>: <code>true</code>.<br /></td>
+          </tr>
+          
 <tr class="a">
             
 <td align="left"><code><a href="#target">&lt;target&gt;</a></code></td>
@@ -352,20 +313,15 @@ typically need to be added in the parent POM.</p><br /><b>Default value is</b>: 
             
 <td><code>-</code></td>
             
-<td>List of .target artifacts to use for dependency resolution.<br />
-Could either be 
+<td>List of .target artifacts to use for dependency resolution.<br /> Could either be 
 
 <ul>
-
-<li><code>&lt;artifact&gt;</code> to define a target GAV (either
-local to the reactor or a remote one)</li>
-
-<li><code>&lt;file&gt;</code> to define a file local to the
-build</li>
-
-<li><code>&lt;uri&gt;</code> to define a (remote) URI that
-specifies a target, currently only URIs that can be converted to
-URLs are supported (e.g. file:/.... http://..., )</li>
+ 
+<li><code>&lt;artifact&gt;</code> to define a target GAV (either local to the reactor or a remote one)</li>
+ 
+<li><code>&lt;file&gt;</code> to define a file local to the build</li>
+ 
+<li><code>&lt;uri&gt;</code> to define a (remote) URI that specifies a target, currently only URIs that can be converted to URLs are supported (e.g. file:/.... http://..., )</li>
 </ul><br /></td>
           </tr>
           
@@ -408,12 +364,10 @@ URLs are supported (e.g. file:/.... http://..., )</li>
         </ul><hr /></section><section>
 <h4><a name="a.3Cdependency-resolution.3E"></a><b><a name="dependency-resolution">&lt;dependency-resolution&gt;</a></b></h4>
         
-<div>Configure dependency resolution, for example by adding
-requirements. Example: 
+<div>Configure dependency resolution, for example by adding requirements. Example: 
 
 <div>
-<pre>
-&lt;plugin&gt;
+<pre>&lt;plugin&gt;
   &lt;groupId&gt;org.eclipse.tycho&lt;/groupId&gt;
   &lt;artifactId&gt;target-platform-configuration&lt;/artifactId&gt;
   &lt;configuration&gt;
@@ -448,27 +402,19 @@ requirements. Example:
         </ul><hr /></section><section>
 <h4><a name="a.3Cexclusions.3E"></a><b><a name="exclusions">&lt;exclusions&gt;</a></b></h4>
         
-<div>Exclusions could be used together with <code>pomDependencies</code>
-setting to exclude certain maven dependencies from being
-considered. This is useful for example if there is an offending
-(transitive) dependency needed for compilation but not for the
-runtime that would cause problems otherwise.</div>
+<div>Exclusions could be used together with <code>pomDependencies</code> setting to exclude certain maven dependencies from being considered. This is useful for example if there is an offending (transitive) dependency needed for compilation but not for the runtime that would cause problems otherwise.</div>
         
 <ul>
           
-<li><b>Type</b>: <code>java.util.List</code></li>
+<li><b>Type</b>: <code>java.util.List&lt;org.apache.maven.model.Exclusion&gt;</code></li>
           
 <li><b>Required</b>: <code>No</code></li>
         </ul><hr /></section><section>
 <h4><a name="a.3CexecutionEnvironment.3E"></a><b><a name="executionEnvironment">&lt;executionEnvironment&gt;</a></b></h4>
         
-<div>Force an execution environment for dependency resolution. If unset,
-use the default JRE of your computer. 
+<div>Force an execution environment for dependency resolution. If unset, use the default JRE of your computer. 
 
-<p>Set to <code>none</code> to force the resolution to happen
-<b>without</b> any execution environment, typically when the module
-is supposed to use system packages coming from some dependencies
-(eg shipping a JRE inside products with Eclipse JustJ).</p></div>
+<p>Set to <code>none</code> to force the resolution to happen <b>without</b> any execution environment, typically when the module is supposed to use system packages coming from some dependencies (eg shipping a JRE inside products with Eclipse JustJ).</p></div>
         
 <ul>
           
@@ -490,30 +436,16 @@ is supposed to use system packages coming from some dependencies
         
 <div>Selectively remove content from the target platform. 
 
-<p>This for example allows to restrict the version of a bundle, or
-to select one particular provider for a package. Filtering is done
-as last step in the target platform computation, so the filters
-apply to all sources listed above.</p>
+<p>This for example allows to restrict the version of a bundle, or to select one particular provider for a package. Filtering is done as last step in the target platform computation, so the filters apply to all sources listed above.</p>
 
-<p>The filters will only remove content from the target platform;
-they will not add new content. <code>dependency-resolution</code>
-should be used for addition of extra content. If you specify a
-restriction that is not fulfilled by any of the units from the
-target platform sources, all units that the filter applies to (i.e.
-units that match the filter.type, filter.id, and
-filter.version/versionRange criteria) will be removed from the
-target platform.</p>
+<p>The filters will only remove content from the target platform; they will not add new content. <code>dependency-resolution</code> should be used for addition of extra content. If you specify a restriction that is not fulfilled by any of the units from the target platform sources, all units that the filter applies to (i.e. units that match the filter.type, filter.id, and filter.version/versionRange criteria) will be removed from the target platform.</p>
 
-<p>Package provider restrictions work by removing all other bundles
-exporting the package. This means that these other bundles (and the
-packages only exported by them) won't be available in your
-build.</p>
+<p>Package provider restrictions work by removing all other bundles exporting the package. This means that these other bundles (and the packages only exported by them) won't be available in your build.</p>
 
 <p>Example:</p>
 
 <div>
-<pre>
-&lt;plugin&gt; &lt;groupId&gt;org.eclipse.tycho&lt;/groupId&gt;
+<pre>&lt;plugin&gt; &lt;groupId&gt;org.eclipse.tycho&lt;/groupId&gt;
 &lt;artifactId&gt;target-platform-configuration&lt;/artifactId&gt;
 &lt;version&gt;${tycho-version}&lt;/version&gt; &lt;configuration&gt; &lt;filters&gt;
 
@@ -532,12 +464,14 @@ javax.persistence --&gt; &lt;filter&gt; &lt;type&gt;java-package&lt;/type&gt;
 &lt;id&gt;org.eclipse.equinox.servletbridge.extensionbundle&lt;/id&gt; &lt;removeAll /&gt;
 &lt;/filter&gt; &lt;/filters&gt; &lt;/configuration&gt; &lt;/plugin&gt;
 
-&lt;pre&gt;
-</pre></div></div>
+
+<div>
+<pre>
+<p></p></pre></div></pre></div></div>
         
 <ul>
           
-<li><b>Type</b>: <code>java.util.List</code></li>
+<li><b>Type</b>: <code>java.util.List&lt;?&gt;</code></li>
           
 <li><b>Required</b>: <code>No</code></li>
         </ul><hr /></section><section>
@@ -545,34 +479,20 @@ javax.persistence --&gt; &lt;filter&gt; &lt;type&gt;java-package&lt;/type&gt;
         
 <div>Defines which strategy to apply to Maven dependencies. 
 
-<p>If <code>consider</code> or <code>wrapAsBundle</code>, the
-effect is:</p>
+<p>If <code>consider</code> or <code>wrapAsBundle</code>, the effect is:</p>
 
 <ul>
-
-<li>First, Maven resolves the GAV dependencies according to the
-normal Maven rules. This results in a list of artifacts consisting
-of the specified artifacts and their transitive Maven
-dependencies.</li>
-
-<li>Tycho then checks each of these artifacts, and if the artifact
-is an OSGi bundle, it is added to the target platform. Other
-artifacts are ignored in case of <code>consider</code>, or get some
-OSGi metadata generated and an OSGi bundle created from them.</li>
-
-<li>OSGi bundles which become part of the target platform in this
-way are then available to resolve the project's OSGi
-dependencies.</li>
-</ul>
-<br />
-<br />
  
+<li>First, Maven resolves the GAV dependencies according to the normal Maven rules. This results in a list of artifacts consisting of the specified artifacts and their transitive Maven dependencies.</li>
+ 
+<li>Tycho then checks each of these artifacts, and if the artifact is an OSGi bundle, it is added to the target platform. Other artifacts are ignored in case of <code>consider</code>, or get some OSGi metadata generated and an OSGi bundle created from them.</li>
+ 
+<li>OSGi bundles which become part of the target platform in this way are then available to resolve the project's OSGi dependencies.</li>
+</ul>
 
-<p>Tycho always attempts to resolve transitive dependencies, so if
-you need a POM dependency in the target platform of one module, you
-will also need it in all downstream modules. Therefore the POM
-dependencies (and the pomDependencies=consider configuration)
-typically need to be added in the parent POM.</p></div>
+<p></p>
+
+<p>&#x1f4dd; Tycho always attempts to resolve transitive dependencies, so if you need a POM dependency in the target platform of one module, you will also need it in all downstream modules. Therefore the POM dependencies (and the pomDependencies=consider configuration) typically need to be added in the parent POM.</p></div>
         
 <ul>
           
@@ -581,18 +501,6 @@ typically need to be added in the parent POM.</p></div>
 <li><b>Required</b>: <code>No</code></li>
           
 <li><b>Default</b>: <code>ignore</code></li>
-        </ul><hr /></section><section>
-<h4><a name="a.3CresolveWithExecutionEnvironmentConstraints.3E"></a><b><a name="resolveWithExecutionEnvironmentConstraints">&lt;resolveWithExecutionEnvironmentConstraints&gt;</a></b></h4>
-        
-<div>(no description)</div>
-        
-<ul>
-          
-<li><b>Type</b>: <code>boolean</code></li>
-          
-<li><b>Required</b>: <code>No</code></li>
-          
-<li><b>Default</b>: <code>true</code></li>
         </ul><hr /></section><section>
 <h4><a name="a.3Cresolver.3E"></a><b><a name="resolver">&lt;resolver&gt;</a></b></h4>
         
@@ -606,22 +514,29 @@ typically need to be added in the parent POM.</p></div>
           
 <li><b>Default</b>: <code>p2</code></li>
         </ul><hr /></section><section>
+<h4><a name="a.3CresolveWithExecutionEnvironmentConstraints.3E"></a><b><a name="resolveWithExecutionEnvironmentConstraints">&lt;resolveWithExecutionEnvironmentConstraints&gt;</a></b></h4>
+        
+<div>(no description)</div>
+        
+<ul>
+          
+<li><b>Type</b>: <code>boolean</code></li>
+          
+<li><b>Required</b>: <code>No</code></li>
+          
+<li><b>Default</b>: <code>true</code></li>
+        </ul><hr /></section><section>
 <h4><a name="a.3Ctarget.3E"></a><b><a name="target">&lt;target&gt;</a></b></h4>
         
-<div>List of .target artifacts to use for dependency resolution.<br />
-Could either be 
+<div>List of .target artifacts to use for dependency resolution.<br /> Could either be 
 
 <ul>
-
-<li><code>&lt;artifact&gt;</code> to define a target GAV (either
-local to the reactor or a remote one)</li>
-
-<li><code>&lt;file&gt;</code> to define a file local to the
-build</li>
-
-<li><code>&lt;uri&gt;</code> to define a (remote) URI that
-specifies a target, currently only URIs that can be converted to
-URLs are supported (e.g. file:/.... http://..., )</li>
+ 
+<li><code>&lt;artifact&gt;</code> to define a target GAV (either local to the reactor or a remote one)</li>
+ 
+<li><code>&lt;file&gt;</code> to define a file local to the build</li>
+ 
+<li><code>&lt;uri&gt;</code> to define a (remote) URI that specifies a target, currently only URIs that can be converted to URLs are supported (e.g. file:/.... http://..., )</li>
 </ul></div>
         
 <ul>

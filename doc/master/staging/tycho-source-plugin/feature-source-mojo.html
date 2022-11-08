@@ -90,37 +90,22 @@
       
 <p><b>Description</b>:</p>
       
-<div>Generates a source feature for projects of packaging type
-<code>eclipse-feature</code>. By default, the generated source
-feature 
+<div>Generates a source feature for projects of packaging type <code>eclipse-feature</code>. By default, the generated source feature 
 
 <ul>
-
-<li>Declares feature id
-<code>&lt;originalFeatureId&gt;.source</code></li>
-
-<li>Declares feature label <code>&quot;&lt;originalFeatureLabel&gt;
-Developer Resources&quot;</code></li>
-
-<li>If present, reuses feature provider, description, copyright and
-license as well as respective URLs from
-&lt;originalFeature&gt;</li>
-
-<li>Includes all plugins included by &lt;originalFeature&gt;, but
-each with <code>.source</code> appended to each plugin id</li>
-
-<li>Includes all features included by &lt;originalFeature&gt;, but
-each with <code>.source</code> appended to each feature id</li>
-
-<li>Includes the original feature. This ensures that binaries and
-corresponding sources match.</li>
-</ul>
-Source feature generation can be customized by adding files under
-path <code>sourceTemplateFeature/</code>. Files added here will be
-added to the root of the source feature jar. Especially, if file
-<code>sourceTemplateFeature/feature.properties</code> is found,
-values in this file override values of respective keys in
-<code>&lt;originalFeature&gt;/feature.properties</code>.</div>
+ 
+<li>Declares feature id <code>&lt;originalFeatureId&gt;.source</code></li>
+ 
+<li>Declares feature label <code>&quot;&lt;originalFeatureLabel&gt; Developer Resources&quot;</code></li>
+ 
+<li>If present, reuses feature provider, description, copyright and license as well as respective URLs from &lt;originalFeature&gt;</li>
+ 
+<li>Includes all plugins included by &lt;originalFeature&gt;, but each with <code>.source</code> appended to each plugin id</li>
+ 
+<li>Includes all features included by &lt;originalFeature&gt;, but each with <code>.source</code> appended to each feature id</li>
+ 
+<li>Includes the original feature. This ensures that binaries and corresponding sources match.</li>
+</ul> Source feature generation can be customized by adding files under path <code>sourceTemplateFeature/</code>. Files added here will be added to the root of the source feature jar. Especially, if file <code>sourceTemplateFeature/feature.properties</code> is found, values in this file override values of respective keys in <code>&lt;originalFeature&gt;/feature.properties</code>.</div>
       
 <p><b>Attributes</b>:</p>
       
@@ -167,9 +152,7 @@ values in this file override values of respective keys in
             
 <td><code>-</code></td>
             
-<td>Use this to explicitly set the <a class="externalLink" href="https://help.eclipse.org/juno/index.jsp?topic=%2Forg.eclipse.pde.doc.user%2Fguide%2Ftools%2Feditors%2Ffeature_editor%2Ffeature_editor.htm">branding
-plugin attribute</a> of the generated source feature (overrides
-<code>reuseBrandingPlugin</code>).<br /></td>
+<td>Use this to explicitly set the <a class="externalLink" href="https://help.eclipse.org/juno/index.jsp?topic=%2Forg.eclipse.pde.doc.user%2Fguide%2Ftools%2Feditors%2Ffeature_editor%2Ffeature_editor.htm"> branding plugin attribute</a> of the generated source feature (overrides <code>reuseBrandingPlugin</code>).<br /></td>
           </tr>
           
 <tr class="b">
@@ -180,12 +163,10 @@ plugin attribute</a> of the generated source feature (overrides
             
 <td><code>-</code></td>
             
-<td>Bundles and features that do not have corresponding sources.
-Example: 
+<td>Bundles and features that do not have corresponding sources. Example: 
 
 <div>
-<pre>
-&lt;excludes&gt;
+<pre>&lt;excludes&gt;
   &lt;plugin id=&quot;plugin.nosource&quot;/&gt;
   &lt;feature id=&quot;feature.nosource&quot;/&gt;
 &lt;/excludes&gt;
@@ -200,9 +181,7 @@ Example:
             
 <td><code>-</code></td>
             
-<td>The filename to be used for the generated archive file. For the
-source-feature goal, &quot;-sources-feature&quot; is appended to this
-filename.<br /><b>User property is</b>: <code>project.build.finalName</code>.<br /></td>
+<td>The filename to be used for the generated archive file. For the source-feature goal, &quot;-sources-feature&quot; is appended to this filename.<br /><b>User property is</b>: <code>project.build.finalName</code>.<br /></td>
           </tr>
           
 <tr class="b">
@@ -213,9 +192,7 @@ filename.<br /><b>User property is</b>: <code>project.build.finalName</code>.<br
             
 <td><code>-</code></td>
             
-<td>Whether to add an include dependency from the source feature to the
-corresponding binary feature. If <code>true</code>, this ensures
-the version of the installed sources matches the binaries.<br /><b>Default value is</b>: <code>true</code>.<br /></td>
+<td>Whether to add an include dependency from the source feature to the corresponding binary feature. If <code>true</code>, this ensures the version of the installed sources matches the binaries.<br /><b>Default value is</b>: <code>true</code>.<br /></td>
           </tr>
           
 <tr class="a">
@@ -226,10 +203,7 @@ the version of the installed sources matches the binaries.<br /><b>Default value
             
 <td><code>-</code></td>
             
-<td>Source feature label suffix. Unless explicitly provided in
-<code>sourceTemplateFeature/feature.properties</code>, this suffix
-will be appended to the original feature label to construct the
-source feature label.<br /><b>Default value is</b>: <code> Developer Resources</code>.<br /></td>
+<td>Source feature label suffix. Unless explicitly provided in <code>sourceTemplateFeature/feature.properties</code>, this suffix will be appended to the original feature label to construct the source feature label.<br /><b>Default value is</b>: <code> Developer Resources</code>.<br /></td>
           </tr>
           
 <tr class="b">
@@ -251,15 +225,9 @@ source feature label.<br /><b>Default value is</b>: <code> Developer Resources</
             
 <td><code>-</code></td>
             
-<td>Additional plugins to include in the generated source feature.
-Beware that these additional plugins are not considered during
-build target platform calculation and ordering of reactor projects.
-Use &lt;extraRequirements&gt; dependency resolver configuration to
-guarantee proper reactor build order. 
+<td>Additional plugins to include in the generated source feature. Beware that these additional plugins are not considered during build target platform calculation and ordering of reactor projects. Use &lt;extraRequirements&gt; dependency resolver configuration to guarantee proper reactor build order. 
 
-<p><b>WARNING</b> This experimental parameter may be
-removed from future source-feature mojo versions without prior
-notice.</p><br /></td>
+<p><b>WARNING</b> This experimental parameter may be removed from future source-feature mojo versions without prior notice.</p><br /></td>
           </tr>
           
 <tr class="b">
@@ -270,8 +238,7 @@ notice.</p><br /></td>
             
 <td><code>-</code></td>
             
-<td>Whether to reuse an explicit branding plugin from the binary
-feature for the generated source feature.<br /><b>Default value is</b>: <code>true</code>.<br /></td>
+<td>Whether to reuse an explicit branding plugin from the binary feature for the generated source feature.<br /><b>Default value is</b>: <code>true</code>.<br /></td>
           </tr>
           
 <tr class="a">
@@ -312,9 +279,7 @@ feature for the generated source feature.<br /><b>Default value is</b>: <code>tr
         </ul><hr /></section><section>
 <h4><a name="a.3CbrandingPlugin.3E"></a><b><a name="brandingPlugin">&lt;brandingPlugin&gt;</a></b></h4>
         
-<div>Use this to explicitly set the <a class="externalLink" href="https://help.eclipse.org/juno/index.jsp?topic=%2Forg.eclipse.pde.doc.user%2Fguide%2Ftools%2Feditors%2Ffeature_editor%2Ffeature_editor.htm">branding
-plugin attribute</a> of the generated source feature (overrides
-<code>reuseBrandingPlugin</code>).</div>
+<div>Use this to explicitly set the <a class="externalLink" href="https://help.eclipse.org/juno/index.jsp?topic=%2Forg.eclipse.pde.doc.user%2Fguide%2Ftools%2Feditors%2Ffeature_editor%2Ffeature_editor.htm"> branding plugin attribute</a> of the generated source feature (overrides <code>reuseBrandingPlugin</code>).</div>
         
 <ul>
           
@@ -324,12 +289,10 @@ plugin attribute</a> of the generated source feature (overrides
         </ul><hr /></section><section>
 <h4><a name="a.3Cexcludes.3E"></a><b><a name="excludes">&lt;excludes&gt;</a></b></h4>
         
-<div>Bundles and features that do not have corresponding sources.
-Example: 
+<div>Bundles and features that do not have corresponding sources. Example: 
 
 <div>
-<pre>
-&lt;excludes&gt;
+<pre>&lt;excludes&gt;
   &lt;plugin id=&quot;plugin.nosource&quot;/&gt;
   &lt;feature id=&quot;feature.nosource&quot;/&gt;
 &lt;/excludes&gt;
@@ -343,9 +306,7 @@ Example:
         </ul><hr /></section><section>
 <h4><a name="a.3CfinalName.3E"></a><b><a name="finalName">&lt;finalName&gt;</a></b></h4>
         
-<div>The filename to be used for the generated archive file. For the
-source-feature goal, &quot;-sources-feature&quot; is appended to this
-filename.</div>
+<div>The filename to be used for the generated archive file. For the source-feature goal, &quot;-sources-feature&quot; is appended to this filename.</div>
         
 <ul>
           
@@ -357,9 +318,7 @@ filename.</div>
         </ul><hr /></section><section>
 <h4><a name="a.3CincludeBinaryFeature.3E"></a><b><a name="includeBinaryFeature">&lt;includeBinaryFeature&gt;</a></b></h4>
         
-<div>Whether to add an include dependency from the source feature to the
-corresponding binary feature. If <code>true</code>, this ensures
-the version of the installed sources matches the binaries.</div>
+<div>Whether to add an include dependency from the source feature to the corresponding binary feature. If <code>true</code>, this ensures the version of the installed sources matches the binaries.</div>
         
 <ul>
           
@@ -371,10 +330,7 @@ the version of the installed sources matches the binaries.</div>
         </ul><hr /></section><section>
 <h4><a name="a.3ClabelSuffix.3E"></a><b><a name="labelSuffix">&lt;labelSuffix&gt;</a></b></h4>
         
-<div>Source feature label suffix. Unless explicitly provided in
-<code>sourceTemplateFeature/feature.properties</code>, this suffix
-will be appended to the original feature label to construct the
-source feature label.</div>
+<div>Source feature label suffix. Unless explicitly provided in <code>sourceTemplateFeature/feature.properties</code>, this suffix will be appended to the original feature label to construct the source feature label.</div>
         
 <ul>
           
@@ -398,15 +354,9 @@ source feature label.</div>
         </ul><hr /></section><section>
 <h4><a name="a.3Cplugins.3E"></a><b><a name="plugins">&lt;plugins&gt;</a></b></h4>
         
-<div>Additional plugins to include in the generated source feature.
-Beware that these additional plugins are not considered during
-build target platform calculation and ordering of reactor projects.
-Use &lt;extraRequirements&gt; dependency resolver configuration to
-guarantee proper reactor build order. 
+<div>Additional plugins to include in the generated source feature. Beware that these additional plugins are not considered during build target platform calculation and ordering of reactor projects. Use &lt;extraRequirements&gt; dependency resolver configuration to guarantee proper reactor build order. 
 
-<p><b>WARNING</b> This experimental parameter may be
-removed from future source-feature mojo versions without prior
-notice.</p></div>
+<p><b>WARNING</b> This experimental parameter may be removed from future source-feature mojo versions without prior notice.</p></div>
         
 <ul>
           
@@ -416,8 +366,7 @@ notice.</p></div>
         </ul><hr /></section><section>
 <h4><a name="a.3CreuseBrandingPlugin.3E"></a><b><a name="reuseBrandingPlugin">&lt;reuseBrandingPlugin&gt;</a></b></h4>
         
-<div>Whether to reuse an explicit branding plugin from the binary
-feature for the generated source feature.</div>
+<div>Whether to reuse an explicit branding plugin from the binary feature for the generated source feature.</div>
         
 <ul>
           

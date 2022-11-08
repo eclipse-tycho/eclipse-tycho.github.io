@@ -91,55 +91,35 @@
 <p><b>Description</b>:</p>
       
 <div>
-<p>This goals produces a &quot;p2-maven-site&quot; from the projects declared
-&lt;dependencies&gt; (and &lt;dependencyManagement&gt; if desired).
-A p2-maven-site is completely manageable by standard maven tools
-and has the following properties:</p>
+<p>This goals produces a &quot;p2-maven-site&quot; from the projects declared &lt;dependencies&gt; (and &lt;dependencyManagement&gt; if desired). A p2-maven-site is completely manageable by standard maven tools and has the following properties:</p>
 
 <ul>
-
-<li>The artifacts are not stored in the site itself but referenced
-as maven-coordinates, that means you don't have to upload your
-artifacts to a dedicated place, everything is fetched from the
-maven repository</li>
-
-<li>The metadata of the page is attached to the current project
-with type=zip and classifier=p2site and could be deployed using
-standard maven techniques</li>
-</ul>
-<b>Please note:</b> Only valid OSGi bundles are included, there is
-no way to automatically wrap plain jars and they are silently
-ignored. This is intentional, as the goal of a p2-maven-site is to
-use exactly the same artifact that is deployed in the maven
-repository. <br />
-<br />
  
+<li>The artifacts are not stored in the site itself but referenced as maven-coordinates, that means you don't have to upload your artifacts to a dedicated place, everything is fetched from the maven repository</li>
+ 
+<li>The metadata of the page is attached to the current project with type=zip and classifier=p2site and could be deployed using standard maven techniques</li>
+</ul> <b>Please note:</b> Only valid OSGi bundles are included, there is no way to automatically wrap plain jars and they are silently ignored. This is intentional, as the goal of a p2-maven-site is to use exactly the same artifact that is deployed in the maven repository. 
 
-<p>The produced p2-maven-site can then be consumed by Tycho or PDE
-targets (m2eclipse is required for this), in the following way: A
-tycho-repository section:</p>
+<p></p>
+
+<p>The produced p2-maven-site can then be consumed by Tycho or PDE targets (m2eclipse is required for this), in the following way: A tycho-repository section:</p>
 
 <div>
-<pre>
-&lt;repository&gt;
-&lt;id&gt;my-p2-maven-site&lt;/id&gt;
-&lt;url&gt;mvn:[grouId]:[artifactId]:[version]:zip:p2site&lt;/url&gt;
-&lt;layout&gt;p2&lt;/layout&gt;
+<pre>&lt;repository&gt;
+&lt;id&gt;my-p2-maven-site
+&lt;url&gt;mvn:[grouId]:[artifactId]:[version]:zip:p2site
+&lt;layout&gt;p2
 &lt;/repository&gt;
-</pre></div>
-
-A target location of type software-site: 
+</pre></div> A target location of type software-site: 
 
 <div>
-<pre>
- &lt;location includeAllPlatforms=&quot;false&quot; includeConfigurePhase=&quot;true&quot; includeMode=&quot;planner&quot; includeSource=&quot;true&quot; type=&quot;InstallableUnit&quot;&gt;
+<pre> &lt;location includeAllPlatforms=&quot;false&quot; includeConfigurePhase=&quot;true&quot; includeMode=&quot;planner&quot; includeSource=&quot;true&quot; type=&quot;InstallableUnit&quot;&gt;
 &lt;repository location=&quot;mvn:[grouId]:[artifactId]:[version]:zip:p2site&quot;/&gt;
 -- list desired units here --
 &lt;/location&gt;
 </pre></div>
 
-<br />
-<br /></div>
+<p></p></div>
       
 <p><b>Attributes</b>:</p>
       
@@ -175,8 +155,7 @@ A target location of type software-site:
             
 <td><code>-</code></td>
             
-<td>The output directory of the jar file By default this is the Maven
-&quot;target/&quot; directory.<br /><b>User property is</b>: <code>project.build.directory</code>.<br /></td>
+<td>The output directory of the jar file By default this is the Maven &quot;target/&quot; directory.<br /><b>User property is</b>: <code>project.build.directory</code>.<br /></td>
           </tr>
         </table>
       </section>
@@ -204,9 +183,7 @@ A target location of type software-site:
             
 <td><code>-</code></td>
             
-<td>Location of the category definition. If the file does not exits, a
-generic category definition is generated including all bundles
-under one category<br /><b>Default value is</b>: <code>${project.basedir}/category.xml</code>.<br /></td>
+<td>Location of the category definition. If the file does not exits, a generic category definition is generated including all bundles under one category<br /><b>Default value is</b>: <code>${project.basedir}/category.xml</code>.<br /></td>
           </tr>
           
 <tr class="a">
@@ -239,8 +216,7 @@ under one category<br /><b>Default value is</b>: <code>${project.basedir}/catego
             
 <td><code>-</code></td>
             
-<td>Flag whether declared &lt;dependencies&gt; of the projects should
-be included.<br /><b>Default value is</b>: <code>true</code>.<br /></td>
+<td>Flag whether declared &lt;dependencies&gt; of the projects should be included.<br /><b>Default value is</b>: <code>true</code>.<br /></td>
           </tr>
           
 <tr class="b">
@@ -251,11 +227,7 @@ be included.<br /><b>Default value is</b>: <code>true</code>.<br /></td>
             
 <td><code>-</code></td>
             
-<td>Flag that controls if &lt;dependencyManagement&gt; managed
-dependencies should be included, this is useful if your are using a
-BOM and like to include all materials in the update-site regardless
-of if they are explicitly included in the &lt;dependencies&gt;
-section<br /><b>Default value is</b>: <code>false</code>.<br /></td>
+<td>Flag that controls if &lt;dependencyManagement&gt; managed dependencies should be included, this is useful if your are using a BOM and like to include all materials in the update-site regardless of if they are explicitly included in the &lt;dependencies&gt; section<br /><b>Default value is</b>: <code>false</code>.<br /></td>
           </tr>
           
 <tr class="a">
@@ -266,8 +238,7 @@ section<br /><b>Default value is</b>: <code>false</code>.<br /></td>
             
 <td><code>-</code></td>
             
-<td>If enabled, PGP signatures of the artifacts are embedded in the P2
-site to allow for additional verifications / trust decisions<br /><b>Default value is</b>: <code>false</code>.<br /></td>
+<td>If enabled, PGP signatures of the artifacts are embedded in the P2 site to allow for additional verifications / trust decisions<br /><b>Default value is</b>: <code>false</code>.<br /></td>
           </tr>
           
 <tr class="b">
@@ -278,9 +249,7 @@ site to allow for additional verifications / trust decisions<br /><b>Default val
             
 <td><code>-</code></td>
             
-<td>Flag that controls if reactor projects should be considered, this
-is useful if your are simply like to make an update side of all
-your current reactor projects<br /><b>Default value is</b>: <code>false</code>.<br /></td>
+<td>Flag that controls if reactor projects should be considered, this is useful if your are simply like to make an update side of all your current reactor projects<br /><b>Default value is</b>: <code>false</code>.<br /></td>
           </tr>
           
 <tr class="a">
@@ -291,10 +260,7 @@ your current reactor projects<br /><b>Default value is</b>: <code>false</code>.<
             
 <td><code>-</code></td>
             
-<td>Flag whether dependencies of the projects declared
-&lt;dependencies&gt; (and &lt;dependencyManagement&gt; if desired)
-should be included. If enabled this creates the maven equivalent of
-a self-contained P2 site<br /><b>Default value is</b>: <code>false</code>.<br /></td>
+<td>Flag whether dependencies of the projects declared &lt;dependencies&gt; (and &lt;dependencyManagement&gt; if desired) should be included. If enabled this creates the maven equivalent of a self-contained P2 site<br /><b>Default value is</b>: <code>false</code>.<br /></td>
           </tr>
           
 <tr class="b">
@@ -305,21 +271,18 @@ a self-contained P2 site<br /><b>Default value is</b>: <code>false</code>.<br />
             
 <td><code>-</code></td>
             
-<td>Key servers are sometimes busy, this configures the maximum amount
-of retries to fetch the public key before failing the build<br /><b>Default value is</b>: <code>10</code>.<br /></td>
+<td>Key servers are sometimes busy, this configures the maximum amount of retries to fetch the public key before failing the build<br /><b>Default value is</b>: <code>10</code>.<br /></td>
           </tr>
           
 <tr class="a">
             
 <td align="left"><code><a href="#keyServerUrls">&lt;keyServerUrls&gt;</a></code></td>
             
-<td><code>List</code></td>
+<td><code>List&lt;String&gt;</code></td>
             
 <td><code>-</code></td>
             
-<td>Configures the key servers that are used to fetch the public keys,
-if not specified, <code>UBUNTU_KEY_SERVER</code> and
-<code>MAVEN_CENTRAL_KEY_SERVER</code> are used in this order.<br /></td>
+<td>Configures the key servers that are used to fetch the public keys, if not specified, {@value #UBUNTU_KEY_SERVER} and {@value #MAVEN_CENTRAL_KEY_SERVER} are used in this order.<br /></td>
           </tr>
           
 <tr class="b">
@@ -339,8 +302,7 @@ if not specified, <code>UBUNTU_KEY_SERVER</code> and
         <section>
 <h4><a name="a.3CbuildDirectory.3E"></a><b><a name="buildDirectory">&lt;buildDirectory&gt;</a></b></h4>
         
-<div>The output directory of the jar file By default this is the Maven
-&quot;target/&quot; directory.</div>
+<div>The output directory of the jar file By default this is the Maven &quot;target/&quot; directory.</div>
         
 <ul>
           
@@ -352,9 +314,7 @@ if not specified, <code>UBUNTU_KEY_SERVER</code> and
         </ul><hr /></section><section>
 <h4><a name="a.3CcategoryFile.3E"></a><b><a name="categoryFile">&lt;categoryFile&gt;</a></b></h4>
         
-<div>Location of the category definition. If the file does not exits, a
-generic category definition is generated including all bundles
-under one category</div>
+<div>Location of the category definition. If the file does not exits, a generic category definition is generated including all bundles under one category</div>
         
 <ul>
           
@@ -390,8 +350,7 @@ under one category</div>
         </ul><hr /></section><section>
 <h4><a name="a.3CincludeDependencies.3E"></a><b><a name="includeDependencies">&lt;includeDependencies&gt;</a></b></h4>
         
-<div>Flag whether declared &lt;dependencies&gt; of the projects should
-be included.</div>
+<div>Flag whether declared &lt;dependencies&gt; of the projects should be included.</div>
         
 <ul>
           
@@ -403,11 +362,7 @@ be included.</div>
         </ul><hr /></section><section>
 <h4><a name="a.3CincludeManaged.3E"></a><b><a name="includeManaged">&lt;includeManaged&gt;</a></b></h4>
         
-<div>Flag that controls if &lt;dependencyManagement&gt; managed
-dependencies should be included, this is useful if your are using a
-BOM and like to include all materials in the update-site regardless
-of if they are explicitly included in the &lt;dependencies&gt;
-section</div>
+<div>Flag that controls if &lt;dependencyManagement&gt; managed dependencies should be included, this is useful if your are using a BOM and like to include all materials in the update-site regardless of if they are explicitly included in the &lt;dependencies&gt; section</div>
         
 <ul>
           
@@ -419,8 +374,7 @@ section</div>
         </ul><hr /></section><section>
 <h4><a name="a.3CincludePGPSignature.3E"></a><b><a name="includePGPSignature">&lt;includePGPSignature&gt;</a></b></h4>
         
-<div>If enabled, PGP signatures of the artifacts are embedded in the P2
-site to allow for additional verifications / trust decisions</div>
+<div>If enabled, PGP signatures of the artifacts are embedded in the P2 site to allow for additional verifications / trust decisions</div>
         
 <ul>
           
@@ -432,9 +386,7 @@ site to allow for additional verifications / trust decisions</div>
         </ul><hr /></section><section>
 <h4><a name="a.3CincludeReactor.3E"></a><b><a name="includeReactor">&lt;includeReactor&gt;</a></b></h4>
         
-<div>Flag that controls if reactor projects should be considered, this
-is useful if your are simply like to make an update side of all
-your current reactor projects</div>
+<div>Flag that controls if reactor projects should be considered, this is useful if your are simply like to make an update side of all your current reactor projects</div>
         
 <ul>
           
@@ -446,10 +398,7 @@ your current reactor projects</div>
         </ul><hr /></section><section>
 <h4><a name="a.3CincludeTransitiveDependencies.3E"></a><b><a name="includeTransitiveDependencies">&lt;includeTransitiveDependencies&gt;</a></b></h4>
         
-<div>Flag whether dependencies of the projects declared
-&lt;dependencies&gt; (and &lt;dependencyManagement&gt; if desired)
-should be included. If enabled this creates the maven equivalent of
-a self-contained P2 site</div>
+<div>Flag whether dependencies of the projects declared &lt;dependencies&gt; (and &lt;dependencyManagement&gt; if desired) should be included. If enabled this creates the maven equivalent of a self-contained P2 site</div>
         
 <ul>
           
@@ -461,8 +410,7 @@ a self-contained P2 site</div>
         </ul><hr /></section><section>
 <h4><a name="a.3CkeyServerRetry.3E"></a><b><a name="keyServerRetry">&lt;keyServerRetry&gt;</a></b></h4>
         
-<div>Key servers are sometimes busy, this configures the maximum amount
-of retries to fetch the public key before failing the build</div>
+<div>Key servers are sometimes busy, this configures the maximum amount of retries to fetch the public key before failing the build</div>
         
 <ul>
           
@@ -474,13 +422,11 @@ of retries to fetch the public key before failing the build</div>
         </ul><hr /></section><section>
 <h4><a name="a.3CkeyServerUrls.3E"></a><b><a name="keyServerUrls">&lt;keyServerUrls&gt;</a></b></h4>
         
-<div>Configures the key servers that are used to fetch the public keys,
-if not specified, <code>UBUNTU_KEY_SERVER</code> and
-<code>MAVEN_CENTRAL_KEY_SERVER</code> are used in this order.</div>
+<div>Configures the key servers that are used to fetch the public keys, if not specified, {@value #UBUNTU_KEY_SERVER} and {@value #MAVEN_CENTRAL_KEY_SERVER} are used in this order.</div>
         
 <ul>
           
-<li><b>Type</b>: <code>java.util.List</code></li>
+<li><b>Type</b>: <code>java.util.List&lt;java.lang.String&gt;</code></li>
           
 <li><b>Required</b>: <code>No</code></li>
         </ul><hr /></section><section>
