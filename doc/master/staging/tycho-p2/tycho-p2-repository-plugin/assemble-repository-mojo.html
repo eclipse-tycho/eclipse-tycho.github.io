@@ -132,6 +132,19 @@
           
 <tr class="b">
             
+<td align="left"><code><a href="#categoriesDirectory">&lt;categoriesDirectory&gt;</a></code></td>
+            
+<td><code>File</code></td>
+            
+<td><code>-</code></td>
+            
+<td>The directory where <code>category.xml</code> files are located. 
+
+<p>Defaults to the project's base directory.</p><br /><b>Default value is</b>: <code>${project.basedir}</code>.<br /></td>
+          </tr>
+          
+<tr class="a">
+            
 <td align="left"><code><a href="#compress">&lt;compress&gt;</a></code></td>
             
 <td><code>boolean</code></td>
@@ -142,7 +155,7 @@
 <p>Compress the repository index files <code>content.xml</code> and <code>artifacts.xml</code>.</p><br /><b>Default value is</b>: <code>true</code>.<br /></td>
           </tr>
           
-<tr class="a">
+<tr class="b">
             
 <td align="left"><code><a href="#createArtifactRepository">&lt;createArtifactRepository&gt;</a></code></td>
             
@@ -154,7 +167,7 @@
 <p>By default, this goal creates a p2 repository. Set this to <code>false</code> if only a p2 metadata repository (without the artifact files) shall be created.</p><br /><b>Default value is</b>: <code>true</code>.<br /></td>
           </tr>
           
-<tr class="b">
+<tr class="a">
             
 <td align="left"><code><a href="#extraArtifactRepositoryProperties">&lt;extraArtifactRepositoryProperties&gt;</a></code></td>
             
@@ -165,7 +178,7 @@
 <td>(no description)<br /></td>
           </tr>
           
-<tr class="a">
+<tr class="b">
             
 <td align="left"><code><a href="#includeAllDependencies">&lt;includeAllDependencies&gt;</a></code></td>
             
@@ -177,7 +190,7 @@
 <p>By default, only (transitive) <i>inclusions</i> of the published artifacts are aggregated. Set this parameter to <code>true</code> to aggregate <i>all transitive dependencies</i>, making the resulting p2 repository self-contained.</p><br /><b>Default value is</b>: <code>false</code>.<br /></td>
           </tr>
           
-<tr class="b">
+<tr class="a">
             
 <td align="left"><code><a href="#includeAllSources">&lt;includeAllSources&gt;</a></code></td>
             
@@ -189,7 +202,7 @@
 <p>By default, only explicitly mentioned sources are included. Set this parameter to <code>true</code> to include all sources that are available and included in this repository.</p><br /><b>Default value is</b>: <code>false</code>.<br /></td>
           </tr>
           
-<tr class="a">
+<tr class="b">
             
 <td align="left"><code><a href="#includeRequiredFeatures">&lt;includeRequiredFeatures&gt;</a></code></td>
             
@@ -207,7 +220,7 @@
 <p>Due to <a class="externalLink" href="https://github.com/eclipse-equinox/p2/issues/139">current data structure restrictions of P2 Slicer</a> also transitive dependencies of a feature are included and not only the feature itself!</p><br /><b>Default value is</b>: <code>false</code>.<br /></td>
           </tr>
           
-<tr class="b">
+<tr class="a">
             
 <td align="left"><code><a href="#includeRequiredPlugins">&lt;includeRequiredPlugins&gt;</a></code></td>
             
@@ -225,7 +238,7 @@
 <p>Due to <a class="externalLink" href="https://github.com/eclipse-equinox/p2/issues/139">current data structure restrictions of P2 Slicer</a> also transitive dependencies of a plugin might be included and not only the dependency plugin itself!</p><br /><b>Default value is</b>: <code>false</code>.<br /></td>
           </tr>
           
-<tr class="a">
+<tr class="b">
             
 <td align="left"><code><a href="#keepNonXzIndexFiles">&lt;keepNonXzIndexFiles&gt;</a></code></td>
             
@@ -237,7 +250,7 @@
 <p>If <code>xzCompress</code> is <code>true</code>, whether jar or xml index files should be kept in addition to XZ-compressed index files. This fallback provides backwards compatibility for pre-Mars p2 clients which cannot read XZ-compressed index files.</p><br /><b>Default value is</b>: <code>true</code>.<br /></td>
           </tr>
           
-<tr class="b">
+<tr class="a">
             
 <td align="left"><code><a href="#profileProperties">&lt;profileProperties&gt;</a></code></td>
             
@@ -249,7 +262,7 @@
 <p>Additional properties against which p2 filters are evaluated while aggregating.</p><br /></td>
           </tr>
           
-<tr class="a">
+<tr class="b">
             
 <td align="left"><code><a href="#repositoryLocation">&lt;repositoryLocation&gt;</a></code></td>
             
@@ -260,7 +273,7 @@
 <td>(no description)<br /></td>
           </tr>
           
-<tr class="b">
+<tr class="a">
             
 <td align="left"><code><a href="#repositoryName">&lt;repositoryName&gt;</a></code></td>
             
@@ -272,7 +285,7 @@
 <p>The name attribute stored in the created p2 repository.</p><br /><b>Default value is</b>: <code>${project.name}</code>.<br /></td>
           </tr>
           
-<tr class="a">
+<tr class="b">
             
 <td align="left"><code><a href="#xzCompress">&lt;xzCompress&gt;</a></code></td>
             
@@ -288,6 +301,20 @@
       <section>
 <h3><a name="Parameter_Details"></a>Parameter Details</h3>
         <section>
+<h4><a name="a.3CcategoriesDirectory.3E"></a><b><a name="categoriesDirectory">&lt;categoriesDirectory&gt;</a></b></h4>
+        
+<div>The directory where <code>category.xml</code> files are located. 
+
+<p>Defaults to the project's base directory.</p></div>
+        
+<ul>
+          
+<li><b>Type</b>: <code>java.io.File</code></li>
+          
+<li><b>Required</b>: <code>No</code></li>
+          
+<li><b>Default</b>: <code>${project.basedir}</code></li>
+        </ul><hr /></section><section>
 <h4><a name="a.3Ccompress.3E"></a><b><a name="compress">&lt;compress&gt;</a></b></h4>
         
 <div>
