@@ -90,7 +90,7 @@
       
 <p><b>Description</b>:</p>
       
-<div>Modifies the p2 metadata (<code>artifacts.xml</code>) to add PGP signatures for each included artifact. Signatures are added as <code>pgp.signatures</code> property on the artifact metadata, in armored form; and public keys of the signers are added as <code>pgp.publicKeys</code> property on the repository metadata, in armored form.</div>
+<div>Modifies the p2 metadata (<code>artifacts.xml</code>) to add PGP signatures for each included artifact. Signatures are added as <code>pgp.signatures</code> property on the artifact metadata, in armored form; and public keys of the signers are optionally added as <code>pgp.publicKeys</code> property on the repository metadata, in armored form.<br /><b>See also:</b> <a class="externalLink" href="https://help.eclipse.org/latest/index.jsp?topic=%2Forg.eclipse.platform.doc.isv%2Fguide%2Fp2_pgp.html">Using PGP signatures in p2</a></div>
       
 <p><b>Attributes</b>:</p>
       
@@ -120,13 +120,13 @@
           
 <tr class="b">
             
-<td align="left"><code><a href="#addPublicKeysToArtifacts">&lt;addPublicKeysToArtifacts&gt;</a></code></td>
+<td align="left"><code><a href="#addPublicKeyToArtifacts">&lt;addPublicKeyToArtifacts&gt;</a></code></td>
             
 <td><code>boolean</code></td>
             
 <td><code>-</code></td>
             
-<td>(no description)<br /><b>Default value is</b>: <code>true</code>.<br /></td>
+<td>If set to <code>true</code> adds the public key belonging to the signature to each signed artifact's metadata.<br /><b>Default value is</b>: <code>true</code>.<br /><b>Alias is</b>: <code>addPublicKeysToArtifacts</code>.</td>
           </tr>
           
 <tr class="a">
@@ -137,7 +137,7 @@
             
 <td><code>-</code></td>
             
-<td>(no description)<br /><b>Default value is</b>: <code>true</code>.<br /></td>
+<td>If set to <code>true</code> adds the public key belonging to the signature to the repository metadata.<br /><b>Default value is</b>: <code>true</code>.<br /></td>
           </tr>
           
 <tr class="b">
@@ -170,7 +170,7 @@
             
 <td><code>-</code></td>
             
-<td>Bundles that should be signed independently of other settings, eg <code>skipIfJarsigned</code>.<br /></td>
+<td>Bundles that should be signed independently of other settings, e.g. <code>skipIfJarsigned</code>.<br /></td>
           </tr>
           
 <tr class="a">
@@ -306,9 +306,9 @@
       <section>
 <h3><a name="Parameter_Details"></a>Parameter Details</h3>
         <section>
-<h4><a name="a.3CaddPublicKeysToArtifacts.3E"></a><b><a name="addPublicKeysToArtifacts">&lt;addPublicKeysToArtifacts&gt;</a></b></h4>
+<h4><a name="a.3CaddPublicKeyToArtifacts.3E"></a><b><a name="addPublicKeyToArtifacts">&lt;addPublicKeyToArtifacts&gt;</a></b></h4>
         
-<div>(no description)</div>
+<div>If set to <code>true</code> adds the public key belonging to the signature to each signed artifact's metadata.</div>
         
 <ul>
           
@@ -317,10 +317,12 @@
 <li><b>Required</b>: <code>No</code></li>
           
 <li><b>Default</b>: <code>true</code></li>
+          
+<li><b>Alias</b>: <code>addPublicKeysToArtifacts</code></li>
         </ul><hr /></section><section>
 <h4><a name="a.3CaddPublicKeyToRepo.3E"></a><b><a name="addPublicKeyToRepo">&lt;addPublicKeyToRepo&gt;</a></b></h4>
         
-<div>(no description)</div>
+<div>If set to <code>true</code> adds the public key belonging to the signature to the repository metadata.</div>
         
 <ul>
           
@@ -362,7 +364,7 @@
         </ul><hr /></section><section>
 <h4><a name="a.3CforceSignature.3E"></a><b><a name="forceSignature">&lt;forceSignature&gt;</a></b></h4>
         
-<div>Bundles that should be signed independently of other settings, eg <code>skipIfJarsigned</code>.</div>
+<div>Bundles that should be signed independently of other settings, e.g. <code>skipIfJarsigned</code>.</div>
         
 <ul>
           
