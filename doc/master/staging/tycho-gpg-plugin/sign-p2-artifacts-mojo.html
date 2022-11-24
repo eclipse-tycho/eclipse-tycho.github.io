@@ -293,6 +293,17 @@
           
 <tr class="a">
             
+<td align="left"><code><a href="#secretKeys">&lt;secretKeys&gt;</a></code></td>
+            
+<td><code>File</code></td>
+            
+<td><code>-</code></td>
+            
+<td>Configure the Bouncy Castle <code>signer</code> to load the secret keys, stored in armored from, from the specified file. This avoids needing to import the keys into GnuPG's keybox.<br /><b>User property is</b>: <code>tycho.pgp.signer.bc.secretKeys</code>.<br /></td>
+          </tr>
+          
+<tr class="b">
+            
 <td align="left"><code><a href="#signer">&lt;signer&gt;</a></code></td>
             
 <td><code>String</code></td>
@@ -302,7 +313,7 @@
 <td>Configure the signer used for PGP signing. Currently supported are <code>gpg</code> for launching the native <code>gpg</code> executable, and <code>bc</code> for using Bouncy Castle libraries. The latter is much faster and it can sign in parallel, so is very much faster.<br /><b>Default value is</b>: <code>gpg</code>.<br /><b>User property is</b>: <code>tycho.pgp.signer</code>.<br /></td>
           </tr>
           
-<tr class="b">
+<tr class="a">
             
 <td align="left"><code><a href="#skipBinaries">&lt;skipBinaries&gt;</a></code></td>
             
@@ -313,7 +324,7 @@
 <td>Configure to <code>true</code> to generate a PGP signature for binary artifacts.<br /><b>Default value is</b>: <code>true</code>.<br /></td>
           </tr>
           
-<tr class="a">
+<tr class="b">
             
 <td align="left"><code><a href="#skipIfJarsigned">&lt;skipIfJarsigned&gt;</a></code></td>
             
@@ -324,7 +335,7 @@
 <td>Configure to <code>true</code> to generate PGP signature only for artifacts that are <b>not</b> signed by a jarsigner.<br /><b>Default value is</b>: <code>true</code>.<br /></td>
           </tr>
           
-<tr class="b">
+<tr class="a">
             
 <td align="left"><code><a href="#skipIfJarsignedAndAnchored">&lt;skipIfJarsignedAndAnchored&gt;</a></code></td>
             
@@ -335,7 +346,7 @@
 <td>Configure to <code>true</code> to generate a PGP signature only for artifacts that do <b>not</b> contain a signature that's anchored in Java's trust store, i.e., anchored in the JDK's cacerts. A JCA certificate, for example, is never anchored.<br /><b>Default value is</b>: <code>true</code>.<br /></td>
           </tr>
           
-<tr class="a">
+<tr class="b">
             
 <td align="left"><code><a href="#useAgent">&lt;useAgent&gt;</a></code></td>
             
@@ -555,6 +566,18 @@
 <li><b>Required</b>: <code>No</code></li>
           
 <li><b>User Property</b>: <code>gpg.secretKeyring</code></li>
+        </ul><hr /></section><section>
+<h4><a name="a.3CsecretKeys.3E"></a><b><a name="secretKeys">&lt;secretKeys&gt;</a></b></h4>
+        
+<div>Configure the Bouncy Castle <code>signer</code> to load the secret keys, stored in armored from, from the specified file. This avoids needing to import the keys into GnuPG's keybox.</div>
+        
+<ul>
+          
+<li><b>Type</b>: <code>java.io.File</code></li>
+          
+<li><b>Required</b>: <code>No</code></li>
+          
+<li><b>User Property</b>: <code>tycho.pgp.signer.bc.secretKeys</code></li>
         </ul><hr /></section><section>
 <h4><a name="a.3Csigner.3E"></a><b><a name="signer">&lt;signer&gt;</a></b></h4>
         
