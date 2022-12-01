@@ -91,8 +91,7 @@
       
 <p><b>Description</b>:</p>
       
-<div>
-<p>Executes integration-tests in an OSGi runtime.</p>
+<div>Executes integration-tests in an OSGi runtime. 
 
 <p>The goal launches an OSGi runtime and executes the project's integration-tests (default patterns are <code>PluginTest*.class, *IT.class</code>) in that runtime. The &quot;test runtime&quot; consists of the bundle built in this project and its transitive dependencies, plus some Equinox and test harness bundles. The bundles are resolved from the target platform of the project. Note that the test runtime does typically <i>not</i> contain the entire target platform. If there are implicitly required bundles (e.g. <code>org.apache.felix.scr</code> to make declarative services work), they need to be added manually through an <code>extraRequirements</code> configuration on the <code>target-platform-configuration</code> plugin.</p>
 
@@ -100,7 +99,7 @@
 
 <ol style="list-style-type: decimal">
  
-<li><code>pre-integration-test</code> phase could be used to prepare any prerequisite (e.g. starting web-server, files, ...)</li>
+<li><code>pre-integration-test</code> phase could be used to prepare any prerequisite (e.g. starting a web-server, creating files, etc.)</li>
  
 <li><code>integration-test</code> phase does not fail the build if there are test failures but a summary file is written</li>
  
@@ -109,7 +108,7 @@
 <li>test outcome is checked in the <code>verify</code> phase that might fail the build if there are test failures</li>
 </ol>
 
-<p></p> summary files are generated according to the default maven-surefire-plugin for integration with tools that already work with maven-surefire-plugin (e.g. CI servers)</div>
+<p></p> Summary files are generated according to the default maven-surefire-plugin for integration with tools that already work with maven-surefire-plugin (e.g. CI servers).</div>
       
 <p><b>Attributes</b>:</p>
       

@@ -92,16 +92,16 @@
 <th>Description</th></tr>
 <tr class="b">
 <td align="left"><a href="./plugin-test-mojo.html">tycho-surefire:plugin-test</a></td>
-<td><p>Executes integration-tests in an OSGi runtime.</p>
+<td>Executes integration-tests in an OSGi runtime. 
 <p>The goal launches an OSGi runtime and executes the project's integration-tests (default patterns are <code>PluginTest*.class, *IT.class</code>) in that runtime. The "test runtime" consists of the bundle built in this project and its transitive dependencies, plus some Equinox and test harness bundles. The bundles are resolved from the target platform of the project. Note that the test runtime does typically <em>not</em> contain the entire target platform. If there are implicitly required bundles (e.g. <tt>org.apache.felix.scr</tt> to make declarative services work), they need to be added manually through an <tt>extraRequirements</tt> configuration on the <tt>target-platform-configuration</tt> plugin.</p>
 <p>This goal adopts the maven-failsafe paradigm, that works in the following way:</p>
 <ol>
- <li><code>pre-integration-test</code> phase could be used to prepare any prerequisite (e.g. starting web-server, files, ...)</li>
+ <li><code>pre-integration-test</code> phase could be used to prepare any prerequisite (e.g. starting a web-server, creating files, etc.)</li>
  <li><code>integration-test</code> phase does not fail the build if there are test failures but a summary file is written</li>
  <li><code>post-integration-test</code> could be used to cleanup/tear down any resources from the <code>pre-integration-test</code> phase</li>
  <li>test outcome is checked in the <code>verify</code> phase that might fail the build if there are test failures</li>
 </ol>
-<p></p> summary files are generated according to the default maven-surefire-plugin for integration with tools that already work with maven-surefire-plugin (e.g. CI servers)</td></tr>
+<p></p> Summary files are generated according to the default maven-surefire-plugin for integration with tools that already work with maven-surefire-plugin (e.g. CI servers).</td></tr>
 <tr class="a">
 <td align="left"><a href="./test-mojo.html">tycho-surefire:test</a></td>
 <td><p>Executes tests in an OSGi runtime. This is only supported in modules of packaging type `eclipse-test-plugin`.</p>
