@@ -121,17 +121,6 @@
           
 <tr class="b">
             
-<td align="left"><code><a href="#base">&lt;base&gt;</a></code></td>
-            
-<td><code>Base</code></td>
-            
-<td><code>-</code></td>
-            
-<td>(no description)<br /></td>
-          </tr>
-          
-<tr class="a">
-            
 <td align="left"><code><a href="#baselines">&lt;baselines&gt;</a></code></td>
             
 <td><code>List&lt;Repository&gt;</code></td>
@@ -141,95 +130,51 @@
 <td>A list of p2 repositories to be used as baseline. Those are typically the most recent released versions of your project.<br /><b>User property is</b>: <code>baselines</code>.<br /></td>
           </tr>
           
-<tr class="b">
+<tr class="a">
             
-<td align="left"><code><a href="#continueOnError">&lt;continueOnError&gt;</a></code></td>
+<td align="left"><code><a href="#extensions">&lt;extensions&gt;</a></code></td>
             
 <td><code>boolean</code></td>
             
 <td><code>-</code></td>
             
-<td>(no description)<br /><b>Default value is</b>: <code>false</code>.<br /><b>User property is</b>: <code>bnd.baseline.continue.on.error</code>.<br /></td>
+<td>If <code>true</code> enables processing of eclipse specific extensions e.g x-internal directive.<br /><b>Default value is</b>: <code>false</code>.<br /><b>User property is</b>: <code>tycho.baseline.extensions</code>.<br /></td>
           </tr>
           
-<tr class="a">
+<tr class="b">
             
-<td align="left"><code><a href="#diffignores">&lt;diffignores&gt;</a></code></td>
+<td align="left"><code><a href="#ignores">&lt;ignores&gt;</a></code></td>
             
 <td><code>List&lt;String&gt;</code></td>
             
 <td><code>-</code></td>
             
-<td>(no description)<br /><b>User property is</b>: <code>bnd.baseline.diffignores</code>.<br /></td>
+<td>Defines manifest header names or resource paths that should be ignore when comparing to the baseline.<br /><b>User property is</b>: <code>tycho.baseline.diffignores</code>.<br /></td>
+          </tr>
+          
+<tr class="a">
+            
+<td align="left"><code><a href="#mode">&lt;mode&gt;</a></code></td>
+            
+<td><code>BaselineMode</code></td>
+            
+<td><code>-</code></td>
+            
+<td>Controls if the mojo should fail or only warn about baseline problems.<br /><b>Default value is</b>: <code>fail</code>.<br /><b>User property is</b>: <code>tycho.baseline.mode</code>.<br /></td>
           </tr>
           
 <tr class="b">
             
-<td align="left"><code><a href="#diffpackages">&lt;diffpackages&gt;</a></code></td>
+<td align="left"><code><a href="#packages">&lt;packages&gt;</a></code></td>
             
 <td><code>List&lt;String&gt;</code></td>
             
 <td><code>-</code></td>
             
-<td>(no description)<br /><b>Default value is</b>: <code>*</code>.<br /><b>User property is</b>: <code>bnd.baseline.diffpackages</code>.<br /></td>
+<td>Defines what packages should be compared to the baseline, by default all exported packages are compared. Packages can contain wildcards, for a full list of supported syntax see https://bnd.bndtools.org/chapters/820-instructions.html#selector<br /><b>User property is</b>: <code>tycho.baseline.packages</code>.<br /></td>
           </tr>
           
 <tr class="a">
-            
-<td align="left"><code><a href="#failOnMissing">&lt;failOnMissing&gt;</a></code></td>
-            
-<td><code>boolean</code></td>
-            
-<td><code>-</code></td>
-            
-<td>(no description)<br /><b>Default value is</b>: <code>true</code>.<br /><b>User property is</b>: <code>tycho.baseline.fail.on.missing</code>.<br /></td>
-          </tr>
-          
-<tr class="b">
-            
-<td align="left"><code><a href="#fullReport">&lt;fullReport&gt;</a></code></td>
-            
-<td><code>boolean</code></td>
-            
-<td><code>-</code></td>
-            
-<td>(no description)<br /><b>Default value is</b>: <code>false</code>.<br /><b>User property is</b>: <code>bnd.baseline.full.report</code>.<br /></td>
-          </tr>
-          
-<tr class="a">
-            
-<td align="left"><code><a href="#includeDistributionManagement">&lt;includeDistributionManagement&gt;</a></code></td>
-            
-<td><code>boolean</code></td>
-            
-<td><code>-</code></td>
-            
-<td>(no description)<br /><b>Default value is</b>: <code>true</code>.<br /><b>User property is</b>: <code>bnd.baseline.include.distribution.management</code>.<br /></td>
-          </tr>
-          
-<tr class="b">
-            
-<td align="left"><code><a href="#releaseversions">&lt;releaseversions&gt;</a></code></td>
-            
-<td><code>boolean</code></td>
-            
-<td><code>-</code></td>
-            
-<td>(no description)<br /><b>Default value is</b>: <code>false</code>.<br /><b>User property is</b>: <code>bnd.baseline.releaseversions</code>.<br /></td>
-          </tr>
-          
-<tr class="a">
-            
-<td align="left"><code><a href="#reportFile">&lt;reportFile&gt;</a></code></td>
-            
-<td><code>File</code></td>
-            
-<td><code>-</code></td>
-            
-<td>(no description)<br /><b>Default value is</b>: <code>${project.build.directory}/baseline/${project.build.finalName}.txt</code>.<br /><b>User property is</b>: <code>bnd.baseline.report.file</code>.<br /></td>
-          </tr>
-          
-<tr class="b">
             
 <td align="left"><code><a href="#skip">&lt;skip&gt;</a></code></td>
             
@@ -237,23 +182,13 @@
             
 <td><code>-</code></td>
             
-<td>(no description)<br /><b>Default value is</b>: <code>false</code>.<br /><b>User property is</b>: <code>tycho.baseline.skip</code>.<br /></td>
+<td>If <code>true</code> skips any baseline processing.<br /><b>Default value is</b>: <code>false</code>.<br /><b>User property is</b>: <code>tycho.baseline.skip</code>.<br /></td>
           </tr>
         </table>
       </section>
       <section>
 <h3><a name="Parameter_Details"></a>Parameter Details</h3>
         <section>
-<h4><a name="a.3Cbase.3E"></a><b><a name="base">&lt;base&gt;</a></b></h4>
-        
-<div>(no description)</div>
-        
-<ul>
-          
-<li><b>Type</b>: <code>aQute.bnd.maven.baseline.plugin.Base</code></li>
-          
-<li><b>Required</b>: <code>No</code></li>
-        </ul><hr /></section><section>
 <h4><a name="a.3Cbaselines.3E"></a><b><a name="baselines">&lt;baselines&gt;</a></b></h4>
         
 <div>A list of p2 repositories to be used as baseline. Those are typically the most recent released versions of your project.</div>
@@ -266,9 +201,9 @@
           
 <li><b>User Property</b>: <code>baselines</code></li>
         </ul><hr /></section><section>
-<h4><a name="a.3CcontinueOnError.3E"></a><b><a name="continueOnError">&lt;continueOnError&gt;</a></b></h4>
+<h4><a name="a.3Cextensions.3E"></a><b><a name="extensions">&lt;extensions&gt;</a></b></h4>
         
-<div>(no description)</div>
+<div>If <code>true</code> enables processing of eclipse specific extensions e.g x-internal directive.</div>
         
 <ul>
           
@@ -276,13 +211,13 @@
           
 <li><b>Required</b>: <code>No</code></li>
           
-<li><b>User Property</b>: <code>bnd.baseline.continue.on.error</code></li>
+<li><b>User Property</b>: <code>tycho.baseline.extensions</code></li>
           
 <li><b>Default</b>: <code>false</code></li>
         </ul><hr /></section><section>
-<h4><a name="a.3Cdiffignores.3E"></a><b><a name="diffignores">&lt;diffignores&gt;</a></b></h4>
+<h4><a name="a.3Cignores.3E"></a><b><a name="ignores">&lt;ignores&gt;</a></b></h4>
         
-<div>(no description)</div>
+<div>Defines manifest header names or resource paths that should be ignore when comparing to the baseline.</div>
         
 <ul>
           
@@ -290,11 +225,25 @@
           
 <li><b>Required</b>: <code>No</code></li>
           
-<li><b>User Property</b>: <code>bnd.baseline.diffignores</code></li>
+<li><b>User Property</b>: <code>tycho.baseline.diffignores</code></li>
         </ul><hr /></section><section>
-<h4><a name="a.3Cdiffpackages.3E"></a><b><a name="diffpackages">&lt;diffpackages&gt;</a></b></h4>
+<h4><a name="a.3Cmode.3E"></a><b><a name="mode">&lt;mode&gt;</a></b></h4>
         
-<div>(no description)</div>
+<div>Controls if the mojo should fail or only warn about baseline problems.</div>
+        
+<ul>
+          
+<li><b>Type</b>: <code>org.eclipse.tycho.baseline.BaselineMode</code></li>
+          
+<li><b>Required</b>: <code>No</code></li>
+          
+<li><b>User Property</b>: <code>tycho.baseline.mode</code></li>
+          
+<li><b>Default</b>: <code>fail</code></li>
+        </ul><hr /></section><section>
+<h4><a name="a.3Cpackages.3E"></a><b><a name="packages">&lt;packages&gt;</a></b></h4>
+        
+<div>Defines what packages should be compared to the baseline, by default all exported packages are compared. Packages can contain wildcards, for a full list of supported syntax see https://bnd.bndtools.org/chapters/820-instructions.html#selector</div>
         
 <ul>
           
@@ -302,83 +251,11 @@
           
 <li><b>Required</b>: <code>No</code></li>
           
-<li><b>User Property</b>: <code>bnd.baseline.diffpackages</code></li>
-          
-<li><b>Default</b>: <code>*</code></li>
-        </ul><hr /></section><section>
-<h4><a name="a.3CfailOnMissing.3E"></a><b><a name="failOnMissing">&lt;failOnMissing&gt;</a></b></h4>
-        
-<div>(no description)</div>
-        
-<ul>
-          
-<li><b>Type</b>: <code>boolean</code></li>
-          
-<li><b>Required</b>: <code>No</code></li>
-          
-<li><b>User Property</b>: <code>tycho.baseline.fail.on.missing</code></li>
-          
-<li><b>Default</b>: <code>true</code></li>
-        </ul><hr /></section><section>
-<h4><a name="a.3CfullReport.3E"></a><b><a name="fullReport">&lt;fullReport&gt;</a></b></h4>
-        
-<div>(no description)</div>
-        
-<ul>
-          
-<li><b>Type</b>: <code>boolean</code></li>
-          
-<li><b>Required</b>: <code>No</code></li>
-          
-<li><b>User Property</b>: <code>bnd.baseline.full.report</code></li>
-          
-<li><b>Default</b>: <code>false</code></li>
-        </ul><hr /></section><section>
-<h4><a name="a.3CincludeDistributionManagement.3E"></a><b><a name="includeDistributionManagement">&lt;includeDistributionManagement&gt;</a></b></h4>
-        
-<div>(no description)</div>
-        
-<ul>
-          
-<li><b>Type</b>: <code>boolean</code></li>
-          
-<li><b>Required</b>: <code>No</code></li>
-          
-<li><b>User Property</b>: <code>bnd.baseline.include.distribution.management</code></li>
-          
-<li><b>Default</b>: <code>true</code></li>
-        </ul><hr /></section><section>
-<h4><a name="a.3Creleaseversions.3E"></a><b><a name="releaseversions">&lt;releaseversions&gt;</a></b></h4>
-        
-<div>(no description)</div>
-        
-<ul>
-          
-<li><b>Type</b>: <code>boolean</code></li>
-          
-<li><b>Required</b>: <code>No</code></li>
-          
-<li><b>User Property</b>: <code>bnd.baseline.releaseversions</code></li>
-          
-<li><b>Default</b>: <code>false</code></li>
-        </ul><hr /></section><section>
-<h4><a name="a.3CreportFile.3E"></a><b><a name="reportFile">&lt;reportFile&gt;</a></b></h4>
-        
-<div>(no description)</div>
-        
-<ul>
-          
-<li><b>Type</b>: <code>java.io.File</code></li>
-          
-<li><b>Required</b>: <code>No</code></li>
-          
-<li><b>User Property</b>: <code>bnd.baseline.report.file</code></li>
-          
-<li><b>Default</b>: <code>${project.build.directory}/baseline/${project.build.finalName}.txt</code></li>
+<li><b>User Property</b>: <code>tycho.baseline.packages</code></li>
         </ul><hr /></section><section>
 <h4><a name="a.3Cskip.3E"></a><b><a name="skip">&lt;skip&gt;</a></b></h4>
         
-<div>(no description)</div>
+<div>If <code>true</code> skips any baseline processing.</div>
         
 <ul>
           
