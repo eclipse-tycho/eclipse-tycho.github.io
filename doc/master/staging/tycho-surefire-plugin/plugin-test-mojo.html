@@ -239,7 +239,7 @@
             
 <td><code>-</code></td>
             
-<td>if set to a non-null value, the platform is put in debug mode. If the value is a non-empty string it is interpreted as the location of the .options file. This file indicates what debug points are available for a plug-in and whether or not they are enabled. for a list of available options see <a class="externalLink" href="https://git.eclipse.org/c/equinox/rt.equinox.framework.git/plain/bundles/org.eclipse.osgi/.options">https://git.eclipse.org/c/equinox/rt.equinox.framework.git/plain/bundles/org.eclipse.osgi/.options</a><br /><b>User property is</b>: <code>osgi.debug</code>.<br /></td>
+<td>if set to a non-null value, the platform is put in debug mode. If the value is a non-empty string it is interpreted as the location of the .options file. This file indicates what debug points are available for a plug-in and whether or not they are enabled. for a list of available options see <a class="externalLink" href="https://git.eclipse.org/c/equinox/rt.equinox.framework.git/plain/bundles/org.eclipse.osgi/.options">https://git.eclipse.org/c/equinox/rt.equinox.framework.git/plain/bundles/org.eclipse.osgi/.options</a><br /><b>User property is</b>: <code>osgi.debug</code>.<br /></br></td>
           </tr>
           
 <tr class="a">
@@ -250,7 +250,7 @@
             
 <td><code>-</code></td>
             
-<td>Set this parameter to suspend the test JVM waiting for a client to open a remote debug session on the specified port. If further customization of JVM debug parameters is required then <code>argLine</code> can be used instead.<br /><b>User property is</b>: <code>debugPort</code>.<br /></td>
+<td>Set this parameter to suspend the test JVM waiting for a client to open a remote debug session on the specified port. If further customization of JVM debug parameters is required then <code>argLine</code> can be used instead.<br /></br><b>User property is</b>: <code>debugPort</code>.<br /></br></td>
           </tr>
           
 <tr class="b">
@@ -268,7 +268,7 @@
     &lt;level&gt;6&lt;/level&gt;
     &lt;autoStart&gt;true&lt;/autoStart&gt;
   &lt;/defaultStartLevel&gt;
-</pre></div><br /></td>
+</pre></div><br /></br></td>
           </tr>
           
 <tr class="a">
@@ -279,7 +279,7 @@
             
 <td><code>-</code></td>
             
-<td>Whether to recursively delete the directory <code>osgiDataDirectory</code> before running the tests.<br /><b>Default value is</b>: <code>true</code>.<br /></td>
+<td>Whether to recursively delete the directory <code>osgiDataDirectory</code> before running the tests.<br /></br><b>Default value is</b>: <code>true</code>.<br /></td>
           </tr>
           
 <tr class="b">
@@ -874,7 +874,7 @@
 <td>Root directory (<a class="externalLink" href="https://help.eclipse.org/indigo/topic/org.eclipse.platform.doc.isv/reference/misc/runtime-options.html#osgiinstallarea">osgi.install.area</a>) of the Equinox runtime used to execute tests.<br /><b>Default value is</b>: <code>${project.build.directory}/work</code>.<br /></td>
           </tr>
         </table>
-      </section>
+      
       <section>
 <h3><a name="Parameter_Details"></a>Parameter Details</h3>
         <section>
@@ -1389,7 +1389,7 @@
 <li><b>Required</b>: <code>No</code></li>
           
 <li><b>User Property</b>: <code>tycho.plugin-test.skip</code></li>
-        </ul><hr /></section><section>
+        </ul><hr /><section>
 <h4><a name="a.3CskipTests.3E"></a><b><a name="skipTests">&lt;skipTests&gt;</a></b></h4>
         
 <div>Set this to &quot;true&quot; to skip running tests, but still compile them. Its use is NOT RECOMMENDED, but quite convenient on occasion. Default: <code>false</code></div>
