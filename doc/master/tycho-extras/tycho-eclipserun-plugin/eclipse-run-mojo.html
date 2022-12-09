@@ -168,6 +168,17 @@
           
 <tr class="a">
             
+<td align="left"><code><a href="#appArgLine">&lt;appArgLine&gt;</a></code></td>
+            
+<td><code>String</code></td>
+            
+<td><code>-</code></td>
+            
+<td>Arbitrary applications arguments to set on the command line. It is recommended to use <code>applicationArgs</code> instead because it provides more explicit control over argument separation and content, avoiding the need to quote arguments that contain spaces.<br /><b>See also:</b> applicationArgs<br /></td>
+          </tr>
+          
+<tr class="b">
+            
 <td align="left"><code><a href="#applicationArgs">&lt;applicationArgs&gt;</a></code></td>
             
 <td><code>List&lt;String&gt;</code></td>
@@ -175,6 +186,17 @@
 <td><code>0.24.0</code></td>
             
 <td>List of applications arguments set on the command line. Example: <code>&lt;applicationArgs&gt; &lt;arg&gt;-buildfile&lt;/arg&gt; &lt;arg&gt;build-test.xml&lt;/arg&gt; &lt;/applicationArgs&gt; </code><br /><b>Alias is</b>: <code>applicationsArgs</code>.</td>
+          </tr>
+          
+<tr class="a">
+            
+<td align="left"><code><a href="#argLine">&lt;argLine&gt;</a></code></td>
+            
+<td><code>String</code></td>
+            
+<td><code>-</code></td>
+            
+<td>Arbitrary JVM options to set on the command line. It is recommended to use <code>jvmArgs</code> instead because it provides more explicit control over argument separation and content, avoiding the need to quote arguments that contain spaces.<br /><b>See also:</b> jvmArgs<br /></td>
           </tr>
           
 <tr class="b">
@@ -349,6 +371,16 @@
           
 <li><b>Default</b>: <code>true</code></li>
         </ul><hr /></section><section>
+<h4><a name="a.3CappArgLine.3E"></a><b><a name="appArgLine">&lt;appArgLine&gt;</a></b></h4>
+        
+<div>Arbitrary applications arguments to set on the command line. It is recommended to use <code>applicationArgs</code> instead because it provides more explicit control over argument separation and content, avoiding the need to quote arguments that contain spaces.<br /><b>See also:</b> applicationArgs</div>
+        
+<ul>
+          
+<li><b>Type</b>: <code>java.lang.String</code></li>
+          
+<li><b>Required</b>: <code>No</code></li>
+        </ul><hr /></section><section>
 <h4><a name="a.3CapplicationArgs.3E"></a><b><a name="applicationArgs">&lt;applicationArgs&gt;</a></b></h4>
         
 <div>List of applications arguments set on the command line. Example: <code>&lt;applicationArgs&gt; &lt;arg&gt;-buildfile&lt;/arg&gt; &lt;arg&gt;build-test.xml&lt;/arg&gt; &lt;/applicationArgs&gt; </code></div>
@@ -362,6 +394,16 @@
 <li><b>Required</b>: <code>No</code></li>
           
 <li><b>Alias</b>: <code>applicationsArgs</code></li>
+        </ul><hr /></section><section>
+<h4><a name="a.3CargLine.3E"></a><b><a name="argLine">&lt;argLine&gt;</a></b></h4>
+        
+<div>Arbitrary JVM options to set on the command line. It is recommended to use <code>jvmArgs</code> instead because it provides more explicit control over argument separation and content, avoiding the need to quote arguments that contain spaces.<br /><b>See also:</b> jvmArgs</div>
+        
+<ul>
+          
+<li><b>Type</b>: <code>java.lang.String</code></li>
+          
+<li><b>Required</b>: <code>No</code></li>
         </ul><hr /></section><section>
 <h4><a name="a.3CbundleStartLevel.3E"></a><b><a name="bundleStartLevel">&lt;bundleStartLevel&gt;</a></b></h4>
         
