@@ -267,7 +267,7 @@
             
 <td><code>1.2</code></td>
             
-<td>The path to a public keyring to add to the list of keyrings. By default, only the <code>pubring.gpg</code> from gpg's home directory is considered. Use this option (and <code>defaultKeyring</code> if required) to use a different public key. <i>Note:</i> Relative paths are resolved against gpg's home directory, not the project base directory.<br /></br><b>User property is</b>: <code>gpg.publicKeyring</code>.<br /></td>
+<td>The path to a public keyring to add to the list of keyrings. By default, only the <code>pubring.gpg</code> from gpg's home directory is considered. Use this option (and <code>defaultKeyring</code> if required) to use a different public key. <i>Note:</i> Relative paths are resolved against gpg's home directory, not the project base directory.<br /><b>User property is</b>: <code>gpg.publicKeyring</code>.<br /></td>
           </tr>
           
 <tr class="a">
@@ -278,7 +278,7 @@
             
 <td><code>-</code></td>
             
-<td>The repository location.<br /></br><b>Default value is</b>: <code>${project.build.directory}/repository</code>.<br /></br></td>
+<td>The repository location.<br /><b>Default value is</b>: <code>${project.build.directory}/repository</code>.<br /></td>
           </tr>
           
 <tr class="b">
@@ -290,7 +290,7 @@
 <td><code>1.2</code></td>
             
 <td>
-<p>The path to a secret keyring to add to the list of keyrings. By default, only the <code>secring.gpg</code> from gpg's home directory is considered. Use this option (in combination with <code>publicKeyring</code> and <code>defaultKeyring</code> if required) to use a different secret key. <i>Note:</i> Relative paths are resolved against gpg's home directory, not the project base directory.</p> <b>NOTE: </b>As of gpg 2.1 this is an obsolete option and ignored. All secret keys are stored in the &#x2018;private-keys-v1.d&#x2019; directory below the GnuPG home directory.<br /><b>User property is</b>: <code>gpg.secretKeyring</code>.<br /></br></td>
+<p>The path to a secret keyring to add to the list of keyrings. By default, only the <code>secring.gpg</code> from gpg's home directory is considered. Use this option (in combination with <code>publicKeyring</code> and <code>defaultKeyring</code> if required) to use a different secret key. <i>Note:</i> Relative paths are resolved against gpg's home directory, not the project base directory.</p> <b>NOTE: </b>As of gpg 2.1 this is an obsolete option and ignored. All secret keys are stored in the &#x2018;private-keys-v1.d&#x2019; directory below the GnuPG home directory.<br /><b>User property is</b>: <code>gpg.secretKeyring</code>.<br /></td>
           </tr>
           
 <tr class="a">
@@ -301,7 +301,7 @@
             
 <td><code>-</code></td>
             
-<td>Configure the Bouncy Castle <code>signer</code> to load the secret keys, stored in armored from, from the specified file. This avoids needing to import the keys into GnuPG's keybox.<br /></br><b>User property is</b>: <code>tycho.pgp.signer.bc.secretKeys</code>.<br /></td>
+<td>Configure the Bouncy Castle <code>signer</code> to load the secret keys, stored in armored from, from the specified file. This avoids needing to import the keys into GnuPG's keybox.<br /><b>User property is</b>: <code>tycho.pgp.signer.bc.secretKeys</code>.<br /></td>
           </tr>
           
 <tr class="b">
@@ -312,7 +312,7 @@
             
 <td><code>-</code></td>
             
-<td>Configure the signer used for PGP signing. Currently supported are <code>gpg</code> for launching the native <code>gpg</code> executable, and <code>bc</code> for using Bouncy Castle libraries. The latter is much faster and it can sign in parallel, so is very much faster.<br /></br><b>Default value is</b>: <code>gpg</code>.<br /><b>User property is</b>: <code>tycho.pgp.signer</code>.<br /></td>
+<td>Configure the signer used for PGP signing. Currently supported are <code>gpg</code> for launching the native <code>gpg</code> executable, and <code>bc</code> for using Bouncy Castle libraries. The latter is much faster and it can sign in parallel, so is very much faster.<br /><b>Default value is</b>: <code>gpg</code>.<br /><b>User property is</b>: <code>tycho.pgp.signer</code>.<br /></td>
           </tr>
           
 <tr class="a">
@@ -323,7 +323,7 @@
             
 <td><code>-</code></td>
             
-<td>Configure to <code>true</code> to generate a PGP signature for binary artifacts.<br /></br><b>Default value is</b>: <code>true</code>.<br /></td>
+<td>Configure to <code>true</code> to generate a PGP signature for binary artifacts.<br /><b>Default value is</b>: <code>true</code>.<br /></td>
           </tr>
           
 <tr class="b">
@@ -334,7 +334,7 @@
             
 <td><code>-</code></td>
             
-<td>Configure to <code>true</code> to generate PGP signature only for artifacts that are <b>not</b> signed by a jarsigner.<br /></br><b>Default value is</b>: <code>true</code>.<br /></br></td>
+<td>Configure to <code>true</code> to generate PGP signature only for artifacts that are <b>not</b> signed by a jarsigner.<br /><b>Default value is</b>: <code>true</code>.<br /></td>
           </tr>
           
 <tr class="a">
@@ -345,7 +345,7 @@
             
 <td><code>-</code></td>
             
-<td>Configure to <code>true</code> to generate a PGP signature only for artifacts that do <b>not</b> contain a signature that's anchored in Java's trust store, i.e., anchored in the JDK's cacerts. A JCA certificate, for example, is never anchored.<br /></br><b>Default value is</b>: <code>true</code>.<br /></td>
+<td>Configure to <code>true</code> to generate a PGP signature only for artifacts that do <b>not</b> contain a signature that's anchored in Java's trust store, i.e., anchored in the JDK's cacerts. A JCA certificate, for example, is never anchored.<br /><b>Default value is</b>: <code>true</code>.<br /></td>
           </tr>
           
 <tr class="b">
@@ -356,10 +356,10 @@
             
 <td><code>-</code></td>
             
-<td>Passes <code>--use-agent</code> or <code>--no-use-agent</code> to gpg. If using an agent, the passphrase is optional as the agent will provide it. For gpg2, specify true as --no-use-agent was removed in gpg2 and doesn't ask for a passphrase anymore.<br /></br><b>Default value is</b>: <code>true</code>.<br /><b>User property is</b>: <code>gpg.useagent</code>.<br /></td>
+<td>Passes <code>--use-agent</code> or <code>--no-use-agent</code> to gpg. If using an agent, the passphrase is optional as the agent will provide it. For gpg2, specify true as --no-use-agent was removed in gpg2 and doesn't ask for a passphrase anymore.<br /><b>Default value is</b>: <code>true</code>.<br /><b>User property is</b>: <code>gpg.useagent</code>.<br /></td>
           </tr>
         </table>
-      </section></section>
+      </section>
       <section>
 <h3><a name="Parameter_Details"></a>Parameter Details</h3>
         <section>
@@ -376,7 +376,7 @@
 <li><b>Default</b>: <code>true</code></li>
           
 <li><b>Alias</b>: <code>addPublicKeysToArtifacts</code></li>
-        </ul><hr /></hr></section><section>
+        </ul><hr /></section><section>
 <h4><a name="a.3CaddPublicKeyToRepo.3E"></a><b><a name="addPublicKeyToRepo">&lt;addPublicKeyToRepo&gt;</a></b></h4>
         
 <div>Configure to <code>true</code> to add the public key of each signature to the repository's metadata.</div>
@@ -388,7 +388,7 @@
 <li><b>Required</b>: <code>No</code></li>
           
 <li><b>Default</b>: <code>true</code></li>
-        </ul><hr /></hr></section><section>
+        </ul><hr /></section><section>
 <h4><a name="a.3CdefaultKeyring.3E"></a><b><a name="defaultKeyring">&lt;defaultKeyring&gt;</a></b></h4>
         
 <div>Whether to add the default keyrings from gpg's home directory to the list of used keyrings.</div>
@@ -404,7 +404,7 @@
 <li><b>User Property</b>: <code>gpg.defaultKeyring</code></li>
           
 <li><b>Default</b>: <code>true</code></li>
-        </ul><hr /></hr></section><section>
+        </ul><hr /></section><section>
 <h4><a name="a.3Cexecutable.3E"></a><b><a name="executable">&lt;executable&gt;</a></b></h4>
         
 <div>The path to the GnuPG executable to use for artifact signing. Defaults to either &quot;gpg&quot; or &quot;gpg.exe&quot; depending on the operating system.</div>
@@ -418,7 +418,7 @@
 <li><b>Required</b>: <code>No</code></li>
           
 <li><b>User Property</b>: <code>gpg.executable</code></li>
-        </ul><hr /><section><section>
+        </ul><hr /></section><section>
 <h4><a name="a.3CforceSignature.3E"></a><b><a name="forceSignature">&lt;forceSignature&gt;</a></b></h4>
         
 <div>Configured to specify artifacts that should be signed independently of other settings, e.g., <code>skipIfJarsigned</code>, <code>skipIfJarsignedAndAnchored</code>, and <code>skipBinaries</code>.</div>
