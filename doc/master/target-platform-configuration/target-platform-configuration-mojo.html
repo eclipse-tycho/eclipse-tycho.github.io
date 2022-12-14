@@ -120,17 +120,6 @@
           
 <tr class="b">
             
-<td align="left"><code><a href="#allowConflictingDependencies">&lt;allowConflictingDependencies&gt;</a></code></td>
-            
-<td><code>boolean</code></td>
-            
-<td><code>-</code></td>
-            
-<td>(no description)<br /><b>Default value is</b>: <code>false</code>.<br /></td>
-          </tr>
-          
-<tr class="a">
-            
 <td align="left"><code><a href="#breeHeaderSelectionPolicy">&lt;breeHeaderSelectionPolicy&gt;</a></code></td>
             
 <td><code>TargetPlatformConfiguration$BREEHeaderSelectionPolicy</code></td>
@@ -140,7 +129,7 @@
 <td>(no description)<br /></td>
           </tr>
           
-<tr class="b">
+<tr class="a">
             
 <td align="left"><code><a href="#dependency-resolution">&lt;dependency-resolution&gt;</a></code></td>
             
@@ -169,7 +158,7 @@
 </pre></div><br /></td>
           </tr>
           
-<tr class="a">
+<tr class="b">
             
 <td align="left"><code><a href="#environments">&lt;environments&gt;</a></code></td>
             
@@ -180,7 +169,7 @@
 <td>Target environments (os/ws/arch) to consider.<br /></td>
           </tr>
           
-<tr class="b">
+<tr class="a">
             
 <td align="left"><code><a href="#exclusions">&lt;exclusions&gt;</a></code></td>
             
@@ -191,7 +180,7 @@
 <td>Exclusions could be used together with <code>pomDependencies</code> setting to exclude certain maven dependencies from being considered. This is useful for example if there is an offending (transitive) dependency needed for compilation but not for the runtime that would cause problems otherwise.<br /></td>
           </tr>
           
-<tr class="a">
+<tr class="b">
             
 <td align="left"><code><a href="#executionEnvironment">&lt;executionEnvironment&gt;</a></code></td>
             
@@ -204,7 +193,7 @@
 <p>Set to <code>none</code> to force the resolution to happen <b>without</b> any execution environment, typically when the module is supposed to use system packages coming from some dependencies (eg shipping a JRE inside products with Eclipse JustJ).</p><br /></td>
           </tr>
           
-<tr class="b">
+<tr class="a">
             
 <td align="left"><code><a href="#executionEnvironmentDefault">&lt;executionEnvironmentDefault&gt;</a></code></td>
             
@@ -215,7 +204,7 @@
 <td>(no description)<br /></td>
           </tr>
           
-<tr class="a">
+<tr class="b">
             
 <td align="left"><code><a href="#filters">&lt;filters&gt;</a></code></td>
             
@@ -259,7 +248,7 @@ javax.persistence --&gt; &lt;filter&gt; &lt;type&gt;java-package&lt;/type&gt;
 <p></p></pre></div></pre></div><br /></td>
           </tr>
           
-<tr class="b">
+<tr class="a">
             
 <td align="left"><code><a href="#pomDependencies">&lt;pomDependencies&gt;</a></code></td>
             
@@ -285,7 +274,7 @@ javax.persistence --&gt; &lt;filter&gt; &lt;type&gt;java-package&lt;/type&gt;
 <p>&#x1f4dd; Tycho always attempts to resolve transitive dependencies, so if you need a POM dependency in the target platform of one module, you will also need it in all downstream modules. Therefore the POM dependencies (and the pomDependencies=consider configuration) typically need to be added in the parent POM.</p><br /><b>Default value is</b>: <code>ignore</code>.<br /></td>
           </tr>
           
-<tr class="a">
+<tr class="b">
             
 <td align="left"><code><a href="#resolver">&lt;resolver&gt;</a></code></td>
             
@@ -296,7 +285,7 @@ javax.persistence --&gt; &lt;filter&gt; &lt;type&gt;java-package&lt;/type&gt;
 <td>(no description)<br /><b>Default value is</b>: <code>p2</code>.<br /></td>
           </tr>
           
-<tr class="b">
+<tr class="a">
             
 <td align="left"><code><a href="#resolveWithExecutionEnvironmentConstraints">&lt;resolveWithExecutionEnvironmentConstraints&gt;</a></code></td>
             
@@ -307,7 +296,7 @@ javax.persistence --&gt; &lt;filter&gt; &lt;type&gt;java-package&lt;/type&gt;
 <td>(no description)<br /><b>Default value is</b>: <code>true</code>.<br /></td>
           </tr>
           
-<tr class="a">
+<tr class="b">
             
 <td align="left"><code><a href="#target">&lt;target&gt;</a></code></td>
             
@@ -327,7 +316,7 @@ javax.persistence --&gt; &lt;filter&gt; &lt;type&gt;java-package&lt;/type&gt;
 </ul><br /></td>
           </tr>
           
-<tr class="b">
+<tr class="a">
             
 <td align="left"><code><a href="#targetDefinitionIncludeSource">&lt;targetDefinitionIncludeSource&gt;</a></code></td>
             
@@ -342,18 +331,6 @@ javax.persistence --&gt; &lt;filter&gt; &lt;type&gt;java-package&lt;/type&gt;
       <section>
 <h3><a name="Parameter_Details"></a>Parameter Details</h3>
         <section>
-<h4><a name="a.3CallowConflictingDependencies.3E"></a><b><a name="allowConflictingDependencies">&lt;allowConflictingDependencies&gt;</a></b></h4>
-        
-<div>(no description)</div>
-        
-<ul>
-          
-<li><b>Type</b>: <code>boolean</code></li>
-          
-<li><b>Required</b>: <code>No</code></li>
-          
-<li><b>Default</b>: <code>false</code></li>
-        </ul><hr /></section><section>
 <h4><a name="a.3CbreeHeaderSelectionPolicy.3E"></a><b><a name="breeHeaderSelectionPolicy">&lt;breeHeaderSelectionPolicy&gt;</a></b></h4>
         
 <div>(no description)</div>
