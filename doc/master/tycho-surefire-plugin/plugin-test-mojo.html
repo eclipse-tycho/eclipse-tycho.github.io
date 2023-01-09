@@ -439,6 +439,17 @@
           
 <tr class="b">
             
+<td align="left"><code><a href="#packaging">&lt;packaging&gt;</a></code></td>
+            
+<td><code>String</code></td>
+            
+<td><code>-</code></td>
+            
+<td>Configures the packaging type where this mojos applies<br /><b>Default value is</b>: <code>eclipse-plugin</code>.<br /><b>User property is</b>: <code>tycho.plugin-test.packaging</code>.<br /></td>
+          </tr>
+          
+<tr class="a">
+            
 <td align="left"><code><a href="#parallel">&lt;parallel&gt;</a></code></td>
             
 <td><code>ParallelMode</code></td>
@@ -448,7 +459,7 @@
 <td>(JUnit 4.7 provider) Supports values &quot;classes&quot;/&quot;methods&quot;/&quot;both&quot; to run in separate threads, as controlled by threadCount.<br /><b>User property is</b>: <code>parallel</code>.<br /></td>
           </tr>
           
-<tr class="a">
+<tr class="b">
             
 <td align="left"><code><a href="#perCoreThreadCount">&lt;perCoreThreadCount&gt;</a></code></td>
             
@@ -459,7 +470,7 @@
 <td>(JUnit 4.7 provider) Indicates that threadCount is per cpu core.<br /><b>Default value is</b>: <code>true</code>.<br /><b>User property is</b>: <code>perCoreThreadCount</code>.<br /></td>
           </tr>
           
-<tr class="b">
+<tr class="a">
             
 <td align="left"><code><a href="#pluginArtifacts">&lt;pluginArtifacts&gt;</a></code></td>
             
@@ -470,7 +481,7 @@
 <td>(no description)<br /><b>User property is</b>: <code>plugin.artifacts</code>.<br /></td>
           </tr>
           
-<tr class="a">
+<tr class="b">
             
 <td align="left"><code><a href="#printBundles">&lt;printBundles&gt;</a></code></td>
             
@@ -481,7 +492,7 @@
 <td>prints all loaded bundles<br /><b>Default value is</b>: <code>false</code>.<br /><b>User property is</b>: <code>tycho.printBundles</code>.<br /></td>
           </tr>
           
-<tr class="b">
+<tr class="a">
             
 <td align="left"><code><a href="#printWires">&lt;printWires&gt;</a></code></td>
             
@@ -492,7 +503,7 @@
 <td>prints all loaded bundles<br /><b>Default value is</b>: <code>false</code>.<br /><b>User property is</b>: <code>tycho.printWires</code>.<br /></td>
           </tr>
           
-<tr class="a">
+<tr class="b">
             
 <td align="left"><code><a href="#product">&lt;product&gt;</a></code></td>
             
@@ -503,7 +514,7 @@
 <td>Eclipse product to be run, i.e. -product parameter passed to test Eclipse runtime.<br /></td>
           </tr>
           
-<tr class="b">
+<tr class="a">
             
 <td align="left"><code><a href="#profileName">&lt;profileName&gt;</a></code></td>
             
@@ -514,7 +525,7 @@
 <td>p2 <a class="externalLink" href="https://help.eclipse.org/kepler/index.jsp?topic=%2Forg.eclipse.platform.doc.isv%2Fguide%2Fp2_director.html">profile</a> name of the installation under test. Only relevant if <code>testRuntime</code> is <code>p2Installed</code>. If tests are installed on top of an already existing installation in <code>work</code>, this must match the name of the existing profile.<br /><b>Default value is</b>: <code>DefaultProfile</code>.<br /></td>
           </tr>
           
-<tr class="a">
+<tr class="b">
             
 <td align="left"><code><a href="#providerHint">&lt;providerHint&gt;</a></code></td>
             
@@ -525,7 +536,7 @@
 <td>Normally tycho will automatically determine the test framework provider based on the test project's classpath. Use this to force using a test framework provider implementation with the given role hint. Tycho comes with providers &quot;junit3&quot;,&quot;junit4&quot;,&quot;junit47&quot;,&quot;junit5&quot;. Note that when specifying a providerHint, you have to make sure the provider is actually available in the dependencies of tycho-surefire-plugin.<br /></td>
           </tr>
           
-<tr class="b">
+<tr class="a">
             
 <td align="left"><code><a href="#providerProperties">&lt;providerProperties&gt;</a></code></td>
             
@@ -536,7 +547,7 @@
 <td>Use this to specify surefire provider-specific properties.<br /></td>
           </tr>
           
-<tr class="a">
+<tr class="b">
             
 <td align="left"><code><a href="#reactorConcurrencyLevel">&lt;reactorConcurrencyLevel&gt;</a></code></td>
             
@@ -547,7 +558,7 @@
 <td>Configures the overall concurrency level. <b>Important Note:</b> If there are multiple mojo configurations this will choose the lowest configured number! So for example if in the same reactor there is one configuration with a concurrency level of 5 and one with a concurrency level of 3 then then only three parallel runs will be possible!<br /></td>
           </tr>
           
-<tr class="b">
+<tr class="a">
             
 <td align="left"><code><a href="#redirectTestOutputToFile">&lt;redirectTestOutputToFile&gt;</a></code></td>
             
@@ -558,7 +569,7 @@
 <td>Set this to &quot;true&quot; to redirect the unit test standard output to a file (found in reportsDirectory/testName-output.txt).<br /><b>Default value is</b>: <code>false</code>.<br /><b>User property is</b>: <code>maven.test.redirectTestOutputToFile</code>.<br /></td>
           </tr>
           
-<tr class="a">
+<tr class="b">
             
 <td align="left"><code><a href="#rerunFailingTestsCount">&lt;rerunFailingTestsCount&gt;</a></code></td>
             
@@ -571,7 +582,7 @@
 <p>Note: This feature is supported only for JUnit 4.x</p><br /><b>Default value is</b>: <code>0</code>.<br /><b>User property is</b>: <code>surefire.rerunFailingTestsCount</code>.<br /></td>
           </tr>
           
-<tr class="b">
+<tr class="a">
             
 <td align="left"><code><a href="#runOrder">&lt;runOrder&gt;</a></code></td>
             
@@ -582,7 +593,7 @@
 <td>Defines the order the tests will be run in. Supported values are &quot;alphabetical&quot;, &quot;reversealphabetical&quot;, &quot;random&quot;, &quot;hourly&quot; (alphabetical on even hours, reverse alphabetical on odd hours) and &quot;filesystem&quot;.<br /><b>Default value is</b>: <code>filesystem</code>.<br /></td>
           </tr>
           
-<tr class="a">
+<tr class="b">
             
 <td align="left"><code><a href="#showEclipseLog">&lt;showEclipseLog&gt;</a></code></td>
             
@@ -593,7 +604,7 @@
 <td>Enables -consolelog for the test OSGi runtime<br /><b>Default value is</b>: <code>false</code>.<br /><b>User property is</b>: <code>tycho.showEclipseLog</code>.<br /></td>
           </tr>
           
-<tr class="b">
+<tr class="a">
             
 <td align="left"><code><a href="#skip">&lt;skip&gt;</a></code></td>
             
@@ -604,7 +615,7 @@
 <td>Same as <code>skipTests</code><br /><b>User property is</b>: <code>maven.test.skip</code>.<br /></td>
           </tr>
           
-<tr class="a">
+<tr class="b">
             
 <td align="left"><code><a href="#skipAfterFailureCount">&lt;skipAfterFailureCount&gt;</a></code></td>
             
@@ -615,7 +626,7 @@
 <td>Skips the remaining tests after the Nth failure or error. See surefire documentation for details.<br /><b>Default value is</b>: <code>0</code>.<br /><b>User property is</b>: <code>surefire.skipAfterFailureCount</code>.<br /></td>
           </tr>
           
-<tr class="b">
+<tr class="a">
             
 <td align="left"><code><a href="#skipExec">&lt;skipExec&gt;</a></code></td>
             
@@ -626,7 +637,7 @@
 <td><b>Deprecated.</b> <br /><b>User property is</b>: <code>maven.test.skipExec</code>.<br /></td>
           </tr>
           
-<tr class="a">
+<tr class="b">
             
 <td align="left"><code><a href="#skipITs">&lt;skipITs&gt;</a></code></td>
             
@@ -637,7 +648,7 @@
 <td>(no description)<br /><b>User property is</b>: <code>tycho.plugin-test.skip</code>.<br /></td>
           </tr>
           
-<tr class="b">
+<tr class="a">
             
 <td align="left"><code><a href="#skipTests">&lt;skipTests&gt;</a></code></td>
             
@@ -648,7 +659,7 @@
 <td>Set this to &quot;true&quot; to skip running tests, but still compile them. Its use is NOT RECOMMENDED, but quite convenient on occasion. Default: <code>false</code><br /><b>User property is</b>: <code>skipTests</code>.<br /></td>
           </tr>
           
-<tr class="a">
+<tr class="b">
             
 <td align="left"><code><a href="#suiteXmlFiles">&lt;suiteXmlFiles&gt;</a></code></td>
             
@@ -667,7 +678,7 @@
 </pre></div><br /></td>
           </tr>
           
-<tr class="b">
+<tr class="a">
             
 <td align="left"><code><a href="#surefireProperties">&lt;surefireProperties&gt;</a></code></td>
             
@@ -678,7 +689,7 @@
 <td>(no description)<br /><b>Default value is</b>: <code>${project.build.directory}/surefire.properties</code>.<br /></td>
           </tr>
           
-<tr class="a">
+<tr class="b">
             
 <td align="left"><code><a href="#systemProperties">&lt;systemProperties&gt;</a></code></td>
             
@@ -689,7 +700,7 @@
 <td>Additional system properties to set for the forked test JVM.<br /></td>
           </tr>
           
-<tr class="b">
+<tr class="a">
             
 <td align="left"><code><a href="#test">&lt;test&gt;</a></code></td>
             
@@ -700,7 +711,7 @@
 <td>Specify this parameter if you want to use the test pattern matching notation, Ant pattern matching, to select tests to run. The Ant pattern will be used to create an include pattern formatted like <code>**/${test}.java</code> When used, the <code>includes</code> and <code>excludes</code> patterns parameters are ignored<br /><b>User property is</b>: <code>test</code>.<br /></td>
           </tr>
           
-<tr class="a">
+<tr class="b">
             
 <td align="left"><code><a href="#testClass">&lt;testClass&gt;</a></code></td>
             
@@ -715,7 +726,7 @@
 </pre></div><br /><b>User property is</b>: <code>testClass</code>.<br /></td>
           </tr>
           
-<tr class="b">
+<tr class="a">
             
 <td align="left"><code><a href="#testClassesDirectory">&lt;testClassesDirectory&gt;</a></code></td>
             
@@ -726,7 +737,7 @@
 <td>The directory containing generated test classes of the project being tested.<br /><b>User property is</b>: <code>project.build.testOutputDirectory</code>.<br /></td>
           </tr>
           
-<tr class="a">
+<tr class="b">
             
 <td align="left"><code><a href="#testRuntime">&lt;testRuntime&gt;</a></code></td>
             
@@ -772,7 +783,7 @@
 </pre></div><br /><b>Default value is</b>: <code>default</code>.<br /></td>
           </tr>
           
-<tr class="b">
+<tr class="a">
             
 <td align="left"><code><a href="#threadCount">&lt;threadCount&gt;</a></code></td>
             
@@ -783,7 +794,7 @@
 <td>(JUnit 4.7 provider) The attribute thread-count allows you to specify how many threads should be allocated for this execution. Only makes sense to use in conjunction with the parallel parameter.<br /><b>User property is</b>: <code>threadCount</code>.<br /></td>
           </tr>
           
-<tr class="a">
+<tr class="b">
             
 <td align="left"><code><a href="#trimStackTrace">&lt;trimStackTrace&gt;</a></code></td>
             
@@ -794,7 +805,7 @@
 <td>When <code>true</code>, stack traces are trimmed to only show lines within the test.<br /><b>Default value is</b>: <code>false</code>.<br /><b>User property is</b>: <code>trimStackTrace</code>.<br /></td>
           </tr>
           
-<tr class="b">
+<tr class="a">
             
 <td align="left"><code><a href="#useJDK">&lt;useJDK&gt;</a></code></td>
             
@@ -832,7 +843,7 @@
 </pre></div><br /><b>Default value is</b>: <code>SYSTEM</code>.<br /></td>
           </tr>
           
-<tr class="a">
+<tr class="b">
             
 <td align="left"><code><a href="#useUIHarness">&lt;useUIHarness&gt;</a></code></td>
             
@@ -843,7 +854,7 @@
 <td>Run tests using UI (true) or headless (false) test harness.<br /><b>Default value is</b>: <code>false</code>.<br /><b>User property is</b>: <code>tycho.surefire.useUIHarness</code>.<br /></td>
           </tr>
           
-<tr class="b">
+<tr class="a">
             
 <td align="left"><code><a href="#useUIThread">&lt;useUIThread&gt;</a></code></td>
             
@@ -854,7 +865,7 @@
 <td>Run tests in UI (true) or background (false) thread. Only applies to UI test harness.<br /><b>Default value is</b>: <code>true</code>.<br /><b>User property is</b>: <code>tycho.surefire.useUIThread</code>.<br /></td>
           </tr>
           
-<tr class="a">
+<tr class="b">
             
 <td align="left"><code><a href="#useUnlimitedThreads">&lt;useUnlimitedThreads&gt;</a></code></td>
             
@@ -865,7 +876,7 @@
 <td>(JUnit 4.7 provider) Indicates that the thread pool will be unlimited. The parallel parameter and the actual number of classes/methods will decide. Setting this to &quot;true&quot; effectively disables perCoreThreadCount and threadCount.<br /><b>Default value is</b>: <code>false</code>.<br /><b>User property is</b>: <code>useUnlimitedThreads</code>.<br /></td>
           </tr>
           
-<tr class="b">
+<tr class="a">
             
 <td align="left"><code><a href="#work">&lt;work&gt;</a></code></td>
             
@@ -1141,6 +1152,20 @@
 <li><b>Required</b>: <code>No</code></li>
           
 <li><b>Default</b>: <code>${project.build.directory}/work/data/</code></li>
+        </ul><hr /></section><section>
+<h4><a name="a.3Cpackaging.3E"></a><b><a name="packaging">&lt;packaging&gt;</a></b></h4>
+        
+<div>Configures the packaging type where this mojos applies</div>
+        
+<ul>
+          
+<li><b>Type</b>: <code>java.lang.String</code></li>
+          
+<li><b>Required</b>: <code>No</code></li>
+          
+<li><b>User Property</b>: <code>tycho.plugin-test.packaging</code></li>
+          
+<li><b>Default</b>: <code>eclipse-plugin</code></li>
         </ul><hr /></section><section>
 <h4><a name="a.3Cparallel.3E"></a><b><a name="parallel">&lt;parallel&gt;</a></b></h4>
         
