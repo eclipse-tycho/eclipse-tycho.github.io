@@ -94,6 +94,9 @@
 <th>Goal</th>
 <th>Description</th></tr>
 <tr class="b">
+<td align="left"><a href="./bnd-test-mojo.html">tycho-surefire:bnd-test</a></td>
+<td>Execute tests using <a href="https://bnd.bndtools.org/chapters/310-testing.html">BND testing</a></td></tr>
+<tr class="a">
 <td align="left"><a href="./plugin-test-mojo.html">tycho-surefire:plugin-test</a></td>
 <td>Executes integration-tests in an OSGi runtime. 
 <p>The goal launches an OSGi runtime and executes the project's integration-tests (default patterns are <code>PluginTest*.class, *IT.class</code>) in that runtime. The "test runtime" consists of the bundle built in this project and its transitive dependencies, plus some Equinox and test harness bundles. The bundles are resolved from the target platform of the project. Note that the test runtime does typically <em>not</em> contain the entire target platform. If there are implicitly required bundles (e.g. <tt>org.apache.felix.scr</tt> to make declarative services work), they need to be added manually through an <tt>extraRequirements</tt> configuration on the <tt>target-platform-configuration</tt> plugin.</p>
@@ -105,11 +108,11 @@
  <li>test outcome is checked in the <code>verify</code> phase that might fail the build if there are test failures</li>
 </ol>
 <p></p> Summary files are generated according to the default maven-surefire-plugin for integration with tools that already work with maven-surefire-plugin (e.g. CI servers).</td></tr>
-<tr class="a">
+<tr class="b">
 <td align="left"><a href="./test-mojo.html">tycho-surefire:test</a></td>
 <td><p>Executes tests in an OSGi runtime. This is only supported in modules of packaging type `eclipse-test-plugin`.</p>
 <p>The goal launches an OSGi runtime and executes the project's tests in that runtime. The "test runtime" consists of the bundle built in this project and its transitive dependencies, plus some Equinox and test harness bundles. The bundles are resolved from the target platform of the project. Note that the test runtime does typically <em>not</em> contain the entire target platform. If there are implicitly required bundles (e.g. <tt>org.apache.felix.scr</tt> to make declarative services work), they need to be added manually through an <tt>extraRequirements</tt> configuration on the <tt>target-platform-configuration</tt> plugin.</p></td></tr>
-<tr class="b">
+<tr class="a">
 <td align="left"><a href="./verify-mojo.html">tycho-surefire:verify</a></td>
 <td>Verifies plugin-test runs from the integration-test stage</td></tr></table><section>
 <h3><a name="System_Requirements"></a>System Requirements</h3><a name="System_Requirements"></a>

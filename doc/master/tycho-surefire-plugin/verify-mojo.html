@@ -185,6 +185,17 @@
           
 <tr class="a">
             
+<td align="left"><code><a href="#packaging">&lt;packaging&gt;</a></code></td>
+            
+<td><code>String</code></td>
+            
+<td><code>-</code></td>
+            
+<td>(no description)<br /><b>Default value is</b>: <code>eclipse-plugin</code>.<br /><b>User property is</b>: <code>tycho.verify-test.packaging</code>.<br /></td>
+          </tr>
+          
+<tr class="b">
+            
 <td align="left"><code><a href="#reportsDirectory">&lt;reportsDirectory&gt;</a></code></td>
             
 <td><code>File</code></td>
@@ -194,7 +205,7 @@
 <td>Base directory where all reports are written to.<br /><b>Default value is</b>: <code>${project.build.directory}/failsafe-reports</code>.<br /></td>
           </tr>
           
-<tr class="b">
+<tr class="a">
             
 <td align="left"><code><a href="#skip">&lt;skip&gt;</a></code></td>
             
@@ -205,7 +216,7 @@
 <td>Set this to 'true' to bypass unit tests entirely. Its use is NOT RECOMMENDED, especially if you enable it using the &quot;maven.test.skip&quot; property, because maven.test.skip disables both running the tests and compiling the tests. Consider using the skipTests parameter instead.<br /><b>Default value is</b>: <code>false</code>.<br /><b>User property is</b>: <code>maven.test.skip</code>.<br /></td>
           </tr>
           
-<tr class="a">
+<tr class="b">
             
 <td align="left"><code><a href="#skipExec">&lt;skipExec&gt;</a></code></td>
             
@@ -216,7 +227,7 @@
 <td><b>Deprecated.</b> This old parameter is just like skipTests, but bound to the old property maven.test.skip.exec.<br /><b>User property is</b>: <code>maven.test.skip.exec</code>.<br /></td>
           </tr>
           
-<tr class="b">
+<tr class="a">
             
 <td align="left"><code><a href="#skipITs">&lt;skipITs&gt;</a></code></td>
             
@@ -227,7 +238,7 @@
 <td>Set this to 'true' to skip running integration tests, but still compile them. Its use is NOT RECOMMENDED, but quite convenient on occasion.<br /><b>User property is</b>: <code>skipITs</code>.<br /></td>
           </tr>
           
-<tr class="a">
+<tr class="b">
             
 <td align="left"><code><a href="#skipTests">&lt;skipTests&gt;</a></code></td>
             
@@ -238,7 +249,7 @@
 <td>Set this to 'true' to skip running tests, but still compile them. Its use is NOT RECOMMENDED, but quite convenient on occasion.<br /><b>User property is</b>: <code>skipTests</code>.<br /></td>
           </tr>
           
-<tr class="b">
+<tr class="a">
             
 <td align="left"><code><a href="#summaryFiles">&lt;summaryFiles&gt;</a></code></td>
             
@@ -249,7 +260,7 @@
 <td>Additional summary files to read integration test results from.<br /></td>
           </tr>
           
-<tr class="a">
+<tr class="b">
             
 <td align="left"><code><a href="#testClassesDirectory">&lt;testClassesDirectory&gt;</a></code></td>
             
@@ -260,7 +271,7 @@
 <td>The directory containing generated test classes of the project being tested. This will be included at the beginning the test classpath.<br /><b>Default value is</b>: <code>${project.build.testOutputDirectory}</code>.<br /></td>
           </tr>
           
-<tr class="b">
+<tr class="a">
             
 <td align="left"><code><a href="#testFailureIgnore">&lt;testFailureIgnore&gt;</a></code></td>
             
@@ -316,6 +327,20 @@
 <li><b>Required</b>: <code>No</code></li>
           
 <li><b>User Property</b>: <code>failIfNoTests</code></li>
+        </ul><hr /></section><section>
+<h4><a name="a.3Cpackaging.3E"></a><b><a name="packaging">&lt;packaging&gt;</a></b></h4>
+        
+<div>(no description)</div>
+        
+<ul>
+          
+<li><b>Type</b>: <code>java.lang.String</code></li>
+          
+<li><b>Required</b>: <code>No</code></li>
+          
+<li><b>User Property</b>: <code>tycho.verify-test.packaging</code></li>
+          
+<li><b>Default</b>: <code>eclipse-plugin</code></li>
         </ul><hr /></section><section>
 <h4><a name="a.3CreportsDirectory.3E"></a><b><a name="reportsDirectory">&lt;reportsDirectory&gt;</a></b></h4>
         
