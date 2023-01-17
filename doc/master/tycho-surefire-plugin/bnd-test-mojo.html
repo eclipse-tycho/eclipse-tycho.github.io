@@ -229,6 +229,17 @@
           
 <tr class="b">
             
+<td align="left"><code><a href="#launchActivationEager">&lt;launchActivationEager&gt;</a></code></td>
+            
+<td><code>boolean</code></td>
+            
+<td><code>-</code></td>
+            
+<td>Always start bundles with eager activation policy<br /><b>Default value is</b>: <code>false</code>.<br /><b>User property is</b>: <code>tycho.bnd-test.eagerActivation</code>.<br /></td>
+          </tr>
+          
+<tr class="a">
+            
 <td align="left"><code><a href="#packaging">&lt;packaging&gt;</a></code></td>
             
 <td><code>String</code></td>
@@ -238,7 +249,7 @@
 <td>(no description)<br /><b>Default value is</b>: <code>eclipse-plugin</code>.<br /><b>User property is</b>: <code>tycho.bnd-test.packaging</code>.<br /></td>
           </tr>
           
-<tr class="a">
+<tr class="b">
             
 <td align="left"><code><a href="#pluginArtifacts">&lt;pluginArtifacts&gt;</a></code></td>
             
@@ -249,7 +260,7 @@
 <td>(no description)<br /><b>User property is</b>: <code>plugin.artifacts</code>.<br /></td>
           </tr>
           
-<tr class="b">
+<tr class="a">
             
 <td align="left"><code><a href="#printBundles">&lt;printBundles&gt;</a></code></td>
             
@@ -260,7 +271,7 @@
 <td>prints all loaded bundles<br /><b>Default value is</b>: <code>false</code>.<br /><b>User property is</b>: <code>tycho.printBundles</code>.<br /></td>
           </tr>
           
-<tr class="a">
+<tr class="b">
             
 <td align="left"><code><a href="#printTests">&lt;printTests&gt;</a></code></td>
             
@@ -271,7 +282,7 @@
 <td>(no description)<br /><b>Default value is</b>: <code>true</code>.<br /><b>User property is</b>: <code>tycho.bnd-test.printTests</code>.<br /></td>
           </tr>
           
-<tr class="b">
+<tr class="a">
             
 <td align="left"><code><a href="#runfw">&lt;runfw&gt;</a></code></td>
             
@@ -289,7 +300,7 @@
 </ul><br /><b>Default value is</b>: <code>org.eclipse.osgi</code>.<br /></td>
           </tr>
           
-<tr class="a">
+<tr class="b">
             
 <td align="left"><code><a href="#skip">&lt;skip&gt;</a></code></td>
             
@@ -300,7 +311,7 @@
 <td>Same as <code>skipTests</code><br /><b>User property is</b>: <code>maven.test.skip</code>.<br /></td>
           </tr>
           
-<tr class="b">
+<tr class="a">
             
 <td align="left"><code><a href="#skipTests">&lt;skipTests&gt;</a></code></td>
             
@@ -311,7 +322,7 @@
 <td>Set this to &quot;true&quot; to skip running tests, but still compile them. Its use is NOT RECOMMENDED, but quite convenient on occasion. Default: <code>false</code><br /><b>User property is</b>: <code>skipTests</code>.<br /></td>
           </tr>
           
-<tr class="a">
+<tr class="b">
             
 <td align="left"><code><a href="#summaryAppend">&lt;summaryAppend&gt;</a></code></td>
             
@@ -322,7 +333,7 @@
 <td>(no description)<br /></td>
           </tr>
           
-<tr class="b">
+<tr class="a">
             
 <td align="left"><code><a href="#test">&lt;test&gt;</a></code></td>
             
@@ -333,7 +344,7 @@
 <td>Specify this parameter if you want to use the test pattern matching notation, Ant pattern matching, to select tests to run. The Ant pattern will be used to create an include pattern formatted like <code>**/${test}.java</code> When used, the <code>includes</code> and <code>excludes</code> patterns parameters are ignored<br /><b>User property is</b>: <code>test</code>.<br /></td>
           </tr>
           
-<tr class="a">
+<tr class="b">
             
 <td align="left"><code><a href="#testClass">&lt;testClass&gt;</a></code></td>
             
@@ -348,7 +359,7 @@
 </pre></div><br /><b>User property is</b>: <code>testClass</code>.<br /></td>
           </tr>
           
-<tr class="b">
+<tr class="a">
             
 <td align="left"><code><a href="#testClassesDirectory">&lt;testClassesDirectory&gt;</a></code></td>
             
@@ -359,7 +370,7 @@
 <td>The directory containing generated test classes of the project being tested.<br /><b>User property is</b>: <code>project.build.testOutputDirectory</code>.<br /></td>
           </tr>
           
-<tr class="a">
+<tr class="b">
             
 <td align="left"><code><a href="#tester">&lt;tester&gt;</a></code></td>
             
@@ -377,7 +388,7 @@
 </ul><br /><b>Default value is</b>: <code>biz.aQute.tester.junit-platform</code>.<br /></td>
           </tr>
           
-<tr class="b">
+<tr class="a">
             
 <td align="left"><code><a href="#testerTrace">&lt;testerTrace&gt;</a></code></td>
             
@@ -388,7 +399,7 @@
 <td>Enables tracing in the tester<br /><b>Default value is</b>: <code>false</code>.<br /><b>User property is</b>: <code>tycho.bnd-test.testerTrace</code>.<br /></td>
           </tr>
           
-<tr class="a">
+<tr class="b">
             
 <td align="left"><code><a href="#trace">&lt;trace&gt;</a></code></td>
             
@@ -399,7 +410,7 @@
 <td>If set to true, tracing is enabled for bnd<br /><b>Default value is</b>: <code>false</code>.<br /><b>User property is</b>: <code>tycho.bnd-test.trace</code>.<br /></td>
           </tr>
           
-<tr class="b">
+<tr class="a">
             
 <td align="left"><code><a href="#useJDK">&lt;useJDK&gt;</a></code></td>
             
@@ -437,7 +448,7 @@
 </pre></div><br /><b>Default value is</b>: <code>SYSTEM</code>.<br /></td>
           </tr>
           
-<tr class="a">
+<tr class="b">
             
 <td align="left"><code><a href="#work">&lt;work&gt;</a></code></td>
             
@@ -495,6 +506,20 @@
 <li><b>Type</b>: <code>java.util.List&lt;java.lang.String&gt;</code></li>
           
 <li><b>Required</b>: <code>No</code></li>
+        </ul><hr /></section><section>
+<h4><a name="a.3ClaunchActivationEager.3E"></a><b><a name="launchActivationEager">&lt;launchActivationEager&gt;</a></b></h4>
+        
+<div>Always start bundles with eager activation policy</div>
+        
+<ul>
+          
+<li><b>Type</b>: <code>boolean</code></li>
+          
+<li><b>Required</b>: <code>No</code></li>
+          
+<li><b>User Property</b>: <code>tycho.bnd-test.eagerActivation</code></li>
+          
+<li><b>Default</b>: <code>false</code></li>
         </ul><hr /></section><section>
 <h4><a name="a.3Cpackaging.3E"></a><b><a name="packaging">&lt;packaging&gt;</a></b></h4>
         
