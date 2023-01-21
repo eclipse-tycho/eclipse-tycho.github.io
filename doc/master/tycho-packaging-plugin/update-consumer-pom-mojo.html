@@ -94,7 +94,9 @@
       
 <p><b>Description</b>:</p>
       
-<div>Updates the pom file with the dependencies from the tycho model. If you further like to customize the pom you should take a look at the <a class="externalLink" href="https://www.mojohaus.org/flatten-maven-plugin/plugin-info.html">Maven Flatten Plugin</a></div>
+<div>Updates the pom file with the dependencies from the tycho model. If you further like to customize the pom you should take a look at the <a class="externalLink" href="https://www.mojohaus.org/flatten-maven-plugin/plugin-info.html">Maven Flatten Plugin</a>
+
+<p>See also <a class="externalLink" href="https://cwiki.apache.org/confluence/display/MAVEN/Build+vs+Consumer+POM">Build vs Consumer POM</a></p></div>
       
 <p><b>Attributes</b>:</p>
       
@@ -209,6 +211,50 @@
           
 <tr class="b">
             
+<td align="left"><code><a href="#relativePathFromParent">&lt;relativePathFromParent&gt;</a></code></td>
+            
+<td><code>boolean</code></td>
+            
+<td><code>-</code></td>
+            
+<td>If enabled, removes the relative path from the parent<br /><b>Default value is</b>: <code>true</code>.<br /></td>
+          </tr>
+          
+<tr class="a">
+            
+<td align="left"><code><a href="#removeBuild">&lt;removeBuild&gt;</a></code></td>
+            
+<td><code>boolean</code></td>
+            
+<td><code>-</code></td>
+            
+<td>If enabled, build section is removed from the consumer pom<br /><b>Default value is</b>: <code>true</code>.<br /></td>
+          </tr>
+          
+<tr class="b">
+            
+<td align="left"><code><a href="#removeModules">&lt;removeModules&gt;</a></code></td>
+            
+<td><code>boolean</code></td>
+            
+<td><code>-</code></td>
+            
+<td>If enabled, modules are removed from the consumer pom<br /><b>Default value is</b>: <code>true</code>.<br /></td>
+          </tr>
+          
+<tr class="a">
+            
+<td align="left"><code><a href="#replacePackagingType">&lt;replacePackagingType&gt;</a></code></td>
+            
+<td><code>boolean</code></td>
+            
+<td><code>-</code></td>
+            
+<td>if enabled, replace the real packaging-type (e.g. <code>eclipse-plugin</code>) with its implied one (e.g. <code>jar</code>). This makes the pom look more like a &quot;plain&quot; one and ensure that such dependencies are not confused by other tools (including maven).<br /><b>Default value is</b>: <code>true</code>.<br /></td>
+          </tr>
+          
+<tr class="b">
+            
 <td align="left"><code><a href="#replaceTypeWithExtension">&lt;replaceTypeWithExtension&gt;</a></code></td>
             
 <td><code>boolean</code></td>
@@ -312,6 +358,54 @@
 <li><b>Required</b>: <code>Yes</code></li>
           
 <li><b>Default</b>: <code>${project.basedir}</code></li>
+        </ul><hr /></section><section>
+<h4><a name="a.3CrelativePathFromParent.3E"></a><b><a name="relativePathFromParent">&lt;relativePathFromParent&gt;</a></b></h4>
+        
+<div>If enabled, removes the relative path from the parent</div>
+        
+<ul>
+          
+<li><b>Type</b>: <code>boolean</code></li>
+          
+<li><b>Required</b>: <code>No</code></li>
+          
+<li><b>Default</b>: <code>true</code></li>
+        </ul><hr /></section><section>
+<h4><a name="a.3CremoveBuild.3E"></a><b><a name="removeBuild">&lt;removeBuild&gt;</a></b></h4>
+        
+<div>If enabled, build section is removed from the consumer pom</div>
+        
+<ul>
+          
+<li><b>Type</b>: <code>boolean</code></li>
+          
+<li><b>Required</b>: <code>No</code></li>
+          
+<li><b>Default</b>: <code>true</code></li>
+        </ul><hr /></section><section>
+<h4><a name="a.3CremoveModules.3E"></a><b><a name="removeModules">&lt;removeModules&gt;</a></b></h4>
+        
+<div>If enabled, modules are removed from the consumer pom</div>
+        
+<ul>
+          
+<li><b>Type</b>: <code>boolean</code></li>
+          
+<li><b>Required</b>: <code>No</code></li>
+          
+<li><b>Default</b>: <code>true</code></li>
+        </ul><hr /></section><section>
+<h4><a name="a.3CreplacePackagingType.3E"></a><b><a name="replacePackagingType">&lt;replacePackagingType&gt;</a></b></h4>
+        
+<div>if enabled, replace the real packaging-type (e.g. <code>eclipse-plugin</code>) with its implied one (e.g. <code>jar</code>). This makes the pom look more like a &quot;plain&quot; one and ensure that such dependencies are not confused by other tools (including maven).</div>
+        
+<ul>
+          
+<li><b>Type</b>: <code>boolean</code></li>
+          
+<li><b>Required</b>: <code>No</code></li>
+          
+<li><b>Default</b>: <code>true</code></li>
         </ul><hr /></section><section>
 <h4><a name="a.3CreplaceTypeWithExtension.3E"></a><b><a name="replaceTypeWithExtension">&lt;replaceTypeWithExtension&gt;</a></b></h4>
         
