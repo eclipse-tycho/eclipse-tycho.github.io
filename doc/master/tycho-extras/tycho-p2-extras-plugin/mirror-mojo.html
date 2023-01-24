@@ -331,10 +331,10 @@
 <td><code>0.25.0</code></td>
             
 <td>
-<p>Add XZ-compressed repository index files. XZ offers better compression ratios esp. for highly redundant file content.</p><br /><b>Default value is</b>: <code>true</code>.<br /></br></td>
+<p>Add XZ-compressed repository index files. XZ offers better compression ratios esp. for highly redundant file content.</p><br /><b>Default value is</b>: <code>true</code>.<br /></td>
           </tr>
         </table>
-      
+      </section>
       <section>
 <h3><a name="Parameter_Details"></a>Parameter Details</h3>
         <section>
@@ -349,7 +349,7 @@
 <li><b>Required</b>: <code>No</code></li>
           
 <li><b>Default</b>: <code>true</code></li>
-        </ul><hr /></hr><section>
+        </ul><hr /></section><section>
 <h4><a name="a.3Ccompress.3E"></a><b><a name="compress">&lt;compress&gt;</a></b></h4>
         
 <div>Whether to compress the destination repository metadata files (artifacts.xml, content.xml).</div>
@@ -361,7 +361,7 @@
 <li><b>Required</b>: <code>No</code></li>
           
 <li><b>Default</b>: <code>true</code></li>
-        </ul><hr /></hr></section><section>
+        </ul><hr /></section><section>
 <h4><a name="a.3CcurrentModuleAsSource.3E"></a><b><a name="currentModuleAsSource">&lt;currentModuleAsSource&gt;</a></b></h4>
         
 <div>
@@ -376,7 +376,7 @@
 <li><b>Required</b>: <code>No</code></li>
           
 <li><b>Default</b>: <code>true</code></li>
-        </ul><hr /></hr></section><section>
+        </ul><hr /></section><section>
 <h4><a name="a.3Cdestination.3E"></a><b><a name="destination">&lt;destination&gt;</a></b></h4>
         
 <div>The destination directory to mirror to.</div>
@@ -388,7 +388,7 @@
 <li><b>Required</b>: <code>No</code></li>
           
 <li><b>Default</b>: <code>${project.build.directory}/repository</code></li>
-        </ul><hr /><section>
+        </ul><hr /></section><section>
 <h4><a name="a.3Cfilter.3E"></a><b><a name="filter">&lt;filter&gt;</a></b></h4>
         
 <div>Filter properties. In particular, a platform filter can be specified by using keys <code>osgi.os, osgi.ws, osgi.arch</code>.</div>
@@ -410,7 +410,7 @@
 <li><b>Required</b>: <code>No</code></li>
           
 <li><b>Default</b>: <code>false</code></li>
-        </ul><hr /></hr></section><section>
+        </ul><hr /></section><section>
 <h4><a name="a.3CfollowStrictOnly.3E"></a><b><a name="followStrictOnly">&lt;followStrictOnly&gt;</a></b></h4>
         
 <div>Set to true if only strict dependencies should be followed. A strict dependency is defined by a version range only including exactly one version (e.g. [1.0.0.v2009, 1.0.0.v2009]). In particular, plugins/features included in a feature are normally required via a strict dependency from the feature to the included plugin/feature.</div>
@@ -422,7 +422,7 @@
 <li><b>Required</b>: <code>No</code></li>
           
 <li><b>Default</b>: <code>false</code></li>
-        </ul><hr /></hr></section><section>
+        </ul><hr /></section><section>
 <h4><a name="a.3CignoreErrors.3E"></a><b><a name="ignoreErrors">&lt;ignoreErrors&gt;</a></b></h4>
         
 <div>
@@ -449,7 +449,7 @@
 <li><b>Required</b>: <code>No</code></li>
           
 <li><b>Default</b>: <code>true</code></li>
-        </ul><hr /></hr></section><section>
+        </ul><hr /></section><section>
 <h4><a name="a.3CincludeNonGreedy.3E"></a><b><a name="includeNonGreedy">&lt;includeNonGreedy&gt;</a></b></h4>
         
 <div>Whether or not to follow non-greedy requirements.</div>
@@ -461,7 +461,7 @@
 <li><b>Required</b>: <code>No</code></li>
           
 <li><b>Default</b>: <code>true</code></li>
-        </ul><hr /></hr></section><section>
+        </ul><hr /></section><section>
 <h4><a name="a.3CincludeOptional.3E"></a><b><a name="includeOptional">&lt;includeOptional&gt;</a></b></h4>
         
 <div>Whether or not to follow optional requirements.</div>
@@ -473,7 +473,7 @@
 <li><b>Required</b>: <code>No</code></li>
           
 <li><b>Default</b>: <code>true</code></li>
-        </ul><hr /></hr><section><section>
+        </ul><hr /></section><section>
 <h4><a name="a.3Cius.3E"></a><b><a name="ius">&lt;ius&gt;</a></b></h4>
         
 <div>(Optional) Which IUs to mirror. If omitted, all IUs available in the source repositories will be mirrored. An IU must specify an id and may specify a version. If version is omitted, the latest available version will be queried. By default, IUs required by the specified IUs will also be mirrored. See also <code>followStrictOnly</code>, <code>followOnlyFilteredRequirements</code> , <code>includeOptional</code>, <code>includeNonGreedy</code>, <code>includeFeatures</code>.</div>
