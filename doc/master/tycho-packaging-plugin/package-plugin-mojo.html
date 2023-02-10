@@ -227,6 +227,22 @@
           
 <tr class="a">
             
+<td align="left"><code><a href="#deriveHeaderFromSource">&lt;deriveHeaderFromSource&gt;</a></code></td>
+            
+<td><code>boolean</code></td>
+            
+<td><code>-</code></td>
+            
+<td>Whether to derive OSGi-Headers from the sources, currently the following header are supported 
+
+<ul>
+ 
+<li><code>org.osgi.framework.Constants.REQUIRE_CAPABILITY</code> is enhanced by those from code annotations</li>
+</ul><br /><b>Default value is</b>: <code>true</code>.<br /></td>
+          </tr>
+          
+<tr class="b">
+            
 <td align="left"><code><a href="#qualifier">&lt;qualifier&gt;</a></code></td>
             
 <td><code>String</code></td>
@@ -236,7 +252,7 @@
 <td>Build qualifier. Recommended way to set this parameter is using build-qualifier goal.<br /><b>User property is</b>: <code>buildQualifier</code>.<br /></td>
           </tr>
           
-<tr class="b">
+<tr class="a">
             
 <td align="left"><code><a href="#sourceReferences">&lt;sourceReferences&gt;</a></code></td>
             
@@ -260,7 +276,7 @@
 </pre></div><br /></td>
           </tr>
           
-<tr class="a">
+<tr class="b">
             
 <td align="left"><code><a href="#strictBinIncludes">&lt;strictBinIncludes&gt;</a></code></td>
             
@@ -271,7 +287,7 @@
 <td>If set to <code>true</code> (the default), missing build.properties bin.includes will cause build failure. If set to <code>false</code>, missing build.properties bin.includes will be reported as warnings but the build will not fail.<br /><b>Default value is</b>: <code>true</code>.<br /></td>
           </tr>
           
-<tr class="b">
+<tr class="a">
             
 <td align="left"><code><a href="#useDefaultExcludes">&lt;useDefaultExcludes&gt;</a></code></td>
             
@@ -353,6 +369,23 @@
 <ul>
  
 <li><code>org.osgi.framework.Constants.BUNDLE_LICENSE</code> is generated from maven &lt;licenses&gt; configuration</li>
+</ul></div>
+        
+<ul>
+          
+<li><b>Type</b>: <code>boolean</code></li>
+          
+<li><b>Required</b>: <code>No</code></li>
+          
+<li><b>Default</b>: <code>true</code></li>
+        </ul><hr /></section><section>
+<h4><a name="a.3CderiveHeaderFromSource.3E"></a><b><a name="deriveHeaderFromSource">&lt;deriveHeaderFromSource&gt;</a></b></h4>
+        
+<div>Whether to derive OSGi-Headers from the sources, currently the following header are supported 
+
+<ul>
+ 
+<li><code>org.osgi.framework.Constants.REQUIRE_CAPABILITY</code> is enhanced by those from code annotations</li>
 </ul></div>
         
 <ul>
