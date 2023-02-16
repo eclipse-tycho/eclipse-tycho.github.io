@@ -219,13 +219,13 @@
           
 <tr class="b">
             
-<td align="left"><code><a href="#lockMode">&lt;lockMode&gt;</code></td>
+<td align="left"><code><a href="#lockMode">&lt;lockMode&gt;</a></code></td>
             
 <td><code>String</code></td>
             
 <td><code>1.5</code></td>
             
-<td>The lock mode to use when invoking gpg. By default no lock mode will be specified. Valid values are <code>once</code>, <code>multiple</code> and <code>never</code>. The lock mode gets translated into the corresponding <code>--lock-___</code> command line argument. Improper usage of this option may lead to data and key corruption.<br /></br><b>See also:</b> <a class="externalLink" href="http://www.gnupg.org/documentation/manuals/gnupg/GPG-Configuration-Options.html">the --lock-options</a><br /></br><b>User property is</b>: <code>gpg.lockMode</code>.<br /></td>
+<td>The lock mode to use when invoking gpg. By default no lock mode will be specified. Valid values are <code>once</code>, <code>multiple</code> and <code>never</code>. The lock mode gets translated into the corresponding <code>--lock-___</code> command line argument. Improper usage of this option may lead to data and key corruption.<br /><b>See also:</b> <a class="externalLink" href="http://www.gnupg.org/documentation/manuals/gnupg/GPG-Configuration-Options.html">the --lock-options</a><br /><b>User property is</b>: <code>gpg.lockMode</code>.<br /></td>
           </tr>
           
 <tr class="a">
@@ -236,7 +236,7 @@
             
 <td><code>-</code></td>
             
-<td>The passphrase to use when signing. If not given, look up the value under Maven settings using server id at 'passphraseServerKey' configuration.<br /></br><b>User property is</b>: <code>gpg.passphrase</code>.<br /></td>
+<td>The passphrase to use when signing. If not given, look up the value under Maven settings using server id at 'passphraseServerKey' configuration.<br /><b>User property is</b>: <code>gpg.passphrase</code>.<br /></td>
           </tr>
           
 <tr class="b">
@@ -247,7 +247,7 @@
             
 <td><code>1.6</code></td>
             
-<td>Server id to lookup the passphrase under Maven settings.<br /></br><b>Default value is</b>: <code>gpg.passphrase</code>.<br /></br><b>User property is</b>: <code>gpg.passphraseServerId</code>.<br /></br></td>
+<td>Server id to lookup the passphrase under Maven settings.<br /><b>Default value is</b>: <code>gpg.passphrase</code>.<br /><b>User property is</b>: <code>gpg.passphraseServerId</code>.<br /></td>
           </tr>
           
 <tr class="a">
@@ -258,7 +258,7 @@
             
 <td><code>-</code></td>
             
-<td>Configures how to generate PGP signatures for artifacts that already have one or more PGP signatures, <code>skip</code> to generate no new PGP signature, <code>replace</code> to replace the existing signature(s) with a new signature, and <code>merge</code> to add a new signature to any existing signature(s).<br /><b>Default value is</b>: <code>skip</code>.<br /></br></td>
+<td>Configures how to generate PGP signatures for artifacts that already have one or more PGP signatures, <code>skip</code> to generate no new PGP signature, <code>replace</code> to replace the existing signature(s) with a new signature, and <code>merge</code> to add a new signature to any existing signature(s).<br /><b>Default value is</b>: <code>skip</code>.<br /></td>
           </tr>
           
 <tr class="b">
@@ -280,7 +280,7 @@
             
 <td><code>-</code></td>
             
-<td>The repository location.<br /></br><b>Default value is</b>: <code>${project.build.directory}/repository</code>.<br /></br></td>
+<td>The repository location.<br /><b>Default value is</b>: <code>${project.build.directory}/repository</code>.<br /></td>
           </tr>
           
 <tr class="b">
@@ -292,7 +292,7 @@
 <td><code>1.2</code></td>
             
 <td>
-<p>The path to a secret keyring to add to the list of keyrings. By default, only the <code>secring.gpg</code> from gpg's home directory is considered. Use this option (in combination with <code>publicKeyring</code> and <code>defaultKeyring</code> if required) to use a different secret key. <i>Note:</i> Relative paths are resolved against gpg's home directory, not the project base directory.</p> <b>NOTE: </b>As of gpg 2.1 this is an obsolete option and ignored. All secret keys are stored in the &#x2018;private-keys-v1.d&#x2019; directory below the GnuPG home directory.<br /><b>User property is</b>: <code>gpg.secretKeyring</code>.<br /></br></td>
+<p>The path to a secret keyring to add to the list of keyrings. By default, only the <code>secring.gpg</code> from gpg's home directory is considered. Use this option (in combination with <code>publicKeyring</code> and <code>defaultKeyring</code> if required) to use a different secret key. <i>Note:</i> Relative paths are resolved against gpg's home directory, not the project base directory.</p> <b>NOTE: </b>As of gpg 2.1 this is an obsolete option and ignored. All secret keys are stored in the &#x2018;private-keys-v1.d&#x2019; directory below the GnuPG home directory.<br /><b>User property is</b>: <code>gpg.secretKeyring</code>.<br /></td>
           </tr>
           
 <tr class="a">
@@ -303,7 +303,7 @@
             
 <td><code>-</code></td>
             
-<td>Configure the Bouncy Castle <code>signer</code> to load the secret keys, stored in armored from, from the specified file. This avoids needing to import the keys into GnuPG's keybox.<br /></br><b>User property is</b>: <code>tycho.pgp.signer.bc.secretKeys</code>.<br /></br></td>
+<td>Configure the Bouncy Castle <code>signer</code> to load the secret keys, stored in armored from, from the specified file. This avoids needing to import the keys into GnuPG's keybox.<br /><b>User property is</b>: <code>tycho.pgp.signer.bc.secretKeys</code>.<br /></td>
           </tr>
           
 <tr class="b">
@@ -314,7 +314,7 @@
             
 <td><code>-</code></td>
             
-<td>Configure the signer used for PGP signing. Currently supported are <code>gpg</code> for launching the native <code>gpg</code> executable, and <code>bc</code> for using Bouncy Castle libraries. The latter is much faster and it can sign in parallel, so is very much faster.<br /></br><b>Default value is</b>: <code>gpg</code>.<br /></br><b>User property is</b>: <code>tycho.pgp.signer</code>.<br /></td>
+<td>Configure the signer used for PGP signing. Currently supported are <code>gpg</code> for launching the native <code>gpg</code> executable, and <code>bc</code> for using Bouncy Castle libraries. The latter is much faster and it can sign in parallel, so is very much faster.<br /><b>Default value is</b>: <code>gpg</code>.<br /><b>User property is</b>: <code>tycho.pgp.signer</code>.<br /></td>
           </tr>
           
 <tr class="a">
@@ -325,7 +325,7 @@
             
 <td><code>-</code></td>
             
-<td>Configure to <code>true</code> to generate a PGP signature for binary artifacts.<br /></br><b>Default value is</b>: <code>true</code>.<br /></td>
+<td>Configure to <code>true</code> to generate a PGP signature for binary artifacts.<br /><b>Default value is</b>: <code>true</code>.<br /></td>
           </tr>
           
 <tr class="b">
@@ -361,7 +361,7 @@
 <td>Passes <code>--use-agent</code> or <code>--no-use-agent</code> to gpg. If using an agent, the passphrase is optional as the agent will provide it. For gpg2, specify true as --no-use-agent was removed in gpg2 and doesn't ask for a passphrase anymore.<br /><b>Default value is</b>: <code>true</code>.<br /><b>User property is</b>: <code>gpg.useagent</code>.<br /></td>
           </tr>
         </table>
-      
+      </section>
       <section>
 <h3><a name="Parameter_Details"></a>Parameter Details</h3>
         <section>
