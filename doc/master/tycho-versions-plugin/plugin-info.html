@@ -44,6 +44,7 @@
     <li><a href="../StructuredBuild.html" title="Structured Build Layout and Pomless Builds"><span class="none"></span>Structured Build Layout and Pomless Builds</a></li>
     <li><a href="../PackagingTypes.html" title="Packaging Types"><span class="none"></span>Packaging Types</a></li>
     <li><a href="../TestingBundles.html" title="Testing Bundles"><span class="none"></span>Testing Bundles</a></li>
+    <li><a href="../TychoCiFriendly.html" title="Tycho CI Friendly Versions"><span class="none"></span>Tycho CI Friendly Versions</a></li>
     <li><a href="../target-platform-configuration/plugin-info.html" title="Target Platform Configuration"><span class="none"></span>Target Platform Configuration</a></li>
     <li><a href="../tycho-compiler-plugin/plugin-info.html" title="Compiler Plugin"><span class="none"></span>Compiler Plugin</a></li>
     <li><a href="../tycho-ds-plugin/plugin-info.html" title="Declarative Services Plugin"><span class="none"></span>Declarative Services Plugin</a></li>
@@ -100,6 +101,9 @@
  <li>You can either configure this in the pom (e.g. in a profile) with an explicit execution, or specify it on the command line like <code>mvn [other goals and options] org.eclipse.tycho:tycho-versions-plugin:bump-versions</code></li><code> <li>if the build fails with a VersionBumpRequiredException the projects version is incremented</li> <li>one can now run the build again with the incremented version and verify the automatic applied changes</li> </code>
 </ul></td></tr>
 <tr class="a">
+<td align="left"><a href="./set-property-mojo.html">tycho-versions:set-property</a></td>
+<td><p>Updates some properties in a pom file</p></td></tr>
+<tr class="b">
 <td align="left"><a href="./set-version-mojo.html">tycho-versions:set-version</a></td>
 <td><p>Sets the version of the current project and child projects with the same version, and updates references as necessary.</p>
 <p>The set-version goal implements a version refactoring for a Tycho reactor: When updating the version of a project, it consistently updates the version strings in the project's configuration files (e.g. pom.xml and META-INF/MANIFEST.MF) and all references to that project (e.g. in a feature.xml).</p>
@@ -114,10 +118,10 @@
   </ul></li>
  <li>When an <tt>eclipse-repository</tt> project is changed and a product file in the project has an equivalent version, the version in the product file is also changed.</li>
 </ul></td></tr>
-<tr class="b">
+<tr class="a">
 <td align="left"><a href="./update-eclipse-metadata-mojo.html">tycho-versions:update-eclipse-metadata</a></td>
 <td>Update Eclipse/OSGi metadata (MANIFEST.MF, feature.xml, product.xml) version to match corresponding pom.xml.</td></tr>
-<tr class="a">
+<tr class="b">
 <td align="left"><a href="./update-pom-mojo.html">tycho-versions:update-pom</a></td>
 <td>Update pom.xml version to match corresponding Eclipse/OSGi metadata.</td></tr></table><section>
 <h3><a name="System_Requirements"></a>System Requirements</h3><a name="System_Requirements"></a>
