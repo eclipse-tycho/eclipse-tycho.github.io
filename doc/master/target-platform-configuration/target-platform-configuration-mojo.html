@@ -137,7 +137,7 @@
             
 <td align="left"><code><a href="#dependency-resolution">&lt;dependency-resolution&gt;</a></code></td>
             
-<td><code>Object</code></td>
+<td><code>DependencyResolutionConfiguration</code></td>
             
 <td><code>-</code></td>
             
@@ -212,7 +212,7 @@
             
 <td align="left"><code><a href="#filters">&lt;filters&gt;</a></code></td>
             
-<td><code>List&lt;?&gt;</code></td>
+<td><code>List&lt;TargetPlatformFilter$CapabilityPattern&gt;</code></td>
             
 <td><code>-</code></td>
             
@@ -246,10 +246,9 @@ javax.persistence --&gt; &lt;filter&gt; &lt;type&gt;java-package&lt;/type&gt;
 &lt;id&gt;org.eclipse.equinox.servletbridge.extensionbundle&lt;/id&gt; &lt;removeAll /&gt;
 &lt;/filter&gt; &lt;/filters&gt; &lt;/configuration&gt; &lt;/plugin&gt;
 
+</pre></div>
 
-<div>
-<pre>
-<p></p></pre></div></pre></div><br /></td>
+<p></p><br /></td>
           </tr>
           
 <tr class="a">
@@ -293,7 +292,7 @@ javax.persistence --&gt; &lt;filter&gt; &lt;type&gt;java-package&lt;/type&gt;
             
 <td align="left"><code><a href="#target">&lt;target&gt;</a></code></td>
             
-<td><code>Xpp3Dom</code></td>
+<td><code>TargetParameterObject</code></td>
             
 <td><code>-</code></td>
             
@@ -358,7 +357,7 @@ javax.persistence --&gt; &lt;filter&gt; &lt;type&gt;java-package&lt;/type&gt;
         
 <ul>
           
-<li><b>Type</b>: <code>java.lang.Object</code></li>
+<li><b>Type</b>: <code>org.eclipse.tycho.target.DependencyResolutionConfiguration</code></li>
           
 <li><b>Required</b>: <code>No</code></li>
         </ul><hr /></section><section>
@@ -436,14 +435,13 @@ javax.persistence --&gt; &lt;filter&gt; &lt;type&gt;java-package&lt;/type&gt;
 &lt;id&gt;org.eclipse.equinox.servletbridge.extensionbundle&lt;/id&gt; &lt;removeAll /&gt;
 &lt;/filter&gt; &lt;/filters&gt; &lt;/configuration&gt; &lt;/plugin&gt;
 
+</pre></div>
 
-<div>
-<pre>
-<p></p></pre></div></pre></div></div>
+<p></p></div>
         
 <ul>
           
-<li><b>Type</b>: <code>java.util.List&lt;?&gt;</code></li>
+<li><b>Type</b>: <code>java.util.List&lt;org.eclipse.tycho.artifacts.TargetPlatformFilter$CapabilityPattern&gt;</code></li>
           
 <li><b>Required</b>: <code>No</code></li>
         </ul><hr /></section><section>
@@ -501,7 +499,7 @@ javax.persistence --&gt; &lt;filter&gt; &lt;type&gt;java-package&lt;/type&gt;
         
 <ul>
           
-<li><b>Type</b>: <code>org.codehaus.plexus.util.xml.Xpp3Dom</code></li>
+<li><b>Type</b>: <code>org.eclipse.tycho.target.TargetParameterObject</code></li>
           
 <li><b>Required</b>: <code>No</code></li>
         </ul><hr /></section><section>
