@@ -87,7 +87,7 @@
         <main id="bodyColumn"  class="span10" >
 
   
-    </section><section>
+    <section>
 <h2><a name="tycho-versions:set-parent-version"></a>tycho-versions:set-parent-version</h2>
       
 <p><b>Full name</b>:</p>
@@ -109,7 +109,7 @@
         
 <li>The goal is not marked as thread-safe and thus does not support parallel builds.</li>
       </ul>
-      </section><section>
+      <section>
 <h3><a name="Required_Parameters"></a>Required Parameters</h3>
         
 <table class="table table-striped" border="0">
@@ -134,7 +134,7 @@
 <td><code>-</code></td>
             
 <td>
-<p>The new parent version to set to the current project.</p><br /></br><b>User property is</b>: <code>newParentVersion</code>.<br /></br></td>
+<p>The new parent version to set to the current project.</p><br /><b>User property is</b>: <code>newParentVersion</code>.<br /></td>
           </tr>
         </table>
       </section>
@@ -163,7 +163,7 @@
 <td><code>-</code></td>
             
 <td>
-<p>Initial list of of projects to be changed. From these projects, the full list of projects to be changed is derived according to the rules described above. If set, this parameter needs to be specified as a comma separated list of artifactIds.</p><br /><b>Default value is</b>: <code>${project.artifactId}</code>.<br /><b>User property is</b>: <code>artifacts</code>.<br /></br></td>
+<p>Initial list of of projects to be changed. From these projects, the full list of projects to be changed is derived according to the rules described above. If set, this parameter needs to be specified as a comma separated list of artifactIds.</p><br /><b>Default value is</b>: <code>${project.artifactId}</code>.<br /><b>User property is</b>: <code>artifacts</code>.<br /></td>
           </tr>
           
 <tr class="a">
@@ -174,13 +174,13 @@
             
 <td><code>-</code></td>
             
-<td>List of additional modules (relative to the basedir) to considering even if not listed in the pom, this can be used to update related projects that are not included as modules in the root.<br /></br><b>User property is</b>: <code>modules</code>.<br /></td>
+<td>List of additional modules (relative to the basedir) to considering even if not listed in the pom, this can be used to update related projects that are not included as modules in the root.<br /><b>User property is</b>: <code>modules</code>.<br /></td>
           </tr>
         </table>
-      </section></section>
+      </section>
       <section>
 <h3><a name="Parameter_Details"></a>Parameter Details</h3>
-        </section><section>
+        <section>
 <h4><a name="a.3Cartifacts.3E"></a><b><a name="artifacts">&lt;artifacts&gt;</a></b></h4>
         
 <div>
@@ -195,7 +195,7 @@
 <li><b>User Property</b>: <code>artifacts</code></li>
           
 <li><b>Default</b>: <code>${project.artifactId}</code></li>
-        </ul><hr /></hr></section><section>
+        </ul><hr /></section><section>
 <h4><a name="a.3Cmodules.3E"></a><b><a name="modules">&lt;modules&gt;</a></b></h4>
         
 <div>List of additional modules (relative to the basedir) to considering even if not listed in the pom, this can be used to update related projects that are not included as modules in the root.</div>
@@ -207,7 +207,7 @@
 <li><b>Required</b>: <code>No</code></li>
           
 <li><b>User Property</b>: <code>modules</code></li>
-        </ul><hr /></hr></section><section>
+        </ul><hr /></section><section>
 <h4><a name="a.3CnewParentVersion.3E"></a><b><a name="newParentVersion">&lt;newParentVersion&gt;</a></b></h4>
         
 <div>
