@@ -274,10 +274,23 @@ javax.persistence --&gt; &lt;filter&gt; &lt;type&gt;java-package&lt;/type&gt;
 
 <p></p>
 
-<p>&#x1f4dd; Tycho always attempts to resolve transitive dependencies, so if you need a POM dependency in the target platform of one module, you will also need it in all downstream modules. Therefore the POM dependencies (and the pomDependencies=consider configuration) typically need to be added in the parent POM.</p><br /><b>Default value is</b>: <code>ignore</code>.<br /></td>
+<p>&#x1f4dd; Tycho always attempts to resolve transitive dependencies, so if you need a POM dependency in the target platform of one module, you will also need it in all downstream modules. Therefore the POM dependencies (and the pomDependencies=consider configuration) typically need to be added in the parent POM.</p>
+
+<p>If no explicit value is configured Tycho uses <code>org.eclipse.tycho.core.resolver.shared.PomDependencies.ignore</code> if eager resolution is activated and <code>org.eclipse.tycho.core.resolver.shared.PomDependencies.consider</code> otherwhise.</p><br /></td>
           </tr>
           
 <tr class="b">
+            
+<td align="left"><code><a href="#requireEagerResolve">&lt;requireEagerResolve&gt;</a></code></td>
+            
+<td><code>boolean</code></td>
+            
+<td><code>-</code></td>
+            
+<td>Configures when resolve of the project specific target platform happens. If the value is <code>true</code> the project platform is computed as early as when starting the build before the first mojo executes, if the value is <code>false</code> the resolving is delayed until the project is actually executed, this can considerably improve your build speed in parallel builds. The drawback is that there might be some tools making assumptions about the build being static from the start or having &quot;hidden&quot; dependency chains that point back to your build reactor. For these reason this can be configured here even though it is recommend to always use lazy resolve for best performance and maximum of features, e.g. using mixed maven builds require lazy resolving of that projects depend on the plain maven projects.<br /><b>Default value is</b>: <code>false</code>.<br /><b>User property is</b>: <code>tycho.target.eager</code>.<br /><b>Alias is</b>: <code>tycho.resolver.classic</code>.</td>
+          </tr>
+          
+<tr class="a">
             
 <td align="left"><code><a href="#resolveWithExecutionEnvironmentConstraints">&lt;resolveWithExecutionEnvironmentConstraints&gt;</a></code></td>
             
@@ -288,7 +301,7 @@ javax.persistence --&gt; &lt;filter&gt; &lt;type&gt;java-package&lt;/type&gt;
 <td>(no description)<br /><b>Default value is</b>: <code>true</code>.<br /></td>
           </tr>
           
-<tr class="a">
+<tr class="b">
             
 <td align="left"><code><a href="#target">&lt;target&gt;</a></code></td>
             
@@ -308,7 +321,7 @@ javax.persistence --&gt; &lt;filter&gt; &lt;type&gt;java-package&lt;/type&gt;
 </ul><br /></td>
           </tr>
           
-<tr class="b">
+<tr class="a">
             
 <td align="left"><code><a href="#targetDefinitionIncludeSource">&lt;targetDefinitionIncludeSource&gt;</a></code></td>
             
@@ -462,15 +475,31 @@ javax.persistence --&gt; &lt;filter&gt; &lt;type&gt;java-package&lt;/type&gt;
 
 <p></p>
 
-<p>&#x1f4dd; Tycho always attempts to resolve transitive dependencies, so if you need a POM dependency in the target platform of one module, you will also need it in all downstream modules. Therefore the POM dependencies (and the pomDependencies=consider configuration) typically need to be added in the parent POM.</p></div>
+<p>&#x1f4dd; Tycho always attempts to resolve transitive dependencies, so if you need a POM dependency in the target platform of one module, you will also need it in all downstream modules. Therefore the POM dependencies (and the pomDependencies=consider configuration) typically need to be added in the parent POM.</p>
+
+<p>If no explicit value is configured Tycho uses <code>org.eclipse.tycho.core.resolver.shared.PomDependencies.ignore</code> if eager resolution is activated and <code>org.eclipse.tycho.core.resolver.shared.PomDependencies.consider</code> otherwhise.</p></div>
         
 <ul>
           
 <li><b>Type</b>: <code>org.eclipse.tycho.core.resolver.shared.PomDependencies</code></li>
           
 <li><b>Required</b>: <code>No</code></li>
+        </ul><hr /></section><section>
+<h4><a name="a.3CrequireEagerResolve.3E"></a><b><a name="requireEagerResolve">&lt;requireEagerResolve&gt;</a></b></h4>
+        
+<div>Configures when resolve of the project specific target platform happens. If the value is <code>true</code> the project platform is computed as early as when starting the build before the first mojo executes, if the value is <code>false</code> the resolving is delayed until the project is actually executed, this can considerably improve your build speed in parallel builds. The drawback is that there might be some tools making assumptions about the build being static from the start or having &quot;hidden&quot; dependency chains that point back to your build reactor. For these reason this can be configured here even though it is recommend to always use lazy resolve for best performance and maximum of features, e.g. using mixed maven builds require lazy resolving of that projects depend on the plain maven projects.</div>
+        
+<ul>
           
-<li><b>Default</b>: <code>ignore</code></li>
+<li><b>Type</b>: <code>boolean</code></li>
+          
+<li><b>Required</b>: <code>No</code></li>
+          
+<li><b>User Property</b>: <code>tycho.target.eager</code></li>
+          
+<li><b>Default</b>: <code>false</code></li>
+          
+<li><b>Alias</b>: <code>tycho.resolver.classic</code></li>
         </ul><hr /></section><section>
 <h4><a name="a.3CresolveWithExecutionEnvironmentConstraints.3E"></a><b><a name="resolveWithExecutionEnvironmentConstraints">&lt;resolveWithExecutionEnvironmentConstraints&gt;</a></b></h4>
         
