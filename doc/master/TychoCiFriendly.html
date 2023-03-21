@@ -97,7 +97,8 @@
 </ul>
 <p>These uses the usual semantics that you can use them in a version string e.g. <code>&lt;version&gt;${releaseVersion}${qualifier}&lt;/version&gt;</code> and pass them on the commandline.</p>
 <p>Beside this, Tycho supports some useful default calculation for <code>qualifier</code> if you give a format on the commandline with <code>-Dtycho.buildqualifier.format=yyyyMMddHHmm</code>
-(or <a class="externalLink" href="https://www.eclipse.org/tycho/sitedocs/tycho-packaging-plugin/build-qualifier-mojo.html#format">any other format supported</a>). Tycho will also make the build qualifier available in your Maven model!</p>
+(or <a class="externalLink" href="https://tycho.eclipseprojects.io/doc/latest/tycho-packaging-plugin/build-qualifier-mojo.html#format">any other format supported</a>). Tycho will also make the build qualifier available in your Maven model!</p>
+<p>Alternatively, if you want that your qualifier matches the one from maven you can specify <code>-DforceContextQualifier=abc</code></p>
 <p>That way you can configure your pom in the following way:</p>
 
 <div class="source"><pre class="prettyprint"><code>&lt;project&gt;

@@ -246,6 +246,17 @@
           
 <tr class="a">
             
+<td align="left"><code><a href="#removeParent">&lt;removeParent&gt;</a></code></td>
+            
+<td><code>boolean</code></td>
+            
+<td><code>-</code></td>
+            
+<td>If enabled, removes the parent and resolves version and group id directly<br /><b>Default value is</b>: <code>true</code>.<br /></td>
+          </tr>
+          
+<tr class="b">
+            
 <td align="left"><code><a href="#replacePackagingType">&lt;replacePackagingType&gt;</a></code></td>
             
 <td><code>boolean</code></td>
@@ -255,7 +266,7 @@
 <td>if enabled, replace the real packaging-type (e.g. <code>eclipse-plugin</code>) with its implied one (e.g. <code>jar</code>). This makes the pom look more like a &quot;plain&quot; one and ensure that such dependencies are not confused by other tools (including maven).<br /><b>Default value is</b>: <code>true</code>.<br /></td>
           </tr>
           
-<tr class="b">
+<tr class="a">
             
 <td align="left"><code><a href="#replaceTypeWithExtension">&lt;replaceTypeWithExtension&gt;</a></code></td>
             
@@ -266,7 +277,7 @@
 <td>replace they type of a dependency (e.g. 'eclipse-plugin') with its extension (e.g. 'jar')<br /><b>Default value is</b>: <code>true</code>.<br /></td>
           </tr>
           
-<tr class="a">
+<tr class="b">
             
 <td align="left"><code><a href="#resolver">&lt;resolver&gt;</a></code></td>
             
@@ -277,7 +288,7 @@
 <td>(no description)<br /><b>Default value is</b>: <code>local,p2,central</code>.<br /></td>
           </tr>
           
-<tr class="b">
+<tr class="a">
             
 <td align="left"><code><a href="#skipPomGeneration">&lt;skipPomGeneration&gt;</a></code></td>
             
@@ -288,7 +299,7 @@
 <td>(no description)<br /></td>
           </tr>
           
-<tr class="a">
+<tr class="b">
             
 <td align="left"><code><a href="#updatePomFile">&lt;updatePomFile&gt;</a></code></td>
             
@@ -388,6 +399,18 @@
 <h4><a name="a.3CremoveModules.3E"></a><b><a name="removeModules">&lt;removeModules&gt;</a></b></h4>
         
 <div>If enabled, modules are removed from the consumer pom</div>
+        
+<ul>
+          
+<li><b>Type</b>: <code>boolean</code></li>
+          
+<li><b>Required</b>: <code>No</code></li>
+          
+<li><b>Default</b>: <code>true</code></li>
+        </ul><hr /></section><section>
+<h4><a name="a.3CremoveParent.3E"></a><b><a name="removeParent">&lt;removeParent&gt;</a></b></h4>
+        
+<div>If enabled, removes the parent and resolves version and group id directly</div>
         
 <ul>
           
