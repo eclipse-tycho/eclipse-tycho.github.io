@@ -96,7 +96,7 @@
       
 <p><b>Description</b>:</p>
       
-<div>Modifies the p2 metadata (<code>artifacts.xml</code>) to add a PGP signature to each included artifact. A signature is added as a <code>pgp.signatures</code> property on the artifact metadata, in armored form; and the public key of the signer is <code>optionally added</code> as a <code>pgp.publicKeys</code> property on the repository metadata, in armored form, and/or <code>optionally added</code> as a <code>pgp.publicKeys</code> property on the artifact metadata, in armored form.<br /></br><b>See also:</b> <a class="externalLink" href="https://help.eclipse.org/latest/index.jsp?topic=%2Forg.eclipse.platform.doc.isv%2Fguide%2Fp2_pgp.html">Using PGP signatures in p2</a></div>
+<div>Modifies the p2 metadata (<code>artifacts.xml</code>) to add a PGP signature to each included artifact. A signature is added as a <code>pgp.signatures</code> property on the artifact metadata, in armored form; and the public key of the signer is <code>optionally added</code> as a <code>pgp.publicKeys</code> property on the repository metadata, in armored form, and/or <code>optionally added</code> as a <code>pgp.publicKeys</code> property on the artifact metadata, in armored form.<br /><b>See also:</b> <a class="externalLink" href="https://help.eclipse.org/latest/index.jsp?topic=%2Forg.eclipse.platform.doc.isv%2Fguide%2Fp2_pgp.html">Using PGP signatures in p2</a></div>
       
 <p><b>Attributes</b>:</p>
       
@@ -108,7 +108,7 @@
         
 <li>Binds by default to the <a class="externalLink" href="http://maven.apache.org/ref/current/maven-core/lifecycles.html">lifecycle phase</a>: <code>prepare-package</code>.</li>
       </ul>
-      </section><section>
+      <section>
 <h3><a name="Optional_Parameters"></a>Optional Parameters</h3>
         
 <table class="table table-striped" border="0">
@@ -132,7 +132,7 @@
             
 <td><code>-</code></td>
             
-<td>Configure to <code>true</code> to add the public key of the signature to each signed artifact's metadata.<br /></br><b>Default value is</b>: <code>true</code>.<br /></br><b>Alias is</b>: <code>addPublicKeysToArtifacts</code>.</td>
+<td>Configure to <code>true</code> to add the public key of the signature to each signed artifact's metadata.<br /><b>Default value is</b>: <code>true</code>.<br /><b>Alias is</b>: <code>addPublicKeysToArtifacts</code>.</td>
           </tr>
           
 <tr class="a">
@@ -143,7 +143,7 @@
             
 <td><code>-</code></td>
             
-<td>Configure to <code>true</code> to add the public key of each signature to the repository's metadata.<br /></br><b>Default value is</b>: <code>true</code>.<br /></br></td>
+<td>Configure to <code>true</code> to add the public key of each signature to the repository's metadata.<br /><b>Default value is</b>: <code>true</code>.<br /></td>
           </tr>
           
 <tr class="b">
@@ -154,7 +154,7 @@
             
 <td><code>1.2</code></td>
             
-<td>Whether to add the default keyrings from gpg's home directory to the list of used keyrings.<br /><b>Default value is</b>: <code>true</code>.<br /></br><b>User property is</b>: <code>gpg.defaultKeyring</code>.<br /></br></td>
+<td>Whether to add the default keyrings from gpg's home directory to the list of used keyrings.<br /><b>Default value is</b>: <code>true</code>.<br /><b>User property is</b>: <code>gpg.defaultKeyring</code>.<br /></td>
           </tr>
           
 <tr class="a">
@@ -165,7 +165,7 @@
             
 <td><code>1.1</code></td>
             
-<td>The path to the GnuPG executable to use for artifact signing. Defaults to either &quot;gpg&quot; or &quot;gpg.exe&quot; depending on the operating system.<br /><b>User property is</b>: <code>gpg.executable</code>.<br /></br></td>
+<td>The path to the GnuPG executable to use for artifact signing. Defaults to either &quot;gpg&quot; or &quot;gpg.exe&quot; depending on the operating system.<br /><b>User property is</b>: <code>gpg.executable</code>.<br /></td>
           </tr>
           
 <tr class="b">
@@ -176,7 +176,7 @@
             
 <td><code>-</code></td>
             
-<td>Configured to specify artifacts that should be signed independently of other settings, e.g., <code>skipIfJarsigned</code>, <code>skipIfJarsignedAndAnchored</code>, and <code>skipBinaries</code>.<br /></br></td>
+<td>Configured to specify artifacts that should be signed independently of other settings, e.g., <code>skipIfJarsigned</code>, <code>skipIfJarsignedAndAnchored</code>, and <code>skipBinaries</code>.<br /></td>
           </tr>
           
 <tr class="a">
@@ -194,7 +194,7 @@
   &lt;arg&gt;--no-random-seed-file&lt;/arg&gt;
   &lt;arg&gt;--no-permission-warning&lt;/arg&gt;
 &lt;/gpgArguments&gt;
-</pre></div><br /></br></td>
+</pre></div><br /></td>
           </tr>
           
 <tr class="b">
@@ -205,7 +205,7 @@
             
 <td><code>1.0</code></td>
             
-<td>The directory from which gpg will load keyrings. If not specified, gpg will use the value configured for its installation, e.g. <code>~/.gnupg</code> or <code>%APPDATA%/gnupg</code>.<br /><b>User property is</b>: <code>gpg.homedir</code>.<br /></br></td>
+<td>The directory from which gpg will load keyrings. If not specified, gpg will use the value configured for its installation, e.g. <code>~/.gnupg</code> or <code>%APPDATA%/gnupg</code>.<br /><b>User property is</b>: <code>gpg.homedir</code>.<br /></td>
           </tr>
           
 <tr class="a">
@@ -216,7 +216,7 @@
             
 <td><code>-</code></td>
             
-<td>The &quot;name&quot; of the key to sign with. Passed to gpg as <code>--local-user</code>.<br /><b>User property is</b>: <code>gpg.keyname</code>.<br /></br></td>
+<td>The &quot;name&quot; of the key to sign with. Passed to gpg as <code>--local-user</code>.<br /><b>User property is</b>: <code>gpg.keyname</code>.<br /></td>
           </tr>
           
 <tr class="b">
@@ -363,7 +363,7 @@
 <td>Passes <code>--use-agent</code> or <code>--no-use-agent</code> to gpg. If using an agent, the passphrase is optional as the agent will provide it. For gpg2, specify true as --no-use-agent was removed in gpg2 and doesn't ask for a passphrase anymore.<br /><b>Default value is</b>: <code>true</code>.<br /><b>User property is</b>: <code>gpg.useagent</code>.<br /></td>
           </tr>
         </table>
-      
+      </section>
       <section>
 <h3><a name="Parameter_Details"></a>Parameter Details</h3>
         <section>
