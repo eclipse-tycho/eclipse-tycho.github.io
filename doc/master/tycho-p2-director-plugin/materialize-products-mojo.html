@@ -107,7 +107,7 @@
 <th>Description</th></tr>
 <tr class="b">
 <td align="left"><a href="#directorRuntime"><code>&lt;directorRuntime&gt;</code></a></td>
-<td><code>DirectorMojo$DirectorRuntimeType</code></td>
+<td><code>MaterializeProductsMojo$DirectorRuntimeType</code></td>
 <td><code>-</code></td>
 <td>Runtime in which the director application is executed. Can be: 
 <ul>
@@ -196,7 +196,7 @@
 <td>Additional profile properties to set when materializing the product</td></tr>
 <tr class="a">
 <td align="left"><a href="#source"><code>&lt;source&gt;</code></a></td>
-<td><code>DirectorMojo$InstallationSource</code></td>
+<td><code>MaterializeProductsMojo$InstallationSource</code></td>
 <td><code>-</code></td>
 <td>Source repositories to be used in the director calls. Can be: 
 <ul>
@@ -211,7 +211,7 @@
  <li><code>standalone</code> - to create and use a stand-alone installation of the director application. This option is needed if the product to be installed includes artifacts with meta-requirements (e.g. to a non-standard touchpoint action). Requires that the <code>source</code> parameter is set to <code>repository</code>.</li>
 </ul></div>
 <ul>
-<li><strong>Type</strong>: <code>org.eclipse.tycho.plugins.p2.director.DirectorMojo$DirectorRuntimeType</code></li>
+<li><strong>Type</strong>: <code>org.eclipse.tycho.plugins.p2.director.MaterializeProductsMojo$DirectorRuntimeType</code></li>
 <li><strong>Required</strong>: <code>report.plugin.goal.no</code></li>
 <li><strong>Default</strong>: <code>internal</code></li></ul><hr /></section><a name="forkedProcessTimeoutInSeconds"><section>
 <h4><a name="a.3CforkedProcessTimeoutInSeconds.3E"></a>&lt;forkedProcessTimeoutInSeconds&gt;</h4><a name="a.3CforkedProcessTimeoutInSeconds.3E"></a></a>
@@ -305,7 +305,7 @@
  <li><code>repository</code> - to use the p2 repository in <tt>target/repository/</tt> as source. With this option, the build implicitly verifies that it would also be possible to install the product from that repository with an external director application.</li>
 </ul></div>
 <ul>
-<li><strong>Type</strong>: <code>org.eclipse.tycho.plugins.p2.director.DirectorMojo$InstallationSource</code></li>
+<li><strong>Type</strong>: <code>org.eclipse.tycho.plugins.p2.director.MaterializeProductsMojo$InstallationSource</code></li>
 <li><strong>Required</strong>: <code>report.plugin.goal.no</code></li>
 <li><strong>Default</strong>: <code>targetPlatform</code></li></ul></section></section></section>
         </main>
