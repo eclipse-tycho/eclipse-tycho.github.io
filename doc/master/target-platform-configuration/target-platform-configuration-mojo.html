@@ -201,7 +201,7 @@ javax.persistence --&gt; &lt;filter&gt; &lt;type&gt;java-package&lt;/type&gt;
 <td align="left"><a href="#referencedRepositoryMode"><code>&lt;referencedRepositoryMode&gt;</code></a></td>
 <td><code>ReferencedRepositoryMode</code></td>
 <td><code>-</code></td>
-<td>Configures if referenced repositories should be included in when fetching repositories.</td></tr>
+<td>Configures if referenced repositories should be included when fetching repositories. The default is <code>ignore</code>. To specify to use referenced repositories, pass <code>include</code>.</td></tr>
 <tr class="a">
 <td align="left"><a href="#requireEagerResolve"><code>&lt;requireEagerResolve&gt;</code></a></td>
 <td><code>boolean</code></td>
@@ -323,7 +323,7 @@ javax.persistence --&gt; &lt;filter&gt; &lt;type&gt;java-package&lt;/type&gt;
 <li><strong>Required</strong>: <code>report.plugin.goal.no</code></li>
 <li><strong>User Property</strong>: <code>tycho.target.pomDependencies</code></li></ul><hr /></section><a name="referencedRepositoryMode"><section>
 <h4><a name="a.3CreferencedRepositoryMode.3E"></a>&lt;referencedRepositoryMode&gt;</h4><a name="a.3CreferencedRepositoryMode.3E"></a></a>
-<div>Configures if referenced repositories should be included in when fetching repositories.</div>
+<div>Configures if referenced repositories should be included when fetching repositories. The default is <code>ignore</code>. To specify to use referenced repositories, pass <code>include</code>.</div>
 <ul>
 <li><strong>Type</strong>: <code>org.eclipse.tycho.core.resolver.shared.ReferencedRepositoryMode</code></li>
 <li><strong>Required</strong>: <code>report.plugin.goal.no</code></li></ul><hr /></section><a name="requireEagerResolve"><section>
