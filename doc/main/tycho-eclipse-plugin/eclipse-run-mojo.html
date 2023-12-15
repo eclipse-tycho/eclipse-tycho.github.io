@@ -97,26 +97,6 @@
 <ul>
 <li>Requires a Maven project to be executed.</li>
 <li>The goal is thread-safe and supports parallel builds.</li></ul><section>
-<h3><a name="Required_Parameters"></a>Required Parameters</h3><a name="Required_Parameters"></a>
-<table border="0" class="table table-striped">
-<tr class="a">
-<th>Name</th>
-<th>Type</th>
-<th>Since</th>
-<th>Description</th></tr>
-<tr class="b">
-<td align="left"><a href="#repositories"><code>&lt;repositories&gt;</code></a></td>
-<td><code>List&lt;Repository&gt;</code></td>
-<td><code>-</code></td>
-<td>p2 repositories which will be used to resolve dependencies. Example: 
-<pre>&lt;repositories&gt;
- &lt;repository&gt;
-  &lt;id&gt;juno&lt;/id&gt;
-  &lt;layout&gt;p2&lt;/layout&gt;
-  &lt;url&gt;https://download.eclipse.org/releases/juno&lt;/url&gt;
- &lt;/repository&gt;
-&lt;/repositories&gt;
-</pre></td></tr></table></section><section>
 <h3><a name="Optional_Parameters"></a>Optional Parameters</h3><a name="Optional_Parameters"></a>
 <table border="0" class="table table-striped">
 <tr class="a">
@@ -201,15 +181,33 @@
 <td><code>-</code></td>
 <td>Kill the forked process after a certain number of seconds. If set to 0, wait forever for the process, never timing out.<br /><strong>User Property</strong>: <code>eclipserun.timeout</code></td></tr>
 <tr class="a">
+<td align="left"><a href="#installation"><code>&lt;installation&gt;</code></a></td>
+<td><code>File</code></td>
+<td><code>-</code></td>
+<td>Allows to use a prebuild installation to perform the run instead of one assembled by Tycho</td></tr>
+<tr class="b">
 <td align="left"><a href="#jvmArgs"><code>&lt;jvmArgs&gt;</code></a></td>
 <td><code>List&lt;String&gt;</code></td>
 <td><code>0.25.0</code></td>
 <td>List of JVM arguments set on the command line. Example: <code>&lt;jvmArgs&gt; &lt;arg&gt;-Xdebug&lt;arg&gt; &lt;arg&gt;-Xrunjdwp:transport=dt_socket,server=y,suspend=n,address=1044&lt;/arg&gt; &lt;/jvmArgs&gt; </code></td></tr>
-<tr class="b">
+<tr class="a">
 <td align="left"><a href="#project"><code>&lt;project&gt;</code></a></td>
 <td><code>MavenProject</code></td>
 <td><code>-</code></td>
 <td>No description.<br /><strong>User Property</strong>: <code>project</code></td></tr>
+<tr class="b">
+<td align="left"><a href="#repositories"><code>&lt;repositories&gt;</code></a></td>
+<td><code>List&lt;Repository&gt;</code></td>
+<td><code>-</code></td>
+<td>p2 repositories which will be used to resolve dependencies. Example: 
+<pre>&lt;repositories&gt;
+ &lt;repository&gt;
+  &lt;id&gt;juno&lt;/id&gt;
+  &lt;layout&gt;p2&lt;/layout&gt;
+  &lt;url&gt;https://download.eclipse.org/releases/juno&lt;/url&gt;
+ &lt;/repository&gt;
+&lt;/repositories&gt;
+</pre></td></tr>
 <tr class="a">
 <td align="left"><a href="#skip"><code>&lt;skip&gt;</code></a></td>
 <td><code>boolean</code></td>
@@ -306,7 +304,12 @@
 <ul>
 <li><strong>Type</strong>: <code>int</code></li>
 <li><strong>Required</strong>: <code>report.plugin.goal.no</code></li>
-<li><strong>User Property</strong>: <code>eclipserun.timeout</code></li></ul><hr /></section><a name="jvmArgs"><section>
+<li><strong>User Property</strong>: <code>eclipserun.timeout</code></li></ul><hr /></section><a name="installation"><section>
+<h4><a name="a.3Cinstallation.3E"></a>&lt;installation&gt;</h4><a name="a.3Cinstallation.3E"></a></a>
+<div>Allows to use a prebuild installation to perform the run instead of one assembled by Tycho</div>
+<ul>
+<li><strong>Type</strong>: <code>java.io.File</code></li>
+<li><strong>Required</strong>: <code>report.plugin.goal.no</code></li></ul><hr /></section><a name="jvmArgs"><section>
 <h4><a name="a.3CjvmArgs.3E"></a>&lt;jvmArgs&gt;</h4><a name="a.3CjvmArgs.3E"></a></a>
 <div>List of JVM arguments set on the command line. Example: <code>&lt;jvmArgs&gt; &lt;arg&gt;-Xdebug&lt;arg&gt; &lt;arg&gt;-Xrunjdwp:transport=dt_socket,server=y,suspend=n,address=1044&lt;/arg&gt; &lt;/jvmArgs&gt; </code></div>
 <ul>
@@ -331,7 +334,7 @@
 </pre></div>
 <ul>
 <li><strong>Type</strong>: <code>java.util.List&lt;org.eclipse.tycho.eclipserun.Repository&gt;</code></li>
-<li><strong>Required</strong>: <code>report.plugin.goal.yes</code></li></ul><hr /></section><a name="skip"><section>
+<li><strong>Required</strong>: <code>report.plugin.goal.no</code></li></ul><hr /></section><a name="skip"><section>
 <h4><a name="a.3Cskip.3E"></a>&lt;skip&gt;</h4><a name="a.3Cskip.3E"></a></a>
 <div>Whether to skip mojo execution.</div>
 <ul>
