@@ -183,7 +183,7 @@
 <td align="left"><a href="#installFeatures"><code>&lt;installFeatures&gt;</code></a></td>
 <td><code>boolean</code></td>
 <td><code>-</code></td>
-<td>No description.<br /><strong>User Property</strong>: <code>installFeatures</code></td></tr>
+<td>No description.<br /><strong>Default</strong>: <code>true</code><br /><strong>User Property</strong>: <code>installFeatures</code></td></tr>
 <tr class="b">
 <td align="left"><a href="#installIUs"><code>&lt;installIUs&gt;</code></a></td>
 <td><code>String</code></td>
@@ -258,7 +258,7 @@
 <td align="left"><a href="#profile"><code>&lt;profile&gt;</code></a></td>
 <td><code>String</code></td>
 <td><code>-</code></td>
-<td>Defines what profile to use for the actions.<br /><strong>User Property</strong>: <code>profile</code></td></tr>
+<td>Defines what profile to use for the actions.<br /><strong>Default</strong>: <code>DefaultProfile</code><br /><strong>User Property</strong>: <code>profile</code></td></tr>
 <tr class="b">
 <td align="left"><a href="#profileproperties"><code>&lt;profileproperties&gt;</code></a></td>
 <td><code>String</code></td>
@@ -415,7 +415,8 @@
 <ul>
 <li><strong>Type</strong>: <code>boolean</code></li>
 <li><strong>Required</strong>: <code>report.plugin.goal.no</code></li>
-<li><strong>User Property</strong>: <code>installFeatures</code></li></ul><hr /></section><a name="installIUs"><section>
+<li><strong>User Property</strong>: <code>installFeatures</code></li>
+<li><strong>Default</strong>: <code>true</code></li></ul><hr /></section><a name="installIUs"><section>
 <h4><a name="a.3CinstallIUs.3E"></a>&lt;installIUs&gt;</h4><a name="a.3CinstallIUs.3E"></a></a>
 <div>comma separated list of IUs to install, each entry in the list is in the form <id>
  [ '/' 
@@ -504,7 +505,8 @@
 <ul>
 <li><strong>Type</strong>: <code>java.lang.String</code></li>
 <li><strong>Required</strong>: <code>report.plugin.goal.no</code></li>
-<li><strong>User Property</strong>: <code>profile</code></li></ul><hr /></section><a name="profileproperties"><section>
+<li><strong>User Property</strong>: <code>profile</code></li>
+<li><strong>Default</strong>: <code>DefaultProfile</code></li></ul><hr /></section><a name="profileproperties"><section>
 <h4><a name="a.3Cprofileproperties.3E"></a>&lt;profileproperties&gt;</h4><a name="a.3Cprofileproperties.3E"></a></a>
 <div>A list of properties in the form key=value pairs. Effective only when a new profile is created. For example <tt>org.eclipse.update.install.features=true</tt> to install the features into the product.</div>
 <ul>
