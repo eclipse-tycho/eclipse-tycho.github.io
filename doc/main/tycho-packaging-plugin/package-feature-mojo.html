@@ -161,37 +161,32 @@
 <td><code>-</code></td>
 <td>No description.<br /><strong>User Property</strong>: <code>project.basedir</code></td></tr>
 <tr class="a">
-<td align="left"><a href="#deployableFeature"><code>&lt;deployableFeature&gt;</code></a></td>
-<td><code>boolean</code></td>
-<td><code>-</code></td>
-<td><strong>Deprecated.</strong> If set to <code>true</code>, standard eclipse update site directory with feature content will be created under target folder.<br /><strong>Default</strong>: <code>false</code></td></tr>
-<tr class="b">
 <td align="left"><a href="#featureFile"><code>&lt;featureFile&gt;</code></a></td>
 <td><code>File</code></td>
 <td><code>-</code></td>
 <td>The path to the <code>feature.xml</code> file. 
 <p>Defaults to the <code>feature.xml</code> under the project's base directory.</p><br /><strong>Default</strong>: <code>${project.basedir}/feature.xml</code></td></tr>
-<tr class="a">
+<tr class="b">
 <td align="left"><a href="#outputDirectory"><code>&lt;outputDirectory&gt;</code></a></td>
 <td><code>File</code></td>
 <td><code>-</code></td>
 <td>The output directory of the jar file By default this is the Maven <tt>target/</tt> directory.<br /><strong>User Property</strong>: <code>project.build.directory</code></td></tr>
-<tr class="b">
+<tr class="a">
 <td align="left"><a href="#qualifier"><code>&lt;qualifier&gt;</code></a></td>
 <td><code>String</code></td>
 <td><code>-</code></td>
 <td>Build qualifier. Recommended way to set this parameter is using build-qualifier goal.<br /><strong>User Property</strong>: <code>buildQualifier</code></td></tr>
-<tr class="a">
+<tr class="b">
 <td align="left"><a href="#strictBinIncludes"><code>&lt;strictBinIncludes&gt;</code></a></td>
 <td><code>boolean</code></td>
 <td><code>-</code></td>
 <td>If set to <code>true</code> (the default), missing build.properties bin.includes will cause build failure. If set to <code>false</code>, missing build.properties bin.includes will be reported as warnings but the build will not fail.<br /><strong>Default</strong>: <code>true</code></td></tr>
-<tr class="b">
+<tr class="a">
 <td align="left"><a href="#target"><code>&lt;target&gt;</code></a></td>
 <td><code>File</code></td>
 <td><code>-</code></td>
 <td>No description.<br /><strong>Default</strong>: <code>${project.build.directory}/site</code></td></tr>
-<tr class="a">
+<tr class="b">
 <td align="left"><a href="#useDefaultExcludes"><code>&lt;useDefaultExcludes&gt;</code></a></td>
 <td><code>boolean</code></td>
 <td><code>-</code></td>
@@ -240,14 +235,7 @@
 <ul>
 <li><strong>Type</strong>: <code>java.io.File</code></li>
 <li><strong>Required</strong>: <code>report.plugin.goal.yes</code></li>
-<li><strong>User Property</strong>: <code>project.build.directory</code></li></ul><hr /></section><a name="deployableFeature"><section>
-<h4><a name="a.3CdeployableFeature.3E"></a>&lt;deployableFeature&gt;</h4><a name="a.3CdeployableFeature.3E"></a></a>
-<div><strong>Deprecated.</strong> use the new <code>mirror-target-platform</code> instead.</div>
-<div>If set to <code>true</code>, standard eclipse update site directory with feature content will be created under target folder.</div>
-<ul>
-<li><strong>Type</strong>: <code>boolean</code></li>
-<li><strong>Required</strong>: <code>report.plugin.goal.no</code></li>
-<li><strong>Default</strong>: <code>false</code></li></ul><hr /></section><a name="featureFile"><section>
+<li><strong>User Property</strong>: <code>project.build.directory</code></li></ul><hr /></section><a name="featureFile"><section>
 <h4><a name="a.3CfeatureFile.3E"></a>&lt;featureFile&gt;</h4><a name="a.3CfeatureFile.3E"></a></a>
 <div>The path to the <code>feature.xml</code> file. 
 <p>Defaults to the <code>feature.xml</code> under the project's base directory.</p></div>
