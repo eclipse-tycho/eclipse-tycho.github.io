@@ -131,26 +131,61 @@
 <td><code>-</code></td>
 <td>No description.<br /><strong>Default</strong>: <code>false</code><br /><strong>User Property</strong>: <code>tycho.apitools.debug</code></td></tr>
 <tr class="a">
+<td align="left"><a href="#enhanceLogs"><code>&lt;enhanceLogs&gt;</code></a></td>
+<td><code>boolean</code></td>
+<td><code>-</code></td>
+<td>No description.<br /><strong>Default</strong>: <code>false</code></td></tr>
+<tr class="b">
+<td align="left"><a href="#failOnError"><code>&lt;failOnError&gt;</code></a></td>
+<td><code>boolean</code></td>
+<td><code>-</code></td>
+<td>No description.<br /><strong>Default</strong>: <code>true</code></td></tr>
+<tr class="a">
+<td align="left"><a href="#failOnWarning"><code>&lt;failOnWarning&gt;</code></a></td>
+<td><code>boolean</code></td>
+<td><code>-</code></td>
+<td>No description.<br /><strong>Default</strong>: <code>false</code></td></tr>
+<tr class="b">
+<td align="left"><a href="#logDirectory"><code>&lt;logDirectory&gt;</code></a></td>
+<td><code>File</code></td>
+<td><code>-</code></td>
+<td>If given a folder, enhances the ECJ compiler logs with API errors so it can be analyzed by tools understanding that format<br /><strong>Default</strong>: <code>${project.build.directory}/compile-logs</code></td></tr>
+<tr class="a">
+<td align="left"><a href="#parallel"><code>&lt;parallel&gt;</code></a></td>
+<td><code>boolean</code></td>
+<td><code>-</code></td>
+<td>No description.<br /><strong>Default</strong>: <code>false</code></td></tr>
+<tr class="b">
 <td align="left"><a href="#pluginArtifacts"><code>&lt;pluginArtifacts&gt;</code></a></td>
 <td><code>List&lt;Artifact&gt;</code></td>
 <td><code>-</code></td>
 <td>No description.<br /><strong>User Property</strong>: <code>plugin.artifacts</code></td></tr>
+<tr class="a">
+<td align="left"><a href="#printProblems"><code>&lt;printProblems&gt;</code></a></td>
+<td><code>boolean</code></td>
+<td><code>-</code></td>
+<td>No description.<br /><strong>Default</strong>: <code>true</code></td></tr>
 <tr class="b">
+<td align="left"><a href="#printSummary"><code>&lt;printSummary&gt;</code></a></td>
+<td><code>boolean</code></td>
+<td><code>-</code></td>
+<td>No description.<br /><strong>Default</strong>: <code>true</code></td></tr>
+<tr class="a">
 <td align="left"><a href="#properties"><code>&lt;properties&gt;</code></a></td>
 <td><code>Map&lt;String,String&gt;</code></td>
 <td><code>-</code></td>
 <td>No description.</td></tr>
-<tr class="a">
+<tr class="b">
 <td align="left"><a href="#skip"><code>&lt;skip&gt;</code></a></td>
 <td><code>boolean</code></td>
 <td><code>-</code></td>
 <td>No description.<br /><strong>Default</strong>: <code>false</code><br /><strong>User Property</strong>: <code>tycho.apitools.verify.skip</code></td></tr>
-<tr class="b">
+<tr class="a">
 <td align="left"><a href="#skipIfReplaced"><code>&lt;skipIfReplaced&gt;</code></a></td>
 <td><code>boolean</code></td>
 <td><code>-</code></td>
 <td>No description.<br /><strong>Default</strong>: <code>true</code><br /><strong>User Property</strong>: <code>tycho.apitools.verify.skipIfReplaced</code></td></tr>
-<tr class="a">
+<tr class="b">
 <td align="left"><a href="#supportedPackagingTypes"><code>&lt;supportedPackagingTypes&gt;</code></a></td>
 <td><code>Set&lt;String&gt;</code></td>
 <td><code>-</code></td>
@@ -185,13 +220,55 @@
 <li><strong>Type</strong>: <code>boolean</code></li>
 <li><strong>Required</strong>: <code>No</code></li>
 <li><strong>User Property</strong>: <code>tycho.apitools.debug</code></li>
+<li><strong>Default</strong>: <code>false</code></li></ul><hr /></section><a name="enhanceLogs"><section>
+<h4><a name="a.3CenhanceLogs.3E"></a>&lt;enhanceLogs&gt;</h4><a name="a.3CenhanceLogs.3E"></a></a>
+<div>No description.</div>
+<ul>
+<li><strong>Type</strong>: <code>boolean</code></li>
+<li><strong>Required</strong>: <code>No</code></li>
+<li><strong>Default</strong>: <code>false</code></li></ul><hr /></section><a name="failOnError"><section>
+<h4><a name="a.3CfailOnError.3E"></a>&lt;failOnError&gt;</h4><a name="a.3CfailOnError.3E"></a></a>
+<div>No description.</div>
+<ul>
+<li><strong>Type</strong>: <code>boolean</code></li>
+<li><strong>Required</strong>: <code>No</code></li>
+<li><strong>Default</strong>: <code>true</code></li></ul><hr /></section><a name="failOnWarning"><section>
+<h4><a name="a.3CfailOnWarning.3E"></a>&lt;failOnWarning&gt;</h4><a name="a.3CfailOnWarning.3E"></a></a>
+<div>No description.</div>
+<ul>
+<li><strong>Type</strong>: <code>boolean</code></li>
+<li><strong>Required</strong>: <code>No</code></li>
+<li><strong>Default</strong>: <code>false</code></li></ul><hr /></section><a name="logDirectory"><section>
+<h4><a name="a.3ClogDirectory.3E"></a>&lt;logDirectory&gt;</h4><a name="a.3ClogDirectory.3E"></a></a>
+<div>If given a folder, enhances the ECJ compiler logs with API errors so it can be analyzed by tools understanding that format</div>
+<ul>
+<li><strong>Type</strong>: <code>java.io.File</code></li>
+<li><strong>Required</strong>: <code>No</code></li>
+<li><strong>Default</strong>: <code>${project.build.directory}/compile-logs</code></li></ul><hr /></section><a name="parallel"><section>
+<h4><a name="a.3Cparallel.3E"></a>&lt;parallel&gt;</h4><a name="a.3Cparallel.3E"></a></a>
+<div>No description.</div>
+<ul>
+<li><strong>Type</strong>: <code>boolean</code></li>
+<li><strong>Required</strong>: <code>No</code></li>
 <li><strong>Default</strong>: <code>false</code></li></ul><hr /></section><a name="pluginArtifacts"><section>
 <h4><a name="a.3CpluginArtifacts.3E"></a>&lt;pluginArtifacts&gt;</h4><a name="a.3CpluginArtifacts.3E"></a></a>
 <div>No description.</div>
 <ul>
 <li><strong>Type</strong>: <code>java.util.List&lt;org.apache.maven.artifact.Artifact&gt;</code></li>
 <li><strong>Required</strong>: <code>No</code></li>
-<li><strong>User Property</strong>: <code>plugin.artifacts</code></li></ul><hr /></section><a name="properties"><section>
+<li><strong>User Property</strong>: <code>plugin.artifacts</code></li></ul><hr /></section><a name="printProblems"><section>
+<h4><a name="a.3CprintProblems.3E"></a>&lt;printProblems&gt;</h4><a name="a.3CprintProblems.3E"></a></a>
+<div>No description.</div>
+<ul>
+<li><strong>Type</strong>: <code>boolean</code></li>
+<li><strong>Required</strong>: <code>No</code></li>
+<li><strong>Default</strong>: <code>true</code></li></ul><hr /></section><a name="printSummary"><section>
+<h4><a name="a.3CprintSummary.3E"></a>&lt;printSummary&gt;</h4><a name="a.3CprintSummary.3E"></a></a>
+<div>No description.</div>
+<ul>
+<li><strong>Type</strong>: <code>boolean</code></li>
+<li><strong>Required</strong>: <code>No</code></li>
+<li><strong>Default</strong>: <code>true</code></li></ul><hr /></section><a name="properties"><section>
 <h4><a name="a.3Cproperties.3E"></a>&lt;properties&gt;</h4><a name="a.3Cproperties.3E"></a></a>
 <div>No description.</div>
 <ul>
