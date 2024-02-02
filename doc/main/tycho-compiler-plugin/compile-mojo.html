@@ -276,42 +276,36 @@ ${project.build.directory}/logfiles/lib2_library.jar.xml
 <td><code>-</code></td>
 <td>Since OSGi R7 it is <a href="https://blog.osgi.org/2018/02/osgi-r7-highlights-java-9-support.html">allowed to import java.* packages</a> as well and considered good practice. This option controls if Tycho enforces this rule.<br /><strong>Default</strong>: <code>false</code></td></tr>
 <tr class="b">
-<td align="left"><a href="#requireJREPackageImports"><code>&lt;requireJREPackageImports&gt;</code></a></td>
-<td><code>Boolean</code></td>
-<td><code>-</code></td>
-<td>
-<div><strong>Deprecated.</strong><br />OSGI requires all packages to be imported and support for osgi.compatibility.bootdelegation will be removed in one of the next Tycho releases.</div><br />Whether a bundle is required to explicitly import non-java.* packages from the JDK. This is the design-time equivalent to the equinox runtime option <a href="https://wiki.eclipse.org/Equinox_Boot_Delegation#The_solution">osgi.compatibility.bootdelegation</a>.<br /><strong>See also:</strong> requireJavaPackageImports<!-- no javadoc sites associated --></td></tr>
-<tr class="a">
 <td align="left"><a href="#showDeprecation"><code>&lt;showDeprecation&gt;</code></a></td>
 <td><code>boolean</code></td>
 <td><code>-</code></td>
 <td>Output source locations where deprecated APIs are used<br /><strong>Default</strong>: <code>false</code><br /><strong>User Property</strong>: <code>maven.compiler.showDeprecation</code></td></tr>
-<tr class="b">
+<tr class="a">
 <td align="left"><a href="#showWarnings"><code>&lt;showWarnings&gt;</code></a></td>
 <td><code>boolean</code></td>
 <td><code>-</code></td>
 <td>Output warnings<br /><strong>Default</strong>: <code>false</code><br /><strong>User Property</strong>: <code>maven.compiler.showWarnings</code></td></tr>
-<tr class="a">
+<tr class="b">
 <td align="left"><a href="#source"><code>&lt;source&gt;</code></a></td>
 <td><code>String</code></td>
 <td><code>-</code></td>
 <td>The -source argument for the Java compiler<br /><strong>User Property</strong>: <code>maven.compiler.source</code></td></tr>
-<tr class="b">
+<tr class="a">
 <td align="left"><a href="#staleMillis"><code>&lt;staleMillis&gt;</code></a></td>
 <td><code>int</code></td>
 <td><code>-</code></td>
 <td>The granularity in milliseconds of the last modification date for testing whether a source needs recompilation<br /><strong>Default</strong>: <code>0</code><br /><strong>User Property</strong>: <code>lastModGranularityMs</code></td></tr>
-<tr class="a">
+<tr class="b">
 <td align="left"><a href="#strictCompilerTarget"><code>&lt;strictCompilerTarget&gt;</code></a></td>
 <td><code>boolean</code></td>
 <td><code>-</code></td>
 <td>If set to <code>false</code> (the default) issue a warning if effective compiler target level is incompatible with bundle minimal execution environment. If set to <code>true</code> will fail the build if effective compiler target and minimal BREE are incompatible.<br /><strong>Default</strong>: <code>false</code></td></tr>
-<tr class="b">
+<tr class="a">
 <td align="left"><a href="#target"><code>&lt;target&gt;</code></a></td>
 <td><code>String</code></td>
 <td><code>-</code></td>
 <td>The -target argument for the Java compiler<br /><strong>User Property</strong>: <code>maven.compiler.target</code></td></tr>
-<tr class="a">
+<tr class="b">
 <td align="left"><a href="#useJDK"><code>&lt;useJDK&gt;</code></a></td>
 <td><code>ToolchainProvider$JDKUsage</code></td>
 <td><code>-</code></td>
@@ -341,12 +335,12 @@ ${project.build.directory}/logfiles/lib2_library.jar.xml
   &lt;/bootClassPath&gt;
 &lt;/configuration&gt;
 </pre><br /><strong>Default</strong>: <code>SYSTEM</code></td></tr>
-<tr class="b">
+<tr class="a">
 <td align="left"><a href="#useProjectSettings"><code>&lt;useProjectSettings&gt;</code></a></td>
 <td><code>boolean</code></td>
 <td><code>-</code></td>
 <td>If set to <code>true</code>, the settings file ${project.basedir}/.settings/org.eclipse.jdt.core.prefs will be passed to the compiler. If the file is not present, the build will not fail.<br /><strong>Default</strong>: <code>true</code></td></tr>
-<tr class="a">
+<tr class="b">
 <td align="left"><a href="#verbose"><code>&lt;verbose&gt;</code></a></td>
 <td><code>boolean</code></td>
 <td><code>-</code></td>
@@ -546,13 +540,7 @@ ${project.build.directory}/logfiles/lib2_library.jar.xml
 <ul>
 <li><strong>Type</strong>: <code>boolean</code></li>
 <li><strong>Required</strong>: <code>No</code></li>
-<li><strong>Default</strong>: <code>false</code></li></ul><hr /></section><a name="requireJREPackageImports"><section>
-<h4><a name="a.3CrequireJREPackageImports.3E"></a>&lt;requireJREPackageImports&gt;</h4><a name="a.3CrequireJREPackageImports.3E"></a></a>
-<div><strong>Deprecated.</strong><br />OSGI requires all packages to be imported and support for osgi.compatibility.bootdelegation will be removed in one of the next Tycho releases.</div><br />
-<div>Whether a bundle is required to explicitly import non-java.* packages from the JDK. This is the design-time equivalent to the equinox runtime option <a href="https://wiki.eclipse.org/Equinox_Boot_Delegation#The_solution">osgi.compatibility.bootdelegation</a>.<br /><strong>See also:</strong> requireJavaPackageImports<!-- no javadoc sites associated --></div>
-<ul>
-<li><strong>Type</strong>: <code>java.lang.Boolean</code></li>
-<li><strong>Required</strong>: <code>No</code></li></ul><hr /></section><a name="showDeprecation"><section>
+<li><strong>Default</strong>: <code>false</code></li></ul><hr /></section><a name="showDeprecation"><section>
 <h4><a name="a.3CshowDeprecation.3E"></a>&lt;showDeprecation&gt;</h4><a name="a.3CshowDeprecation.3E"></a></a>
 <div>Output source locations where deprecated APIs are used</div>
 <ul>
