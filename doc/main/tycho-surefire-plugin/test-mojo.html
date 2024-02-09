@@ -260,71 +260,88 @@
 <td><code>-</code></td>
 <td>List of patterns (separated by commas) used to specify the tests that should be included in testing. When not specified and when the <code>test</code> parameter is not specified, the default includes will be <code>**/Test*.java **/*Test.java **/*Tests.java **/*TestCase.java</code></td></tr>
 <tr class="a">
+<td align="left"><a href="#install"><code>&lt;install&gt;</code></a></td>
+<td><code>List&lt;IU&gt;</code></td>
+<td><code>-</code></td>
+<td>Additional root IUs to install, only relevant if <code>testRuntime</code><!-- no javadoc sites associated --> is <code>p2Installed</code>. 
+<pre>&lt;install&gt;
+   &lt;iu&gt;
+      &lt;id&gt;...&lt;/id&gt;
+      &lt;version&gt;...optional version...&lt;/id&gt;
+      &lt;feature&gt;true/false&lt;/feature&gt; &lt;!-- optional if true .feature.group is automatically added to the id  --&gt;
+&lt;/install&gt;
+</pre></td></tr>
+<tr class="b">
 <td align="left"><a href="#installAllEnvironments"><code>&lt;installAllEnvironments&gt;</code></a></td>
 <td><code>boolean</code></td>
 <td><code>-</code></td>
 <td>If <code>testRuntime</code><!-- no javadoc sites associated --> is <code>p2Installed</code> installs all configured environments</td></tr>
-<tr class="b">
+<tr class="a">
 <td align="left"><a href="#metadataDirectory"><code>&lt;metadataDirectory&gt;</code></a></td>
 <td><code>File</code></td>
 <td><code>-</code></td>
 <td>The directory where OSGi/PDE metadata files (e.g., <code>MANIFEST.MF</code>) are located. Useful in case said metadata is changed at build time, using filtering. 
 <p>Defaults to the project's base directory.</p><br /><strong>Default</strong>: <code>${project.basedir}</code></td></tr>
-<tr class="a">
+<tr class="b">
 <td align="left"><a href="#osgiDataDirectory"><code>&lt;osgiDataDirectory&gt;</code></a></td>
 <td><code>File</code></td>
 <td><code>-</code></td>
 <td><a href="https://help.eclipse.org/juno/topic/org.eclipse.platform.doc.isv/reference/misc/runtime-options.html#osgiinstancearea">OSGi data directory</a> (<code>osgi.instance.area</code>, aka the workspace) of the Equinox runtime used to execute tests.<br /><strong>Default</strong>: <code>${project.build.directory}/work/data/</code></td></tr>
-<tr class="b">
+<tr class="a">
 <td align="left"><a href="#packaging"><code>&lt;packaging&gt;</code></a></td>
 <td><code>String</code></td>
 <td><code>-</code></td>
 <td>Configures the packaging type where this mojos applies, would normally be one of eclipse-test-plugin or eclipse-plugin.<br /><strong>Default</strong>: <code>eclipse-test-plugin</code><br /><strong>User Property</strong>: <code>tycho.test.packaging</code></td></tr>
-<tr class="a">
+<tr class="b">
 <td align="left"><a href="#parallel"><code>&lt;parallel&gt;</code></a></td>
 <td><code>ParallelMode</code></td>
 <td><code>0.16.0</code></td>
 <td>(JUnit 4.7 provider) Supports values "classes"/"methods"/"both" to run in separate threads, as controlled by threadCount.<br /><strong>User Property</strong>: <code>parallel</code></td></tr>
-<tr class="b">
+<tr class="a">
 <td align="left"><a href="#perCoreThreadCount"><code>&lt;perCoreThreadCount&gt;</code></a></td>
 <td><code>boolean</code></td>
 <td><code>0.16.0</code></td>
 <td>(JUnit 4.7 provider) Indicates that threadCount is per cpu core.<br /><strong>Default</strong>: <code>true</code><br /><strong>User Property</strong>: <code>perCoreThreadCount</code></td></tr>
-<tr class="a">
+<tr class="b">
 <td align="left"><a href="#pluginArtifacts"><code>&lt;pluginArtifacts&gt;</code></a></td>
 <td><code>List&lt;Artifact&gt;</code></td>
 <td><code>-</code></td>
 <td>No description.<br /><strong>User Property</strong>: <code>plugin.artifacts</code></td></tr>
-<tr class="b">
+<tr class="a">
 <td align="left"><a href="#printBundles"><code>&lt;printBundles&gt;</code></a></td>
 <td><code>boolean</code></td>
 <td><code>-</code></td>
 <td>prints all loaded bundles<br /><strong>Default</strong>: <code>false</code><br /><strong>User Property</strong>: <code>tycho.printBundles</code></td></tr>
-<tr class="a">
+<tr class="b">
 <td align="left"><a href="#printWires"><code>&lt;printWires&gt;</code></a></td>
 <td><code>boolean</code></td>
 <td><code>-</code></td>
 <td>prints all loaded bundles<br /><strong>Default</strong>: <code>false</code><br /><strong>User Property</strong>: <code>tycho.printWires</code></td></tr>
-<tr class="b">
+<tr class="a">
 <td align="left"><a href="#product"><code>&lt;product&gt;</code></a></td>
 <td><code>String</code></td>
 <td><code>-</code></td>
 <td>Eclipse product to be run, i.e. -product parameter passed to test Eclipse runtime.</td></tr>
-<tr class="a">
+<tr class="b">
 <td align="left"><a href="#profileName"><code>&lt;profileName&gt;</code></a></td>
 <td><code>String</code></td>
 <td><code>0.19.0</code></td>
 <td>p2 <a href="https://help.eclipse.org/kepler/index.jsp?topic=%2Forg.eclipse.platform.doc.isv%2Fguide%2Fp2_director.html">profile</a> name of the installation under test. Only relevant if <code>testRuntime</code><!-- no javadoc sites associated --> is <code>p2Installed</code>. If tests are installed on top of an already existing installation in <code>work</code><!-- no javadoc sites associated -->, this must match the name of the existing profile.<br /><strong>Default</strong>: <code>DefaultProfile</code></td></tr>
-<tr class="b">
+<tr class="a">
 <td align="left"><a href="#providerHint"><code>&lt;providerHint&gt;</code></a></td>
 <td><code>String</code></td>
 <td><code>0.16.0</code></td>
 <td>Normally, Tycho will automatically determine the test framework provider based on the test project's classpath. This options forces the use of a test framework provider implementation with the given role hint. Tycho comes with providers such as "junit3","junit4","junit47","junit5", or "junit59". Note that when specifying a providerHint, you have to make sure the provider is actually available in the dependencies of tycho-surefire-plugin.</td></tr>
-<tr class="a">
+<tr class="b">
 <td align="left"><a href="#providerProperties"><code>&lt;providerProperties&gt;</code></a></td>
 <td><code>Properties</code></td>
 <td><code>0.16.0</code></td>
 <td>Use this to specify surefire provider-specific properties.</td></tr>
+<tr class="a">
+<td align="left"><a href="#quiet"><code>&lt;quiet&gt;</code></a></td>
+<td><code>boolean</code></td>
+<td><code>-</code></td>
+<td>No description.</td></tr>
 <tr class="b">
 <td align="left"><a href="#reactorConcurrencyLevel"><code>&lt;reactorConcurrencyLevel&gt;</code></a></td>
 <td><code>int</code></td>
@@ -660,6 +677,18 @@
 <div>List of patterns (separated by commas) used to specify the tests that should be included in testing. When not specified and when the <code>test</code> parameter is not specified, the default includes will be <code>**/Test*.java **/*Test.java **/*Tests.java **/*TestCase.java</code></div>
 <ul>
 <li><strong>Type</strong>: <code>java.util.List&lt;java.lang.String&gt;</code></li>
+<li><strong>Required</strong>: <code>No</code></li></ul><hr /></section><a name="install"><section>
+<h4><a name="a.3Cinstall.3E"></a>&lt;install&gt;</h4><a name="a.3Cinstall.3E"></a></a>
+<div>Additional root IUs to install, only relevant if <code>testRuntime</code><!-- no javadoc sites associated --> is <code>p2Installed</code>. 
+<pre>&lt;install&gt;
+   &lt;iu&gt;
+      &lt;id&gt;...&lt;/id&gt;
+      &lt;version&gt;...optional version...&lt;/id&gt;
+      &lt;feature&gt;true/false&lt;/feature&gt; &lt;!-- optional if true .feature.group is automatically added to the id  --&gt;
+&lt;/install&gt;
+</pre></div>
+<ul>
+<li><strong>Type</strong>: <code>java.util.List&lt;org.eclipse.tycho.surefire.IU&gt;</code></li>
 <li><strong>Required</strong>: <code>No</code></li></ul><hr /></section><a name="installAllEnvironments"><section>
 <h4><a name="a.3CinstallAllEnvironments.3E"></a>&lt;installAllEnvironments&gt;</h4><a name="a.3CinstallAllEnvironments.3E"></a></a>
 <div>If <code>testRuntime</code><!-- no javadoc sites associated --> is <code>p2Installed</code> installs all configured environments</div>
@@ -744,6 +773,11 @@
 <ul>
 <li><strong>Type</strong>: <code>java.util.Properties</code></li>
 <li><strong>Since</strong>: <code>0.16.0</code></li>
+<li><strong>Required</strong>: <code>No</code></li></ul><hr /></section><a name="quiet"><section>
+<h4><a name="a.3Cquiet.3E"></a>&lt;quiet&gt;</h4><a name="a.3Cquiet.3E"></a></a>
+<div>No description.</div>
+<ul>
+<li><strong>Type</strong>: <code>boolean</code></li>
 <li><strong>Required</strong>: <code>No</code></li></ul><hr /></section><a name="reactorConcurrencyLevel"><section>
 <h4><a name="a.3CreactorConcurrencyLevel.3E"></a>&lt;reactorConcurrencyLevel&gt;</h4><a name="a.3CreactorConcurrencyLevel.3E"></a></a>
 <div>Configures the overall concurrency level. <b>Important Note:</b> If there are multiple mojo configurations this will choose the lowest configured number! So for example if in the same reactor there is one configuration with a concurrency level of 5 and one with a concurrency level of 3 then then only three parallel runs will be possible!</div>
