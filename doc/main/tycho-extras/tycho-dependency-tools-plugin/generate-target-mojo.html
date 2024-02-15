@@ -10,7 +10,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="generator" content="Apache Maven Doxia Site Renderer 1.11.1" />
-    <title>Tycho Dependency Tools Plugin &#x2013; Plugin Documentation</title>
+    <title>Tycho Dependency Tools Plugin &#x2013; tycho-dependency-tools:generate-target</title>
     <link rel="stylesheet" href="./css/apache-maven-fluido-1.11.1.min.css" />
     <link rel="stylesheet" href="./css/site.css" />
     <link rel="stylesheet" href="./css/print.css" media="print" />
@@ -86,10 +86,7 @@
     <li><a href="../../tycho-versions-plugin/plugin-info.html" title="Versions Plugin"><span class="none"></span>Versions Plugin</a></li>
    <li class="nav-header">Project Documentation</li>
     <li><a href="project-info.html" title="Project Information"><span class="icon-chevron-right"></span>Project Information</a></li>
-    <li><a href="project-reports.html" title="Project Reports"><span class="icon-chevron-down"></span>Project Reports</a>
-     <ul class="nav nav-list">
-      <li class="active"><a><span class="none"></span>Plugin Documentation</a></li>
-     </ul></li>
+    <li><a href="project-reports.html" title="Project Reports"><span class="icon-chevron-right"></span>Project Reports</a></li>
   </ul>
           </nav>
           <div class="well sidebar-nav">
@@ -103,57 +100,36 @@
         </header>
         <main id="bodyColumn"  class="span10" >
 <section>
-<h2><a name="Plugin_Documentation"></a>Plugin Documentation</h2><a name="Plugin_Documentation"></a>
-<p>This report describes goals, parameters details, requirements and sample usage of this plugin.</p><section>
-<h3><a name="Goals"></a>Goals</h3><a name="Goals"></a>
-<p>Goals available for this plugin:</p>
+<h2><a name="tycho-dependency-tools:generate-target"></a>tycho-dependency-tools:generate-target</h2><a name="tycho-dependency-tools:generate-target"></a>
+<p><strong>Full name</strong>:</p>
+<p>org.eclipse.tycho.extras:tycho-dependency-tools-plugin:5.0.0-SNAPSHOT:generate-target</p>
+<p><strong>Description</strong>:</p>
+<p>This mojo generates a target platform from all the dependencies of a maven build for example to be used inside of PDE</p>
+<p><strong>Attributes</strong>:</p>
+<ul>
+<li>Requires a Maven project to be executed.</li>
+<li>Executes as an aggregator goal.</li>
+<li>The goal is thread-safe and supports parallel builds.</li></ul><section>
+<h3><a name="Required_Parameters"></a>Required Parameters</h3><a name="Required_Parameters"></a>
 <table border="0" class="table table-striped">
 <tr class="a">
-<th>Goal</th>
+<th>Name</th>
+<th>Type</th>
+<th>Since</th>
 <th>Description</th></tr>
 <tr class="b">
-<td align="left"><a href="./generate-target-mojo.html">tycho-dependency-tools:generate-target</a></td>
-<td>This mojo generates a target platform from all the dependencies of a maven build for example to be used inside of PDE</td></tr>
-<tr class="a">
-<td align="left"><a href="./list-dependencies-mojo.html">tycho-dependency-tools:list-dependencies</a></td>
-<td>Builds a .target file describing the dependencies for current project. It differs from <code>maven-dependency-plugin:list</code> in the fact that it does return location to bundles, and not to nested jars (in case bundle contain some).</td></tr></table></section><section>
-<h3><a name="System_Requirements"></a>System Requirements</h3><a name="System_Requirements"></a>
-<p>The following specifies the minimum requirements to run this Maven plugin:</p>
-<table border="0" class="table table-striped">
-<tr class="a">
-<td align="left">Maven</td>
-<td>3.9.6</td></tr>
-<tr class="b">
-<td align="left">JDK</td>
-<td>17</td></tr></table></section><section>
-<h3><a name="Usage"></a>Usage</h3><a name="Usage"></a>
-<p>You should specify the version in your project's plugin configuration:</p>
-<div class="source"><pre class="prettyprint">&lt;project&gt;
-  ...
-  &lt;build&gt;
-    &lt;!-- To define the plugin version in your parent POM --&gt;
-    &lt;pluginManagement&gt;
-      &lt;plugins&gt;
-        &lt;plugin&gt;
-          &lt;groupId&gt;org.eclipse.tycho.extras&lt;/groupId&gt;
-          &lt;artifactId&gt;tycho-dependency-tools-plugin&lt;/artifactId&gt;
-          &lt;version&gt;5.0.0-SNAPSHOT&lt;/version&gt;
-        &lt;/plugin&gt;
-        ...
-      &lt;/plugins&gt;
-    &lt;/pluginManagement&gt;
-    &lt;!-- To use the plugin goals in your POM or parent POM --&gt;
-    &lt;plugins&gt;
-      &lt;plugin&gt;
-        &lt;groupId&gt;org.eclipse.tycho.extras&lt;/groupId&gt;
-        &lt;artifactId&gt;tycho-dependency-tools-plugin&lt;/artifactId&gt;
-      &lt;/plugin&gt;
-      ...
-    &lt;/plugins&gt;
-  &lt;/build&gt;
-  ...
-&lt;/project&gt;</pre></div>
-<p>For more information, see <a class="externalLink" href="https://maven.apache.org/guides/mini/guide-configuring-plugins.html">&quot;Guide to Configuring Plug-ins&quot;</a></p></section></section>
+<td align="left"><a href="#targetFile"><code>&lt;targetFile&gt;</code></a></td>
+<td><code>File</code></td>
+<td><code>-</code></td>
+<td>No description.<br /><strong>Default</strong>: <code>${project.build.directory}/generate.target</code><br /><strong>User Property</strong>: <code>generateTargetFile</code></td></tr></table></section><section>
+<h3><a name="Parameter_Details"></a>Parameter Details</h3><a name="Parameter_Details"></a><a name="targetFile"><section>
+<h4><a name="a.3CtargetFile.3E"></a>&lt;targetFile&gt;</h4><a name="a.3CtargetFile.3E"></a></a>
+<div>No description.</div>
+<ul>
+<li><strong>Type</strong>: <code>java.io.File</code></li>
+<li><strong>Required</strong>: <code>Yes</code></li>
+<li><strong>User Property</strong>: <code>generateTargetFile</code></li>
+<li><strong>Default</strong>: <code>${project.build.directory}/generate.target</code></li></ul></section></section></section>
         </main>
       </div>
     </div>
