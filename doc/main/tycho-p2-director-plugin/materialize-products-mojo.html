@@ -127,26 +127,31 @@
  <li><code>standalone</code> - to create and use a stand-alone installation of the director application. This option is needed if the product to be installed includes artifacts with meta-requirements (e.g. to a non-standard touchpoint action). Requires that the <code>source</code> parameter is set to <code>repository</code>.</li>
 </ul><br /><strong>Default</strong>: <code>internal</code></td></tr>
 <tr class="a">
+<td align="left"><a href="#EEProfiles"><code>&lt;EEProfiles&gt;</code></a></td>
+<td><code>String</code></td>
+<td><code>-</code></td>
+<td><p>Comma-separated list of profile names to be published. Examples: JavaSE-11, JavaSE-17, JavaSE-18. If not given, all current available JavaSE profiles with version &gt;= 11 are used.</p></td></tr>
+<tr class="b">
 <td align="left"><a href="#forkedProcessTimeoutInSeconds"><code>&lt;forkedProcessTimeoutInSeconds&gt;</code></a></td>
 <td><code>int</code></td>
 <td><code>-</code></td>
 <td>Kill the forked process after a certain number of seconds. If set to 0, wait forever for the process, never timing out.<br /><strong>Default</strong>: <code>0</code><br /><strong>User Property</strong>: <code>p2.timeout</code></td></tr>
-<tr class="b">
+<tr class="a">
 <td align="left"><a href="#installFeatures"><code>&lt;installFeatures&gt;</code></a></td>
 <td><code>boolean</code></td>
 <td><code>-</code></td>
 <td>Include the feature JARs in installation. (Technically, this sets the property <code>org.eclipse.update.install.features</code> to <code>true</code> in the p2 profile.)<br /><strong>Default</strong>: <code>true</code></td></tr>
-<tr class="a">
+<tr class="b">
 <td align="left"><a href="#installSources"><code>&lt;installSources&gt;</code></a></td>
 <td><code>boolean</code></td>
 <td><code>-</code></td>
 <td>Include the sources of JARs in installation. (Technically, this sets the property <code>org.eclipse.update.install.sources</code> to <code>true</code> in the p2 profile.)<br /><strong>Default</strong>: <code>false</code></td></tr>
-<tr class="b">
+<tr class="a">
 <td align="left"><a href="#parallel"><code>&lt;parallel&gt;</code></a></td>
 <td><code>boolean</code></td>
 <td><code>-</code></td>
 <td>Controls if products are allowed to be build in parallel</td></tr>
-<tr class="a">
+<tr class="b">
 <td align="left"><a href="#products"><code>&lt;products&gt;</code></a></td>
 <td><code>List&lt;Product&gt;</code></td>
 <td><code>-</code></td>
@@ -201,22 +206,22 @@
  <li><code>rootFolder</code> - The path where the installed product shall be stored in the archive, e.g. "eclipse". By default, the product is stored in the archive root.</li>
  <li><code>rootFolders</code> - OS-specific installation root folders, overriding <code>rootFolder</code>. Allowed children are <code>&lt;macosx&gt;</code>, <code>&lt;win32&gt;</code>, <code>&lt;linux&gt;</code> and <code>&lt;freebsd&gt;</code> or any other OS supported by p2. Since 0.18.0</li>
 </ul></td></tr>
-<tr class="b">
+<tr class="a">
 <td align="left"><a href="#profile"><code>&lt;profile&gt;</code></a></td>
 <td><code>String</code></td>
 <td><code>-</code></td>
 <td>The name of the p2 profile to be created.<br /><strong>Default</strong>: <code>DefaultProfile</code></td></tr>
-<tr class="a">
+<tr class="b">
 <td align="left"><a href="#profileNames"><code>&lt;profileNames&gt;</code></a></td>
 <td><code>List&lt;ProfileName&gt;</code></td>
 <td><code>-</code></td>
 <td>No description.</td></tr>
-<tr class="b">
+<tr class="a">
 <td align="left"><a href="#profileProperties"><code>&lt;profileProperties&gt;</code></a></td>
 <td><code>Map&lt;String,String&gt;</code></td>
 <td><code>-</code></td>
 <td>Additional profile properties to set when materializing the product</td></tr>
-<tr class="a">
+<tr class="b">
 <td align="left"><a href="#source"><code>&lt;source&gt;</code></a></td>
 <td><code>MaterializeProductsMojo$InstallationSource</code></td>
 <td><code>-</code></td>
@@ -235,7 +240,12 @@
 <ul>
 <li><strong>Type</strong>: <code>org.eclipse.tycho.plugins.p2.director.MaterializeProductsMojo$DirectorRuntimeType</code></li>
 <li><strong>Required</strong>: <code>No</code></li>
-<li><strong>Default</strong>: <code>internal</code></li></ul><hr /></section><a name="forkedProcessTimeoutInSeconds"><section>
+<li><strong>Default</strong>: <code>internal</code></li></ul><hr /></section><a name="EEProfiles"><section>
+<h4><a name="a.3CEEProfiles.3E"></a>&lt;EEProfiles&gt;</h4><a name="a.3CEEProfiles.3E"></a></a>
+<div><p>Comma-separated list of profile names to be published. Examples: JavaSE-11, JavaSE-17, JavaSE-18. If not given, all current available JavaSE profiles with version &gt;= 11 are used.</p></div>
+<ul>
+<li><strong>Type</strong>: <code>java.lang.String</code></li>
+<li><strong>Required</strong>: <code>No</code></li></ul><hr /></section><a name="forkedProcessTimeoutInSeconds"><section>
 <h4><a name="a.3CforkedProcessTimeoutInSeconds.3E"></a>&lt;forkedProcessTimeoutInSeconds&gt;</h4><a name="a.3CforkedProcessTimeoutInSeconds.3E"></a></a>
 <div>Kill the forked process after a certain number of seconds. If set to 0, wait forever for the process, never timing out.</div>
 <ul>
