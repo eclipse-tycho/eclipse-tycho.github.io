@@ -152,6 +152,11 @@
 <td><code>-</code></td>
 <td>Controls if products are allowed to be build in parallel</td></tr>
 <tr class="b">
+<td align="left"><a href="#productRepository"><code>&lt;productRepository&gt;</code></a></td>
+<td><code>String</code></td>
+<td><code>-</code></td>
+<td>If a product requires JustJ this repository is automatically added as part of the product assembly, if not this is just ignored. To disable this feature one can set the configuration to an empty value<br /><strong>Default</strong>: <code>https://download.eclipse.org/justj/jres</code></td></tr>
+<tr class="a">
 <td align="left"><a href="#products"><code>&lt;products&gt;</code></a></td>
 <td><code>List&lt;Product&gt;</code></td>
 <td><code>-</code></td>
@@ -206,22 +211,22 @@
  <li><code>rootFolder</code> - The path where the installed product shall be stored in the archive, e.g. "eclipse". By default, the product is stored in the archive root.</li>
  <li><code>rootFolders</code> - OS-specific installation root folders, overriding <code>rootFolder</code>. Allowed children are <code>&lt;macosx&gt;</code>, <code>&lt;win32&gt;</code>, <code>&lt;linux&gt;</code> and <code>&lt;freebsd&gt;</code> or any other OS supported by p2. Since 0.18.0</li>
 </ul></td></tr>
-<tr class="a">
+<tr class="b">
 <td align="left"><a href="#profile"><code>&lt;profile&gt;</code></a></td>
 <td><code>String</code></td>
 <td><code>-</code></td>
 <td>The name of the p2 profile to be created.<br /><strong>Default</strong>: <code>DefaultProfile</code></td></tr>
-<tr class="b">
+<tr class="a">
 <td align="left"><a href="#profileNames"><code>&lt;profileNames&gt;</code></a></td>
 <td><code>List&lt;ProfileName&gt;</code></td>
 <td><code>-</code></td>
 <td>No description.</td></tr>
-<tr class="a">
+<tr class="b">
 <td align="left"><a href="#profileProperties"><code>&lt;profileProperties&gt;</code></a></td>
 <td><code>Map&lt;String,String&gt;</code></td>
 <td><code>-</code></td>
 <td>Additional profile properties to set when materializing the product</td></tr>
-<tr class="b">
+<tr class="a">
 <td align="left"><a href="#source"><code>&lt;source&gt;</code></a></td>
 <td><code>MaterializeProductsMojo$InstallationSource</code></td>
 <td><code>-</code></td>
@@ -269,7 +274,13 @@
 <div>Controls if products are allowed to be build in parallel</div>
 <ul>
 <li><strong>Type</strong>: <code>boolean</code></li>
-<li><strong>Required</strong>: <code>No</code></li></ul><hr /></section><a name="products"><section>
+<li><strong>Required</strong>: <code>No</code></li></ul><hr /></section><a name="productRepository"><section>
+<h4><a name="a.3CproductRepository.3E"></a>&lt;productRepository&gt;</h4><a name="a.3CproductRepository.3E"></a></a>
+<div>If a product requires JustJ this repository is automatically added as part of the product assembly, if not this is just ignored. To disable this feature one can set the configuration to an empty value</div>
+<ul>
+<li><strong>Type</strong>: <code>java.lang.String</code></li>
+<li><strong>Required</strong>: <code>No</code></li>
+<li><strong>Default</strong>: <code>https://download.eclipse.org/justj/jres</code></li></ul><hr /></section><a name="products"><section>
 <h4><a name="a.3Cproducts.3E"></a>&lt;products&gt;</h4><a name="a.3Cproducts.3E"></a></a>
 <div><p>Selection of products to be installed and configuration per product.</p>
 <p>If the project contains more than one product file, you need to choose for which ones you want to create distribution archives. If you choose to install more than one product, you need to specify the <code>attachId</code> (which becomes a part of the classifier) to make the classifiers unique. Example:</p>
