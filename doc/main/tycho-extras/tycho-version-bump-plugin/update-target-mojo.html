@@ -131,7 +131,12 @@
 <td align="left"><a href="#targetFile"><code>&lt;targetFile&gt;</code></a></td>
 <td><code>File</code></td>
 <td><code>-</code></td>
-<td>No description.<br /><strong>User Property</strong>: <code>target</code></td></tr></table></section><section>
+<td>No description.<br /><strong>User Property</strong>: <code>target</code></td></tr>
+<tr class="a">
+<td align="left"><a href="#updateMajorVersion"><code>&lt;updateMajorVersion&gt;</code></a></td>
+<td><code>boolean</code></td>
+<td><code>-</code></td>
+<td>If specified also update to new major versions of the dependency otherwise only perform minor, micro or "qualifier" changes, please note that for maven locations the semantic might be slightly different as maven does not follow OSGi version scheme, in this case we interpret the first part of the version as the major version.<br /><strong>Default</strong>: <code>true</code><br /><strong>User Property</strong>: <code>major</code></td></tr></table></section><section>
 <h3><a name="Parameter_Details"></a>Parameter Details</h3><a name="Parameter_Details"></a><a name="executionEnvironment"></a><section>
 <h4><a name="a.3CexecutionEnvironment.3E"></a>&lt;executionEnvironment&gt;</h4><a name="a.3CexecutionEnvironment.3E"></a>
 <div>No description.</div>
@@ -150,7 +155,14 @@
 <ul>
 <li><strong>Type</strong>: <code>java.io.File</code></li>
 <li><strong>Required</strong>: <code>No</code></li>
-<li><strong>User Property</strong>: <code>target</code></li></ul></section></section></section>
+<li><strong>User Property</strong>: <code>target</code></li></ul><hr /></section><a name="updateMajorVersion"></a><section>
+<h4><a name="a.3CupdateMajorVersion.3E"></a>&lt;updateMajorVersion&gt;</h4><a name="a.3CupdateMajorVersion.3E"></a>
+<div>If specified also update to new major versions of the dependency otherwise only perform minor, micro or "qualifier" changes, please note that for maven locations the semantic might be slightly different as maven does not follow OSGi version scheme, in this case we interpret the first part of the version as the major version.</div>
+<ul>
+<li><strong>Type</strong>: <code>boolean</code></li>
+<li><strong>Required</strong>: <code>No</code></li>
+<li><strong>User Property</strong>: <code>major</code></li>
+<li><strong>Default</strong>: <code>true</code></li></ul></section></section></section>
         </main>
       </div>
     </div>
