@@ -117,7 +117,9 @@
 <td>Quick&amp;dirty way to update .product file to use latest versions of IUs available from specified metadata repositories.</td></tr>
 <tr class="a">
 <td align="left"><a href="./update-target-mojo.html">tycho-version-bump:update-target</a></td>
-<td>Quick&amp;dirty way to update .target file to use latest versions of IUs available from specified metadata repositories.</td></tr></table></section><section>
+<td>This allows to update a target file to use newer version of specified items, e.g. IUs from updatesites or maven coordinates. In the simplest form this is called like 
+<pre>mvn -f [path to target project] tycho-version-bump:update-target
+</pre></td></tr></table></section><section>
 <h3><a name="System_Requirements"></a>System Requirements</h3><a name="System_Requirements"></a>
 <p>The following specifies the minimum requirements to run this Maven plugin:</p>
 <table border="0" class="table table-striped">

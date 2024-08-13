@@ -105,7 +105,9 @@
 <p><strong>Full name</strong>:</p>
 <p>org.eclipse.tycho.extras:tycho-version-bump-plugin:5.0.0-SNAPSHOT:update-target</p>
 <p><strong>Description</strong>:</p>
-<p>Quick&amp;dirty way to update .target file to use latest versions of IUs available from specified metadata repositories.</p>
+<p>This allows to update a target file to use newer version of specified items, e.g. IUs from updatesites or maven coordinates. In the simplest form this is called like 
+<pre>mvn -f [path to target project] tycho-version-bump:update-target
+</pre></p>
 <p><strong>Attributes</strong>:</p>
 <ul>
 <li>Requires a Maven project to be executed.</li>
@@ -121,7 +123,7 @@
 <td align="left"><a href="#executionEnvironment"><code>&lt;executionEnvironment&gt;</code></a></td>
 <td><code>String</code></td>
 <td><code>-</code></td>
-<td>No description.<br /><strong>Default</strong>: <code>JavaSE-1.7</code></td></tr>
+<td>No description.<br /><strong>Default</strong>: <code>JavaSE-17</code></td></tr>
 <tr class="a">
 <td align="left"><a href="#project"><code>&lt;project&gt;</code></a></td>
 <td><code>MavenProject</code></td>
@@ -131,7 +133,7 @@
 <td align="left"><a href="#targetFile"><code>&lt;targetFile&gt;</code></a></td>
 <td><code>File</code></td>
 <td><code>-</code></td>
-<td>No description.<br /><strong>User Property</strong>: <code>target</code></td></tr>
+<td>Specify the path to the target file to update, if not given the current project settings will be used to find a suitable file<br /><strong>User Property</strong>: <code>target</code></td></tr>
 <tr class="a">
 <td align="left"><a href="#updateMajorVersion"><code>&lt;updateMajorVersion&gt;</code></a></td>
 <td><code>boolean</code></td>
@@ -143,7 +145,7 @@
 <ul>
 <li><strong>Type</strong>: <code>java.lang.String</code></li>
 <li><strong>Required</strong>: <code>No</code></li>
-<li><strong>Default</strong>: <code>JavaSE-1.7</code></li></ul><hr /></section><a name="project"></a><section>
+<li><strong>Default</strong>: <code>JavaSE-17</code></li></ul><hr /></section><a name="project"></a><section>
 <h4><a name="a.3Cproject.3E"></a>&lt;project&gt;</h4><a name="a.3Cproject.3E"></a>
 <div>No description.</div>
 <ul>
@@ -151,7 +153,7 @@
 <li><strong>Required</strong>: <code>No</code></li>
 <li><strong>User Property</strong>: <code>project</code></li></ul><hr /></section><a name="targetFile"></a><section>
 <h4><a name="a.3CtargetFile.3E"></a>&lt;targetFile&gt;</h4><a name="a.3CtargetFile.3E"></a>
-<div>No description.</div>
+<div>Specify the path to the target file to update, if not given the current project settings will be used to find a suitable file</div>
 <ul>
 <li><strong>Type</strong>: <code>java.io.File</code></li>
 <li><strong>Required</strong>: <code>No</code></li>
