@@ -144,63 +144,68 @@
 <td><a href="#enhanceLogs"><code>&lt;enhanceLogs&gt;</code></a></td>
 <td><code>boolean</code></td>
 <td><code>-</code></td>
-<td>No description.<br /><strong>Default</strong>: <code>false</code></td></tr>
+<td>No description.<br /><strong>Default</strong>: <code>false</code><br /><strong>User Property</strong>: <code>tycho.apitools.enhanceLogs</code></td></tr>
 <tr class="b">
 <td><a href="#failOnError"><code>&lt;failOnError&gt;</code></a></td>
 <td><code>boolean</code></td>
 <td><code>-</code></td>
-<td>No description.<br /><strong>Default</strong>: <code>true</code></td></tr>
+<td>No description.<br /><strong>Default</strong>: <code>true</code><br /><strong>User Property</strong>: <code>tycho.apitools.failOnError</code></td></tr>
 <tr class="a">
 <td><a href="#failOnResolutionError"><code>&lt;failOnResolutionError&gt;</code></a></td>
 <td><code>boolean</code></td>
 <td><code>-</code></td>
 <td>No description.<br /><strong>Default</strong>: <code>false</code></td></tr>
 <tr class="b">
+<td><a href="#failOnVersion"><code>&lt;failOnVersion&gt;</code></a></td>
+<td><code>boolean</code></td>
+<td><code>-</code></td>
+<td>No description.<br /><strong>Default</strong>: <code>false</code><br /><strong>User Property</strong>: <code>tycho.apitools.failOnVersion</code></td></tr>
+<tr class="a">
 <td><a href="#failOnWarning"><code>&lt;failOnWarning&gt;</code></a></td>
 <td><code>boolean</code></td>
 <td><code>-</code></td>
-<td>No description.<br /><strong>Default</strong>: <code>false</code></td></tr>
-<tr class="a">
+<td>No description.<br /><strong>Default</strong>: <code>false</code><br /><strong>User Property</strong>: <code>tycho.apitools.failOnWarning</code></td></tr>
+<tr class="b">
 <td><a href="#logDirectory"><code>&lt;logDirectory&gt;</code></a></td>
 <td><code>File</code></td>
 <td><code>-</code></td>
 <td>If given a folder, enhances the ECJ compiler logs with API errors so it can be analyzed by tools understanding that format<br /><strong>Default</strong>: <code>${project.build.directory}/compile-logs</code></td></tr>
-<tr class="b">
+<tr class="a">
 <td><a href="#parallel"><code>&lt;parallel&gt;</code></a></td>
 <td><code>boolean</code></td>
 <td><code>-</code></td>
 <td>No description.<br /><strong>Default</strong>: <code>false</code></td></tr>
-<tr class="a">
+<tr class="b">
 <td><a href="#pluginArtifacts"><code>&lt;pluginArtifacts&gt;</code></a></td>
 <td><code>List&lt;Artifact&gt;</code></td>
 <td><code>-</code></td>
 <td>No description.<br /><strong>User Property</strong>: <code>plugin.artifacts</code></td></tr>
-<tr class="b">
+<tr class="a">
 <td><a href="#printProblems"><code>&lt;printProblems&gt;</code></a></td>
 <td><code>boolean</code></td>
 <td><code>-</code></td>
-<td>No description.<br /><strong>Default</strong>: <code>true</code></td></tr>
-<tr class="a">
+<td>No description.<br /><strong>Default</strong>: <code>true</code><br /><strong>User Property</strong>: <code>tycho.apitools.printProblems</code></td></tr>
+<tr class="b">
 <td><a href="#printSummary"><code>&lt;printSummary&gt;</code></a></td>
 <td><code>boolean</code></td>
 <td><code>-</code></td>
-<td>No description.<br /><strong>Default</strong>: <code>true</code></td></tr>
-<tr class="b">
+<td>No description.<br /><strong>Default</strong>: <code>true</code><br /><strong>User Property</strong>: <code>tycho.apitools.printSummary</code></td></tr>
+<tr class="a">
 <td><a href="#properties"><code>&lt;properties&gt;</code></a></td>
 <td><code>Map&lt;String,String&gt;</code></td>
 <td><code>-</code></td>
 <td>No description.</td></tr>
-<tr class="a">
+<tr class="b">
 <td><a href="#skip"><code>&lt;skip&gt;</code></a></td>
 <td><code>boolean</code></td>
 <td><code>-</code></td>
 <td>No description.<br /><strong>Default</strong>: <code>false</code><br /><strong>User Property</strong>: <code>tycho.apitools.verify.skip</code></td></tr>
-<tr class="b">
+<tr class="a">
 <td><a href="#skipIfReplaced"><code>&lt;skipIfReplaced&gt;</code></a></td>
 <td><code>boolean</code></td>
 <td><code>-</code></td>
 <td>No description.<br /><strong>Default</strong>: <code>true</code><br /><strong>User Property</strong>: <code>tycho.apitools.verify.skipIfReplaced</code></td></tr>
-<tr class="a">
+<tr class="b">
 <td><a href="#supportedPackagingTypes"><code>&lt;supportedPackagingTypes&gt;</code></a></td>
 <td><code>Set&lt;String&gt;</code></td>
 <td><code>-</code></td>
@@ -241,24 +246,34 @@
 <ul>
 <li><strong>Type</strong>: <code>boolean</code></li>
 <li><strong>Required</strong>: <code>No</code></li>
+<li><strong>User Property</strong>: <code>tycho.apitools.enhanceLogs</code></li>
 <li><strong>Default</strong>: <code>false</code></li></ul><hr /></section><a id="failOnError"></a><section><a id="a.3CfailOnError.3E"></a>
 <h3>&lt;failOnError&gt;</h3>
 <div>No description.</div>
 <ul>
 <li><strong>Type</strong>: <code>boolean</code></li>
 <li><strong>Required</strong>: <code>No</code></li>
+<li><strong>User Property</strong>: <code>tycho.apitools.failOnError</code></li>
 <li><strong>Default</strong>: <code>true</code></li></ul><hr /></section><a id="failOnResolutionError"></a><section><a id="a.3CfailOnResolutionError.3E"></a>
 <h3>&lt;failOnResolutionError&gt;</h3>
 <div>No description.</div>
 <ul>
 <li><strong>Type</strong>: <code>boolean</code></li>
 <li><strong>Required</strong>: <code>No</code></li>
+<li><strong>Default</strong>: <code>false</code></li></ul><hr /></section><a id="failOnVersion"></a><section><a id="a.3CfailOnVersion.3E"></a>
+<h3>&lt;failOnVersion&gt;</h3>
+<div>No description.</div>
+<ul>
+<li><strong>Type</strong>: <code>boolean</code></li>
+<li><strong>Required</strong>: <code>No</code></li>
+<li><strong>User Property</strong>: <code>tycho.apitools.failOnVersion</code></li>
 <li><strong>Default</strong>: <code>false</code></li></ul><hr /></section><a id="failOnWarning"></a><section><a id="a.3CfailOnWarning.3E"></a>
 <h3>&lt;failOnWarning&gt;</h3>
 <div>No description.</div>
 <ul>
 <li><strong>Type</strong>: <code>boolean</code></li>
 <li><strong>Required</strong>: <code>No</code></li>
+<li><strong>User Property</strong>: <code>tycho.apitools.failOnWarning</code></li>
 <li><strong>Default</strong>: <code>false</code></li></ul><hr /></section><a id="logDirectory"></a><section><a id="a.3ClogDirectory.3E"></a>
 <h3>&lt;logDirectory&gt;</h3>
 <div>If given a folder, enhances the ECJ compiler logs with API errors so it can be analyzed by tools understanding that format</div>
@@ -283,12 +298,14 @@
 <ul>
 <li><strong>Type</strong>: <code>boolean</code></li>
 <li><strong>Required</strong>: <code>No</code></li>
+<li><strong>User Property</strong>: <code>tycho.apitools.printProblems</code></li>
 <li><strong>Default</strong>: <code>true</code></li></ul><hr /></section><a id="printSummary"></a><section><a id="a.3CprintSummary.3E"></a>
 <h3>&lt;printSummary&gt;</h3>
 <div>No description.</div>
 <ul>
 <li><strong>Type</strong>: <code>boolean</code></li>
 <li><strong>Required</strong>: <code>No</code></li>
+<li><strong>User Property</strong>: <code>tycho.apitools.printSummary</code></li>
 <li><strong>Default</strong>: <code>true</code></li></ul><hr /></section><a id="properties"></a><section><a id="a.3Cproperties.3E"></a>
 <h3>&lt;properties&gt;</h3>
 <div>No description.</div>
