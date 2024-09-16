@@ -164,6 +164,11 @@
 &lt;/plugin&gt;
 </pre></td></tr>
 <tr class="b">
+<td><a href="#checkServiceComponentFilesExist"><code>&lt;checkServiceComponentFilesExist&gt;</code></a></td>
+<td><code>boolean</code></td>
+<td><code>-</code></td>
+<td>If <code>true</code>, it is checked that the explicitly declared OSGi service component files exist.<br /><strong>Default</strong>: <code>true</code></td></tr>
+<tr class="a">
 <td><a href="#deriveHeaderFromProject"><code>&lt;deriveHeaderFromProject&gt;</code></a></td>
 <td><code>boolean</code></td>
 <td><code>-</code></td>
@@ -171,7 +176,7 @@
 <ul>
  <li><code>org.osgi.framework.Constants.BUNDLE_LICENSE</code><!-- no javadoc sites associated --> is generated from maven &lt;licenses&gt; configuration</li>
 </ul><br /><strong>Default</strong>: <code>true</code></td></tr>
-<tr class="a">
+<tr class="b">
 <td><a href="#deriveHeaderFromSource"><code>&lt;deriveHeaderFromSource&gt;</code></a></td>
 <td><code>boolean</code></td>
 <td><code>-</code></td>
@@ -179,17 +184,17 @@
 <ul>
  <li><code>org.osgi.framework.Constants.REQUIRE_CAPABILITY</code><!-- no javadoc sites associated --> is enhanced by those from code annotations</li>
 </ul><br /><strong>Default</strong>: <code>true</code></td></tr>
-<tr class="b">
+<tr class="a">
 <td><a href="#qualifier"><code>&lt;qualifier&gt;</code></a></td>
 <td><code>String</code></td>
 <td><code>-</code></td>
 <td>Build qualifier. Recommended way to set this parameter is using build-qualifier goal.<br /><strong>User Property</strong>: <code>buildQualifier</code></td></tr>
-<tr class="a">
+<tr class="b">
 <td><a href="#skip"><code>&lt;skip&gt;</code></a></td>
 <td><code>boolean</code></td>
 <td><code>-</code></td>
 <td>If <code>true</code>, skips the packaging entirely.<br /><strong>Default</strong>: <code>false</code></td></tr>
-<tr class="b">
+<tr class="a">
 <td><a href="#sourceReferences"><code>&lt;sourceReferences&gt;</code></a></td>
 <td><code>SourceReferences</code></td>
 <td><code>-</code></td>
@@ -203,12 +208,12 @@
           &lt;customValue&gt;scm:myscm:customSourceReferenceValue&lt;/customValue&gt;
         &lt;/sourceReferences&gt;
 </pre></td></tr>
-<tr class="a">
+<tr class="b">
 <td><a href="#strictBinIncludes"><code>&lt;strictBinIncludes&gt;</code></a></td>
 <td><code>boolean</code></td>
 <td><code>-</code></td>
 <td>If set to <code>true</code> (the default), missing build.properties bin.includes will cause build failure. If set to <code>false</code>, missing build.properties bin.includes will be reported as warnings but the build will not fail.<br /><strong>Default</strong>: <code>true</code></td></tr>
-<tr class="b">
+<tr class="a">
 <td><a href="#useDefaultExcludes"><code>&lt;useDefaultExcludes&gt;</code></a></td>
 <td><code>boolean</code></td>
 <td><code>-</code></td>
@@ -251,7 +256,13 @@
 <ul>
 <li><strong>Type</strong>: <code>java.io.File</code></li>
 <li><strong>Required</strong>: <code>Yes</code></li>
-<li><strong>User Property</strong>: <code>project.build.directory</code></li></ul><hr /></section><a id="deriveHeaderFromProject"></a><section><a id="a.3CderiveHeaderFromProject.3E"></a>
+<li><strong>User Property</strong>: <code>project.build.directory</code></li></ul><hr /></section><a id="checkServiceComponentFilesExist"></a><section><a id="a.3CcheckServiceComponentFilesExist.3E"></a>
+<h3>&lt;checkServiceComponentFilesExist&gt;</h3>
+<div>If <code>true</code>, it is checked that the explicitly declared OSGi service component files exist.</div>
+<ul>
+<li><strong>Type</strong>: <code>boolean</code></li>
+<li><strong>Required</strong>: <code>No</code></li>
+<li><strong>Default</strong>: <code>true</code></li></ul><hr /></section><a id="deriveHeaderFromProject"></a><section><a id="a.3CderiveHeaderFromProject.3E"></a>
 <h3>&lt;deriveHeaderFromProject&gt;</h3>
 <div>Whether to derive OSGi-Headers from the maven-pom configuration, currently the following header are supported 
 <ul>
