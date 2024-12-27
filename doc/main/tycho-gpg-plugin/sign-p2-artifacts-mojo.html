@@ -197,83 +197,88 @@
 <td><code>1.5</code></td>
 <td>GPG Signer only: The lock mode to use when invoking gpg. By default no lock mode will be specified. Valid values are <code>once</code>, <code>multiple</code> and <code>never</code>. The lock mode gets translated into the corresponding <code>--lock-___</code> command line argument. Improper usage of this option may lead to data and key corruption.<br /><strong>See also:</strong> <a href="http://www.gnupg.org/documentation/manuals/gnupg/GPG-Configuration-Options.html">the --lock-options</a><br /><strong>User Property</strong>: <code>gpg.lockMode</code></td></tr>
 <tr class="a">
+<td><a href="#outputTimestamp"><code>&lt;outputTimestamp&gt;</code></a></td>
+<td><code>String</code></td>
+<td><code>-</code></td>
+<td>Timestamp for reproducible output archive entries, either formatted as ISO 8601 extended offset date-time (e.g. in UTC such as '2011-12-03T10:15:30Z' or with an offset '2019-10-05T20:37:42+06:00'), or as an int representing seconds since the epoch (like <a href="https://reproducible-builds.org/docs/source-date-epoch/">SOURCE_DATE_EPOCH</a>).<br /><strong>Default</strong>: <code>${project.build.outputTimestamp}</code></td></tr>
+<tr class="b">
 <td><a href="#passphrase"><code>&lt;passphrase&gt;</code></a></td>
 <td><code>String</code></td>
 <td><code>-</code></td>
 <td>
 <div><strong>Deprecated.</strong><br />Do not use this configuration, it may leak sensitive information. Rely on gpg-agent or env variables instead.</div><br />The passphrase to use when signing. If not given, look up the value under Maven settings using server id at 'passphraseServerKey' configuration. <em>Do not use this parameter, it leaks sensitive data. Passphrase should be provided only via gpg-agent or via env variable. If parameter <code>bestPractices</code><!-- no javadoc sites associated --> set to <code>true</code>, plugin fails when this parameter is configured.</em><br /><strong>User Property</strong>: <code>gpg.passphrase</code></td></tr>
-<tr class="b">
+<tr class="a">
 <td><a href="#passphraseEnvName"><code>&lt;passphraseEnvName&gt;</code></a></td>
 <td><code>String</code></td>
 <td><code>3.2.0</code></td>
 <td>The env variable name where the GnuPG passphrase is set. This is the recommended way to pass passphrase for signing in batch mode execution of Maven.<br /><strong>Default</strong>: <code>MAVEN_GPG_PASSPHRASE</code><br /><strong>User Property</strong>: <code>gpg.passphraseEnvName</code></td></tr>
-<tr class="a">
+<tr class="b">
 <td><a href="#passphraseServerId"><code>&lt;passphraseServerId&gt;</code></a></td>
 <td><code>String</code></td>
 <td><code>1.6</code></td>
 <td>
 <div><strong>Deprecated.</strong><br />Do not use this configuration, it may leak sensitive information. Rely on gpg-agent or env variables instead.</div><br />Server id to lookup the passphrase under Maven settings. <em>Do not use this parameter, it leaks sensitive data. Passphrase should be provided only via gpg-agent or via env variable. If parameter <code>bestPractices</code><!-- no javadoc sites associated --> set to <code>true</code>, plugin fails when this parameter is configured.</em> Is programatically defaulted to <code>GPG_PASSPHRASE</code><!-- no javadoc sites associated -->.<br /><strong>User Property</strong>: <code>gpg.passphraseServerId</code></td></tr>
-<tr class="b">
+<tr class="a">
 <td><a href="#pgpKeyBehavior"><code>&lt;pgpKeyBehavior&gt;</code></a></td>
 <td><code>SignRepositoryArtifactsMojo$PGPKeyBehavior</code></td>
 <td><code>-</code></td>
 <td>Configures how to generate PGP signatures for artifacts that already have one or more PGP signatures, <code>skip</code> to generate no new PGP signature, <code>replace</code> to replace the existing signature(s) with a new signature, and <code>merge</code> to add a new signature to any existing signature(s).<br /><strong>Default</strong>: <code>skip</code></td></tr>
-<tr class="a">
+<tr class="b">
 <td><a href="#publicKeyring"><code>&lt;publicKeyring&gt;</code></a></td>
 <td><code>String</code></td>
 <td><code>1.2</code></td>
 <td>
 <div><strong>Deprecated.</strong><br />Obsolete option since GnuPG 2.1 version.</div><br />GPG Signer only: The path to a public keyring to add to the list of keyrings. By default, only the <code>pubring.gpg</code> from gpg's home directory is considered. Use this option (and <code>defaultKeyring</code><!-- no javadoc sites associated --> if required) to use a different public key. <em>Note:</em> Relative paths are resolved against gpg's home directory, not the project base directory. 
 <p><strong>NOTE: </strong>As of gpg 2.1 this is an obsolete option and ignored. All public keys are stored in the ‘pubring.kbx’ file below the GnuPG home directory.</p><br /><strong>User Property</strong>: <code>gpg.publicKeyring</code></td></tr>
-<tr class="b">
+<tr class="a">
 <td><a href="#repository"><code>&lt;repository&gt;</code></a></td>
 <td><code>File</code></td>
 <td><code>-</code></td>
 <td>The repository location.<br /><strong>Default</strong>: <code>${project.build.directory}/repository</code></td></tr>
-<tr class="a">
+<tr class="b">
 <td><a href="#secretKeyring"><code>&lt;secretKeyring&gt;</code></a></td>
 <td><code>String</code></td>
 <td><code>1.2</code></td>
 <td>
 <div><strong>Deprecated.</strong><br />Obsolete option since GnuPG 2.1 version.</div><br />GPG Signer only: The path to a secret keyring to add to the list of keyrings. By default, only the <code>secring.gpg</code> from gpg's home directory is considered. Use this option (in combination with <code>publicKeyring</code><!-- no javadoc sites associated --> and <code>defaultKeyring</code><!-- no javadoc sites associated --> if required) to use a different secret key. <em>Note:</em> Relative paths are resolved against gpg's home directory, not the project base directory. 
 <p><strong>NOTE: </strong>As of gpg 2.1 this is an obsolete option and ignored. All secret keys are stored in the ‘private-keys-v1.d’ directory below the GnuPG home directory.</p><br /><strong>User Property</strong>: <code>gpg.secretKeyring</code></td></tr>
-<tr class="b">
+<tr class="a">
 <td><a href="#secretKeys"><code>&lt;secretKeys&gt;</code></a></td>
 <td><code>File</code></td>
 <td><code>-</code></td>
 <td>Configure the Bouncy Castle <code>signer</code><!-- no javadoc sites associated --> to load the secret keys, stored in armored from, from the specified file. This avoids needing to import the keys into GnuPG's keybox.<br /><strong>User Property</strong>: <code>tycho.pgp.signer.bc.secretKeys</code></td></tr>
-<tr class="a">
+<tr class="b">
 <td><a href="#signer"><code>&lt;signer&gt;</code></a></td>
 <td><code>String</code></td>
 <td><code>-</code></td>
 <td>Configure the signer used for PGP signing. Currently supported are <code>gpg</code> for launching the native <code>gpg</code> executable, and <code>bc</code> for using Bouncy Castle libraries. The latter is much faster and it can sign in parallel, so is very much faster.<br /><strong>Default</strong>: <code>gpg</code><br /><strong>User Property</strong>: <code>tycho.pgp.signer</code></td></tr>
-<tr class="b">
+<tr class="a">
 <td><a href="#skip"><code>&lt;skip&gt;</code></a></td>
 <td><code>boolean</code></td>
 <td><code>-</code></td>
 <td>Skip doing the gpg signing.<br /><strong>Default</strong>: <code>false</code><br /><strong>User Property</strong>: <code>gpg.skip</code></td></tr>
-<tr class="a">
+<tr class="b">
 <td><a href="#skipBinaries"><code>&lt;skipBinaries&gt;</code></a></td>
 <td><code>boolean</code></td>
 <td><code>-</code></td>
 <td>Configure to <code>true</code> to generate a PGP signature for binary artifacts.<br /><strong>Default</strong>: <code>true</code></td></tr>
-<tr class="b">
+<tr class="a">
 <td><a href="#skipIfJarsigned"><code>&lt;skipIfJarsigned&gt;</code></a></td>
 <td><code>boolean</code></td>
 <td><code>-</code></td>
 <td>Configure to <code>true</code> to generate PGP signature only for artifacts that are <strong>not</strong> signed by a jarsigner.<br /><strong>Default</strong>: <code>true</code></td></tr>
-<tr class="a">
+<tr class="b">
 <td><a href="#skipIfJarsignedAndAnchored"><code>&lt;skipIfJarsignedAndAnchored&gt;</code></a></td>
 <td><code>boolean</code></td>
 <td><code>-</code></td>
 <td>Configure to <code>true</code> to generate a PGP signature only for artifacts that do <strong>not</strong> contain a signature that's anchored in Java's trust store, i.e., anchored in the JDK's cacerts. A JCA certificate, for example, is never anchored.<br /><strong>Default</strong>: <code>true</code></td></tr>
-<tr class="b">
+<tr class="a">
 <td><a href="#terminatePassphrase"><code>&lt;terminatePassphrase&gt;</code></a></td>
 <td><code>boolean</code></td>
 <td><code>3.2.7</code></td>
 <td>Whether to terminate the passphrase with LF character or not, as on some systems and some GPG executable combinations lack of trailing LF may cause GPG to not detect passphrase on STDIN. Since 3.2.0 it was always appended, unless passphrase itself ended with it. Note: before 3.2.7 the "line separator" was used for termination, that on other hand caused issues on Windows, where line separator is CRLF while GPG handles LF only. This parameter affects ONLY the GPG signer, not the BC signer. 
 <p>By default, this parameter is <code>true</code>.</p><br /><strong>See also:</strong> <a href="https://issues.apache.org/jira/browse/MGPG-99">MGPG-99</a>, <a href="https://issues.apache.org/jira/browse/MGPG-136">MGPG-136</a><br /><strong>Default</strong>: <code>true</code><br /><strong>User Property</strong>: <code>gpg.terminatePassphrase</code></td></tr>
-<tr class="a">
+<tr class="b">
 <td><a href="#useAgent"><code>&lt;useAgent&gt;</code></a></td>
 <td><code>boolean</code></td>
 <td><code>-</code></td>
@@ -392,7 +397,13 @@
 <li><strong>Type</strong>: <code>java.lang.String</code></li>
 <li><strong>Since</strong>: <code>1.5</code></li>
 <li><strong>Required</strong>: <code>No</code></li>
-<li><strong>User Property</strong>: <code>gpg.lockMode</code></li></ul><hr /></section><a id="passphrase"></a><section><a id="a.3Cpassphrase.3E"></a>
+<li><strong>User Property</strong>: <code>gpg.lockMode</code></li></ul><hr /></section><a id="outputTimestamp"></a><section><a id="a.3CoutputTimestamp.3E"></a>
+<h3>&lt;outputTimestamp&gt;</h3>
+<div>Timestamp for reproducible output archive entries, either formatted as ISO 8601 extended offset date-time (e.g. in UTC such as '2011-12-03T10:15:30Z' or with an offset '2019-10-05T20:37:42+06:00'), or as an int representing seconds since the epoch (like <a href="https://reproducible-builds.org/docs/source-date-epoch/">SOURCE_DATE_EPOCH</a>).</div>
+<ul>
+<li><strong>Type</strong>: <code>java.lang.String</code></li>
+<li><strong>Required</strong>: <code>No</code></li>
+<li><strong>Default</strong>: <code>${project.build.outputTimestamp}</code></li></ul><hr /></section><a id="passphrase"></a><section><a id="a.3Cpassphrase.3E"></a>
 <h3>&lt;passphrase&gt;</h3>
 <div><strong>Deprecated.</strong><br />Do not use this configuration, it may leak sensitive information. Rely on gpg-agent or env variables instead.</div><br />
 <div>The passphrase to use when signing. If not given, look up the value under Maven settings using server id at 'passphraseServerKey' configuration. <em>Do not use this parameter, it leaks sensitive data. Passphrase should be provided only via gpg-agent or via env variable. If parameter <code>bestPractices</code><!-- no javadoc sites associated --> set to <code>true</code>, plugin fails when this parameter is configured.</em></div>

@@ -142,11 +142,16 @@
 </ul>
 <p></p></td></tr>
 <tr class="b">
+<td><a href="#outputTimestamp"><code>&lt;outputTimestamp&gt;</code></a></td>
+<td><code>String</code></td>
+<td><code>-</code></td>
+<td>Timestamp for reproducible output archive entries, either formatted as ISO 8601 extended offset date-time (e.g. in UTC such as '2011-12-03T10:15:30Z' or with an offset '2019-10-05T20:37:42+06:00'), or as an int representing seconds since the epoch (like <a href="https://reproducible-builds.org/docs/source-date-epoch/">SOURCE_DATE_EPOCH</a>).<br /><strong>Default</strong>: <code>${project.build.outputTimestamp}</code></td></tr>
+<tr class="a">
 <td><a href="#parallel"><code>&lt;parallel&gt;</code></a></td>
 <td><code>boolean</code></td>
 <td><code>-</code></td>
 <td>Controls if products are allowed to be build in parallel</td></tr>
-<tr class="a">
+<tr class="b">
 <td><a href="#products"><code>&lt;products&gt;</code></a></td>
 <td><code>List&lt;Product&gt;</code></td>
 <td><code>-</code></td>
@@ -201,7 +206,7 @@
  <li><code>rootFolder</code> - The path where the installed product shall be stored in the archive, e.g. "eclipse". By default, the product is stored in the archive root.</li>
  <li><code>rootFolders</code> - OS-specific installation root folders, overriding <code>rootFolder</code>. Allowed children are <code>&lt;macosx&gt;</code>, <code>&lt;win32&gt;</code>, <code>&lt;linux&gt;</code> and <code>&lt;freebsd&gt;</code> or any other OS supported by p2. Since 0.18.0</li>
 </ul></td></tr>
-<tr class="b">
+<tr class="a">
 <td><a href="#storeCreationTime"><code>&lt;storeCreationTime&gt;</code></a></td>
 <td><code>boolean</code></td>
 <td><code>-</code></td>
@@ -234,7 +239,13 @@
 <p></p></div>
 <ul>
 <li><strong>Type</strong>: <code>java.util.Map&lt;java.lang.String, java.lang.String&gt;</code></li>
-<li><strong>Required</strong>: <code>No</code></li></ul><hr /></section><a id="parallel"></a><section><a id="a.3Cparallel.3E"></a>
+<li><strong>Required</strong>: <code>No</code></li></ul><hr /></section><a id="outputTimestamp"></a><section><a id="a.3CoutputTimestamp.3E"></a>
+<h3>&lt;outputTimestamp&gt;</h3>
+<div>Timestamp for reproducible output archive entries, either formatted as ISO 8601 extended offset date-time (e.g. in UTC such as '2011-12-03T10:15:30Z' or with an offset '2019-10-05T20:37:42+06:00'), or as an int representing seconds since the epoch (like <a href="https://reproducible-builds.org/docs/source-date-epoch/">SOURCE_DATE_EPOCH</a>).</div>
+<ul>
+<li><strong>Type</strong>: <code>java.lang.String</code></li>
+<li><strong>Required</strong>: <code>No</code></li>
+<li><strong>Default</strong>: <code>${project.build.outputTimestamp}</code></li></ul><hr /></section><a id="parallel"></a><section><a id="a.3Cparallel.3E"></a>
 <h3>&lt;parallel&gt;</h3>
 <div>Controls if products are allowed to be build in parallel</div>
 <ul>

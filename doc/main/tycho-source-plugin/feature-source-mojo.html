@@ -164,22 +164,27 @@
 <td><code>-</code></td>
 <td>No description.<br /><strong>Default</strong>: <code>WARN</code></td></tr>
 <tr class="a">
+<td><a href="#outputTimestamp"><code>&lt;outputTimestamp&gt;</code></a></td>
+<td><code>String</code></td>
+<td><code>-</code></td>
+<td>Timestamp for reproducible output archive entries, either formatted as ISO 8601 extended offset date-time (e.g. in UTC such as '2011-12-03T10:15:30Z' or with an offset '2019-10-05T20:37:42+06:00'), or as an int representing seconds since the epoch (like <a href="https://reproducible-builds.org/docs/source-date-epoch/">SOURCE_DATE_EPOCH</a>).<br /><strong>Default</strong>: <code>${project.build.outputTimestamp}</code></td></tr>
+<tr class="b">
 <td><a href="#plugins"><code>&lt;plugins&gt;</code></a></td>
 <td><code>PlexusConfiguration</code></td>
 <td><code>-</code></td>
 <td>Additional plugins to include in the generated source feature. Beware that these additional plugins are not considered during build target platform calculation and ordering of reactor projects. Use &lt;extraRequirements&gt; dependency resolver configuration to guarantee proper reactor build order. 
 <p><strong>WARNING</strong> This experimental parameter may be removed from future source-feature mojo versions without prior notice.</p></td></tr>
-<tr class="b">
+<tr class="a">
 <td><a href="#reuseBrandingPlugin"><code>&lt;reuseBrandingPlugin&gt;</code></a></td>
 <td><code>boolean</code></td>
 <td><code>-</code></td>
 <td>Whether to reuse an explicit branding plugin from the binary feature for the generated source feature.<br /><strong>Default</strong>: <code>true</code></td></tr>
-<tr class="a">
+<tr class="b">
 <td><a href="#skip"><code>&lt;skip&gt;</code></a></td>
 <td><code>boolean</code></td>
 <td><code>-</code></td>
 <td>Whether to skip source feature generation.<br /><strong>Default</strong>: <code>false</code></td></tr>
-<tr class="b">
+<tr class="a">
 <td><a href="#useDefaultExcludes"><code>&lt;useDefaultExcludes&gt;</code></a></td>
 <td><code>boolean</code></td>
 <td><code>-</code></td>
@@ -228,7 +233,13 @@
 <ul>
 <li><strong>Type</strong>: <code>org.eclipse.tycho.source.SourceFeatureMojo$MissingSourcesAction</code></li>
 <li><strong>Required</strong>: <code>No</code></li>
-<li><strong>Default</strong>: <code>WARN</code></li></ul><hr /></section><a id="plugins"></a><section><a id="a.3Cplugins.3E"></a>
+<li><strong>Default</strong>: <code>WARN</code></li></ul><hr /></section><a id="outputTimestamp"></a><section><a id="a.3CoutputTimestamp.3E"></a>
+<h3>&lt;outputTimestamp&gt;</h3>
+<div>Timestamp for reproducible output archive entries, either formatted as ISO 8601 extended offset date-time (e.g. in UTC such as '2011-12-03T10:15:30Z' or with an offset '2019-10-05T20:37:42+06:00'), or as an int representing seconds since the epoch (like <a href="https://reproducible-builds.org/docs/source-date-epoch/">SOURCE_DATE_EPOCH</a>).</div>
+<ul>
+<li><strong>Type</strong>: <code>java.lang.String</code></li>
+<li><strong>Required</strong>: <code>No</code></li>
+<li><strong>Default</strong>: <code>${project.build.outputTimestamp}</code></li></ul><hr /></section><a id="plugins"></a><section><a id="a.3Cplugins.3E"></a>
 <h3>&lt;plugins&gt;</h3>
 <div>Additional plugins to include in the generated source feature. Beware that these additional plugins are not considered during build target platform calculation and ordering of reactor projects. Use &lt;extraRequirements&gt; dependency resolver configuration to guarantee proper reactor build order. 
 <p><strong>WARNING</strong> This experimental parameter may be removed from future source-feature mojo versions without prior notice.</p></div>

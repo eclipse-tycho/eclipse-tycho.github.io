@@ -121,16 +121,21 @@
 <td><code>-</code></td>
 <td><p>Name of the generated zip file (without extension).</p><br /><strong>User Property</strong>: <code>project.build.finalName</code></td></tr>
 <tr class="a">
+<td><a href="#outputTimestamp"><code>&lt;outputTimestamp&gt;</code></a></td>
+<td><code>String</code></td>
+<td><code>-</code></td>
+<td>Timestamp for reproducible output archive entries, either formatted as ISO 8601 extended offset date-time (e.g. in UTC such as '2011-12-03T10:15:30Z' or with an offset '2019-10-05T20:37:42+06:00'), or as an int representing seconds since the epoch (like <a href="https://reproducible-builds.org/docs/source-date-epoch/">SOURCE_DATE_EPOCH</a>).<br /><strong>Default</strong>: <code>${project.build.outputTimestamp}</code></td></tr>
+<tr class="b">
 <td><a href="#qualifier"><code>&lt;qualifier&gt;</code></a></td>
 <td><code>String</code></td>
 <td><code>-</code></td>
 <td>No description.<br /><strong>User Property</strong>: <code>buildQualifier</code></td></tr>
-<tr class="b">
+<tr class="a">
 <td><a href="#repositoryLocation"><code>&lt;repositoryLocation&gt;</code></a></td>
 <td><code>File</code></td>
 <td><code>-</code></td>
 <td>No description.<br /><strong>User Property</strong>: <code>p2.repository.location</code></td></tr>
-<tr class="a">
+<tr class="b">
 <td><a href="#skipArchive"><code>&lt;skipArchive&gt;</code></a></td>
 <td><code>boolean</code></td>
 <td><code>-</code></td>
@@ -141,7 +146,13 @@
 <ul>
 <li><strong>Type</strong>: <code>java.lang.String</code></li>
 <li><strong>Required</strong>: <code>No</code></li>
-<li><strong>User Property</strong>: <code>project.build.finalName</code></li></ul><hr /></section><a id="qualifier"></a><section><a id="a.3Cqualifier.3E"></a>
+<li><strong>User Property</strong>: <code>project.build.finalName</code></li></ul><hr /></section><a id="outputTimestamp"></a><section><a id="a.3CoutputTimestamp.3E"></a>
+<h3>&lt;outputTimestamp&gt;</h3>
+<div>Timestamp for reproducible output archive entries, either formatted as ISO 8601 extended offset date-time (e.g. in UTC such as '2011-12-03T10:15:30Z' or with an offset '2019-10-05T20:37:42+06:00'), or as an int representing seconds since the epoch (like <a href="https://reproducible-builds.org/docs/source-date-epoch/">SOURCE_DATE_EPOCH</a>).</div>
+<ul>
+<li><strong>Type</strong>: <code>java.lang.String</code></li>
+<li><strong>Required</strong>: <code>No</code></li>
+<li><strong>Default</strong>: <code>${project.build.outputTimestamp}</code></li></ul><hr /></section><a id="qualifier"></a><section><a id="a.3Cqualifier.3E"></a>
 <h3>&lt;qualifier&gt;</h3>
 <div>No description.</div>
 <ul>

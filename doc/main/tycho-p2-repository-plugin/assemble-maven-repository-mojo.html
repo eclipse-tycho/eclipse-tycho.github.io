@@ -196,6 +196,11 @@
 <td><code>-</code></td>
 <td>Configures the key servers that are used to fetch the public keys, if not specified, "https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search={0}" and "http://pgp.mit.edu/pks/lookup?op=get&amp;search={0}" are used in this order.</td></tr>
 <tr class="b">
+<td><a href="#outputTimestamp"><code>&lt;outputTimestamp&gt;</code></a></td>
+<td><code>String</code></td>
+<td><code>-</code></td>
+<td>Timestamp for reproducible output archive entries, either formatted as ISO 8601 extended offset date-time (e.g. in UTC such as '2011-12-03T10:15:30Z' or with an offset '2019-10-05T20:37:42+06:00'), or as an int representing seconds since the epoch (like <a href="https://reproducible-builds.org/docs/source-date-epoch/">SOURCE_DATE_EPOCH</a>).<br /><strong>Default</strong>: <code>${project.build.outputTimestamp}</code></td></tr>
+<tr class="a">
 <td><a href="#timeoutInSeconds"><code>&lt;timeoutInSeconds&gt;</code></a></td>
 <td><code>int</code></td>
 <td><code>-</code></td>
@@ -265,7 +270,13 @@
 <div>Configures the key servers that are used to fetch the public keys, if not specified, "https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search={0}" and "http://pgp.mit.edu/pks/lookup?op=get&amp;search={0}" are used in this order.</div>
 <ul>
 <li><strong>Type</strong>: <code>java.util.List&lt;java.lang.String&gt;</code></li>
-<li><strong>Required</strong>: <code>No</code></li></ul><hr /></section><a id="timeoutInSeconds"></a><section><a id="a.3CtimeoutInSeconds.3E"></a>
+<li><strong>Required</strong>: <code>No</code></li></ul><hr /></section><a id="outputTimestamp"></a><section><a id="a.3CoutputTimestamp.3E"></a>
+<h3>&lt;outputTimestamp&gt;</h3>
+<div>Timestamp for reproducible output archive entries, either formatted as ISO 8601 extended offset date-time (e.g. in UTC such as '2011-12-03T10:15:30Z' or with an offset '2019-10-05T20:37:42+06:00'), or as an int representing seconds since the epoch (like <a href="https://reproducible-builds.org/docs/source-date-epoch/">SOURCE_DATE_EPOCH</a>).</div>
+<ul>
+<li><strong>Type</strong>: <code>java.lang.String</code></li>
+<li><strong>Required</strong>: <code>No</code></li>
+<li><strong>Default</strong>: <code>${project.build.outputTimestamp}</code></li></ul><hr /></section><a id="timeoutInSeconds"></a><section><a id="a.3CtimeoutInSeconds.3E"></a>
 <h3>&lt;timeoutInSeconds&gt;</h3>
 <div>No description.</div>
 <ul>

@@ -201,37 +201,42 @@
 <td><code>-</code></td>
 <td>The directory where the generated archive file will be put.<br /><strong>User Property</strong>: <code>project.build.directory</code></td></tr>
 <tr class="b">
+<td><a href="#outputTimestamp"><code>&lt;outputTimestamp&gt;</code></a></td>
+<td><code>String</code></td>
+<td><code>-</code></td>
+<td>Timestamp for reproducible output archive entries, either formatted as ISO 8601 extended offset date-time (e.g. in UTC such as '2011-12-03T10:15:30Z' or with an offset '2019-10-05T20:37:42+06:00'), or as an int representing seconds since the epoch (like <a href="https://reproducible-builds.org/docs/source-date-epoch/">SOURCE_DATE_EPOCH</a>).<br /><strong>Default</strong>: <code>${project.build.outputTimestamp}</code></td></tr>
+<tr class="a">
 <td><a href="#qualifier"><code>&lt;qualifier&gt;</code></a></td>
 <td><code>String</code></td>
 <td><code>-</code></td>
 <td>Build qualifier. Recommended way to set this parameter is using build-qualifier goal. Only used when creating a source bundle.<br /><strong>User Property</strong>: <code>buildQualifier</code></td></tr>
-<tr class="a">
+<tr class="b">
 <td><a href="#sourceBundle"><code>&lt;sourceBundle&gt;</code></a></td>
 <td><code>boolean</code></td>
 <td><code>-</code></td>
 <td>Whether the source jar should be an Eclipse source bundle.<br /><strong>Default</strong>: <code>true</code></td></tr>
-<tr class="b">
+<tr class="a">
 <td><a href="#sourceBundleSuffix"><code>&lt;sourceBundleSuffix&gt;</code></a></td>
 <td><code>String</code></td>
 <td><code>-</code></td>
 <td>The suffix to be added to the symbolic name of the bundle to construct the symbolic name of the Eclipse source bundle.<br /><strong>Default</strong>: <code>.source</code><br /><strong>User Property</strong>: <code>sourceBundleSuffix</code></td></tr>
-<tr class="a">
+<tr class="b">
 <td><a href="#strictSrcIncludes"><code>&lt;strictSrcIncludes&gt;</code></a></td>
 <td><code>boolean</code></td>
 <td><code>-</code></td>
 <td>If set to <code>true</code> (the default), missing build.properties src.includes will cause build failure. If set to <code>false</code>, missing build.properties src.includes will be reported as warnings but the build will not fail.<br /><strong>Default</strong>: <code>true</code></td></tr>
-<tr class="b">
+<tr class="a">
 <td><a href="#useDefaultExcludes"><code>&lt;useDefaultExcludes&gt;</code></a></td>
 <td><code>boolean</code></td>
 <td><code>2.1</code></td>
 <td>Exclude commonly excluded files such as SCM configuration. These are defined in the plexus FileUtils.getDefaultExcludes()<br /><strong>Default</strong>: <code>true</code></td></tr>
-<tr class="a">
+<tr class="b">
 <td><a href="#useDefaultManifestFile"><code>&lt;useDefaultManifestFile&gt;</code></a></td>
 <td><code>boolean</code></td>
 <td><code>2.1</code></td>
 <td>Set this to <code>true</code> to enable the use of the <code>defaultManifestFile</code>. 
 <br /><br /><strong>Default</strong>: <code>false</code></td></tr>
-<tr class="b">
+<tr class="a">
 <td><a href="#useDefaultSourceExcludes"><code>&lt;useDefaultSourceExcludes&gt;</code></a></td>
 <td><code>boolean</code></td>
 <td><code>-</code></td>
@@ -333,7 +338,13 @@
 <ul>
 <li><strong>Type</strong>: <code>java.io.File</code></li>
 <li><strong>Required</strong>: <code>No</code></li>
-<li><strong>User Property</strong>: <code>project.build.directory</code></li></ul><hr /></section><a id="qualifier"></a><section><a id="a.3Cqualifier.3E"></a>
+<li><strong>User Property</strong>: <code>project.build.directory</code></li></ul><hr /></section><a id="outputTimestamp"></a><section><a id="a.3CoutputTimestamp.3E"></a>
+<h3>&lt;outputTimestamp&gt;</h3>
+<div>Timestamp for reproducible output archive entries, either formatted as ISO 8601 extended offset date-time (e.g. in UTC such as '2011-12-03T10:15:30Z' or with an offset '2019-10-05T20:37:42+06:00'), or as an int representing seconds since the epoch (like <a href="https://reproducible-builds.org/docs/source-date-epoch/">SOURCE_DATE_EPOCH</a>).</div>
+<ul>
+<li><strong>Type</strong>: <code>java.lang.String</code></li>
+<li><strong>Required</strong>: <code>No</code></li>
+<li><strong>Default</strong>: <code>${project.build.outputTimestamp}</code></li></ul><hr /></section><a id="qualifier"></a><section><a id="a.3Cqualifier.3E"></a>
 <h3>&lt;qualifier&gt;</h3>
 <div>Build qualifier. Recommended way to set this parameter is using build-qualifier goal. Only used when creating a source bundle.</div>
 <ul>
