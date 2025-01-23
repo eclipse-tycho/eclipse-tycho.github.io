@@ -116,25 +116,35 @@
 <th>Since</th>
 <th>Description</th></tr>
 <tr class="b">
+<td><a href="#baselines"><code>&lt;baselines&gt;</code></a></td>
+<td><code>List&lt;Repository&gt;</code></td>
+<td><code>-</code></td>
+<td>If configured, automatically sets a baseline for this project if api tools nature is enabled<br /><strong>User Property</strong>: <code>baselines</code></td></tr>
+<tr class="a">
 <td><a href="#bundles"><code>&lt;bundles&gt;</code></a></td>
 <td><code>List&lt;String&gt;</code></td>
 <td><code>-</code></td>
 <td>No description.</td></tr>
-<tr class="a">
+<tr class="b">
 <td><a href="#debug"><code>&lt;debug&gt;</code></a></td>
 <td><code>boolean</code></td>
 <td><code>-</code></td>
 <td>No description.<br /><strong>Default</strong>: <code>false</code><br /><strong>User Property</strong>: <code>tycho.eclipsebuild.debug</code></td></tr>
-<tr class="b">
+<tr class="a">
 <td><a href="#eclipseRepository"><code>&lt;eclipseRepository&gt;</code></a></td>
 <td><code>Repository</code></td>
 <td><code>-</code></td>
 <td>No description.</td></tr>
-<tr class="a">
+<tr class="b">
 <td><a href="#failOnError"><code>&lt;failOnError&gt;</code></a></td>
 <td><code>boolean</code></td>
 <td><code>-</code></td>
 <td>No description.<br /><strong>Default</strong>: <code>true</code><br /><strong>User Property</strong>: <code>tycho.eclipsebuild.failOnError</code></td></tr>
+<tr class="a">
+<td><a href="#failOnResolutionError"><code>&lt;failOnResolutionError&gt;</code></a></td>
+<td><code>boolean</code></td>
+<td><code>-</code></td>
+<td>No description.<br /><strong>Default</strong>: <code>false</code></td></tr>
 <tr class="b">
 <td><a href="#features"><code>&lt;features&gt;</code></a></td>
 <td><code>List&lt;String&gt;</code></td>
@@ -155,7 +165,13 @@
 <td><code>boolean</code></td>
 <td><code>-</code></td>
 <td>No description.<br /><strong>Default</strong>: <code>false</code><br /><strong>User Property</strong>: <code>tycho.eclipsebuild.skip</code></td></tr></table></section><section><a id="Parameter_Details"></a>
-<h2>Parameter Details</h2><a id="bundles"></a><section><a id="a.3Cbundles.3E"></a>
+<h2>Parameter Details</h2><a id="baselines"></a><section><a id="a.3Cbaselines.3E"></a>
+<h3>&lt;baselines&gt;</h3>
+<div>If configured, automatically sets a baseline for this project if api tools nature is enabled</div>
+<ul>
+<li><strong>Type</strong>: <code>java.util.List&lt;org.apache.maven.model.Repository&gt;</code></li>
+<li><strong>Required</strong>: <code>No</code></li>
+<li><strong>User Property</strong>: <code>baselines</code></li></ul><hr /></section><a id="bundles"></a><section><a id="a.3Cbundles.3E"></a>
 <h3>&lt;bundles&gt;</h3>
 <div>No description.</div>
 <ul>
@@ -179,7 +195,13 @@
 <li><strong>Type</strong>: <code>boolean</code></li>
 <li><strong>Required</strong>: <code>No</code></li>
 <li><strong>User Property</strong>: <code>tycho.eclipsebuild.failOnError</code></li>
-<li><strong>Default</strong>: <code>true</code></li></ul><hr /></section><a id="features"></a><section><a id="a.3Cfeatures.3E"></a>
+<li><strong>Default</strong>: <code>true</code></li></ul><hr /></section><a id="failOnResolutionError"></a><section><a id="a.3CfailOnResolutionError.3E"></a>
+<h3>&lt;failOnResolutionError&gt;</h3>
+<div>No description.</div>
+<ul>
+<li><strong>Type</strong>: <code>boolean</code></li>
+<li><strong>Required</strong>: <code>No</code></li>
+<li><strong>Default</strong>: <code>false</code></li></ul><hr /></section><a id="features"></a><section><a id="a.3Cfeatures.3E"></a>
 <h3>&lt;features&gt;</h3>
 <div>No description.</div>
 <ul>
