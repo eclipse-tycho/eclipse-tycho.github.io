@@ -165,18 +165,13 @@
 <td>Specify the path to the target file to update, if not given the current project settings will be used to find a suitable file<br /><strong>User Property</strong>: <code>target</code></td></tr>
 <tr class="a">
 <td><a href="#updateSiteDiscovery"><code>&lt;updateSiteDiscovery&gt;</code></a></td>
-<td><code>String</code></td>
-<td><code>-</code></td>
-<td>A comma separated list of update site discovery strategies, the following is currently supported: 
-<ul>
- <li><code>parent</code> - search the parent path for a composite that can be used to find newer versions</li>
- <li><code>versionPattern[:pattern]</code> - specifies a pattern to match in the URL (defaults to (\d+)\.(\d+) where it increments each numeric part beginning at the last group, if no repository is found using the next group setting the previous to zero. Any non numeric pattern will be replaced by the empty string</li>
-</ul><br /><strong>User Property</strong>: <code>discovery</code></td></tr>
-<tr class="b">
-<td><a href="#updateSiteDiscoveryStrategies"><code>&lt;updateSiteDiscoveryStrategies&gt;</code></a></td>
 <td><code>List&lt;String&gt;</code></td>
 <td><code>-</code></td>
-<td>No description.</td></tr></table></section><section><a id="Parameter_Details"></a>
+<td>A list of update site discovery strategies, the following is currently supported: 
+<ul>
+ <li><code>parent</code> - search the parent path for a composite that can be used to find newer versions</li>
+ <li><code>versionPattern[:pattern]</code> - specifies a pattern to match in the URL (defaults to <code>(\d+)\.(\d+)</code> where it increments each numeric part beginning at the last group, if no repository is found using the next group setting the previous to zero. Any non numeric pattern will be replaced by the empty string</li>
+</ul> If used on the CLI, individual values must be separated by a comma see <a href="https://maven.apache.org/guides/mini/guide-configuring-plugins.html#Mapping_Collections_and_Arrays">here</a><br /><strong>User Property</strong>: <code>discovery</code></td></tr></table></section><section><a id="Parameter_Details"></a>
 <h2>Parameter Details</h2><a id="allowIncrementalUpdates"></a><section><a id="a.3CallowIncrementalUpdates.3E"></a>
 <h3>&lt;allowIncrementalUpdates&gt;</h3>
 <div>Whether to allow the incremental version number to be changed.</div>
@@ -236,20 +231,15 @@
 <li><strong>Required</strong>: <code>No</code></li>
 <li><strong>User Property</strong>: <code>target</code></li></ul><hr /></section><a id="updateSiteDiscovery"></a><section><a id="a.3CupdateSiteDiscovery.3E"></a>
 <h3>&lt;updateSiteDiscovery&gt;</h3>
-<div>A comma separated list of update site discovery strategies, the following is currently supported: 
+<div>A list of update site discovery strategies, the following is currently supported: 
 <ul>
  <li><code>parent</code> - search the parent path for a composite that can be used to find newer versions</li>
- <li><code>versionPattern[:pattern]</code> - specifies a pattern to match in the URL (defaults to (\d+)\.(\d+) where it increments each numeric part beginning at the last group, if no repository is found using the next group setting the previous to zero. Any non numeric pattern will be replaced by the empty string</li>
-</ul></div>
-<ul>
-<li><strong>Type</strong>: <code>java.lang.String</code></li>
-<li><strong>Required</strong>: <code>No</code></li>
-<li><strong>User Property</strong>: <code>discovery</code></li></ul><hr /></section><a id="updateSiteDiscoveryStrategies"></a><section><a id="a.3CupdateSiteDiscoveryStrategies.3E"></a>
-<h3>&lt;updateSiteDiscoveryStrategies&gt;</h3>
-<div>No description.</div>
+ <li><code>versionPattern[:pattern]</code> - specifies a pattern to match in the URL (defaults to <code>(\d+)\.(\d+)</code> where it increments each numeric part beginning at the last group, if no repository is found using the next group setting the previous to zero. Any non numeric pattern will be replaced by the empty string</li>
+</ul> If used on the CLI, individual values must be separated by a comma see <a href="https://maven.apache.org/guides/mini/guide-configuring-plugins.html#Mapping_Collections_and_Arrays">here</a></div>
 <ul>
 <li><strong>Type</strong>: <code>java.util.List&lt;java.lang.String&gt;</code></li>
-<li><strong>Required</strong>: <code>No</code></li></ul></section></section></section>        </main>
+<li><strong>Required</strong>: <code>No</code></li>
+<li><strong>User Property</strong>: <code>discovery</code></li></ul></section></section></section>        </main>
       </div>
     </div>
     <hr/>
