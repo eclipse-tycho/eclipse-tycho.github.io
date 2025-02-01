@@ -107,9 +107,39 @@
 <ul>
 <li>Requires a Maven project to be executed.</li>
 <li>The goal is thread-safe and supports parallel builds.</li>
-<li>Binds by default to the <a class="externalLink" href="https://maven.apache.org/ref/current/maven-core/lifecycles.html">lifecycle phase</a>: <code>clean</code>.</li></ul><section><a id="Parameters"></a>
-<h2>Parameters</h2>
-<p>(no parameters)</p></section></section>        </main>
+<li>Binds by default to the <a class="externalLink" href="https://maven.apache.org/ref/current/maven-core/lifecycles.html">lifecycle phase</a>: <code>clean</code>.</li></ul><section><a id="Optional_Parameters"></a>
+<h2>Optional Parameters</h2>
+<table class="table table-striped">
+<tr class="a">
+<th>Name</th>
+<th>Type</th>
+<th>Since</th>
+<th>Description</th></tr>
+<tr class="b">
+<td><a href="#outputDirectory"><code>&lt;outputDirectory&gt;</code></a></td>
+<td><code>File</code></td>
+<td><code>-</code></td>
+<td>The directory where the tycho generated POM file will be written to.<br /><strong>Default</strong>: <code>${project.basedir}</code><br /><strong>User Property</strong>: <code>tycho.bnd.consumerpom.directory</code></td></tr>
+<tr class="a">
+<td><a href="#tychoPomFilename"><code>&lt;tychoPomFilename&gt;</code></a></td>
+<td><code>String</code></td>
+<td><code>-</code></td>
+<td>The filename of the tycho generated POM file.<br /><strong>Default</strong>: <code>.tycho-consumer-pom.xml</code><br /><strong>User Property</strong>: <code>tycho.bnd.consumerpom.file</code></td></tr></table></section><section><a id="Parameter_Details"></a>
+<h2>Parameter Details</h2><a id="outputDirectory"></a><section><a id="a.3CoutputDirectory.3E"></a>
+<h3>&lt;outputDirectory&gt;</h3>
+<div>The directory where the tycho generated POM file will be written to.</div>
+<ul>
+<li><strong>Type</strong>: <code>java.io.File</code></li>
+<li><strong>Required</strong>: <code>No</code></li>
+<li><strong>User Property</strong>: <code>tycho.bnd.consumerpom.directory</code></li>
+<li><strong>Default</strong>: <code>${project.basedir}</code></li></ul><hr /></section><a id="tychoPomFilename"></a><section><a id="a.3CtychoPomFilename.3E"></a>
+<h3>&lt;tychoPomFilename&gt;</h3>
+<div>The filename of the tycho generated POM file.</div>
+<ul>
+<li><strong>Type</strong>: <code>java.lang.String</code></li>
+<li><strong>Required</strong>: <code>No</code></li>
+<li><strong>User Property</strong>: <code>tycho.bnd.consumerpom.file</code></li>
+<li><strong>Default</strong>: <code>.tycho-consumer-pom.xml</code></li></ul></section></section></section>        </main>
       </div>
     </div>
     <hr/>
