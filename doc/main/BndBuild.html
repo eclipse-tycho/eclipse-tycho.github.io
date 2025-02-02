@@ -146,7 +146,7 @@ In contrast to a traditional maven build where each module has to contain a <cod
 </code></pre>
 <ul>
 
-<li>create a file called <code>maven.config</code> in the <code>.mvn</code> folder with the following content (adjust the version accordingly!):</li>
+<li>create a file called <code>maven.config</code> in the <code>.mvn</code> folder with the following content (adjust the Tycho version accordingly to the <a href="https://github.com/eclipse-tycho/tycho/releases" class="externalLink">latest release</a>!):</li>
 </ul>
 
 <pre class="prettyprint linenums"><code class="language-properties">-Dtycho-version=4.0.10
@@ -155,7 +155,15 @@ In contrast to a traditional maven build where each module has to contain a <cod
 
 <li>You can now run your build with <code>mvn clean verify</code>.</li>
 </ul>
-<p>You can check more details in a <a href="https://github.com/eclipse-tycho/tycho/tree/master/demo/bnd-workspace" class="externalLink">demo project</a>.</p></section><section><a id="Mixed_Builds"></a>
+<p>You can check more details in a <a href="https://github.com/eclipse-tycho/tycho/tree/master/demo/bnd-workspace" class="externalLink">demo project</a>.</p><section><a id="Configure_the_pomless_build"></a>
+<h3>Configure the pomless build</h3>
+<p>If you want to further configure the build can be done in these ways:</p>
+<ol style="list-style-type: decimal;">
+
+<li>You can specify additional global properties in the <code>.mvn/maven.config</code>.</li>
+<li>You can define properties per project properties in the <code>bnd.bnd</code> file <code>pom.model.property.&lt;some property&gt;: true</code>, see <a href="https://github.com/eclipse-tycho/tycho/wiki/Tycho-Pomless#overwrite-group-and-artifact-ids" class="externalLink">the wiki</a> for more details.</li>
+<li>You can place a <code>pom.xml</code> in your <code>cnf</code> folder this will then be used as a parent for the aggregator, here you can add additional mojos, profiles and so on. If you want to enable certain things only for some of the projects you can use properties as described in (2) to skip the execution of mojos not relevant for other projects.</li>
+</ol></section></section><section><a id="Mixed_Builds"></a>
 <h2>Mixed Builds</h2>
 <p>You can even combine a BND Workspace and PDE bundles in a build, see <a href="https://github.com/eclipse-tycho/tycho/tree/master/demo/bnd-pde-workspace" class="externalLink">demo</a>.</p></section></section>        </main>
       </div>
