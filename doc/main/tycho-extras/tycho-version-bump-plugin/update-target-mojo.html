@@ -159,11 +159,26 @@
 <td><code>-</code></td>
 <td>No description.<br /><strong>User Property</strong>: <code>project</code></td></tr>
 <tr class="b">
+<td><a href="#reportFileName"><code>&lt;reportFileName&gt;</code></a></td>
+<td><code>File</code></td>
+<td><code>-</code></td>
+<td>No description.<br /><strong>Default</strong>: <code>${project.build.directory}/targetUpdates.md</code><br /><strong>User Property</strong>: <code>tycho.updatetarget.report</code></td></tr>
+<tr class="a">
+<td><a href="#reportPreamble"><code>&lt;reportPreamble&gt;</code></a></td>
+<td><code>String</code></td>
+<td><code>-</code></td>
+<td>No description.<br /><strong>Default</strong>: <code>Please review the changes and merge if appropriate, or cherry pick individual updates.</code><br /><strong>User Property</strong>: <code>tycho.updatetarget.report.preamble</code></td></tr>
+<tr class="b">
 <td><a href="#targetFile"><code>&lt;targetFile&gt;</code></a></td>
 <td><code>File</code></td>
 <td><code>-</code></td>
 <td>Specify the path to the target file to update, if not given the current project settings will be used to find a suitable file<br /><strong>User Property</strong>: <code>target</code></td></tr>
 <tr class="a">
+<td><a href="#updateEmptyVersion"><code>&lt;updateEmptyVersion&gt;</code></a></td>
+<td><code>boolean</code></td>
+<td><code>-</code></td>
+<td>If enabled, missing or empty versions are updated to the most recent found in the repository to guarantee a stable build<br /><strong>Default</strong>: <code>true</code><br /><strong>User Property</strong>: <code>tycho.updatetarget.updateEmptyVersion</code></td></tr>
+<tr class="b">
 <td><a href="#updateSiteDiscovery"><code>&lt;updateSiteDiscovery&gt;</code></a></td>
 <td><code>List&lt;String&gt;</code></td>
 <td><code>-</code></td>
@@ -224,13 +239,34 @@
 <ul>
 <li><strong>Type</strong>: <code>org.apache.maven.project.MavenProject</code></li>
 <li><strong>Required</strong>: <code>No</code></li>
-<li><strong>User Property</strong>: <code>project</code></li></ul><hr /></section><a id="targetFile"></a><section><a id="a.3CtargetFile.3E"></a>
+<li><strong>User Property</strong>: <code>project</code></li></ul><hr /></section><a id="reportFileName"></a><section><a id="a.3CreportFileName.3E"></a>
+<h3>&lt;reportFileName&gt;</h3>
+<div>No description.</div>
+<ul>
+<li><strong>Type</strong>: <code>java.io.File</code></li>
+<li><strong>Required</strong>: <code>No</code></li>
+<li><strong>User Property</strong>: <code>tycho.updatetarget.report</code></li>
+<li><strong>Default</strong>: <code>${project.build.directory}/targetUpdates.md</code></li></ul><hr /></section><a id="reportPreamble"></a><section><a id="a.3CreportPreamble.3E"></a>
+<h3>&lt;reportPreamble&gt;</h3>
+<div>No description.</div>
+<ul>
+<li><strong>Type</strong>: <code>java.lang.String</code></li>
+<li><strong>Required</strong>: <code>No</code></li>
+<li><strong>User Property</strong>: <code>tycho.updatetarget.report.preamble</code></li>
+<li><strong>Default</strong>: <code>Please review the changes and merge if appropriate, or cherry pick individual updates.</code></li></ul><hr /></section><a id="targetFile"></a><section><a id="a.3CtargetFile.3E"></a>
 <h3>&lt;targetFile&gt;</h3>
 <div>Specify the path to the target file to update, if not given the current project settings will be used to find a suitable file</div>
 <ul>
 <li><strong>Type</strong>: <code>java.io.File</code></li>
 <li><strong>Required</strong>: <code>No</code></li>
-<li><strong>User Property</strong>: <code>target</code></li></ul><hr /></section><a id="updateSiteDiscovery"></a><section><a id="a.3CupdateSiteDiscovery.3E"></a>
+<li><strong>User Property</strong>: <code>target</code></li></ul><hr /></section><a id="updateEmptyVersion"></a><section><a id="a.3CupdateEmptyVersion.3E"></a>
+<h3>&lt;updateEmptyVersion&gt;</h3>
+<div>If enabled, missing or empty versions are updated to the most recent found in the repository to guarantee a stable build</div>
+<ul>
+<li><strong>Type</strong>: <code>boolean</code></li>
+<li><strong>Required</strong>: <code>No</code></li>
+<li><strong>User Property</strong>: <code>tycho.updatetarget.updateEmptyVersion</code></li>
+<li><strong>Default</strong>: <code>true</code></li></ul><hr /></section><a id="updateSiteDiscovery"></a><section><a id="a.3CupdateSiteDiscovery.3E"></a>
 <h3>&lt;updateSiteDiscovery&gt;</h3>
 <div>A list of update site discovery strategies, the following is currently supported: 
 <ul>
