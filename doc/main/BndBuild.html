@@ -15,8 +15,10 @@
     <link rel="stylesheet" href="./css/site.css" />
     <link rel="stylesheet" href="./css/print.css" media="print" />
     <script src="./js/apache-maven-fluido-2.0.1.min.js"></script>
+    <style>.github-fork-ribbon:before { background-color: gray; }</style>
   </head>
   <body>
+    <a class="github-fork-ribbon right-top" href="https://github.com/eclipse-tycho/tycho" data-ribbon="Fork me on GitHub">Fork me on GitHub</a>
     <div class="container-fluid container-fluid-top">
       <header>
         <div id="banner">
@@ -121,6 +123,7 @@
 <ul>
 
 <li><code>bnd.bnd</code> - project configuration file</li>
+<li><code>myapp.bndrun</code> - a .bndrun file which can be used to export an executable .jar as part of the build</li>
 </ul></li>
 <li><code>...</code></li>
 </ul></li>
@@ -163,9 +166,36 @@ In contrast to a traditional maven build where each module has to contain a <cod
 <li>You can specify additional global properties in the <code>.mvn/maven.config</code>.</li>
 <li>You can define properties per project properties in the <code>bnd.bnd</code> file <code>pom.model.property.&lt;some property&gt;: true</code>, see <a href="https://github.com/eclipse-tycho/tycho/wiki/Tycho-Pomless#overwrite-group-and-artifact-ids" class="externalLink">the wiki</a> for more details.</li>
 <li>You can place a <code>pom.xml</code> in your <code>cnf</code> folder this will then be used as a parent for the aggregator, here you can add additional mojos, profiles and so on. If you want to enable certain things only for some of the projects you can use properties as described in (2) to skip the execution of mojos not relevant for other projects.</li>
-</ol></section></section><section><a id="Mixed_Builds"></a>
+</ol><section><a id="Create_executable_jar"></a>
+<h4>Create executable jar</h4>
+<p>Tycho can also create an executable <code>.jar</code> file of your application based on a <code>.bndrun</code> file containing <code>-runbundles</code>, which you can then deploy and start.</p>
+<p>Just add the following line to your <code>.mvn/maven.config</code> file or pass it on the maven commandline:</p>
+
+<pre><code class="nohighlight nocode">-Dbndrun.exports=mydemo.app
+</code></pre>
+<p>This automatically searches all your bundles for a file named <code>mydemo.app.bndrun</code>.</p>
+<p>If you have a bundle <code>myappbundle</code> which contains <code>mydemo.app.bndrun</code>, then the build would create an executable jar at the following location:</p>
+<p><code>/myappbundle/target/executable/mydemo.app.bndrun.jar</code></p>
+<p>Your build output will look like this:</p>
+
+<pre><code class="nohighlight nocode">[INFO] --- tycho-bnd:4.0.11:run (build) @ myappbundle ---
+[INFO] Exporting mydemo.app.bndrun ...
+[INFO] Exported to .../myappbundle/target/executable/tycho.demo.app.jar
+</code></pre></section></section></section><section><a id="Mixed_Builds"></a>
 <h2>Mixed Builds</h2>
-<p>You can even combine a BND Workspace and PDE bundles in a build, see <a href="https://github.com/eclipse-tycho/tycho/tree/master/demo/bnd-pde-workspace" class="externalLink">demo</a>.</p></section></section>        </main>
+<p>You can even combine a BND Workspace and PDE bundles in a build, see <a href="https://github.com/eclipse-tycho/tycho/tree/master/demo/bnd-pde-workspace" class="externalLink">demo</a>.</p></section><section><a id="Troubleshooting"></a>
+<h2>Troubleshooting</h2>
+<p>Note: All properties in <code>.mvn/maven.config</code> can also be supplied via command line, for example to use a different tycho version use the following command line argument:</p>
+<p><code>mvn clean install -Dtycho-version=5.0.0-SNAPSHOT</code></p>
+<p>This uses the snapshot build which is useful if you build tycho yourself on your local machine and want to test that build.</p><section><a id="polyglot.dump.pom"></a>
+<h3>polyglot.dump.pom</h3>
+<p>E.g., <code>-Dpolyglot.dump.pom=pom-gen.xml</code> specifies that the generated pom.xml files which tycho polyglot creates is called <code>pom-gen.xml</code>.
+This might be needed if you have name clashes with existing files in your build.</p></section><section><a id="tycho.pomless.aggregator.names"></a>
+<h3>tycho.pomless.aggregator.names</h3>
+<p>The command line argument <code>-Dtycho.pomless.aggregator.names=_dummydisabled_</code> is for handling a rare edge case:
+In case you have your bnd workspace in a subfolder named <code>bundles</code>, <code>plugins</code>, <code>tests</code>,<code>features</code>, <code>sites</code>,<code>products</code>, or <code>releng</code> then tycho can have problems.
+The reason is that those names are kind of &#x2018;magic&#x2019; names reserved for special usecases.
+<code>-Dtycho.pomless.aggregator.names=_dummydisabled_</code> is a workaround to instruct Tycho to ignore those names. You can choose any word like <code>_dummydisabled_</code>, but just make sure you do not have a folder with that name.</p></section></section></section>        </main>
       </div>
     </div>
     <hr/>
