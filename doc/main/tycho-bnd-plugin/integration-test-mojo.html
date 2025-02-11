@@ -110,9 +110,37 @@
 <li>Requires a Maven project to be executed.</li>
 <li>Requires dependency resolution of artifacts in scope: <code>test</code>.</li>
 <li>The goal is thread-safe and supports parallel builds.</li>
-<li>Binds by default to the <a class="externalLink" href="https://maven.apache.org/ref/current/maven-core/lifecycles.html">lifecycle phase</a>: <code>integration-test</code>.</li></ul><section><a id="Parameters"></a>
-<h2>Parameters</h2>
-<p>(no parameters)</p></section></section>        </main>
+<li>Binds by default to the <a class="externalLink" href="https://maven.apache.org/ref/current/maven-core/lifecycles.html">lifecycle phase</a>: <code>integration-test</code>.</li></ul><section><a id="Optional_Parameters"></a>
+<h2>Optional Parameters</h2>
+<table class="table table-striped">
+<tr class="a">
+<th>Name</th>
+<th>Type</th>
+<th>Since</th>
+<th>Description</th></tr>
+<tr class="b">
+<td><a href="#skip"><code>&lt;skip&gt;</code></a></td>
+<td><code>boolean</code></td>
+<td><code>-</code></td>
+<td>Set this to <code>true</code> to bypass unit tests entirely. Its use is <b>NOT RECOMMENDED</b>, especially if you enable it using the "maven.test.skip" property, because maven.test.skip disables both running the tests and compiling the tests. Consider using the <code>skipTests</code> parameter instead that only skip the <i>execution</i> of tests.<br /><strong>User Property</strong>: <code>maven.test.skip</code></td></tr>
+<tr class="a">
+<td><a href="#skipTests"><code>&lt;skipTests&gt;</code></a></td>
+<td><code>boolean</code></td>
+<td><code>-</code></td>
+<td>Set this to "true" to skip running tests, but still compile them. Its use is NOT RECOMMENDED, but quite convenient on occasion.<br /><strong>User Property</strong>: <code>skipTests</code></td></tr></table></section><section><a id="Parameter_Details"></a>
+<h2>Parameter Details</h2><a id="skip"></a><section><a id="a.3Cskip.3E"></a>
+<h3>&lt;skip&gt;</h3>
+<div>Set this to <code>true</code> to bypass unit tests entirely. Its use is <b>NOT RECOMMENDED</b>, especially if you enable it using the "maven.test.skip" property, because maven.test.skip disables both running the tests and compiling the tests. Consider using the <code>skipTests</code> parameter instead that only skip the <i>execution</i> of tests.</div>
+<ul>
+<li><strong>Type</strong>: <code>boolean</code></li>
+<li><strong>Required</strong>: <code>No</code></li>
+<li><strong>User Property</strong>: <code>maven.test.skip</code></li></ul><hr /></section><a id="skipTests"></a><section><a id="a.3CskipTests.3E"></a>
+<h3>&lt;skipTests&gt;</h3>
+<div>Set this to "true" to skip running tests, but still compile them. Its use is NOT RECOMMENDED, but quite convenient on occasion.</div>
+<ul>
+<li><strong>Type</strong>: <code>boolean</code></li>
+<li><strong>Required</strong>: <code>No</code></li>
+<li><strong>User Property</strong>: <code>skipTests</code></li></ul></section></section></section>        </main>
       </div>
     </div>
     <hr/>
