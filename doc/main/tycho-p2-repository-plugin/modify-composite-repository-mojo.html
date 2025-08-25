@@ -10,7 +10,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="generator" content="Apache Maven Doxia Site Renderer 2.0.0" />
-    <title>tycho-p2-repository:modify-repository-properties – Tycho p2 Repository Plugin</title>
+    <title>tycho-p2-repository:modify-composite-repository – Tycho p2 Repository Plugin</title>
     <link rel="stylesheet" href="./css/apache-maven-fluido-2.0.1.min.css" />
     <link rel="stylesheet" href="./css/site.css" />
     <link rel="stylesheet" href="./css/print.css" media="print" />
@@ -100,17 +100,17 @@
           </div>
         </header>
         <main id="bodyColumn" class="span10">
-<section><a id="tycho-p2-repository.3Amodify-repository-properties"></a>
-<h1>tycho-p2-repository:modify-repository-properties</h1>
+<section><a id="tycho-p2-repository.3Amodify-composite-repository"></a>
+<h1>tycho-p2-repository:modify-composite-repository</h1>
 <p><strong>Full name</strong>:</p>
-<p>org.eclipse.tycho:tycho-p2-repository-plugin:6.0.0-SNAPSHOT:modify-repository-properties</p>
+<p>org.eclipse.tycho:tycho-p2-repository-plugin:6.0.0-SNAPSHOT:modify-composite-repository</p>
 <p><strong>Description</strong>:</p>
-<p>Modifies metadata of a P2-repository like its name or properties. 
-<p>This can be used to customize metadata of a just assembled repository or to modify an already existing (remote) repository. The resulting repository metadata files (<code>artifact.xml/jar/xml.xz</code> or <code>content.xml/jar/xml.xz</code>) are always written to a local directory. For a remote repository, a suitable other tool (such as SSH) must be used to copy these files subsequently back to the remote server.</p></p>
+<p>Modifies the content or name of a composite P2-repository. 
+<p>This can be used to create a new composite repository or to modify an already existing (remote) repository. The resulting repository metadata files (<code>compositeArtifacts.xml/jar</code> or <code>compositeContent.xml/jar</code>) are always written to a local directory. For a remote repository, a suitable other tool (such as SSH) must be used to copy these files subsequently back to the remote server.</p></p>
 <p><strong>Attributes</strong>:</p>
 <ul>
 <li>Requires a Maven project to be executed.</li>
-<li>The goal is thread-safe and supports parallel builds.</li></ul><section><a id="Optional_Parameters"></a>
+<li>The goal is not marked as thread-safe and thus does not support parallel builds.</li></ul><section><a id="Optional_Parameters"></a>
 <h2>Optional Parameters</h2>
 <table class="table table-striped">
 <tr class="a">
@@ -119,15 +119,27 @@
 <th>Since</th>
 <th>Description</th></tr>
 <tr class="b">
+<td><a href="#childCountLimit"><code>&lt;childCountLimit&gt;</code></a></td>
+<td><code>int</code></td>
+<td><code>-</code></td>
+<td>The maximum number of children to keep in the composite repository.
+<br />
+ If this limit is exceeded (after adding children) a corresponding count is removed from the beginning of the list of children. A value of zero or less, is considered as no-limit.<br /><strong>Default</strong>: <code>0</code><br /><strong>User Property</strong>: <code>p2.composite.children.limit</code></td></tr>
+<tr class="a">
+<td><a href="#childrenToAdd"><code>&lt;childrenToAdd&gt;</code></a></td>
+<td><code>List&lt;URI&gt;</code></td>
+<td><code>-</code></td>
+<td>The children to append to the composite repository.<br /><strong>User Property</strong>: <code>p2.composite.children.add</code></td></tr>
+<tr class="b">
+<td><a href="#childrenToRemove"><code>&lt;childrenToRemove&gt;</code></a></td>
+<td><code>List&lt;URI&gt;</code></td>
+<td><code>-</code></td>
+<td>The children to remove from the composite repository.<br /><strong>User Property</strong>: <code>p2.composite.children.remove</code></td></tr>
+<tr class="a">
 <td><a href="#compress"><code>&lt;compress&gt;</code></a></td>
 <td><code>boolean</code></td>
 <td><code>-</code></td>
 <td>Compress the repository index files <code>content.xml</code> and <code>artifacts.xml</code>.<br /><strong>Default</strong>: <code>true</code><br /><strong>User Property</strong>: <code>p2.repository.compress</code></td></tr>
-<tr class="a">
-<td><a href="#keepNonXzIndexFiles"><code>&lt;keepNonXzIndexFiles&gt;</code></a></td>
-<td><code>boolean</code></td>
-<td><code>-</code></td>
-<td>If <code>xzCompress</code><!-- no javadoc sites associated --> is <code>true</code>, whether jar or xml index files should be kept in addition to XZ-compressed index files. This fallback provides backwards compatibility for pre-Mars p2 clients which cannot read XZ-compressed index files.<br /><strong>Default</strong>: <code>true</code><br /><strong>User Property</strong>: <code>p2.repository.xz.keep</code></td></tr>
 <tr class="b">
 <td><a href="#outputLocation"><code>&lt;outputLocation&gt;</code></a></td>
 <td><code>Path</code></td>
@@ -135,20 +147,6 @@
 <td>Optional output location where the modified metadata files (<code>artifact.xml/jar/xml.xz</code> or <code>content.xml/jar/xml.xz</code>) are written to.
 <br />
  If not specified or equals to <code>repository</code><!-- no javadoc sites associated --> the source repository is modified in-place.<br /><strong>User Property</strong>: <code>p2.repository.output</code></td></tr>
-<tr class="a">
-<td><a href="#propertiesToAdd"><code>&lt;propertiesToAdd&gt;</code></a></td>
-<td><code>Map&lt;String,String&gt;</code></td>
-<td><code>-</code></td>
-<td>The properties to add.
-<br />
- Already existing properties are overwritten and updated to the value specified.<br /><strong>User Property</strong>: <code>p2.repository.properties.add</code></td></tr>
-<tr class="b">
-<td><a href="#propertiesToRemove"><code>&lt;propertiesToRemove&gt;</code></a></td>
-<td><code>List&lt;String&gt;</code></td>
-<td><code>-</code></td>
-<td>The properties to remove.
-<br />
- Properties that don't exist in the repository are just silently ignored.<br /><strong>User Property</strong>: <code>p2.repository.properties.remove</code></td></tr>
 <tr class="a">
 <td><a href="#repository"><code>&lt;repository&gt;</code></a></td>
 <td><code>Repository</code></td>
@@ -171,24 +169,38 @@
 <td><code>-</code></td>
 <td>Optional repository name to set. An existing name is overwritten.<br /><strong>User Property</strong>: <code>p2.repository.name</code></td></tr>
 <tr class="b">
-<td><a href="#xzCompress"><code>&lt;xzCompress&gt;</code></a></td>
+<td><a href="#validateChildren"><code>&lt;validateChildren&gt;</code></a></td>
 <td><code>boolean</code></td>
 <td><code>-</code></td>
-<td>Add XZ-compressed repository index files. XZ offers better compression ratios esp. for highly redundant file content.<br /><strong>Default</strong>: <code>true</code><br /><strong>User Property</strong>: <code>p2.repository.xz</code></td></tr></table></section><section><a id="Parameter_Details"></a>
-<h2>Parameter Details</h2><a id="compress"></a><section><a id="a.3Ccompress.3E"></a>
+<td>Validate the existence of the repository and all added children.<br /><strong>Default</strong>: <code>true</code><br /><strong>User Property</strong>: <code>p2.composite.validate</code></td></tr></table></section><section><a id="Parameter_Details"></a>
+<h2>Parameter Details</h2><a id="childCountLimit"></a><section><a id="a.3CchildCountLimit.3E"></a>
+<h3>&lt;childCountLimit&gt;</h3>
+<div>The maximum number of children to keep in the composite repository.
+<br />
+ If this limit is exceeded (after adding children) a corresponding count is removed from the beginning of the list of children. A value of zero or less, is considered as no-limit.</div>
+<ul>
+<li><strong>Type</strong>: <code>int</code></li>
+<li><strong>Required</strong>: <code>No</code></li>
+<li><strong>User Property</strong>: <code>p2.composite.children.limit</code></li>
+<li><strong>Default</strong>: <code>0</code></li></ul><hr /></section><a id="childrenToAdd"></a><section><a id="a.3CchildrenToAdd.3E"></a>
+<h3>&lt;childrenToAdd&gt;</h3>
+<div>The children to append to the composite repository.</div>
+<ul>
+<li><strong>Type</strong>: <code>java.util.List&lt;java.net.URI&gt;</code></li>
+<li><strong>Required</strong>: <code>No</code></li>
+<li><strong>User Property</strong>: <code>p2.composite.children.add</code></li></ul><hr /></section><a id="childrenToRemove"></a><section><a id="a.3CchildrenToRemove.3E"></a>
+<h3>&lt;childrenToRemove&gt;</h3>
+<div>The children to remove from the composite repository.</div>
+<ul>
+<li><strong>Type</strong>: <code>java.util.List&lt;java.net.URI&gt;</code></li>
+<li><strong>Required</strong>: <code>No</code></li>
+<li><strong>User Property</strong>: <code>p2.composite.children.remove</code></li></ul><hr /></section><a id="compress"></a><section><a id="a.3Ccompress.3E"></a>
 <h3>&lt;compress&gt;</h3>
 <div>Compress the repository index files <code>content.xml</code> and <code>artifacts.xml</code>.</div>
 <ul>
 <li><strong>Type</strong>: <code>boolean</code></li>
 <li><strong>Required</strong>: <code>No</code></li>
 <li><strong>User Property</strong>: <code>p2.repository.compress</code></li>
-<li><strong>Default</strong>: <code>true</code></li></ul><hr /></section><a id="keepNonXzIndexFiles"></a><section><a id="a.3CkeepNonXzIndexFiles.3E"></a>
-<h3>&lt;keepNonXzIndexFiles&gt;</h3>
-<div>If <code>xzCompress</code><!-- no javadoc sites associated --> is <code>true</code>, whether jar or xml index files should be kept in addition to XZ-compressed index files. This fallback provides backwards compatibility for pre-Mars p2 clients which cannot read XZ-compressed index files.</div>
-<ul>
-<li><strong>Type</strong>: <code>boolean</code></li>
-<li><strong>Required</strong>: <code>No</code></li>
-<li><strong>User Property</strong>: <code>p2.repository.xz.keep</code></li>
 <li><strong>Default</strong>: <code>true</code></li></ul><hr /></section><a id="outputLocation"></a><section><a id="a.3CoutputLocation.3E"></a>
 <h3>&lt;outputLocation&gt;</h3>
 <div>Optional output location where the modified metadata files (<code>artifact.xml/jar/xml.xz</code> or <code>content.xml/jar/xml.xz</code>) are written to.
@@ -197,23 +209,7 @@
 <ul>
 <li><strong>Type</strong>: <code>java.nio.file.Path</code></li>
 <li><strong>Required</strong>: <code>No</code></li>
-<li><strong>User Property</strong>: <code>p2.repository.output</code></li></ul><hr /></section><a id="propertiesToAdd"></a><section><a id="a.3CpropertiesToAdd.3E"></a>
-<h3>&lt;propertiesToAdd&gt;</h3>
-<div>The properties to add.
-<br />
- Already existing properties are overwritten and updated to the value specified.</div>
-<ul>
-<li><strong>Type</strong>: <code>java.util.Map&lt;java.lang.String, java.lang.String&gt;</code></li>
-<li><strong>Required</strong>: <code>No</code></li>
-<li><strong>User Property</strong>: <code>p2.repository.properties.add</code></li></ul><hr /></section><a id="propertiesToRemove"></a><section><a id="a.3CpropertiesToRemove.3E"></a>
-<h3>&lt;propertiesToRemove&gt;</h3>
-<div>The properties to remove.
-<br />
- Properties that don't exist in the repository are just silently ignored.</div>
-<ul>
-<li><strong>Type</strong>: <code>java.util.List&lt;java.lang.String&gt;</code></li>
-<li><strong>Required</strong>: <code>No</code></li>
-<li><strong>User Property</strong>: <code>p2.repository.properties.remove</code></li></ul><hr /></section><a id="repository"></a><section><a id="a.3Crepository.3E"></a>
+<li><strong>User Property</strong>: <code>p2.repository.output</code></li></ul><hr /></section><a id="repository"></a><section><a id="a.3Crepository.3E"></a>
 <h3>&lt;repository&gt;</h3>
 <div>Location of the <em>source</em> repository to modify.
 <br />
@@ -236,13 +232,13 @@
 <ul>
 <li><strong>Type</strong>: <code>java.lang.String</code></li>
 <li><strong>Required</strong>: <code>No</code></li>
-<li><strong>User Property</strong>: <code>p2.repository.name</code></li></ul><hr /></section><a id="xzCompress"></a><section><a id="a.3CxzCompress.3E"></a>
-<h3>&lt;xzCompress&gt;</h3>
-<div>Add XZ-compressed repository index files. XZ offers better compression ratios esp. for highly redundant file content.</div>
+<li><strong>User Property</strong>: <code>p2.repository.name</code></li></ul><hr /></section><a id="validateChildren"></a><section><a id="a.3CvalidateChildren.3E"></a>
+<h3>&lt;validateChildren&gt;</h3>
+<div>Validate the existence of the repository and all added children.</div>
 <ul>
 <li><strong>Type</strong>: <code>boolean</code></li>
 <li><strong>Required</strong>: <code>No</code></li>
-<li><strong>User Property</strong>: <code>p2.repository.xz</code></li>
+<li><strong>User Property</strong>: <code>p2.composite.validate</code></li>
 <li><strong>Default</strong>: <code>true</code></li></ul></section></section></section>        </main>
       </div>
     </div>
