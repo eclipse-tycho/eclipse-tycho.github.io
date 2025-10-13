@@ -177,12 +177,12 @@
 <td><a href="#failIfNoTests"><code>&lt;failIfNoTests&gt;</code></a></td>
 <td><code>boolean</code></td>
 <td><code>-</code></td>
-<td>Fail and return exit status code 2 if no tests are found.<br /><strong>Default</strong>: <code>false</code><br /><strong>User Property</strong>: <code>fail-if-no-tests</code></td></tr>
+<td>Fail and return exit status code 2 if no tests are found.<br /><strong>Default</strong>: <code>true</code><br /><strong>User Property</strong>: <code>fail-if-no-tests</code></td></tr>
 <tr class="a">
 <td><a href="#frameworkProperties"><code>&lt;frameworkProperties&gt;</code></a></td>
 <td><code>Map&lt;String,String&gt;</code></td>
 <td><code>-</code></td>
-<td>No description.</td></tr>
+<td>Additional OSGi framework properties to use when executing the test</td></tr>
 <tr class="b">
 <td><a href="#includeClassname"><code>&lt;includeClassname&gt;</code></a></td>
 <td><code>String</code></td>
@@ -204,66 +204,71 @@
 <td><code>-</code></td>
 <td>Tags to include in test execution.<br /><strong>User Property</strong>: <code>include-tag</code></td></tr>
 <tr class="b">
+<td><a href="#launchType"><code>&lt;launchType&gt;</code></a></td>
+<td><code>String</code></td>
+<td><code>-</code></td>
+<td>No description.<br /><strong>Default</strong>: <code>embedded</code><br /><strong>User Property</strong>: <code>junit-platform.launchType</code></td></tr>
+<tr class="a">
 <td><a href="#printBundles"><code>&lt;printBundles&gt;</code></a></td>
 <td><code>boolean</code></td>
 <td><code>-</code></td>
 <td>No description.</td></tr>
-<tr class="a">
+<tr class="b">
 <td><a href="#reportsDir"><code>&lt;reportsDir&gt;</code></a></td>
 <td><code>File</code></td>
 <td><code>-</code></td>
 <td>No description.<br /><strong>Default</strong>: <code>${project.build.directory}/testReports</code><br /><strong>User Property</strong>: <code>reports-dir</code></td></tr>
-<tr class="b">
+<tr class="a">
 <td><a href="#scanClasspath"><code>&lt;scanClasspath&gt;</code></a></td>
 <td><code>boolean</code></td>
 <td><code>-</code></td>
 <td>No description.<br /><strong>Default</strong>: <code>true</code><br /><strong>User Property</strong>: <code>scan-classpath</code></td></tr>
-<tr class="a">
+<tr class="b">
 <td><a href="#selectClass"><code>&lt;selectClass&gt;</code></a></td>
 <td><code>List&lt;String&gt;</code></td>
 <td><code>-</code></td>
 <td>Select specific test classes to execute. Each entry should be a fully qualified class name (e.g., "com.example.MyTest").<br /><strong>User Property</strong>: <code>select-class</code></td></tr>
-<tr class="b">
+<tr class="a">
 <td><a href="#selectMethod"><code>&lt;selectMethod&gt;</code></a></td>
 <td><code>List&lt;String&gt;</code></td>
 <td><code>-</code></td>
 <td>Select specific test methods to execute. Each entry should be a fully qualified method name (e.g., "com.example.MyTest#myTestMethod").<br /><strong>User Property</strong>: <code>select-method</code></td></tr>
-<tr class="a">
+<tr class="b">
 <td><a href="#selectModule"><code>&lt;selectModule&gt;</code></a></td>
 <td><code>List&lt;String&gt;</code></td>
 <td><code>-</code></td>
 <td>Select specific modules for test discovery (JPMS).<br /><strong>User Property</strong>: <code>select-module</code></td></tr>
-<tr class="b">
+<tr class="a">
 <td><a href="#selectPackage"><code>&lt;selectPackage&gt;</code></a></td>
 <td><code>List&lt;String&gt;</code></td>
 <td><code>-</code></td>
 <td>Select packages to scan for tests.<br /><strong>User Property</strong>: <code>select-package</code></td></tr>
-<tr class="a">
+<tr class="b">
 <td><a href="#selectResource"><code>&lt;selectResource&gt;</code></a></td>
 <td><code>List&lt;String&gt;</code></td>
 <td><code>-</code></td>
 <td>Select classpath resources for test discovery.<br /><strong>User Property</strong>: <code>select-resource</code></td></tr>
-<tr class="b">
+<tr class="a">
 <td><a href="#selectUri"><code>&lt;selectUri&gt;</code></a></td>
 <td><code>List&lt;String&gt;</code></td>
 <td><code>-</code></td>
 <td>Select URIs for test discovery.<br /><strong>User Property</strong>: <code>select-uri</code></td></tr>
-<tr class="a">
+<tr class="b">
 <td><a href="#singleColor"><code>&lt;singleColor&gt;</code></a></td>
 <td><code>boolean</code></td>
 <td><code>-</code></td>
 <td>Style test output in single color (no ANSI color codes).<br /><strong>Default</strong>: <code>false</code><br /><strong>User Property</strong>: <code>single-color</code></td></tr>
-<tr class="b">
+<tr class="a">
 <td><a href="#skip"><code>&lt;skip&gt;</code></a></td>
 <td><code>boolean</code></td>
 <td><code>-</code></td>
 <td>No description.<br /><strong>User Property</strong>: <code>junit-platform.skip</code></td></tr>
-<tr class="a">
+<tr class="b">
 <td><a href="#startExtender"><code>&lt;startExtender&gt;</code></a></td>
 <td><code>boolean</code></td>
 <td><code>-</code></td>
 <td>If bundles providing an <code>osgi.extender</code> capability should be started by default<br /><strong>Default</strong>: <code>true</code></td></tr>
-<tr class="b">
+<tr class="a">
 <td><a href="#startupTimout"><code>&lt;startupTimout&gt;</code></a></td>
 <td><code>long</code></td>
 <td><code>-</code></td>
@@ -335,9 +340,9 @@
 <li><strong>Type</strong>: <code>boolean</code></li>
 <li><strong>Required</strong>: <code>No</code></li>
 <li><strong>User Property</strong>: <code>fail-if-no-tests</code></li>
-<li><strong>Default</strong>: <code>false</code></li></ul><hr /></section><a id="frameworkProperties"></a><section><a id="a.3CframeworkProperties.3E"></a>
+<li><strong>Default</strong>: <code>true</code></li></ul><hr /></section><a id="frameworkProperties"></a><section><a id="a.3CframeworkProperties.3E"></a>
 <h3>&lt;frameworkProperties&gt;</h3>
-<div>No description.</div>
+<div>Additional OSGi framework properties to use when executing the test</div>
 <ul>
 <li><strong>Type</strong>: <code>java.util.Map&lt;java.lang.String, java.lang.String&gt;</code></li>
 <li><strong>Required</strong>: <code>No</code></li></ul><hr /></section><a id="includeClassname"></a><section><a id="a.3CincludeClassname.3E"></a>
@@ -364,7 +369,14 @@
 <ul>
 <li><strong>Type</strong>: <code>java.util.List&lt;java.lang.String&gt;</code></li>
 <li><strong>Required</strong>: <code>No</code></li>
-<li><strong>User Property</strong>: <code>include-tag</code></li></ul><hr /></section><a id="printBundles"></a><section><a id="a.3CprintBundles.3E"></a>
+<li><strong>User Property</strong>: <code>include-tag</code></li></ul><hr /></section><a id="launchType"></a><section><a id="a.3ClaunchType.3E"></a>
+<h3>&lt;launchType&gt;</h3>
+<div>No description.</div>
+<ul>
+<li><strong>Type</strong>: <code>java.lang.String</code></li>
+<li><strong>Required</strong>: <code>No</code></li>
+<li><strong>User Property</strong>: <code>junit-platform.launchType</code></li>
+<li><strong>Default</strong>: <code>embedded</code></li></ul><hr /></section><a id="printBundles"></a><section><a id="a.3CprintBundles.3E"></a>
 <h3>&lt;printBundles&gt;</h3>
 <div>No description.</div>
 <ul>
