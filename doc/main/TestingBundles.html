@@ -307,7 +307,100 @@ This approach has several advantages:</p>
 <li><a href="https://github.com/eclipse-tycho/tycho/tree/master/demo/testing/junit-platform" class="externalLink">https://github.com/eclipse-tycho/tycho/tree/master/demo/testing/junit-platform</a></li>
 </ul></section></section><section><a id="combining_different_approaches"></a>
 <h2>combining different approaches</h2></section><section><a id="setup_test_source_folders_in_eclipse"></a>
-<h2>setup test source folders in eclipse</h2></section></section>        </main>
+<h2>setup test source folders in eclipse</h2>
+<p>When working with Eclipse and PDE (Plugin Development Environment), you can mark source folders as containing test sources. This is important for Tycho to correctly identify and compile test classes separately from production code.</p><section><a id="Marking_a_Source_Folder_as_Test_Source"></a>
+<h3>Marking a Source Folder as Test Source</h3>
+<p>To configure a source folder to contain test sources in Eclipse:</p>
+<ol style="list-style-type: decimal;">
+
+<li><strong>Right-click on your Eclipse plugin project</strong> in the Package Explorer or Project Explorer</li>
+<li><strong>Select &#x201c;Properties&#x201d;</strong> from the context menu</li>
+<li><strong>Navigate to &#x201c;Java Build Path&#x201d;</strong> in the left panel</li>
+<li><strong>Select the &#x201c;Source&#x201d; tab</strong></li>
+<li><strong>Locate the source folder</strong> you want to mark as a test source folder (e.g., <code>src_test</code>)</li>
+<li><strong>Expand the source folder entry</strong> by clicking on the arrow/triangle next to it to reveal its attributes</li>
+<li><strong>Look for &#x201c;Contains test sources: No&#x201d;</strong> in the expanded view</li>
+<li><strong>Double-click on &#x201c;Contains test sources: No&#x201d;</strong> or select it and click &#x201c;Edit&#x201d;</li>
+<li><strong>In the dialog that appears, change the value to &#x201c;Yes&#x201d;</strong></li>
+<li><strong>Click &#x201c;OK&#x201d;</strong> to close the edit dialog</li>
+<li><strong>Click &#x201c;Apply and Close&#x201d;</strong> to save the changes</li>
+</ol>
+<blockquote>
+
+<p><strong>Tip</strong>: After marking a source folder as a test source, you'll see &#x201c;Contains test sources: Yes&#x201d; in the build path configuration.</p>
+</blockquote></section><section><a id="What_This_Does"></a>
+<h3>What This Does</h3>
+<p>When you mark a source folder as containing test sources, Eclipse modifies the <code>.classpath</code> file in your project to include a test attribute. For example:</p>
+
+<pre class="prettyprint linenums"><code class="language-xml">&lt;classpathentry kind=&quot;src&quot; output=&quot;bin_test&quot; path=&quot;src_test&quot;&gt;
+    &lt;attributes&gt;
+        &lt;attribute name=&quot;test&quot; value=&quot;true&quot;/&gt;
+    &lt;/attributes&gt;
+&lt;/classpathentry&gt;
+</code></pre></section><section><a id="How_Tycho_Uses_This_Information"></a>
+<h3>How Tycho Uses This Information</h3>
+<p>Tycho reads the <code>.classpath</code> file to determine which source folders contain test code:</p>
+<ul>
+
+<li><strong>Source folders without the test attribute</strong> (or with <code>test=&quot;false&quot;</code>) are treated as production code and compiled during the <code>compile</code> phase</li>
+<li><strong>Source folders with <code>test=&quot;true&quot;</code></strong> are treated as test code and compiled during the <code>test-compile</code> phase with test dependencies available</li>
+</ul>
+<p>This allows you to:</p>
+<ul>
+
+<li>Keep test and production code in the same project</li>
+<li>Use different output directories for test and production classes</li>
+<li>Have test-specific dependencies that don't leak into your production bundle</li>
+</ul></section><section><a id="Recommended_Directory_Structure"></a>
+<h3>Recommended Directory Structure</h3>
+<p>For projects that include both production and test code, a common structure is:</p>
+
+<pre><code class="nohighlight nocode">your-plugin-project/
+&#x251c;&#x2500;&#x2500; src/              (production code)
+&#x251c;&#x2500;&#x2500; src_test/         (test code, marked with test=&quot;true&quot;)
+&#x251c;&#x2500;&#x2500; META-INF/
+&#x2502;   &#x2514;&#x2500;&#x2500; MANIFEST.MF
+&#x251c;&#x2500;&#x2500; build.properties
+&#x2514;&#x2500;&#x2500; pom.xml
+</code></pre></section><section><a id="Important_Notes"></a>
+<h3>Important Notes</h3>
+<ul>
+
+<li>The test attribute is supported in Eclipse since version 4.8 (2018-09)</li>
+<li>When using pomless builds, Tycho automatically detects test source folders marked in the <code>.classpath</code> file</li>
+<li>Test source folders should be included in the <code>build.properties</code> file if you want them to be part of the build</li>
+<li>Make sure your <code>pom.xml</code> includes the necessary test plugin configurations (either <code>maven-surefire-plugin</code> or <code>tycho-surefire-plugin</code> with appropriate executions)</li>
+</ul></section><section><a id="Alternative.3A_Manual_.classpath_Editing"></a>
+<h3>Alternative: Manual .classpath Editing</h3>
+<p>If you prefer, you can also directly edit the <code>.classpath</code> file in your project root. Add or modify the <code>classpathentry</code> element for your test source folder to include the test attribute:</p>
+
+<pre class="prettyprint linenums"><code class="language-xml">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;classpath&gt;
+    &lt;!-- Production source folder --&gt;
+    &lt;classpathentry kind=&quot;src&quot; output=&quot;bin&quot; path=&quot;src&quot;/&gt;
+    
+    &lt;!-- Test source folder with test attribute --&gt;
+    &lt;classpathentry kind=&quot;src&quot; output=&quot;bin_test&quot; path=&quot;src_test&quot;&gt;
+        &lt;attributes&gt;
+            &lt;attribute name=&quot;test&quot; value=&quot;true&quot;/&gt;
+        &lt;/attributes&gt;
+    &lt;/classpathentry&gt;
+    
+    &lt;!-- Other classpath entries --&gt;
+    &lt;classpathentry kind=&quot;con&quot; path=&quot;org.eclipse.jdt.launching.JRE_CONTAINER&quot;/&gt;
+    &lt;classpathentry kind=&quot;con&quot; path=&quot;org.eclipse.pde.core.requiredPlugins&quot;/&gt;
+    &lt;classpathentry kind=&quot;output&quot; path=&quot;bin&quot;/&gt;
+&lt;/classpath&gt;
+</code></pre>
+<p>After editing, refresh your project in Eclipse (F5) for the changes to take effect.</p></section><section><a id="Example_Projects"></a>
+<h3>Example Projects</h3>
+<p>See these demo projects for working examples:</p>
+<ul>
+
+<li><a href="https://github.com/eclipse-tycho/tycho/tree/master/demo/testing/surefire/with-source-folder" class="externalLink">Surefire with source folder</a> - Shows <code>src_test</code> marked as test source</li>
+<li><a href="https://github.com/eclipse-tycho/tycho/tree/master/demo/testing/tycho/standalone/test" class="externalLink">Tycho standalone test</a> - Shows a project with only test sources</li>
+<li><a href="https://github.com/eclipse-tycho/tycho/tree/master/demo/testing/tycho/osgitest" class="externalLink">Tycho OSGi test</a> - Shows mixed production and test sources</li>
+</ul></section></section></section>        </main>
       </div>
     </div>
     <hr/>
