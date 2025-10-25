@@ -216,25 +216,39 @@
 <p>The filters will only remove content from the target platform; they will not add new content. <code>dependency-resolution</code> should be used for addition of extra content. If you specify a restriction that is not fulfilled by any of the units from the target platform sources, all units that the filter applies to (i.e. units that match the filter.type, filter.id, and filter.version/versionRange criteria) will be removed from the target platform.</p>
 <p>Package provider restrictions work by removing all other bundles exporting the package. This means that these other bundles (and the packages only exported by them) won't be available in your build.</p>
 <p>Example:</p>
-<pre>&lt;plugin&gt; &lt;groupId&gt;org.eclipse.tycho&lt;/groupId&gt;
-&lt;artifactId&gt;target-platform-configuration&lt;/artifactId&gt;
-&lt;version&gt;${tycho-version}&lt;/version&gt; &lt;configuration&gt; &lt;filters&gt;
-
-&lt;!-- example 1: restrict version of a bundle --&gt; &lt;filter&gt;
-&lt;type&gt;eclipse-plugin&lt;/type&gt; &lt;id&gt;org.eclipse.osgi&lt;/id&gt; &lt;restrictTo&gt;
-&lt;versionRange&gt;[3.6,3.7)&lt;/versionRange&gt; &lt;!-- alternative: &lt;version&gt; for selecting
-exactly one versions --&gt; &lt;/restrictTo&gt; &lt;/filter&gt;
-
-&lt;!-- example 2: remove all providers of the package javax.persistence except the bundle
-javax.persistence --&gt; &lt;filter&gt; &lt;type&gt;java-package&lt;/type&gt;
-&lt;id&gt;javax.persistence&lt;/id&gt; &lt;restrictTo&gt; &lt;type&gt;eclipse-plugin&lt;/type&gt;
-&lt;id&gt;javax.persistence&lt;/id&gt; &lt;/restrictTo&gt; &lt;/filter&gt;
-
-&lt;!-- example 3: work around Equinox bug 348045 --&gt; &lt;filter&gt;
-&lt;type&gt;p2-installable-unit&lt;/type&gt;
-&lt;id&gt;org.eclipse.equinox.servletbridge.extensionbundle&lt;/id&gt; &lt;removeAll /&gt;
-&lt;/filter&gt; &lt;/filters&gt; &lt;/configuration&gt; &lt;/plugin&gt;
-
+<pre>&lt;plugin&gt;
+  &lt;groupId&gt;org.eclipse.tycho&lt;/groupId&gt;
+  &lt;artifactId&gt;target-platform-configuration&lt;/artifactId&gt;
+  &lt;version&gt;${tycho-version}&lt;/version&gt;
+  &lt;configuration&gt;
+    &lt;filters&gt;
+      &lt;!-- example 1: restrict version of a bundle --&gt;
+      &lt;filter&gt;
+        &lt;type&gt;eclipse-plugin&lt;/type&gt;
+        &lt;id&gt;org.eclipse.osgi&lt;/id&gt;
+        &lt;restrictTo&gt;
+          &lt;versionRange&gt;[3.6,3.7)&lt;/versionRange&gt;
+          &lt;!-- alternative: &lt;version&gt; for selecting exactly one versions --&gt;
+        &lt;/restrictTo&gt;
+      &lt;/filter&gt;
+      &lt;!-- example 2: remove all providers of the package javax.persistence except the bundle javax.persistence --&gt;
+      &lt;filter&gt;
+        &lt;type&gt;java-package&lt;/type&gt;
+        &lt;id&gt;javax.persistence&lt;/id&gt;
+        &lt;restrictTo&gt;
+          &lt;type&gt;eclipse-plugin&lt;/type&gt;
+          &lt;id&gt;javax.persistence&lt;/id&gt;
+        &lt;/restrictTo&gt;
+      &lt;/filter&gt;
+      &lt;!-- example 3: work around Equinox bug 348045 --&gt;
+      &lt;filter&gt;
+        &lt;type&gt;p2-installable-unit&lt;/type&gt;
+        &lt;id&gt;org.eclipse.equinox.servletbridge.extensionbundle&lt;/id&gt;
+        &lt;removeAll /&gt;
+      &lt;/filter&gt;
+    &lt;/filters&gt;
+  &lt;/configuration&gt;
+&lt;/plugin&gt;
 </pre>
 <p></p></td></tr>
 <tr class="a">
@@ -371,25 +385,39 @@ javax.persistence --&gt; &lt;filter&gt; &lt;type&gt;java-package&lt;/type&gt;
 <p>The filters will only remove content from the target platform; they will not add new content. <code>dependency-resolution</code> should be used for addition of extra content. If you specify a restriction that is not fulfilled by any of the units from the target platform sources, all units that the filter applies to (i.e. units that match the filter.type, filter.id, and filter.version/versionRange criteria) will be removed from the target platform.</p>
 <p>Package provider restrictions work by removing all other bundles exporting the package. This means that these other bundles (and the packages only exported by them) won't be available in your build.</p>
 <p>Example:</p>
-<pre>&lt;plugin&gt; &lt;groupId&gt;org.eclipse.tycho&lt;/groupId&gt;
-&lt;artifactId&gt;target-platform-configuration&lt;/artifactId&gt;
-&lt;version&gt;${tycho-version}&lt;/version&gt; &lt;configuration&gt; &lt;filters&gt;
-
-&lt;!-- example 1: restrict version of a bundle --&gt; &lt;filter&gt;
-&lt;type&gt;eclipse-plugin&lt;/type&gt; &lt;id&gt;org.eclipse.osgi&lt;/id&gt; &lt;restrictTo&gt;
-&lt;versionRange&gt;[3.6,3.7)&lt;/versionRange&gt; &lt;!-- alternative: &lt;version&gt; for selecting
-exactly one versions --&gt; &lt;/restrictTo&gt; &lt;/filter&gt;
-
-&lt;!-- example 2: remove all providers of the package javax.persistence except the bundle
-javax.persistence --&gt; &lt;filter&gt; &lt;type&gt;java-package&lt;/type&gt;
-&lt;id&gt;javax.persistence&lt;/id&gt; &lt;restrictTo&gt; &lt;type&gt;eclipse-plugin&lt;/type&gt;
-&lt;id&gt;javax.persistence&lt;/id&gt; &lt;/restrictTo&gt; &lt;/filter&gt;
-
-&lt;!-- example 3: work around Equinox bug 348045 --&gt; &lt;filter&gt;
-&lt;type&gt;p2-installable-unit&lt;/type&gt;
-&lt;id&gt;org.eclipse.equinox.servletbridge.extensionbundle&lt;/id&gt; &lt;removeAll /&gt;
-&lt;/filter&gt; &lt;/filters&gt; &lt;/configuration&gt; &lt;/plugin&gt;
-
+<pre>&lt;plugin&gt;
+  &lt;groupId&gt;org.eclipse.tycho&lt;/groupId&gt;
+  &lt;artifactId&gt;target-platform-configuration&lt;/artifactId&gt;
+  &lt;version&gt;${tycho-version}&lt;/version&gt;
+  &lt;configuration&gt;
+    &lt;filters&gt;
+      &lt;!-- example 1: restrict version of a bundle --&gt;
+      &lt;filter&gt;
+        &lt;type&gt;eclipse-plugin&lt;/type&gt;
+        &lt;id&gt;org.eclipse.osgi&lt;/id&gt;
+        &lt;restrictTo&gt;
+          &lt;versionRange&gt;[3.6,3.7)&lt;/versionRange&gt;
+          &lt;!-- alternative: &lt;version&gt; for selecting exactly one versions --&gt;
+        &lt;/restrictTo&gt;
+      &lt;/filter&gt;
+      &lt;!-- example 2: remove all providers of the package javax.persistence except the bundle javax.persistence --&gt;
+      &lt;filter&gt;
+        &lt;type&gt;java-package&lt;/type&gt;
+        &lt;id&gt;javax.persistence&lt;/id&gt;
+        &lt;restrictTo&gt;
+          &lt;type&gt;eclipse-plugin&lt;/type&gt;
+          &lt;id&gt;javax.persistence&lt;/id&gt;
+        &lt;/restrictTo&gt;
+      &lt;/filter&gt;
+      &lt;!-- example 3: work around Equinox bug 348045 --&gt;
+      &lt;filter&gt;
+        &lt;type&gt;p2-installable-unit&lt;/type&gt;
+        &lt;id&gt;org.eclipse.equinox.servletbridge.extensionbundle&lt;/id&gt;
+        &lt;removeAll /&gt;
+      &lt;/filter&gt;
+    &lt;/filters&gt;
+  &lt;/configuration&gt;
+&lt;/plugin&gt;
 </pre>
 <p></p></div>
 <ul>
