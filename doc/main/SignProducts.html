@@ -117,7 +117,7 @@ also sometimes one wants to sign it with an own company certificate.</p>
 <p>As the process of signing an executable can vary and there is no platform independent way to do this Tycho can not do it on its own and the process to do it properly requires some steps,
 so we try to give some guidance here.</p>
 <p><strong>Important note</strong> Signing the binary does not really sign your product as a whole! As Eclipse is extensible by nature it can be modified or the binary can be copied to a complete different product!</p>
-<p>As signing is usually not performed during normal development, it might be good to put the following configurations into a <code>profile</code> e.g. with the name sign-products, the current process is quite convoluted so we likey want to improve that over time to make it simpler.</p><section><a id="Step_1.3A_Move_some_of_the_executions_to_the_compile_phase"></a>
+<p>As signing is usually not performed during normal development, it might be good to put the following configurations into a <code>profile</code> e.g. with the name sign-products, the current process is quite convoluted so we likely want to improve that over time to make it simpler.</p><section><a id="Step_1.3A_Move_some_of_the_executions_to_the_compile_phase"></a>
 <h2>Step 1: Move some of the executions to the compile phase</h2>
 <p>Because we want to modify some files before they appear in the assembly repository, we first move some of the executions from the default phase into the compile phase to execute additional actions:</p>
 
@@ -142,7 +142,7 @@ so we try to give some guidance here.</p>
 &lt;/plugin&gt;
 </code></pre></section><section><a id="Step_2.3A_Expand_the_customized_product_binaries"></a>
 <h2>Step 2: Expand the customized product binaries</h2>
-<p>Maven and P2 manage artifacts as zip files so they can be transfered as a stream, because usually the signing tools are not capable to sign binaries inside a zip file we first need to extract them we use the windows binaries here as an example:</p>
+<p>Maven and P2 manage artifacts as zip files so they can be transferred as a stream, because usually the signing tools are not capable to sign binaries inside a zip file we first need to extract them we use the windows binaries here as an example:</p>
 
 <pre class="prettyprint linenums"><code class="language-xml">&lt;plugin&gt;
 	&lt;groupId&gt;org.apache.maven.plugins&lt;/groupId&gt;
